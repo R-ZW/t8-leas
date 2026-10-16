@@ -1,0 +1,21 @@
+# Fontes consultadas — Mininet-GUI
+
+**Consulta:** 15/10/2026 (America/Sao_Paulo). **Escopo:** Mininet-GUI, Salão de Ferramentas do SBRC 2025. Este inventário reúne evidências documentais; nenhuma VM ou emulação foi executada nesta etapa.
+
+| Fonte e localização | Finalidade | Fatos confirmados na fonte | Lacunas ou ressalvas |
+|---|---|---|---|
+| Protocolo local: `../../../../novo_protocolo.md` | Fixar escopo e fluxo da T8 | Dois artefatos; avaliação separada de F/R; selos em referência, fora dos pacotes das LLMs. | Documento do grupo, não é fonte dos critérios oficiais nem evidência de funcionamento. |
+| Artigo recebido: `../../../fontes/mininet-gui.pdf` (9 páginas; SHA-256 `63949FAAEC7BC9E3F88FE2338C8F0B93D42DEA7A09852076372202D313D5E463`) | Identificar as contribuições e os casos de uso de 2025 | P. 2 enumera seis contribuições: interface web, emulação integrada, alterações em tempo real, geração automática, WebShell e regras de fluxo. Seções 3–4 descrevem a arquitetura e três casos demonstrados: modelagem/conectividade, `iperf` via WebShell e múltiplos controladores. | Não há, no PDF recebido, conjunto de logs, métricas esperadas ou configuração de VM imutável para comparar automaticamente as demonstrações. |
+| README atual: https://github.com/latarc/mininet-gui#readme | Inspecionar instalação e teste mínimo | Descreve VM VirtualBox, Docker e instalação a partir do código; teste com controlador Default, topologia Single de dois hosts e `pingall`; experimentos explicitados para geração Single/Linear/Tree e WebShell. Aponta para uma OVA no Google Drive. | OVA foi apenas identificada por link, não baixada, auditada nem executada. Nenhum SHA da versão oficial de 2025 ou do conteúdo da OVA está fixado. |
+| Documentação em `docs/README.md`: https://github.com/latarc/mininet-gui/tree/main/docs | Conferir documentação suplementar | A pasta `docs/` contém README em português, com requisitos, opções de instalação, teste mínimo e os dois experimentos documentados. | Conteúdo exibido é da branch atual; não demonstra o procedimento entregue ao CTA em 2025. |
+| Critérios oficiais: https://doc-artefatos.github.io/sbrc2025/revinstrucoes.html | Obter requisitos da edição correta | F exige artefato executável e funcionalidades observáveis; R exige conseguir reproduzir as principais reivindicações com instruções e processo descrito. D e S também são definidos. | Registro dos pontos pertinentes em `instrucoes-oficiais.md`; a página original continua sendo a referência integral. |
+| Resultados oficiais: https://doc-artefatos.github.io/sbrc2025/results.html | Fixar comparação posterior | A linha de Mininet-GUI na trilha SF mostra imagens dos quatro selos D/F/S/R. | Registro datado em `selos-oficiais.md` e `selos-oficiais.pdf`. Os selos não provam identidade com a branch atual ou com a OVA disponível agora. |
+
+## Divergências e pontos a resolver
+
+1. **Memória da VM no próprio README:** seção de requisitos pede **8 GB** para a VM; seção de experimentos afirma **2 GB e um núcleo**. Registrar a diferença e confirmar recursos reais da OVA antes da execução.
+2. **Funcionalidades atuais e recorte de 2025:** o README atual menciona sniffer, gráficos de tráfego em tempo real e chat com IA. O artigo de 2025 apresenta visualização de tráfego em tempo real como trabalho futuro e não inclui chat com IA nas seis contribuições. A leitura mais cautelosa é evolução posterior ou diferença documental; não atribuir esses recursos automaticamente à versão avaliada em 2025.
+3. **Amplitude da reprodução:** o artigo ilustra três casos de uso e seis contribuições; o README atual detalha apenas dois experimentos sob a seção “Experiments”. A seleção das reivindicações principais para R deve ser congelada antes das conversas avaliadoras, explicitando quais casos serão efetivamente reproduzidos.
+4. **Ambiente e versão:** há link para OVA, mas o commit dentro dela, a integridade do arquivo, sua disponibilidade atual e o ambiente compatível ainda não foram verificados. Docker e código-fonte são alternativas documentadas, sem que esta etapa tenha escolhido ou testado qualquer uma.
+
+**Próxima etapa documental:** identificar commit/tag de 2025, verificar a OVA e seu código instalado, fixar versão, ambiente e arquivos do pacote. Até lá, todas as afirmações sobre o repositório têm qualificador **README/docs atuais**.
