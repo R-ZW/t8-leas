@@ -1,6 +1,6 @@
 # Pré-registro metodológico — Foremost-NG
 
-**Congelamento inicial:** 15/10/2026 (America/Sao_Paulo), **antes de qualquer Prompt A/conversa avaliadora**. Versão 1 da lista: [`pacote/reivindicacoes.md`](pacote/reivindicacoes.md), IDs C1–C7. O arquivo de verificação [`CONGELAMENTO.sha256`](CONGELAMENTO.sha256) será gerado após a redação final deste pré-registro e da lista; não integra o pacote fornecido às LLMs.
+**Congelamento inicial:** 15/10/2026 (America/Sao_Paulo), **antes de qualquer Prompt A/conversa avaliadora**. Versão 2 da lista (15/10/2026, ainda antes de qualquer Prompt A): [`pacote/reivindicacoes.md`](pacote/reivindicacoes.md), IDs C1–C7, no formato do §4.4 do protocolo e sem juízos sobre disponibilidade ou resultado. A versão 1, com os critérios de observação detalhados, foi preservada sem alteração em [`criterios-observacao.md`](criterios-observacao.md), que nunca é anexado às LLMs; motivo em [`../registro-mudancas-pre-A.md`](../registro-mudancas-pre-A.md). IDs, regra de R e reivindicações principais não mudaram. O arquivo de verificação [`CONGELAMENTO.sha256`](CONGELAMENTO.sha256) será gerado após a redação final deste pré-registro e da lista; não integra o pacote fornecido às LLMs.
 
 ## Fontes e separação de papéis
 

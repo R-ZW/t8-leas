@@ -1,0 +1,134 @@
+
+### Data e identificação
+$ date -u +%Y-%m-%dT%H:%M:%SZ
+2026-10-16T02:02:53Z
+[saida=0]
+$ id; hostname
+uid=1000(mininet) gid=1000(mininet) groups=1000(mininet),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),111(lxd),115(lpadmin),116(sambashare)
+mininet-vm
+[saida=0]
+
+### Sistema operacional e kernel
+$ cat /etc/os-release
+NAME="Ubuntu"
+VERSION="20.04.1 LTS (Focal Fossa)"
+ID=ubuntu
+ID_LIKE=debian
+PRETTY_NAME="Ubuntu 20.04.1 LTS"
+VERSION_ID="20.04"
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+VERSION_CODENAME=focal
+UBUNTU_CODENAME=focal
+[saida=0]
+$ uname -a
+Linux mininet-vm 5.4.0-42-generic #46-Ubuntu SMP Fri Jul 10 00:24:02 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
+[saida=0]
+
+### Código em /home/mininet/mininet-gui (versao.md, Como confirmar)
+$ git -C '/home/mininet/mininet-gui' rev-parse HEAD
+be68302a9d3e17acf740d002090f7191098ac03d
+[saida=0]
+$ git -C '/home/mininet/mininet-gui' status --short
+[saida=0]
+$ git -C '/home/mininet/mininet-gui' remote -v
+origin	https://github.com/latarc/mininet-gui (fetch)
+origin	https://github.com/latarc/mininet-gui (push)
+[saida=0]
+$ git -C '/home/mininet/mininet-gui' log -1 --format='%H %ci %s'
+be68302a9d3e17acf740d002090f7191098ac03d 2025-03-17 09:53:46 -0700 update setup and run scripts
+[saida=0]
+$ git -C '/home/mininet/mininet-gui' describe --tags --always
+v0.0.1-2-gbe68302
+[saida=0]
+$ git -C '/home/mininet/mininet-gui' branch -a
+  main
+* sbrc2025
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/dev
+  remotes/origin/main
+  remotes/origin/sbrc2025
+[saida=0]
+$ git -C '/home/mininet/mininet-gui' stash list
+[saida=0]
+
+### Lançador mininet_gui (sem executar)
+$ command -v mininet_gui
+[saida=127]
+$ type mininet_gui
+mininet_gui: not found
+[saida=127]
+$ grep -n "mininet_gui" ~/.bashrc ~/.profile /etc/bash.bashrc /etc/profile 2>/dev/null
+/home/mininet/.bashrc:123:alias mininet_gui=/home/mininet/mininet-gui/run.sh
+[saida=0]
+
+### Versões
+$ mn --version
+2.3.0
+[saida=0]
+$ ovs-vsctl --version
+ovs-vsctl (Open vSwitch) 2.13.1
+DB Schema 8.2.0
+[saida=0]
+$ python3 --version
+Python 3.8.5
+[saida=0]
+$ command -v python3
+/usr/bin/python3
+[saida=0]
+$ node --version
+v10.19.0
+[saida=0]
+$ npm --version
+6.14.4
+[saida=0]
+$ git --version
+git version 2.25.1
+[saida=0]
+$ pip3 show mininet-gui-backend 2>/dev/null | head -n 12
+[saida=0]
+
+### Manifesto SHA-256 dos arquivos do projeto (sem .git, node_modules, venv, dist, __pycache__)
+fb8eba25e924efb6a1c2007a3d3f84d8a22e5acbd3fce629b7444cbb71532906  ./LICENSE
+083d7c3adb0be047da0d4a833474177b8f731a7fed4cb4231e1ecfb6fb8e3c50  ./README.md
+03d532227e6c8756b2b3c916ea25da8cc6ff7a833f45349050c727e979aaeedd  ./mininet-gui-backend/.gitignore
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  ./mininet-gui-backend/mininet_gui_backend/__init__.py
+e84f75ed1f554e6ae83d8092d6fd0ed0f83cd449dc7935f360ebe7aae7f155e8  ./mininet-gui-backend/mininet_gui_backend/api.py
+40cb2612dcc9d2516321d9eb0468fe00001ac92564610f6eeeb9a38abc22cab5  ./mininet-gui-backend/mininet_gui_backend/cli.py
+e70e5e0c9ce1517e56c83659d759b98e1d10dfb2379b396e37494687180a5e93  ./mininet-gui-backend/mininet_gui_backend/export.py
+c8c4c139e827c00831fb20b48dbbc919397f4ccebd8ad002295dc4cdf1bd166d  ./mininet-gui-backend/mininet_gui_backend/schema.py
+2f36a78b171ee7e3b99460fd03e47e17d6777887801d51ddb5b93854f274f142  ./mininet-gui-backend/requirements.txt
+9746eb50d1f66507f27c95500329932fe26a512d301c9d1109e09cad096c29d1  ./mininet-gui-frontend/.gitignore
+ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356  ./mininet-gui-frontend/.prettierrc.json
+8452cda8658fb3d575ea4135cf002fdd3c4bd9708b05769693080a544b7b44ce  ./mininet-gui-frontend/index.html
+febb33439fe0c240feaecd11866d474805c9133b1364c9b0b678912e12b30eb5  ./mininet-gui-frontend/package-lock.json
+aa40a8f8c321d72bff7722875cb7736646d03e8539cf1e9041222f4b8f12a6b3  ./mininet-gui-frontend/package.json
+c9c463bb796f2bb2678ceb1bcfe917029502e9df09a8623c321ccea5fcb61474  ./mininet-gui-frontend/public/favicon.ico
+74f4579d34f58ad38f6e3e2c713b25d07fa0bd11097a672ffea8cd802b1362eb  ./mininet-gui-frontend/src/App.vue
+f4e17688970e08361f20e4b0e1da261f4526e3e0f2a1d32e1e05be47bff40150  ./mininet-gui-frontend/src/assets/controller.svg
+7b0c89fbe0ff790cc735535f3d367920ef9b9ccccad64baa8f3a9ee32d0e03f2  ./mininet-gui-frontend/src/assets/ethernet-cable-off.svg
+8e2be6a14c2698119f1cb4f89f66f6ac6c7d5350842a4d07624322ce9dd3b83f  ./mininet-gui-frontend/src/assets/ethernet-cable.svg
+b6ba33b38a2f0643cc8d1b0c809802e22cc51cea854ae60538a63940d8832908  ./mininet-gui-frontend/src/assets/host.svg
+913262132278fd9f79c2d71fd6a6b731c1a2497ff93ccc0f203ddf734d032310  ./mininet-gui-frontend/src/assets/light-controller.svg
+4444f709f85355d8a32a8b3e0fd0fb6ca6573d029864e675c1868fcd61382895  ./mininet-gui-frontend/src/assets/light-host.svg
+990f0ddf5d317bead10e4c9a8f3a503cff69eaeecd6800d6c7c33eb552180be7  ./mininet-gui-frontend/src/assets/light-switch.svg
+da9b90952638876ba42099a1f8d6559f513c59379266e77abaa2940e7439d7e9  ./mininet-gui-frontend/src/assets/logo.svg
+34813b2aa3831ade3309c9561c60c746624e709986405cc1ea3c54808fcd8e7b  ./mininet-gui-frontend/src/assets/router.svg
+3909b87549e54183e95d43b5a797a964fc1e22e05ec8e6a7e9d03d2f969516fc  ./mininet-gui-frontend/src/assets/switch.svg
+52df558af914d8f8a677cf8aa13ee2751bd57ad969fcf99298ce4522105085bf  ./mininet-gui-frontend/src/components/ControllerForm.vue
+8e9bf15b837e2c57f06ffc72edbd2af5b567abbf43db9240f764790a0b3dccc6  ./mininet-gui-frontend/src/components/Header.vue
+3336fe2e2e0eb1663c177788d60eb88a06a91137a1727891506f378f568ba8ac  ./mininet-gui-frontend/src/components/Modal.vue
+02f08ef84a1ae8879e0ecf22cf9399049126e149ee3dfd6d7de3ba3c1473d6f9  ./mininet-gui-frontend/src/components/NetworkGraph.vue
+024e73543979d03a5abf57e55e815cb51d8ade10bbdf8558ca8000770ef4f225  ./mininet-gui-frontend/src/components/NodeStats.vue
+5b05376578c4a35d9d6fb547ea2ab70752afe817ae06c873025e2bd3da52fee3  ./mininet-gui-frontend/src/components/PingallResults.vue
+db2cba02d05634e15ff89b16983a9faf6d0503a9490af341b64bc4d271c670f8  ./mininet-gui-frontend/src/components/Side.vue
+d8199c0a110744499faede58e1767a86c482dfd716c866a110a9ea6fa782e3cd  ./mininet-gui-frontend/src/components/TopologyForm.vue
+84b6e0354e6c7ed446fc3a7ae482ee67592ce97cd5934e6914a0263791956a5c  ./mininet-gui-frontend/src/components/Webshell.vue
+4b869f43e97d73958c5a5a56b5105a746363e64f715a5bbc761e247d9adc1600  ./mininet-gui-frontend/src/core/api.js
+502e968274694fc8ec6d266ab1c50d9a66ea83a56de0de51590aad094f7e2733  ./mininet-gui-frontend/src/core/options.js
+833a6e652b0f0b7fcf89acf1fb6430242edfa9db7bcc6a5acbff9f71ce423a8c  ./mininet-gui-frontend/src/main.js
+d97bc49c6510c9bdac0a42e90b3746cb063dd34c72bcc3f603da295e46308b9b  ./mininet-gui-frontend/vite.config.js
+25b467af6f7152061657a10157245d77010a06a63602fb64ba653a5b11645ad0  ./run.sh
+27ba054847889f6aebf0519c2d6b2c5210825390c921ca36f2ba644fc84dea5e  ./setup.sh

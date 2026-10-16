@@ -1,0 +1,63 @@
+$ cat /home/mininet/mininet-gui/mininet-gui-backend/requirements.txt
+fastapi
+websockets
+uvicorn
+python-multipart[saida=0]
+$ python3 -m pip list 2>/dev/null | grep -iE "fastapi|uvicorn|pydantic|mininet|starlette|websockets|ryu"
+fastapi                0.115.11            
+mininet                2.3.0               
+pydantic               2.10.6              
+pydantic-core          2.27.2              
+starlette              0.44.0              
+uvicorn                0.33.0              
+websockets             13.1                
+[saida=0]
+$ bash -ic "nvm ls --no-colors" 2>/dev/null
+->     v18.20.7 *
+         system *
+default -> 18.20.7 (-> v18.20.7 *)
+iojs -> N/A (default)
+node -> stable (-> v18.20.7 *) (default)
+stable -> 18.20 (-> v18.20.7 *) (default)
+unstable -> N/A (default)
+lts/argon -> v4.9.1 (-> N/A)
+lts/boron -> v6.17.1 (-> N/A)
+lts/carbon -> v8.17.0 (-> N/A)
+lts/dubnium -> v10.24.1 (-> N/A)
+lts/erbium -> v12.22.12 (-> N/A)
+lts/fermium -> v14.21.3 (-> N/A)
+lts/gallium -> v16.20.2 (-> N/A)
+lts/hydrogen -> v18.20.7 *
+lts/iron -> v20.19.0 (-> N/A)
+lts/jod -> v22.14.0 (-> N/A)
+lts/* -> lts/jod (-> N/A)
+[saida=0]
+$ cat /home/mininet/mininet-gui/mininet-gui-frontend/node_modules/vite/package.json | grep -m1 \"version\"
+  "version": "4.5.9",
+[saida=0]
+$ cat /home/mininet/mininet-gui/mininet-gui-frontend/node_modules/vue/package.json | grep -m1 \"version\"
+  "version": "3.5.13",
+[saida=0]
+$ ls -la /home/mininet/mininet-gui/mininet-gui-frontend/.env /home/mininet/mininet-gui/mininet-gui-backend/nohup.out /home/mininet/mininet-gui/mininet-gui-frontend/nohup.out
+ls: cannot access '/home/mininet/mininet-gui/mininet-gui-frontend/.env': No such file or directory
+ls: cannot access '/home/mininet/mininet-gui/mininet-gui-backend/nohup.out': No such file or directory
+ls: cannot access '/home/mininet/mininet-gui/mininet-gui-frontend/nohup.out': No such file or directory
+[saida=2]
+$ command -v script scriptreplay; script --version
+/usr/bin/script
+/usr/bin/scriptreplay
+script from util-linux 2.34
+[saida=0]
+$ timedatectl | head -5
+               Local time: Thu 2026-10-15 19:05:14 PDT     
+           Universal time: Fri 2026-10-16 02:05:14 UTC     
+                 RTC time: Fri 2026-10-16 02:05:14         
+                Time zone: America/Los_Angeles (PDT, -0700)
+System clock synchronized: no                              
+[saida=0]
+$ df -h / | tail -1
+/dev/sda5       7.4G  3.8G  3.2G  55% /
+[saida=0]
+$ sudo -n true 2>&1 && echo sudo_sem_senha || echo sudo_pede_senha
+sudo_sem_senha
+[saida=0]

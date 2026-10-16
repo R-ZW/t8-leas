@@ -1,0 +1,60 @@
+== data
+2026-10-16T01:39:29Z
+== os-release
+PRETTY_NAME="Ubuntu 24.04.2 LTS"
+VERSION_ID="24.04"
+VERSION_CODENAME=noble
+== uname
+Linux ebe6f01fd627 6.18.33.2-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Thu Jun 18 21:54:43 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+== cpu
+Architecture:                            x86_64
+CPU(s):                                  16
+Model name:                              13th Gen Intel(R) Core(TM) i5-13450HX
+Thread(s) per core:                      2
+Core(s) per socket:                      8
+Socket(s):                               1
+Virtualization:                          VT-x
+Hypervisor vendor:                       Microsoft
+Virtualization type:                     full
+== mem
+               total        used        free      shared  buff/cache   available
+Mem:      8161746944  1157013504  5036187648    27340800  2172444672  7004733440
+Swap:     2147483648           0  2147483648
+== disco
+Filesystem      Size  Used Avail Use% Mounted on
+overlay        1007G  4.0G  952G   1% /
+== gcc
+gcc (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0
+== make
+GNU Make 4.3
+== openssl
+OpenSSL 3.0.13 30 Jan 2024 (Library: OpenSSL 3.0.13 30 Jan 2024)
+built on: Wed Feb  5 13:17:43 2025 UTC
+libcurl4-openssl-dev 8.5.0-2ubuntu10.6
+libcurl4t64 8.5.0-2ubuntu10.6
+libssl-dev 3.0.13-0ubuntu3.5
+libssl3t64 3.0.13-0ubuntu3.5
+openssl 3.0.13-0ubuntu3.5
+== curl-config
+libcurl 8.5.0
+OpenSSL v3+
+== git
+git version 2.43.0
+== sudo
+Sudo version 1.9.15p5
+== man
+man 2.12.0
+== script
+script from util-linux 2.39.3
+== unzip
+UnZip 6.00 of 20 April 2009, by Debian. Original by Info-ZIP.
+== glibc
+ldd (Ubuntu GLIBC 2.39-0ubuntu8.4) 2.39
+== ld
+GNU ld (GNU Binutils for Ubuntu) 2.42
+== bash
+GNU bash, version 5.2.21(1)-release (x86_64-pc-linux-gnu)
+== usuario
+uid=1001(revisor) gid=1001(revisor) groups=1001(revisor)
+== apt snapshot
+APT::Snapshot "20250708T190020Z";

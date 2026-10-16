@@ -1,0 +1,6 @@
+# Anexos entregues às LLMs e arquivos congelados: bytes exatos, sem conversão de fim de linha.
+# Os hashes em MANIFESTO.sha256 e CONGELAMENTO.sha256 valem para estes bytes em qualquer SO.
+runs/*/pacote/** -text
+runs/*/preregistro.md -text
+runs/*/execucao/registro-factual.md -text
+runs/*/CONGELAMENTO.sha256 -text

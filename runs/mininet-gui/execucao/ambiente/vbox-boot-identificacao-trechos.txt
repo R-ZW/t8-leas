@@ -1,0 +1,30 @@
+00:00:00.580425 VirtualBox VM 7.1.6 r167084 win.amd64 (Jan 21 2025 14:13:52) release log
+00:00:00.580427 Log opened 2026-10-16T02:00:57.153972400Z
+00:00:00.719002 Host RAM: 16068MB (15.6GB) total, 38MB available
+00:00:01.782917   NumCPUs           <integer> = 0x0000000000000002 (2)
+00:00:01.782920   RamSize           <integer> = 0x0000000200000000 (8 589 934 592, 8.0 GiB)
+00:00:01.782967   NumCPUs             <integer> = 0x0000000000000002 (2)
+00:00:01.783002   NumCPUs <integer> = 0x0000000000000002 (2)
+00:00:01.783059   NumCPUs <integer> = 0x0000000000000002 (2)
+00:00:01.783113   NumCPUs            <integer> = 0x0000000000000002 (2)
+00:00:01.783179   VRamSize         <integer> = 0x0000000001000000 (16 777 216, 16.0 MiB)
+00:00:01.785357 HM: HMR3Init: Attempting fall back to NEM: VT-x is not available
+00:00:02.043078 NEM: NEMR3Init: Snail execution mode is active!
+00:00:02.066386 NEM: Successfully set up partition (device handle 0000000000000d2d, partition ID 0x0)
+00:00:04.278312 Changing the VM state from 'CREATING' to 'CREATED'
+00:00:04.286668 Changing the VM state from 'CREATED' to 'POWERING_ON'
+00:00:04.287196 Changing the VM state from 'POWERING_ON' to 'RUNNING'
+00:00:04.296887 VMMDev: Guest Log: BIOS: VirtualBox 7.1.6
+00:00:04.411513 VMMDev: Guest Log: CPUID EDX: 0x178bfbff
+00:00:04.414085 VMMDev: Guest Log: BIOS: No PCI IDE controller, not probing IDE
+00:00:04.423799 VMMDev: Guest Log: BIOS: SCSI 0-ID#0: LCHS=1044/255/63 0x0000000001000000 sectors
+00:00:07.000604 VMMDev: Guest Log: BIOS: Boot : bseqnr=1, bootseq=0231
+00:00:07.000842 VMMDev: Guest Log: BIOS: Boot from Floppy 0 failed
+00:00:07.001166 VMMDev: Guest Log: BIOS: Boot : bseqnr=2, bootseq=0023
+00:00:07.001341 VMMDev: Guest Log: BIOS: CDROM boot failure code : 0002
+00:00:07.001341 VMMDev: Guest Log: BIOS: Boot from CD-ROM failed
+00:00:07.001341 VMMDev: Guest Log: BIOS: Boot : bseqnr=3, bootseq=0002
+00:00:07.012303 VMMDev: Guest Log: BIOS: Booting from Hard Disk...
+00:00:34.043700 VMMDev: Guest Additions information report: Version 6.1.6 r137129 '6.1.6_Ubuntu'
+00:00:34.044419 VMMDev: Guest Additions information report: Interface = 0x00010004 osType = 0x00053100 (Linux >= 2.6, 64-bit)
+00:00:34.046748 VMMDev: Guest Additions capability report: (0x0 -> 0x0) seamless: no, hostWindowMapping: no, graphics: no

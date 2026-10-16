@@ -1,0 +1,4929 @@
+ARTEFATO EM ARQUIVO ÚNICO
+Origem: artefato.zip (SHA-256 e766231891c8441d21dd44208d1ee34f677a51f2dbcfb57651f88586df34d91c), gerado por git archive.
+Commit (comentário do ZIP): 465648a4425a4457af0348ab951cf7f71d37a86f
+Diretório raiz no ZIP: mininet-gui-465648a4/
+Conteúdo: todos os arquivos do commit. Arquivos de texto aparecem na íntegra, com o número
+da linha original à esquerda (LINHA| texto). Arquivos binários aparecem só no índice.
+Para citar evidência use caminho:linha, por exemplo README.md:12.
+
+ÍNDICE (caminho | bytes | tipo | sha256)
+LICENSE | 1534 | texto | 478f22ae58e8b61113e2c490f6a946489b20a7dad04830922280ce8efc50e964
+README.md | 9086 | texto | e424434fa7cf0985a9472d2b29c62b46d121d6db8c199428841406ccef1e3753
+example_network_export.json | 2547 | texto | 204b6a82462950c05cc83dbc7052638a2d85e965a7e788fd608e67db4713f36c
+example_network_export.py | 1118 | texto | 287df046e7e2e1a483738708b1b3fa29ed14b87978d6a7eba4a2d7ded634dde2
+mininet-gui-backend/.gitignore | 46 | texto | 27cfcd5fb6902871188d2cda6a5c41e4265ababa26b2f353a56a2d0fb2d33786
+mininet-gui-backend/mininet_gui_backend/__init__.py | 0 | texto | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+mininet-gui-backend/mininet_gui_backend/api.py | 16830 | texto | 1ea14fe454ef54b39569ceada233f0e454411f03f21efc9b8f61f30fe2830d6e
+mininet-gui-backend/mininet_gui_backend/cli.py | 622 | texto | 52ebdb08b623c9875fd66ed4ecf6b16001ce102632c487ea0638aedbd8eae5ed
+mininet-gui-backend/mininet_gui_backend/export.py | 2836 | texto | 97e1b01429dcb6d5a1c7659d540fa72cb98149e697d3891f4e267a92fb69f27b
+mininet-gui-backend/mininet_gui_backend/schema.py | 399 | texto | 4dddb3910fb766dd6618c2fe2c9f24e89134ddd3a06c8a4ce23189a37358e396
+mininet-gui-backend/requirements.txt | 46 | texto | 411ea75065cfc55deeeccd80aa1a92f21655a67b7e1fd76856d454e0d2b9f298
+mininet-gui-frontend/.gitignore | 32 | texto | 8b41e08e3a96631e94934c92900840b65eca98e1c853ec265a8306cd48744813
+mininet-gui-frontend/.prettierrc.json | 4 | texto | e3566b3a06430868d71e9287dfd6c6c520a3da027aabea01951d407ee131dc2f
+mininet-gui-frontend/index.html | 353 | texto | 927673d3c9d3c17a9b4ca95d59c56fc08ff3c033996c150fceb92b36a333ccd7
+mininet-gui-frontend/package-lock.json | 39833 | texto | 8ed86756c8b9ead7561e7fa814ac80775026091a06d76c1fe2d11864d11c5aee
+mininet-gui-frontend/package.json | 498 | texto | 78e86936f05eea12e8aa99f066a05751a6f368b5bf24f58c76d41c9f45cf194b
+mininet-gui-frontend/public/favicon.ico | 7732 | binário (omitido) | c9c463bb796f2bb2678ceb1bcfe917029502e9df09a8623c321ccea5fcb61474
+mininet-gui-frontend/src/App.vue | 698 | texto | 52577dc727570305691ae2536ef75d44b2e25df3b4b669a7c7581730f0d8949d
+mininet-gui-frontend/src/assets/controller.svg | 780 | texto | 3449b3e31037316b470c29d05d1b78433dabd527956d748f82bdb67feb10212b
+mininet-gui-frontend/src/assets/ethernet-cable-off.svg | 209 | texto | 7b0c89fbe0ff790cc735535f3d367920ef9b9ccccad64baa8f3a9ee32d0e03f2
+mininet-gui-frontend/src/assets/ethernet-cable.svg | 152 | texto | 8e2be6a14c2698119f1cb4f89f66f6ac6c7d5350842a4d07624322ce9dd3b83f
+mininet-gui-frontend/src/assets/host.svg | 747 | texto | 446333cb5003ddf14ee31b83b4074726f129b5ee6cf841869c3f2ae962b2fa2a
+mininet-gui-frontend/src/assets/light-controller.svg | 2057 | texto | 585ab9c4ab48ac78d11ce71de237fb013dd8cadb2f51937893a288b923a9bf96
+mininet-gui-frontend/src/assets/light-host.svg | 2008 | texto | cc2aecb3452f52c2a22dcca56dc2d4da94ccf4b139e0a3250fb027bf169a3e0c
+mininet-gui-frontend/src/assets/light-switch.svg | 1972 | texto | 118be96f53f8299771791c494d4a7e775f014f3c4ad6ecda9a0f7a36debc63e8
+mininet-gui-frontend/src/assets/logo.svg | 308 | texto | da9b90952638876ba42099a1f8d6559f513c59379266e77abaa2940e7439d7e9
+mininet-gui-frontend/src/assets/router.svg | 1059 | texto | 47f5e4e770b9653f4a16c104fef03e84079dd9ef242ae7e0f6078705125fb5ca
+mininet-gui-frontend/src/assets/switch.svg | 758 | texto | adefe93770cf98557e2008234b80e6f5e5e3d66d5fcfff845283dae66c2bb90a
+mininet-gui-frontend/src/components/ControllerForm.vue | 1391 | texto | 5fa372c802a554fdecdda15835b9c665286f013201e87e83772113715b79633d
+mininet-gui-frontend/src/components/Header.vue | 1210 | texto | 341d00dd928f1b0717ddd1db2c00b1b252239d456262b96c27bc772ad4bcffda
+mininet-gui-frontend/src/components/Modal.vue | 1760 | texto | b49ca2229d852af17f707f3a35575b54f45a7e649ccc7c241af0b5a0a700190c
+mininet-gui-frontend/src/components/NetworkGraph.vue | 22077 | texto | c8272489b1bda41267f6b146ab51688f3f45c2941ebba5ab500f915c7b93e345
+mininet-gui-frontend/src/components/NodeStats.vue | 4072 | texto | d395d49608e59dc8fc2c947a0c1a5660473607a3a6b7013ff31d887d78b03e47
+mininet-gui-frontend/src/components/PingallResults.vue | 1874 | texto | 88da425654d0c454e8ef76b3d2f79c7a32330fc188f2acad8377307cc4f0ee8c
+mininet-gui-frontend/src/components/Side.vue | 8383 | texto | 72e0f131a6b430176e55b4cb8243c76f29529347ad547a2d806bf6b18794c6e8
+mininet-gui-frontend/src/components/TopologyForm.vue | 2498 | texto | a2ce7c41127d1b989ed1f9fa644ed5319d7f08d3deedf35293359930081b2536
+mininet-gui-frontend/src/components/Webshell.vue | 7067 | texto | 9758dc0826f2ac6975bb7af86f8d55bcdc3c60cccd45b6e718caa2983c4c5b84
+mininet-gui-frontend/src/core/api.js | 9306 | texto | a6d3b71267b68fcc093298300294f6da971f7957aeb7706261214be18f306298
+mininet-gui-frontend/src/core/options.js | 776 | texto | 3b54a8c534dda9e5ea8aced885433fc232f15e96906956d9e8d8198eea9525f9
+mininet-gui-frontend/src/main.js | 130 | texto | 58f70b4e2755bbf02d06c65cfbc8138fcd2aaa7404eb7128d5e502b7684915b1
+mininet-gui-frontend/vite.config.js | 357 | texto | 2f4c8578e0a4545e9ba1a0009c973db8a2372e89d6678ddf6bc91c1bee68e9a4
+run.sh | 971 | texto | e1e2a1e8d45685fe8110f76934748ff98a541a76e51657f987f50bbd174d77f5
+setup.sh | 680 | texto | 9f7c7bf54590fcc8dbed8e4d798e798dda98f4c53d8295f90b8f75b687df7246
+
+===== INÍCIO DO ARQUIVO: LICENSE (28 linhas) =====
+ 1| BSD 3-Clause License
+ 2| 
+ 3| Copyright (c) 2025, LaTARC Research Lab
+ 4| 
+ 5| Redistribution and use in source and binary forms, with or without
+ 6| modification, are permitted provided that the following conditions are met:
+ 7| 
+ 8| 1. Redistributions of source code must retain the above copyright notice, this
+ 9|    list of conditions and the following disclaimer.
+10| 
+11| 2. Redistributions in binary form must reproduce the above copyright notice,
+12|    this list of conditions and the following disclaimer in the documentation
+13|    and/or other materials provided with the distribution.
+14| 
+15| 3. Neither the name of the copyright holder nor the names of its
+16|    contributors may be used to endorse or promote products derived from
+17|    this software without specific prior written permission.
+18| 
+19| THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+20| AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+21| IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+22| DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+23| FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+24| DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+25| SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+26| CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+27| OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+28| OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+===== FIM DO ARQUIVO: LICENSE =====
+
+===== INÍCIO DO ARQUIVO: README.md (146 linhas) =====
+  1| # Mininet-GUI: Uma Abordagem Visual e Interativa para Experimentação em Redes SDN
+  2| 
+  3| O Mininet é um emulador amplamente utilizado para a prototipação e experimentação de Redes Definidas por Software (SDN). No entanto, sua interface gráfica principal, o MiniEdit, oferece suporte limitado e baixa interatividade, dificultando sua adoção e restringindo experimentações avançadas. Embora diversas ferramentas tenham sido propostas, nenhuma se consolidou como alternativa definitiva devido à falta de integração de funcionalidades essenciais. 
+  4| Neste trabalho, apresentamos o Mininet-GUI, uma ferramenta integrada que opera através de uma interface web para viabilizar a criação, edição e execução de topologias no Mininet em tempo real. O Mininet-GUI possibilita a manipulação dinâmica de hosts, switches, controladores e links, além da execução de comandos diretamente na interface. Diferentemente das abordagens existentes, o Mininet-GUI oferece edição interativa da topologia, acesso simplificado aos terminais via WebShell e suporte à exportação/importação de topologias nos formatos JSON e Python.  
+  5| O Mininet-GUI visa tornar a experimentação com SDN mais acessível e eficiente, atendendo tanto a iniciantes quanto a pesquisadores avançados. Este trabalho descreve sua arquitetura, funcionalidades e aplicabilidade por meio de casos de uso recorrentes.
+  6| 
+  7| # Estrutura do readme.md
+  8| 
+  9| O arquivo README.md divide-se nas seguintes seções: Selos Considerados, Informações Básicas, Dependências, Preocupações com segurança, Instalação, Teste mínimo, Experimentos e LICENSE.
+ 10| O repositório contém dois subdiretórios principais: mininet-gui-frontend, com o código da aplicação frontend, e mininet-gui-backend, com o código do backend.
+ 11| Além disso, há dois scripts setup.sh e run.sh, para facilitar a instalação e execução.
+ 12| Foram incluídos também dois arquivos: `example_network_export.json` e `example_network_export.py`, que são arquivos exemplos exportados de uma topologia criada no Mininet-GUI.
+ 13| 
+ 14| 
+ 15| # Selos Considerados
+ 16| 
+ 17| Os selos considerados são: Disponíveis, Funcionais, Sustentáveis e Reprodutíveis.
+ 18| 
+ 19| 
+ 20| # Informações básicas
+ 21| 
+ 22| Vídeo da demonstração: <https://youtu.be/YSsqHKsJlxY>
+ 23| 
+ 24| Repositório oficial: <https://github.com/latarc/mininet-gui>
+ 25| 
+ 26| Para a demonstração, foi utilizado um laptop com as seguintes configurações:
+ 27| 
+ 28| Processador:	Intel(R) Core(TM) i5-10300H CPU @ 2.50GHz   2.50 GHz
+ 29| RAM instalada:	8,00 GB
+ 30| Sistema Operacional:	Windows 11 Home Single Language
+ 31| Tipo de sistema:	Sistema operacional de 64 bits, processador baseado em x64
+ 32| Espaço disponível em disco: Pelo menos 80GB livres
+ 33| 
+ 34| 
+ 35| # Dependências
+ 36| 
+ 37| A execução do Mininet-GUI requer o Oracle VirtualBox (versão 7.1.6 r167084).
+ 38| Memória RAM: Mínimo de 8GB para a máquina virtual.
+ 39| 
+ 40| 
+ 41| # Preocupações com segurança
+ 42| 
+ 43| A instalação nativa do Mininet é invasiva, e pode alterar ou remover arquivos importantes do sistema de arquivos. 
+ 44| Por isso, recomenda-se a utilização da VM do Mininet-GUI que disponibilizamos no repositório.
+ 45| 
+ 46| 
+ 47| # Instalação
+ 48| 
+ 49| ## Máquina Virtual (recomendado)
+ 50| 
+ 51| Pré-requisitos: Oracle VirtualBox (<https://www.virtualbox.org/wiki/Downloads>)
+ 52| 
+ 53| Passo 1: Baixe o arquivo ova neste link: <https://drive.google.com/file/d/1HBqlTwEWnmkPjRFJVQhEn34itKNyzhg3/view?usp=sharing>
+ 54| 
+ 55| Passo 2: Abra o arquivo `Mininet-GUI-Desktop-VM-SBRC-2025.ova` no VirtualBox, para importar a máquina virtual
+ 56| 
+ 57| Passo 3: Execute a máquina virtual (user `mininet`, senha `mininet`)
+ 58| 
+ 59| 
+ 60| ## Instalação manual
+ 61| 
+ 62| Atenção: os comandos abaixo irão modificar o kernel e outras configurações do seu sistema operacional, portanto use com cautela.
+ 63| Utilize os comandos abaixo para instalar manualmente (testado no ubuntu 20.04):
+ 64| 
+ 65| ```bash
+ 66| git clone https://github.com/mininet/mininet
+ 67| cd mininet
+ 68| ./util/install.sh -nfv
+ 69| cd ..
+ 70| git clone https://github.com/latarc/mininet-gui
+ 71| cd mininet-gui
+ 72| ./setup.sh
+ 73| ```
+ 74| 
+ 75| Opcionalmente, para instalar o Ryu:
+ 76| ```bash
+ 77| pip3 install ryu eventlet==0.30.0 dnspython==1.16.0
+ 78| ```
+ 79| 
+ 80| # Teste mínimo
+ 81| 
+ 82| Passo 1: Execute a VM dentro do VirtualBox e faça login (usuário: `mininet`, senha: `mininet`)
+ 83| 
+ 84| Passo 2: Abra o terminal (Ctrl+Alt+T) e rode o seguinte comando: `mininet_gui` (ou alternativamente `/home/mininet/mininet-gui/run.sh`)
+ 85| 
+ 86| Passo 3: A execução do comando do Passo 2 mostrará em sua saída do terminal uma URL (Exemplo: `http://10.0.2.15:5173`). Acesse essa URL em um navegador dentro da VM.
+ 87| 
+ 88| Passo 4: Para criar um controlador, arraste o ícone rotulado "Controller", localizado na aba lateral esquerda, para o centro da tela. Em seguida, se abrirá uma caixa de diálogo, perguntando o tipo do controller. Nessa etapa, selecione a opção "Default" e em seguida pressione o botão "Submit" para criar o controller.
+ 89| 
+ 90| Passo 5: Clique no botão "Generate Topology" localizado na aba lateral esquerda. No modal, selecione o "Topology Type" Single, o "Controller" c1, e no campo "Hosts" insira o número 2. Em seguida, pressione o botão "Submit".
+ 91| 
+ 92| Passo 6: Execute um teste de pingall clicando no botão "Run Pingall Test" na aba lateral esquerda e aguarde os resultados aparecerem.
+ 93| 
+ 94| Passo 7 (opcional): Teste com iperf - selecione no webshell o terminal do node h1 e digite o comando `iperf -s`. Depois, abra o terminal do node h2 e digite o comando `iperf -c 10.0.0.1`. Aguarde 1 minuto para o teste completar-se.
+ 95| 
+ 96| Passo 8 (opcional): Multiplos controladores - arraste um novo "Controller" da barra lateral para o centro da tela, mas dessa vez mude o type para "Remote" e preencha o IP 127.0.0.1 e a porta 6633. Em seguida, gere uma topologia (com o "Generate Topology") do tipo Single e com 2 hosts, e também selecione o novo controlador criado (c2). Adicionalmente, clique no botão "Create Link" e conecte os switches das duas topologias, s1 e s2, clicando e arrastando de um para o outro (o sucesso dessa ação é indicado por uma linha verde conectando os dois nós). A seguir, selecione no webshell o terminal do novo controlador c2 e execute o comando: `ryu-manager --ofp-tcp-listen-port 6633 ryu.app.simple_switch_13` para iniciar o controlador SDN Ryu. Optamos por utilizar o Ryu nesse exemplo, pois ele é leve e não ocupa tanto espaço na VM quanto outros (ONOS, OpenDaylight, Floodlight). Para testar a conexão, execute um teste com o botão de Pingall.
+ 97| 
+ 98| Passo 9: Finalmente, clique nos botões "Export Topology (JSON)" e "Export Mininet Script" para obter respectivamente o arquivo JSON com a configuração da topologia atual e o script do mininet para executar a topologia fora do Mininet-GUI, diretamente no Python.
+ 99| 
+100| 
+101| # Experimentos
+102| 
+103| A execução da VM requer no mínimo 2GB de RAM e um core de CPU reservado à VM.
+104| 
+105| ## Reivindicação "Geração automatizada de topologias, incluindo diversos modelos amplamente utilizados"
+106| 
+107| Após inicializar o mininet_gui e acessar a interface web do frontend, clique no botão "Generate Topology". Selecione o tipo de topologia (Single, Linear ou Tree), 
+108| e o número de dispositivos, então clique em OK.
+109| 
+110| ## Reivindicação "Terminal integrado dos nós via WebShell"
+111| 
+112| Após inicializar o mininet_gui e acessar a interface web do frontend, crie ao menos um nó (seja pelo Gerador de Topologias ou clicando e arrastando) e na aba inferior titulada "Webshell"
+113| selecione a aba com o nome desse nó, clicando nela.
+114| Em seguida, utilize o terminal bash para executar comandos diretamente no namespace daquele nó.
+115| 
+116| # LICENSE
+117| 
+118| BSD 3-Clause License
+119| 
+120| Copyright (c) 2025, LaTARC Research Lab
+121| 
+122| Redistribution and use in source and binary forms, with or without
+123| modification, are permitted provided that the following conditions are met:
+124| 
+125| 1. Redistributions of source code must retain the above copyright notice, this
+126|    list of conditions and the following disclaimer.
+127| 
+128| 2. Redistributions in binary form must reproduce the above copyright notice,
+129|    this list of conditions and the following disclaimer in the documentation
+130|    and/or other materials provided with the distribution.
+131| 
+132| 3. Neither the name of the copyright holder nor the names of its
+133|    contributors may be used to endorse or promote products derived from
+134|    this software without specific prior written permission.
+135| 
+136| THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+137| AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+138| IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+139| DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+140| FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+141| DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+142| SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+143| CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+144| OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+145| OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+146| 
+===== FIM DO ARQUIVO: README.md =====
+
+===== INÍCIO DO ARQUIVO: example_network_export.json (115 linhas) =====
+  1| {
+  2|     "switches": [
+  3|         {
+  4|             "id": "s1",
+  5|             "type": "sw",
+  6|             "name": "s1",
+  7|             "label": "s1 <00:00:00:00:00:00:00:01>",
+  8|             "x": 100.0,
+  9|             "y": 300.0,
+ 10|             "ports": 4,
+ 11|             "controller": "c1"
+ 12|         },
+ 13|         {
+ 14|             "id": "s2",
+ 15|             "type": "sw",
+ 16|             "name": "s2",
+ 17|             "label": "s2 <00:00:00:00:00:00:00:02>",
+ 18|             "x": 300.0,
+ 19|             "y": 300.0,
+ 20|             "ports": 4,
+ 21|             "controller": "c1"
+ 22|         },
+ 23|         {
+ 24|             "id": "s3",
+ 25|             "type": "sw",
+ 26|             "name": "s3",
+ 27|             "label": "s3 <00:00:00:00:00:00:00:03>",
+ 28|             "x": 200.0,
+ 29|             "y": 150.0,
+ 30|             "ports": 4,
+ 31|             "controller": "c1"
+ 32|         }
+ 33|     ],
+ 34|     "hosts": [
+ 35|         {
+ 36|             "id": "h1",
+ 37|             "type": "host",
+ 38|             "name": "h1",
+ 39|             "label": "h1",
+ 40|             "x": 50.0,
+ 41|             "y": 450.0,
+ 42|             "ip": "10.0.0.1/8",
+ 43|             "mac": "000000000001"
+ 44|         },
+ 45|         {
+ 46|             "id": "h2",
+ 47|             "type": "host",
+ 48|             "name": "h2",
+ 49|             "label": "h2",
+ 50|             "x": 150.0,
+ 51|             "y": 450.0,
+ 52|             "ip": "10.0.0.2/8",
+ 53|             "mac": "000000000002"
+ 54|         },
+ 55|         {
+ 56|             "id": "h3",
+ 57|             "type": "host",
+ 58|             "name": "h3",
+ 59|             "label": "h3",
+ 60|             "x": 250.0,
+ 61|             "y": 450.0,
+ 62|             "ip": "10.0.0.3/8",
+ 63|             "mac": "000000000003"
+ 64|         },
+ 65|         {
+ 66|             "id": "h4",
+ 67|             "type": "host",
+ 68|             "name": "h4",
+ 69|             "label": "h4",
+ 70|             "x": 350.0,
+ 71|             "y": 450.0,
+ 72|             "ip": "10.0.0.4/8",
+ 73|             "mac": "000000000004"
+ 74|         }
+ 75|     ],
+ 76|     "controllers": [
+ 77|         {
+ 78|             "id": "c1",
+ 79|             "type": "controller",
+ 80|             "name": "c1",
+ 81|             "label": "c1",
+ 82|             "x": 200.1686906303096,
+ 83|             "y": -0.7609328721958144,
+ 84|             "remote": false,
+ 85|             "ip": null,
+ 86|             "port": null
+ 87|         }
+ 88|     ],
+ 89|     "links": [
+ 90|         [
+ 91|             "h1",
+ 92|             "s1"
+ 93|         ],
+ 94|         [
+ 95|             "h2",
+ 96|             "s1"
+ 97|         ],
+ 98|         [
+ 99|             "s2",
+100|             "h3"
+101|         ],
+102|         [
+103|             "s2",
+104|             "h4"
+105|         ],
+106|         [
+107|             "s1",
+108|             "s3"
+109|         ],
+110|         [
+111|             "s2",
+112|             "s3"
+113|         ]
+114|     ]
+115| }
+===== FIM DO ARQUIVO: example_network_export.json =====
+
+===== INÍCIO DO ARQUIVO: example_network_export.py (49 linhas) =====
+ 1| 
+ 2| """
+ 3| Script generated by Mininet-GUI (https://github.com/latarc/mininet-gui)
+ 4| """
+ 5| from mininet.net import Mininet
+ 6| from mininet.node import Controller, RemoteController, OVSKernelSwitch, Host
+ 7| from mininet.link import TCLink
+ 8| from mininet.cli import CLI
+ 9| from mininet.log import setLogLevel
+10| 
+11| setLogLevel("info")
+12| 
+13| net = Mininet(controller=Controller, switch=OVSKernelSwitch, host=Host, link=TCLink)
+14| 
+15| # Controllers
+16| c1 = net.addController("c1")
+17| 
+18| # Switches
+19| s1 = net.addSwitch("s1")
+20| s2 = net.addSwitch("s2")
+21| s3 = net.addSwitch("s3")
+22| 
+23| # Hosts
+24| h1 = net.addHost("h1", ip="10.0.0.1/8", mac="000000000001")
+25| h2 = net.addHost("h2", ip="10.0.0.2/8", mac="000000000002")
+26| h3 = net.addHost("h3", ip="10.0.0.3/8", mac="000000000003")
+27| h4 = net.addHost("h4", ip="10.0.0.4/8", mac="000000000004")
+28| 
+29| # Links
+30| net.addLink(h1, s1)
+31| net.addLink(h2, s1)
+32| net.addLink(s2, h3)
+33| net.addLink(s2, h4)
+34| net.addLink(s1, s3)
+35| net.addLink(s2, s3)
+36| 
+37| net.build()
+38| 
+39| c1.start()
+40| 
+41| s1.start([c1])
+42| s2.start([c1])
+43| s3.start([c1])
+44| 
+45| print("\nNetwork topology created successfully!\n")
+46| 
+47| CLI(net)  # Start Mininet CLI
+48| 
+49| net.stop()
+===== FIM DO ARQUIVO: example_network_export.py =====
+
+===== INÍCIO DO ARQUIVO: mininet-gui-backend/.gitignore (5 linhas) =====
+1| **/__pycache__/
+2| venv/
+3| *.log
+4| nohup.out
+5| .env
+===== FIM DO ARQUIVO: mininet-gui-backend/.gitignore =====
+
+===== INÍCIO DO ARQUIVO: mininet-gui-backend/mininet_gui_backend/__init__.py (0 linhas) =====
+===== FIM DO ARQUIVO: mininet-gui-backend/mininet_gui_backend/__init__.py =====
+
+===== INÍCIO DO ARQUIVO: mininet-gui-backend/mininet_gui_backend/api.py (491 linhas) =====
+  1| """
+  2| Mininet-GUI API to deploy and manage a mininet network instance.
+  3| 
+  4| ## Deploy
+  5| 
+  6| Endpoints to start and stop the network at any point.
+  7| 
+  8| ## Topology
+  9| 
+ 10| Endpoints that add, remove and edit nodes and edges in real time.
+ 11| """
+ 12| import os
+ 13| import pty
+ 14| import json
+ 15| import select
+ 16| import asyncio
+ 17| from typing import Tuple, Union
+ 18| from contextlib import asynccontextmanager
+ 19| 
+ 20| from mininet.net import Mininet
+ 21| from mininet.log import setLogLevel, info, debug as _debug
+ 22| from mininet.topo import Topo, MinimalTopo
+ 23| from mininet.clean import cleanup as mn_cleanup
+ 24| from mininet.node import RemoteController, Controller as ReferenceController
+ 25| from fastapi import FastAPI, HTTPException, File, UploadFile, WebSocket, WebSocketDisconnect
+ 26| from fastapi.middleware.cors import CORSMiddleware
+ 27| from fastapi.responses import PlainTextResponse
+ 28| 
+ 29| from mininet_gui_backend.export import export_net_to_script, export_net_to_json
+ 30| from mininet_gui_backend.cli import CLISession
+ 31| from mininet_gui_backend.schema import Switch, Host, Controller
+ 32| 
+ 33| 
+ 34| FLOW_FIELDS = [
+ 35|     "cookie", "duration", "table", "n_packets", "n_bytes", 
+ 36|     "idle_timeout", "priority", "actions"
+ 37| ]
+ 38| 
+ 39| @asynccontextmanager
+ 40| async def lifespan(app: FastAPI):
+ 41|     # start
+ 42|     mn_cleanup()
+ 43|     app.controllers = dict()
+ 44|     app.switches = dict()
+ 45|     app.hosts = dict()
+ 46|     app.links = dict()
+ 47|     app.terminals = dict()
+ 48|     setLogLevel("debug")
+ 49|     app.net = Mininet(autoSetMacs=True, topo=Topo())
+ 50|     app.net.is_started = False
+ 51|     start_network()
+ 52|     app.net.is_started = True
+ 53|     yield
+ 54|     # stop
+ 55|     mn_cleanup()
+ 56| 
+ 57| app = FastAPI(
+ 58|     debug=True,
+ 59|     lifespan=lifespan,
+ 60|     title="Mininet-GUI-API",
+ 61|     description=__doc__,
+ 62|     version="0.0.1",
+ 63|     terms_of_service="http://example.com/terms/",
+ 64|     contact={
+ 65|         "name": "Lucas Schneider",
+ 66|         "url": "https://github.com/schneider8357",
+ 67|         "email": "schneider8357@hotmail.com",
+ 68|     },
+ 69|     # license_info={
+ 70|     #     "name": "Apache 2.0",
+ 71|     #     "url": "https://www.apache.org/licenses/LICENSE-2.0.html",
+ 72|     # },
+ 73| )
+ 74| 
+ 75| 
+ 76| app.add_middleware(
+ 77|     CORSMiddleware,
+ 78|     allow_origins=["*"],
+ 79|     allow_credentials=True,
+ 80|     allow_methods=["*"],
+ 81|     allow_headers=["*"],
+ 82| )
+ 83| 
+ 84| def debug(msg, *args):
+ 85|     _debug(str(msg)+" "+" ".join(map(str, args))+"\n")
+ 86| 
+ 87| @app.get("/api/mininet/hosts")
+ 88| def list_hosts():
+ 89|     return app.hosts
+ 90| 
+ 91| @app.get("/api/mininet/switches")
+ 92| def list_switches():
+ 93|     return app.switches
+ 94| 
+ 95| @app.get("/api/mininet/controllers")
+ 96| def list_controllers():
+ 97|     return app.controllers
+ 98| 
+ 99| @app.get("/api/mininet/links")
+100| def list_edges():
+101|     return [e for e in app.links]
+102| 
+103| @app.get("/api/mininet/start")
+104| def get_network_started():
+105|     return app.net.is_started
+106| 
+107| @app.post("/api/mininet/start")
+108| def start_network():
+109|     """Build network and start nodes"""
+110|     if app.net.is_started:
+111|         raise HTTPException(status_code=400, detail="network already started")
+112|     app.net.build()
+113|     for controller in app.controllers:
+114|         app.net.nameToNode[controller].start()
+115|     for switch_id in app.switches:
+116|         switch = app.net.nameToNode[switch_id]
+117|         if switch.controller:
+118|             switch.start([switch.controller])
+119|         else:
+120|             switch.start([])
+121|     app.net.is_started = True
+122|     return {"status": "ok"}
+123| 
+124| @app.post("/api/mininet/stop")
+125| def stop_network():
+126|     """Stop network and nodes"""
+127|     # delete mininet
+128|     try: del app.net
+129|     except AttributeError: pass
+130| 
+131|     # Cleanup (mn -c)
+132|     mn_cleanup()
+133| 
+134|     app.controllers.clear()
+135|     app.switches.clear()
+136|     app.hosts.clear()
+137|     app.links.clear()
+138| 
+139|     # Create the Mininet network
+140|     setLogLevel("debug")
+141|     app.net = Mininet(autoSetMacs=True, topo=Topo())
+142|     #app.net.addController()
+143|     app.net.is_started = False
+144|     return {"status": "ok"}
+145| 
+146| @app.post("/api/mininet/reset")
+147| def reset_network():
+148|     """Restart network and nodes"""
+149|     stop_network()
+150|     return start_network()
+151| 
+152| @app.post("/api/mininet/pingall")
+153| def run_pingall():
+154|     """Build network and start nodes"""
+155|     if not app.net.is_started:
+156|         raise HTTPException(status_code=400, detail="network must be started to run pingall")
+157|     pingall_results = app.net.pingFull()
+158|     debug(pingall_results)
+159|     return "\n".join([f"{p[0]}->{p[1]}: {p[2][0]}/{p[2][1]}, rtt min/avg/max/mdev {p[2][2]:.3f}/{p[2][3]:.3f}/{p[2][4]:.3f}/{p[2][5]:.3f} ms" for p in pingall_results])
+160| 
+161| @app.post("/api/mininet/hosts")
+162| def create_host(host: Host):
+163|     if host.id in app.hosts:
+164|         app.hosts[host.id] = host
+165|         return {"status": "updated"}
+166|     # Create host in the Mininet network using the request data
+167|     debug(host)
+168|     new_host = app.net.addHost(host.name, ip=host.ip)
+169|     new_host.x = host.x
+170|     new_host.y = host.y
+171|     new_host.ip = host.ip
+172|     new_host.type = "host"
+173|     app.hosts[host.name] = host
+174|     debug(new_host)
+175|     # Return an OK status code
+176|     return {"status": "ok"}
+177| 
+178| 
+179| @app.post("/api/mininet/switches")
+180| def create_switch(switch: Switch):
+181|     # Create switch in the Mininet network using the request data
+182|     debug("CREATING SWITCH", switch)
+183|     if switch.controller and switch.controller not in app.controllers:
+184|         raise HTTPException(
+185|             status_code=400, detail=f'controller "{switch.controller}" does not exist'
+186|         )
+187|     new_switch = app.net.addSwitch(switch.name, ports=switch.ports)
+188|     if app.net.is_started and switch.controller:
+189|         new_switch.start([app.net.nameToNode[switch.controller]])
+190|     else:
+191|         new_switch.start([])
+192|     new_switch.x = switch.x
+193|     new_switch.y = switch.y
+194|     new_switch.type = "sw"
+195|     new_switch.controller = switch.controller
+196|     app.switches[switch.name] = switch
+197|     return switch
+198| 
+199| 
+200| @app.post("/api/mininet/controllers")
+201| def create_controller(controller: Controller):
+202|     # Create controller in the Mininet network using the request data
+203|     debug(controller)
+204|     if controller.remote:
+205|         # TODO aqui o mininet verifica se a porta está open com timeout de 60s e blocka a request 
+206|         new_controller = app.net.addController(
+207|             controller.name,
+208|             controller=RemoteController,
+209|             ip=controller.ip,
+210|             port=controller.port,
+211|         )
+212|     else:
+213|         new_controller = app.net.addController(
+214|             controller.name, controller=ReferenceController
+215|         )
+216| 
+217|     new_controller.start()
+218|     new_controller.x = controller.x
+219|     new_controller.y = controller.y
+220|     new_controller.type = "controller"
+221|     app.controllers[controller.name] = controller
+222|     debug(new_controller)
+223|     # Return an OK status code
+224|     return {"status": "ok"}
+225| 
+226| @app.post("/api/mininet/associate_switch")
+227| def associate_switch(data: dict):
+228|     # Associate switch to controller.
+229|     if "switch" not in data or "controller" not in data:
+230|         raise HTTPException(
+231|             status_code=400, detail=f'missing key in data'
+232|         )
+233|     sw_id = data["switch"]
+234|     ctl_id = data["controller"]
+235|     if sw_id not in app.net.nameToNode or ctl_id not in app.net.nameToNode:
+236|         raise HTTPException(status_code=400, detail='node not in net')
+237|     sw = app.net.nameToNode[sw_id]
+238|     ctl = app.net.nameToNode[ctl_id]
+239|     if app.switches[sw_id].controller:
+240|         raise HTTPException(status_code=400, detail="switch is already associated")
+241|     sw.controller = ctl
+242|     app.switches[sw_id].controller = ctl_id
+243|     if app.net.is_started:
+244|         sw.start([sw.controller])
+245|     return "OK"
+246| 
+247| @app.post("/api/mininet/links")
+248| def create_link(link: Tuple[str, str]):
+249|     # Create the link in the Mininet network using the link data
+250|     if link[0] not in app.net.nameToNode or link[1] not in app.net.nameToNode:
+251|         raise HTTPException(status_code=400, detail=f'node not in net')
+252|     key = frozenset((link[0], link[1]))
+253|     if key in app.links:
+254|         raise HTTPException(status_code=400, detail=f'link already exists')
+255|     new_link = app.net.addLink(link[0], link[1])
+256|     if app.net.is_started:
+257|         for node in link:
+258|             node = app.net.nameToNode[node]
+259|             if node.type == "host":
+260|                 node.configDefault()
+261|             elif node.type == "sw" and node.controller:
+262|                 # Important, otherwise switch doesnt init the port
+263|                 node.start([node.controller])
+264|     # It is important to store this Link object because
+265|     # mininet (apparently) doesn't have an easy way to access this
+266|     app.links[key] = new_link
+267|     return {"from": link[0], "to": link[1]}
+268| 
+269| 
+270| @app.post("/api/mininet/node_position")
+271| def node_position(data: dict):
+272|     if "node_id" not in data or "position" not in data:
+273|         raise HTTPException(
+274|             status_code=400, detail=f'missing key in data'
+275|         )
+276|     debug("data:",data)
+277|     node_id = data["node_id"]
+278|     x, y = data["position"]
+279|     if node_id not in app.net.nameToNode:
+280|         raise HTTPException(status_code=404, detail=f"Node {node_id} not found")
+281|     node = app.net.nameToNode[node_id]
+282|     debug("before update xy",(node.x, node.y))
+283|     node.x = x
+284|     node.y = y
+285|     debug("updated xy",(app.net.nameToNode[node_id].x, app.net.nameToNode[node_id].y))
+286|     if node.type == "sw":
+287|         app.switches[node_id].x = x
+288|         app.switches[node_id].y = y
+289|     elif node.type == "host":
+290|         app.hosts[node_id].x = x
+291|         app.hosts[node_id].y = y
+292|     elif node.type == "controller":
+293|         app.controllers[node_id].x = x
+294|         app.controllers[node_id].y = y
+295|     return {"message": f"Node {node_id} updated successfully"}
+296| 
+297| 
+298| @app.delete("/api/mininet/delete_node/{node_id}")
+299| def delete_node(node_id: str):
+300|     if node_id not in app.net.nameToNode:
+301|         raise HTTPException(status_code=404, detail=f"Node {node_id} not found")
+302|     node = app.net.nameToNode[node_id]
+303|     app.net.delNode(node)
+304|     if node.type == "sw":
+305|         del app.switches[node_id]
+306|     elif node.type == "host":
+307|         del app.hosts[node_id]
+308|     elif node.type == "controller":
+309|         del app.controllers[node_id]
+310|         for switch_id in app.switches:
+311|             switch = app.switches[switch_id]
+312|             if switch.controller == node_id:
+313|                 debug("CONTROLLER", switch.controller, node_id)
+314|                 app.switches[switch_id].controller = None
+315|                 app.net.nameToNode[switch_id].start([])
+316|     return {"message": f"Node {node_id} deleted successfully"}
+317| 
+318| @app.delete("/api/mininet/delete_link/{src_id}/{dst_id}")
+319| def delete_link(src_id: str, dst_id: str):
+320|     key = frozenset((src_id, dst_id))
+321|     if key not in app.links:
+322|         raise HTTPException(status_code=404, detail=f"Node not found")
+323|     app.net.delLink(app.links[key])
+324|     del app.links[key]
+325|     return {"message": f"Link {key} deleted successfully"}
+326| 
+327| @app.delete("/api/mininet/remove_association/{src_id}/{dst_id}")
+328| def remove_association(src_id: str, dst_id: str):
+329|     if src_id not in app.net.nameToNode or dst_id not in app.net.nameToNode:
+330|         raise HTTPException(status_code=400, detail='node not in net')
+331|     sw, ctl = None, None
+332|     for node_id in (src_id, dst_id):
+333|         node = app.net.nameToNode[node_id]
+334|         if node.type == "sw":
+335|             sw = node
+336|         elif node.type == "controller":
+337|             ctl = node
+338|     if not sw or not ctl:
+339|         raise HTTPException(status_code=400, detail=f'node {node_id} isnt switch or controller')
+340|     sw.controller = None
+341|     app.switches[sw.name].controller = None
+342|     if app.net.is_started:
+343|         sw.start([])
+344|     return "OK"
+345| 
+346| 
+347| @app.get("/api/mininet/stats/{node_id}")
+348| def get_node_stats(node_id: str):
+349|     if node_id not in app.net.nameToNode:
+350|         raise HTTPException(status_code=404, detail=f"Node {node_id} not found")
+351|     
+352|     node = app.net.nameToNode[node_id]
+353|     base_data = app.switches.get(node_id) or app.hosts.get(node_id) or app.controllers.get(node_id)
+354|     if not base_data:
+355|         raise HTTPException(status_code=404, detail=f"Node {node_id} not found")
+356|     result = dict(**base_data.dict())
+357| 
+358|     if node.type == "sw":
+359|         ports_raw = node.dpctl("dump-ports")
+360|         ports_raw = ports_raw[ports_raw.find("\n") + 1:].replace("\n", " ")
+361|         result["ports"] = [p.strip() for p in ports_raw.split("port") if "LOCAL" not in p and p.strip()]
+362| 
+363|         flow_table_raw = node.dpctl("dump-flows").strip()
+364|         parsed_flows = []
+365| 
+366|         for line in flow_table_raw.split("\n"):
+367|             fields = line.split(",")
+368|             flow = {}
+369|             match_fields = {}
+370| 
+371|             for field in fields:
+372|                 key_val = field.strip().split("=")
+373| 
+374|                 if len(key_val) == 2:
+375|                     key, value = key_val
+376|                     if key in FLOW_FIELDS:
+377|                         flow[key] = value
+378|                     else:
+379|                         match_fields[key] = value
+380| 
+381|             flow["match_fields"] = match_fields
+382|             parsed_flows.append(flow)
+383|         result["flow_table"] = parsed_flows
+384|     elif node.type == "host":
+385|         arp_table = node.cmd("arp -a -n")
+386|         print("ARP TABLE", arp_table)
+387|         parsed_arp_table = []
+388|         for line in arp_table.splitlines():
+389|             parts = line.split()
+390|             if len(parts) < 6:
+391|                 continue
+392|             ip = parts[1].strip("()")
+393|             mac = parts[3]
+394|             interface = parts[-1]
+395|             parsed_arp_table.append({"ip": ip, "mac": mac, "interface": interface})
+396|         result["arp_table"] = parsed_arp_table
+397| 
+398|     result.pop("x", None)
+399|     result.pop("y", None)
+400|     
+401|     return result
+402| 
+403| @app.get("/api/mininet/export_script", response_class=PlainTextResponse)
+404| def export_network():
+405|     debug(app.net)
+406|     return export_net_to_script(app.switches, app.hosts, app.controllers, app.links).encode("utf-8")
+407| 
+408| @app.get("/api/mininet/export_json", response_class=PlainTextResponse)
+409| def export_network():
+410|     debug(app.net)
+411|     return export_net_to_json(app.switches, app.hosts, app.controllers, app.links).encode("utf-8")
+412| 
+413| @app.post("/api/mininet/import_json")
+414| async def import_json(file: UploadFile = File(...)):
+415|     contents = await file.read()
+416|     
+417|     try:
+418|         data = json.loads(contents.decode("utf-8"))
+419|         print("Received Topology JSON:", data)
+420| 
+421|         for controller_data in data.get("controllers", []):
+422|             controller = Controller(**controller_data)
+423|             create_controller(controller)
+424| 
+425|         for switch_data in data.get("switches", []):
+426|             switch = Switch(**switch_data)
+427|             controller = switch.controller
+428|             switch.controller = None
+429|             create_switch(switch)
+430|             if controller:
+431|                 associate_switch({
+432|                     "switch": switch.id,
+433|                     "controller": controller
+434|                 })
+435| 
+436|         for host_data in data.get("hosts", []):
+437|             host = Host(**host_data)
+438|             create_host(host)
+439| 
+440|         for link in data.get("links", []):
+441|             debug("LINKS: ", data["links"])
+442|             debug("LINK: ", link)
+443|             create_link(tuple(link))
+444| 
+445|         return {"message": "Topology successfully imported"}
+446| 
+447|     except json.JSONDecodeError:
+448|         return {"error": "Invalid JSON file"}, 400
+449| 
+450| async def read_pty(master_fd, websocket: WebSocket):
+451|     """Reads PTY output and sends it to WebSocket"""
+452|     try:
+453|         while True:
+454|             await asyncio.sleep(0.01)
+455|             r, _, _ = select.select([master_fd], [], [], 0)
+456|             if master_fd in r:
+457|                 output = os.read(master_fd, 1024).decode(errors="ignore")
+458|                 await websocket.send_text(output)
+459|     except Exception as e:
+460|         debug(f"PTY Read Error: {e}")
+461| 
+462| @app.websocket("/api/mininet/terminal/{node_id}")
+463| async def websocket_terminal(websocket: WebSocket, node_id: str):
+464|     """WebSocket endpoint for accessing a Mininet node terminal"""
+465|     await websocket.accept()
+466|     
+467|     node = app.net.get(node_id)
+468| 
+469|     if not node:
+470|         await websocket.send_text(f"Error: node {node_id} not found.")
+471|         await websocket.close()
+472|         return
+473| 
+474|     master_fd, slave_fd = pty.openpty()
+475| 
+476|     process = node.popen(["/bin/bash", "-i"], stdin=slave_fd, stdout=slave_fd, stderr=slave_fd, text=True, close_fds=True)
+477| 
+478|     app.terminals[node_id] = (master_fd, process)
+479| 
+480|     asyncio.create_task(read_pty(master_fd, websocket))
+481| 
+482|     try:
+483|         while True:
+484|             data = await websocket.receive_text()
+485|             debug("RECEIVED",data.encode())
+486|             os.write(master_fd, data.encode())
+487|     except WebSocketDisconnect:
+488|         process.terminate()
+489|         os.close(master_fd)
+490|         app.terminals.pop(node_id, None)
+491|         print(f"Closed terminal session for {node_id}")
+===== FIM DO ARQUIVO: mininet-gui-backend/mininet_gui_backend/api.py =====
+
+===== INÍCIO DO ARQUIVO: mininet-gui-backend/mininet_gui_backend/cli.py (20 linhas) =====
+ 1| from mininet.cli import CLI
+ 2| 
+ 3| # use https://github.com/mininet/mininet/blob/master/mininet/term.py#L1 ?
+ 4| # and https://github.com/python/cpython/blob/3.11/Lib/cmd.py
+ 5| # and https://fastapi.tiangolo.com/advanced/websockets/
+ 6| # and https://docs.python.org/3/library/cmd.html
+ 7| # and https://github.com/mininet/mininet/blob/master/examples/sshd.py#L21
+ 8| 
+ 9| # check if host is connected, test conn
+10| 
+11| 
+12| class CLISession:
+13|     def __init__(self):
+14|         self.url = ""
+15|         self.detach_and_listen()
+16| 
+17|     def detach_and_listen(self):
+18|         # listen on self.url
+19|         # detach from main
+20|         raise NotImplemented
+===== FIM DO ARQUIVO: mininet-gui-backend/mininet_gui_backend/cli.py =====
+
+===== INÍCIO DO ARQUIVO: mininet-gui-backend/mininet_gui_backend/export.py (111 linhas) =====
+  1| import json
+  2| from typing import List, Tuple, Union
+  3| 
+  4| from mininet_gui_backend.schema import Host, Switch, Controller
+  5| 
+  6| 
+  7| SCRIPT_TEMPLATE = """
+  8| \"\"\"
+  9| Script generated by Mininet-GUI (https://github.com/latarc/mininet-gui)
+ 10| \"\"\"
+ 11| from mininet.net import Mininet
+ 12| from mininet.node import Controller, RemoteController, OVSKernelSwitch, Host
+ 13| from mininet.link import TCLink
+ 14| from mininet.cli import CLI
+ 15| from mininet.log import setLogLevel
+ 16| 
+ 17| setLogLevel("info")
+ 18| 
+ 19| net = Mininet(controller=Controller, switch=OVSKernelSwitch, host=Host, link=TCLink)
+ 20| 
+ 21| # Controllers
+ 22| {controllers}
+ 23| 
+ 24| # Switches
+ 25| {switches}
+ 26| 
+ 27| # Hosts
+ 28| {hosts}
+ 29| 
+ 30| # Links
+ 31| {links}
+ 32| 
+ 33| net.build()
+ 34| 
+ 35| {controller_start}
+ 36| 
+ 37| {switch_start}
+ 38| 
+ 39| print("\\nNetwork topology created successfully!\\n")
+ 40| 
+ 41| CLI(net)  # Start Mininet CLI
+ 42| 
+ 43| net.stop()
+ 44| """
+ 45| 
+ 46| 
+ 47| def export_net_to_script(
+ 48|     switches: List[Switch], 
+ 49|     hosts: List[Host], 
+ 50|     controllers: List[Controller], 
+ 51|     links: List[Tuple[str, str]]
+ 52| ) -> str:
+ 53|     template = str(SCRIPT_TEMPLATE)
+ 54| 
+ 55|     controllers_str = "\n".join([
+ 56|         f'{c.name} = net.addController("{c.name}", controller=RemoteController, ip="{c.ip}", port={c.port})'
+ 57|         if c.remote else f'{c.name} = net.addController("{c.name}")'
+ 58|         for c in controllers.values()
+ 59|     ])
+ 60| 
+ 61|     switches_str = "\n".join([
+ 62|         f'{s.name} = net.addSwitch("{s.name}")' for s in switches.values()
+ 63|     ])
+ 64| 
+ 65|     hosts_str = "\n".join([
+ 66|         f'{h.name} = net.addHost("{h.name}", ip="{h.ip}", mac="{h.mac}")' for h in hosts.values()
+ 67|     ])
+ 68| 
+ 69|     links_str = "\n".join([
+ 70|         f'net.addLink({link_list[0]}, {link_list[1]})'
+ 71|         for link_list in (list(link) for link in links.keys())
+ 72|     ])
+ 73| 
+ 74|     controller_start_str = "\n".join([
+ 75|         f"{c.name}.start()" for c in controllers.values()
+ 76|     ])
+ 77| 
+ 78|     switch_start_str = "\n".join([
+ 79|         f'{s.name}.start([{s.controller}])' if s.controller else f'{s.name}.start([])'
+ 80|         for s in switches.values()
+ 81|     ])
+ 82| 
+ 83|     return template.format(
+ 84|         controllers=controllers_str,
+ 85|         switches=switches_str,
+ 86|         hosts=hosts_str,
+ 87|         links=links_str,
+ 88|         controller_start=controller_start_str,
+ 89|         switch_start=switch_start_str
+ 90|     )
+ 91| 
+ 92| # def import_script(script):
+ 93| #     for line in script.splitlines():
+ 94| #         eval(line)
+ 95| 
+ 96| 
+ 97| # json schema
+ 98| def export_net_to_json(
+ 99|     switches: List[Switch], 
+100|     hosts: List[Host], 
+101|     controllers: List[Controller], 
+102|     links: List[Tuple[str, str]]
+103| ) -> str:
+104|     net_data = {
+105|         "switches": [switch.dict() for switch in switches.values()],
+106|         "hosts": [host.dict() for host in hosts.values()],
+107|         "controllers": [controller.dict() for controller in controllers.values()],
+108|         "links": [list(link) for link in links]
+109|     }
+110| 
+111|     return json.dumps(net_data, indent=4)
+===== FIM DO ARQUIVO: mininet-gui-backend/mininet_gui_backend/export.py =====
+
+===== INÍCIO DO ARQUIVO: mininet-gui-backend/mininet_gui_backend/schema.py (28 linhas) =====
+ 1| from typing import Union
+ 2| 
+ 3| from pydantic import BaseModel
+ 4| 
+ 5| 
+ 6| class Node(BaseModel):
+ 7|     id: str
+ 8|     type: str
+ 9|     name: str
+10|     label: str
+11|     x: float
+12|     y: float
+13| 
+14| 
+15| class Controller(Node):
+16|     remote: bool
+17|     ip: Union[str, None]
+18|     port: Union[int, None]
+19| 
+20| 
+21| class Host(Node):
+22|     ip: str
+23|     mac: str
+24| 
+25| 
+26| class Switch(Node):
+27|     ports: int
+28|     controller: Union[str, None]
+===== FIM DO ARQUIVO: mininet-gui-backend/mininet_gui_backend/schema.py =====
+
+===== INÍCIO DO ARQUIVO: mininet-gui-backend/requirements.txt (4 linhas) =====
+1| fastapi
+2| websockets
+3| uvicorn
+4| python-multipart
+===== FIM DO ARQUIVO: mininet-gui-backend/requirements.txt =====
+
+===== INÍCIO DO ARQUIVO: mininet-gui-frontend/.gitignore (3 linhas) =====
+1| node_modules/**
+2| nohup.out
+3| .env
+===== FIM DO ARQUIVO: mininet-gui-frontend/.gitignore =====
+
+===== INÍCIO DO ARQUIVO: mininet-gui-frontend/.prettierrc.json (1 linhas) =====
+1| {}
+===== FIM DO ARQUIVO: mininet-gui-frontend/.prettierrc.json =====
+
+===== INÍCIO DO ARQUIVO: mininet-gui-frontend/index.html (13 linhas) =====
+ 1| <!doctype html>
+ 2| <html lang="en">
+ 3|   <head>
+ 4|     <meta charset="UTF-8" />
+ 5|     <link rel="icon" href="/favicon.ico" />
+ 6|     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 7|     <title>Mininet-GUI</title>
+ 8|   </head>
+ 9|   <body>
+10|     <div id="app"></div>
+11|     <script type="module" src="/src/main.js"></script>
+12|   </body>
+13| </html>
+===== FIM DO ARQUIVO: mininet-gui-frontend/index.html =====
+
+===== INÍCIO DO ARQUIVO: mininet-gui-frontend/package-lock.json (1141 linhas) =====
+   1| {
+   2|   "name": "mininet-gui",
+   3|   "version": "0.0.1",
+   4|   "lockfileVersion": 3,
+   5|   "requires": true,
+   6|   "packages": {
+   7|     "": {
+   8|       "name": "mininet-gui",
+   9|       "version": "0.0.1",
+  10|       "dependencies": {
+  11|         "axios": "^1.2.1",
+  12|         "dotenv": "^16.4.7",
+  13|         "vis-data": "^7.1.4",
+  14|         "vis-network": "^9.1.2",
+  15|         "vis-util": "^5.0.3",
+  16|         "vis.js": "^1.1.0",
+  17|         "vue": "^3.2.45"
+  18|       },
+  19|       "devDependencies": {
+  20|         "@vitejs/plugin-vue": "^4.0.0",
+  21|         "prettier": "3.0.2",
+  22|         "vite": "^4.0.0"
+  23|       }
+  24|     },
+  25|     "node_modules/@babel/helper-string-parser": {
+  26|       "version": "7.25.9",
+  27|       "resolved": "https://registry.npmjs.org/@babel/helper-string-parser/-/helper-string-parser-7.25.9.tgz",
+  28|       "integrity": "sha512-4A/SCr/2KLd5jrtOMFzaKjVtAei3+2r/NChoBNoZ3EyP/+GlhoaEGoWOZUmFmoITP7zOJyHIMm+DYRd8o3PvHA==",
+  29|       "engines": {
+  30|         "node": ">=6.9.0"
+  31|       }
+  32|     },
+  33|     "node_modules/@babel/helper-validator-identifier": {
+  34|       "version": "7.25.9",
+  35|       "resolved": "https://registry.npmjs.org/@babel/helper-validator-identifier/-/helper-validator-identifier-7.25.9.tgz",
+  36|       "integrity": "sha512-Ed61U6XJc3CVRfkERJWDz4dJwKe7iLmmJsbOGu9wSloNSFttHV0I8g6UAgb7qnK5ly5bGLPd4oXZlxCdANBOWQ==",
+  37|       "engines": {
+  38|         "node": ">=6.9.0"
+  39|       }
+  40|     },
+  41|     "node_modules/@babel/parser": {
+  42|       "version": "7.26.9",
+  43|       "resolved": "https://registry.npmjs.org/@babel/parser/-/parser-7.26.9.tgz",
+  44|       "integrity": "sha512-81NWa1njQblgZbQHxWHpxxCzNsa3ZwvFqpUg7P+NNUU6f3UU2jBEg4OlF/J6rl8+PQGh1q6/zWScd001YwcA5A==",
+  45|       "dependencies": {
+  46|         "@babel/types": "^7.26.9"
+  47|       },
+  48|       "bin": {
+  49|         "parser": "bin/babel-parser.js"
+  50|       },
+  51|       "engines": {
+  52|         "node": ">=6.0.0"
+  53|       }
+  54|     },
+  55|     "node_modules/@babel/types": {
+  56|       "version": "7.26.9",
+  57|       "resolved": "https://registry.npmjs.org/@babel/types/-/types-7.26.9.tgz",
+  58|       "integrity": "sha512-Y3IR1cRnOxOCDvMmNiym7XpXQ93iGDDPHx+Zj+NM+rg0fBaShfQLkg+hKPaZCEvg5N/LeCo4+Rj/i3FuJsIQaw==",
+  59|       "dependencies": {
+  60|         "@babel/helper-string-parser": "^7.25.9",
+  61|         "@babel/helper-validator-identifier": "^7.25.9"
+  62|       },
+  63|       "engines": {
+  64|         "node": ">=6.9.0"
+  65|       }
+  66|     },
+  67|     "node_modules/@egjs/hammerjs": {
+  68|       "version": "2.0.17",
+  69|       "resolved": "https://registry.npmjs.org/@egjs/hammerjs/-/hammerjs-2.0.17.tgz",
+  70|       "integrity": "sha512-XQsZgjm2EcVUiZQf11UBJQfmZeEmOW8DpI1gsFeln6w0ae0ii4dMQEQ0kjl6DspdWX1aGY1/loyXnP0JS06e/A==",
+  71|       "license": "MIT",
+  72|       "peer": true,
+  73|       "dependencies": {
+  74|         "@types/hammerjs": "^2.0.36"
+  75|       },
+  76|       "engines": {
+  77|         "node": ">=0.8.0"
+  78|       }
+  79|     },
+  80|     "node_modules/@esbuild/android-arm": {
+  81|       "version": "0.18.20",
+  82|       "resolved": "https://registry.npmjs.org/@esbuild/android-arm/-/android-arm-0.18.20.tgz",
+  83|       "integrity": "sha512-fyi7TDI/ijKKNZTUJAQqiG5T7YjJXgnzkURqmGj13C6dCqckZBLdl4h7bkhHt/t0WP+zO9/zwroDvANaOqO5Sw==",
+  84|       "cpu": [
+  85|         "arm"
+  86|       ],
+  87|       "dev": true,
+  88|       "optional": true,
+  89|       "os": [
+  90|         "android"
+  91|       ],
+  92|       "engines": {
+  93|         "node": ">=12"
+  94|       }
+  95|     },
+  96|     "node_modules/@esbuild/android-arm64": {
+  97|       "version": "0.18.20",
+  98|       "resolved": "https://registry.npmjs.org/@esbuild/android-arm64/-/android-arm64-0.18.20.tgz",
+  99|       "integrity": "sha512-Nz4rJcchGDtENV0eMKUNa6L12zz2zBDXuhj/Vjh18zGqB44Bi7MBMSXjgunJgjRhCmKOjnPuZp4Mb6OKqtMHLQ==",
+ 100|       "cpu": [
+ 101|         "arm64"
+ 102|       ],
+ 103|       "dev": true,
+ 104|       "optional": true,
+ 105|       "os": [
+ 106|         "android"
+ 107|       ],
+ 108|       "engines": {
+ 109|         "node": ">=12"
+ 110|       }
+ 111|     },
+ 112|     "node_modules/@esbuild/android-x64": {
+ 113|       "version": "0.18.20",
+ 114|       "resolved": "https://registry.npmjs.org/@esbuild/android-x64/-/android-x64-0.18.20.tgz",
+ 115|       "integrity": "sha512-8GDdlePJA8D6zlZYJV/jnrRAi6rOiNaCC/JclcXpB+KIuvfBN4owLtgzY2bsxnx666XjJx2kDPUmnTtR8qKQUg==",
+ 116|       "cpu": [
+ 117|         "x64"
+ 118|       ],
+ 119|       "dev": true,
+ 120|       "optional": true,
+ 121|       "os": [
+ 122|         "android"
+ 123|       ],
+ 124|       "engines": {
+ 125|         "node": ">=12"
+ 126|       }
+ 127|     },
+ 128|     "node_modules/@esbuild/darwin-arm64": {
+ 129|       "version": "0.18.20",
+ 130|       "resolved": "https://registry.npmjs.org/@esbuild/darwin-arm64/-/darwin-arm64-0.18.20.tgz",
+ 131|       "integrity": "sha512-bxRHW5kHU38zS2lPTPOyuyTm+S+eobPUnTNkdJEfAddYgEcll4xkT8DB9d2008DtTbl7uJag2HuE5NZAZgnNEA==",
+ 132|       "cpu": [
+ 133|         "arm64"
+ 134|       ],
+ 135|       "dev": true,
+ 136|       "optional": true,
+ 137|       "os": [
+ 138|         "darwin"
+ 139|       ],
+ 140|       "engines": {
+ 141|         "node": ">=12"
+ 142|       }
+ 143|     },
+ 144|     "node_modules/@esbuild/darwin-x64": {
+ 145|       "version": "0.18.20",
+ 146|       "resolved": "https://registry.npmjs.org/@esbuild/darwin-x64/-/darwin-x64-0.18.20.tgz",
+ 147|       "integrity": "sha512-pc5gxlMDxzm513qPGbCbDukOdsGtKhfxD1zJKXjCCcU7ju50O7MeAZ8c4krSJcOIJGFR+qx21yMMVYwiQvyTyQ==",
+ 148|       "cpu": [
+ 149|         "x64"
+ 150|       ],
+ 151|       "dev": true,
+ 152|       "optional": true,
+ 153|       "os": [
+ 154|         "darwin"
+ 155|       ],
+ 156|       "engines": {
+ 157|         "node": ">=12"
+ 158|       }
+ 159|     },
+ 160|     "node_modules/@esbuild/freebsd-arm64": {
+ 161|       "version": "0.18.20",
+ 162|       "resolved": "https://registry.npmjs.org/@esbuild/freebsd-arm64/-/freebsd-arm64-0.18.20.tgz",
+ 163|       "integrity": "sha512-yqDQHy4QHevpMAaxhhIwYPMv1NECwOvIpGCZkECn8w2WFHXjEwrBn3CeNIYsibZ/iZEUemj++M26W3cNR5h+Tw==",
+ 164|       "cpu": [
+ 165|         "arm64"
+ 166|       ],
+ 167|       "dev": true,
+ 168|       "optional": true,
+ 169|       "os": [
+ 170|         "freebsd"
+ 171|       ],
+ 172|       "engines": {
+ 173|         "node": ">=12"
+ 174|       }
+ 175|     },
+ 176|     "node_modules/@esbuild/freebsd-x64": {
+ 177|       "version": "0.18.20",
+ 178|       "resolved": "https://registry.npmjs.org/@esbuild/freebsd-x64/-/freebsd-x64-0.18.20.tgz",
+ 179|       "integrity": "sha512-tgWRPPuQsd3RmBZwarGVHZQvtzfEBOreNuxEMKFcd5DaDn2PbBxfwLcj4+aenoh7ctXcbXmOQIn8HI6mCSw5MQ==",
+ 180|       "cpu": [
+ 181|         "x64"
+ 182|       ],
+ 183|       "dev": true,
+ 184|       "optional": true,
+ 185|       "os": [
+ 186|         "freebsd"
+ 187|       ],
+ 188|       "engines": {
+ 189|         "node": ">=12"
+ 190|       }
+ 191|     },
+ 192|     "node_modules/@esbuild/linux-arm": {
+ 193|       "version": "0.18.20",
+ 194|       "resolved": "https://registry.npmjs.org/@esbuild/linux-arm/-/linux-arm-0.18.20.tgz",
+ 195|       "integrity": "sha512-/5bHkMWnq1EgKr1V+Ybz3s1hWXok7mDFUMQ4cG10AfW3wL02PSZi5kFpYKrptDsgb2WAJIvRcDm+qIvXf/apvg==",
+ 196|       "cpu": [
+ 197|         "arm"
+ 198|       ],
+ 199|       "dev": true,
+ 200|       "optional": true,
+ 201|       "os": [
+ 202|         "linux"
+ 203|       ],
+ 204|       "engines": {
+ 205|         "node": ">=12"
+ 206|       }
+ 207|     },
+ 208|     "node_modules/@esbuild/linux-arm64": {
+ 209|       "version": "0.18.20",
+ 210|       "resolved": "https://registry.npmjs.org/@esbuild/linux-arm64/-/linux-arm64-0.18.20.tgz",
+ 211|       "integrity": "sha512-2YbscF+UL7SQAVIpnWvYwM+3LskyDmPhe31pE7/aoTMFKKzIc9lLbyGUpmmb8a8AixOL61sQ/mFh3jEjHYFvdA==",
+ 212|       "cpu": [
+ 213|         "arm64"
+ 214|       ],
+ 215|       "dev": true,
+ 216|       "optional": true,
+ 217|       "os": [
+ 218|         "linux"
+ 219|       ],
+ 220|       "engines": {
+ 221|         "node": ">=12"
+ 222|       }
+ 223|     },
+ 224|     "node_modules/@esbuild/linux-ia32": {
+ 225|       "version": "0.18.20",
+ 226|       "resolved": "https://registry.npmjs.org/@esbuild/linux-ia32/-/linux-ia32-0.18.20.tgz",
+ 227|       "integrity": "sha512-P4etWwq6IsReT0E1KHU40bOnzMHoH73aXp96Fs8TIT6z9Hu8G6+0SHSw9i2isWrD2nbx2qo5yUqACgdfVGx7TA==",
+ 228|       "cpu": [
+ 229|         "ia32"
+ 230|       ],
+ 231|       "dev": true,
+ 232|       "optional": true,
+ 233|       "os": [
+ 234|         "linux"
+ 235|       ],
+ 236|       "engines": {
+ 237|         "node": ">=12"
+ 238|       }
+ 239|     },
+ 240|     "node_modules/@esbuild/linux-loong64": {
+ 241|       "version": "0.18.20",
+ 242|       "resolved": "https://registry.npmjs.org/@esbuild/linux-loong64/-/linux-loong64-0.18.20.tgz",
+ 243|       "integrity": "sha512-nXW8nqBTrOpDLPgPY9uV+/1DjxoQ7DoB2N8eocyq8I9XuqJ7BiAMDMf9n1xZM9TgW0J8zrquIb/A7s3BJv7rjg==",
+ 244|       "cpu": [
+ 245|         "loong64"
+ 246|       ],
+ 247|       "dev": true,
+ 248|       "optional": true,
+ 249|       "os": [
+ 250|         "linux"
+ 251|       ],
+ 252|       "engines": {
+ 253|         "node": ">=12"
+ 254|       }
+ 255|     },
+ 256|     "node_modules/@esbuild/linux-mips64el": {
+ 257|       "version": "0.18.20",
+ 258|       "resolved": "https://registry.npmjs.org/@esbuild/linux-mips64el/-/linux-mips64el-0.18.20.tgz",
+ 259|       "integrity": "sha512-d5NeaXZcHp8PzYy5VnXV3VSd2D328Zb+9dEq5HE6bw6+N86JVPExrA6O68OPwobntbNJ0pzCpUFZTo3w0GyetQ==",
+ 260|       "cpu": [
+ 261|         "mips64el"
+ 262|       ],
+ 263|       "dev": true,
+ 264|       "optional": true,
+ 265|       "os": [
+ 266|         "linux"
+ 267|       ],
+ 268|       "engines": {
+ 269|         "node": ">=12"
+ 270|       }
+ 271|     },
+ 272|     "node_modules/@esbuild/linux-ppc64": {
+ 273|       "version": "0.18.20",
+ 274|       "resolved": "https://registry.npmjs.org/@esbuild/linux-ppc64/-/linux-ppc64-0.18.20.tgz",
+ 275|       "integrity": "sha512-WHPyeScRNcmANnLQkq6AfyXRFr5D6N2sKgkFo2FqguP44Nw2eyDlbTdZwd9GYk98DZG9QItIiTlFLHJHjxP3FA==",
+ 276|       "cpu": [
+ 277|         "ppc64"
+ 278|       ],
+ 279|       "dev": true,
+ 280|       "optional": true,
+ 281|       "os": [
+ 282|         "linux"
+ 283|       ],
+ 284|       "engines": {
+ 285|         "node": ">=12"
+ 286|       }
+ 287|     },
+ 288|     "node_modules/@esbuild/linux-riscv64": {
+ 289|       "version": "0.18.20",
+ 290|       "resolved": "https://registry.npmjs.org/@esbuild/linux-riscv64/-/linux-riscv64-0.18.20.tgz",
+ 291|       "integrity": "sha512-WSxo6h5ecI5XH34KC7w5veNnKkju3zBRLEQNY7mv5mtBmrP/MjNBCAlsM2u5hDBlS3NGcTQpoBvRzqBcRtpq1A==",
+ 292|       "cpu": [
+ 293|         "riscv64"
+ 294|       ],
+ 295|       "dev": true,
+ 296|       "optional": true,
+ 297|       "os": [
+ 298|         "linux"
+ 299|       ],
+ 300|       "engines": {
+ 301|         "node": ">=12"
+ 302|       }
+ 303|     },
+ 304|     "node_modules/@esbuild/linux-s390x": {
+ 305|       "version": "0.18.20",
+ 306|       "resolved": "https://registry.npmjs.org/@esbuild/linux-s390x/-/linux-s390x-0.18.20.tgz",
+ 307|       "integrity": "sha512-+8231GMs3mAEth6Ja1iK0a1sQ3ohfcpzpRLH8uuc5/KVDFneH6jtAJLFGafpzpMRO6DzJ6AvXKze9LfFMrIHVQ==",
+ 308|       "cpu": [
+ 309|         "s390x"
+ 310|       ],
+ 311|       "dev": true,
+ 312|       "optional": true,
+ 313|       "os": [
+ 314|         "linux"
+ 315|       ],
+ 316|       "engines": {
+ 317|         "node": ">=12"
+ 318|       }
+ 319|     },
+ 320|     "node_modules/@esbuild/linux-x64": {
+ 321|       "version": "0.18.20",
+ 322|       "resolved": "https://registry.npmjs.org/@esbuild/linux-x64/-/linux-x64-0.18.20.tgz",
+ 323|       "integrity": "sha512-UYqiqemphJcNsFEskc73jQ7B9jgwjWrSayxawS6UVFZGWrAAtkzjxSqnoclCXxWtfwLdzU+vTpcNYhpn43uP1w==",
+ 324|       "cpu": [
+ 325|         "x64"
+ 326|       ],
+ 327|       "dev": true,
+ 328|       "optional": true,
+ 329|       "os": [
+ 330|         "linux"
+ 331|       ],
+ 332|       "engines": {
+ 333|         "node": ">=12"
+ 334|       }
+ 335|     },
+ 336|     "node_modules/@esbuild/netbsd-x64": {
+ 337|       "version": "0.18.20",
+ 338|       "resolved": "https://registry.npmjs.org/@esbuild/netbsd-x64/-/netbsd-x64-0.18.20.tgz",
+ 339|       "integrity": "sha512-iO1c++VP6xUBUmltHZoMtCUdPlnPGdBom6IrO4gyKPFFVBKioIImVooR5I83nTew5UOYrk3gIJhbZh8X44y06A==",
+ 340|       "cpu": [
+ 341|         "x64"
+ 342|       ],
+ 343|       "dev": true,
+ 344|       "optional": true,
+ 345|       "os": [
+ 346|         "netbsd"
+ 347|       ],
+ 348|       "engines": {
+ 349|         "node": ">=12"
+ 350|       }
+ 351|     },
+ 352|     "node_modules/@esbuild/openbsd-x64": {
+ 353|       "version": "0.18.20",
+ 354|       "resolved": "https://registry.npmjs.org/@esbuild/openbsd-x64/-/openbsd-x64-0.18.20.tgz",
+ 355|       "integrity": "sha512-e5e4YSsuQfX4cxcygw/UCPIEP6wbIL+se3sxPdCiMbFLBWu0eiZOJ7WoD+ptCLrmjZBK1Wk7I6D/I3NglUGOxg==",
+ 356|       "cpu": [
+ 357|         "x64"
+ 358|       ],
+ 359|       "dev": true,
+ 360|       "optional": true,
+ 361|       "os": [
+ 362|         "openbsd"
+ 363|       ],
+ 364|       "engines": {
+ 365|         "node": ">=12"
+ 366|       }
+ 367|     },
+ 368|     "node_modules/@esbuild/sunos-x64": {
+ 369|       "version": "0.18.20",
+ 370|       "resolved": "https://registry.npmjs.org/@esbuild/sunos-x64/-/sunos-x64-0.18.20.tgz",
+ 371|       "integrity": "sha512-kDbFRFp0YpTQVVrqUd5FTYmWo45zGaXe0X8E1G/LKFC0v8x0vWrhOWSLITcCn63lmZIxfOMXtCfti/RxN/0wnQ==",
+ 372|       "cpu": [
+ 373|         "x64"
+ 374|       ],
+ 375|       "dev": true,
+ 376|       "optional": true,
+ 377|       "os": [
+ 378|         "sunos"
+ 379|       ],
+ 380|       "engines": {
+ 381|         "node": ">=12"
+ 382|       }
+ 383|     },
+ 384|     "node_modules/@esbuild/win32-arm64": {
+ 385|       "version": "0.18.20",
+ 386|       "resolved": "https://registry.npmjs.org/@esbuild/win32-arm64/-/win32-arm64-0.18.20.tgz",
+ 387|       "integrity": "sha512-ddYFR6ItYgoaq4v4JmQQaAI5s7npztfV4Ag6NrhiaW0RrnOXqBkgwZLofVTlq1daVTQNhtI5oieTvkRPfZrePg==",
+ 388|       "cpu": [
+ 389|         "arm64"
+ 390|       ],
+ 391|       "dev": true,
+ 392|       "optional": true,
+ 393|       "os": [
+ 394|         "win32"
+ 395|       ],
+ 396|       "engines": {
+ 397|         "node": ">=12"
+ 398|       }
+ 399|     },
+ 400|     "node_modules/@esbuild/win32-ia32": {
+ 401|       "version": "0.18.20",
+ 402|       "resolved": "https://registry.npmjs.org/@esbuild/win32-ia32/-/win32-ia32-0.18.20.tgz",
+ 403|       "integrity": "sha512-Wv7QBi3ID/rROT08SABTS7eV4hX26sVduqDOTe1MvGMjNd3EjOz4b7zeexIR62GTIEKrfJXKL9LFxTYgkyeu7g==",
+ 404|       "cpu": [
+ 405|         "ia32"
+ 406|       ],
+ 407|       "dev": true,
+ 408|       "optional": true,
+ 409|       "os": [
+ 410|         "win32"
+ 411|       ],
+ 412|       "engines": {
+ 413|         "node": ">=12"
+ 414|       }
+ 415|     },
+ 416|     "node_modules/@esbuild/win32-x64": {
+ 417|       "version": "0.18.20",
+ 418|       "resolved": "https://registry.npmjs.org/@esbuild/win32-x64/-/win32-x64-0.18.20.tgz",
+ 419|       "integrity": "sha512-kTdfRcSiDfQca/y9QIkng02avJ+NCaQvrMejlsB3RRv5sE9rRoeBPISaZpKxHELzRxZyLvNts1P27W3wV+8geQ==",
+ 420|       "cpu": [
+ 421|         "x64"
+ 422|       ],
+ 423|       "dev": true,
+ 424|       "optional": true,
+ 425|       "os": [
+ 426|         "win32"
+ 427|       ],
+ 428|       "engines": {
+ 429|         "node": ">=12"
+ 430|       }
+ 431|     },
+ 432|     "node_modules/@jridgewell/sourcemap-codec": {
+ 433|       "version": "1.5.0",
+ 434|       "resolved": "https://registry.npmjs.org/@jridgewell/sourcemap-codec/-/sourcemap-codec-1.5.0.tgz",
+ 435|       "integrity": "sha512-gv3ZRaISU3fjPAgNsriBRqGWQL6quFx04YMPW/zD8XMLsU32mhCCbfbO6KZFLjvYpCZ8zyDEgqsgf+PwPaM7GQ=="
+ 436|     },
+ 437|     "node_modules/@types/hammerjs": {
+ 438|       "version": "2.0.46",
+ 439|       "resolved": "https://registry.npmjs.org/@types/hammerjs/-/hammerjs-2.0.46.tgz",
+ 440|       "integrity": "sha512-ynRvcq6wvqexJ9brDMS4BnBLzmr0e14d6ZJTEShTBWKymQiHwlAyGu0ZPEFI2Fh1U53F7tN9ufClWM5KvqkKOw==",
+ 441|       "license": "MIT",
+ 442|       "peer": true
+ 443|     },
+ 444|     "node_modules/@vitejs/plugin-vue": {
+ 445|       "version": "4.6.2",
+ 446|       "resolved": "https://registry.npmjs.org/@vitejs/plugin-vue/-/plugin-vue-4.6.2.tgz",
+ 447|       "integrity": "sha512-kqf7SGFoG+80aZG6Pf+gsZIVvGSCKE98JbiWqcCV9cThtg91Jav0yvYFC9Zb+jKetNGF6ZKeoaxgZfND21fWKw==",
+ 448|       "dev": true,
+ 449|       "engines": {
+ 450|         "node": "^14.18.0 || >=16.0.0"
+ 451|       },
+ 452|       "peerDependencies": {
+ 453|         "vite": "^4.0.0 || ^5.0.0",
+ 454|         "vue": "^3.2.25"
+ 455|       }
+ 456|     },
+ 457|     "node_modules/@vue/compiler-core": {
+ 458|       "version": "3.5.13",
+ 459|       "resolved": "https://registry.npmjs.org/@vue/compiler-core/-/compiler-core-3.5.13.tgz",
+ 460|       "integrity": "sha512-oOdAkwqUfW1WqpwSYJce06wvt6HljgY3fGeM9NcVA1HaYOij3mZG9Rkysn0OHuyUAGMbEbARIpsG+LPVlBJ5/Q==",
+ 461|       "dependencies": {
+ 462|         "@babel/parser": "^7.25.3",
+ 463|         "@vue/shared": "3.5.13",
+ 464|         "entities": "^4.5.0",
+ 465|         "estree-walker": "^2.0.2",
+ 466|         "source-map-js": "^1.2.0"
+ 467|       }
+ 468|     },
+ 469|     "node_modules/@vue/compiler-dom": {
+ 470|       "version": "3.5.13",
+ 471|       "resolved": "https://registry.npmjs.org/@vue/compiler-dom/-/compiler-dom-3.5.13.tgz",
+ 472|       "integrity": "sha512-ZOJ46sMOKUjO3e94wPdCzQ6P1Lx/vhp2RSvfaab88Ajexs0AHeV0uasYhi99WPaogmBlRHNRuly8xV75cNTMDA==",
+ 473|       "dependencies": {
+ 474|         "@vue/compiler-core": "3.5.13",
+ 475|         "@vue/shared": "3.5.13"
+ 476|       }
+ 477|     },
+ 478|     "node_modules/@vue/compiler-sfc": {
+ 479|       "version": "3.5.13",
+ 480|       "resolved": "https://registry.npmjs.org/@vue/compiler-sfc/-/compiler-sfc-3.5.13.tgz",
+ 481|       "integrity": "sha512-6VdaljMpD82w6c2749Zhf5T9u5uLBWKnVue6XWxprDobftnletJ8+oel7sexFfM3qIxNmVE7LSFGTpv6obNyaQ==",
+ 482|       "dependencies": {
+ 483|         "@babel/parser": "^7.25.3",
+ 484|         "@vue/compiler-core": "3.5.13",
+ 485|         "@vue/compiler-dom": "3.5.13",
+ 486|         "@vue/compiler-ssr": "3.5.13",
+ 487|         "@vue/shared": "3.5.13",
+ 488|         "estree-walker": "^2.0.2",
+ 489|         "magic-string": "^0.30.11",
+ 490|         "postcss": "^8.4.48",
+ 491|         "source-map-js": "^1.2.0"
+ 492|       }
+ 493|     },
+ 494|     "node_modules/@vue/compiler-ssr": {
+ 495|       "version": "3.5.13",
+ 496|       "resolved": "https://registry.npmjs.org/@vue/compiler-ssr/-/compiler-ssr-3.5.13.tgz",
+ 497|       "integrity": "sha512-wMH6vrYHxQl/IybKJagqbquvxpWCuVYpoUJfCqFZwa/JY1GdATAQ+TgVtgrwwMZ0D07QhA99rs/EAAWfvG6KpA==",
+ 498|       "dependencies": {
+ 499|         "@vue/compiler-dom": "3.5.13",
+ 500|         "@vue/shared": "3.5.13"
+ 501|       }
+ 502|     },
+ 503|     "node_modules/@vue/reactivity": {
+ 504|       "version": "3.5.13",
+ 505|       "resolved": "https://registry.npmjs.org/@vue/reactivity/-/reactivity-3.5.13.tgz",
+ 506|       "integrity": "sha512-NaCwtw8o48B9I6L1zl2p41OHo/2Z4wqYGGIK1Khu5T7yxrn+ATOixn/Udn2m+6kZKB/J7cuT9DbWWhRxqixACg==",
+ 507|       "dependencies": {
+ 508|         "@vue/shared": "3.5.13"
+ 509|       }
+ 510|     },
+ 511|     "node_modules/@vue/runtime-core": {
+ 512|       "version": "3.5.13",
+ 513|       "resolved": "https://registry.npmjs.org/@vue/runtime-core/-/runtime-core-3.5.13.tgz",
+ 514|       "integrity": "sha512-Fj4YRQ3Az0WTZw1sFe+QDb0aXCerigEpw418pw1HBUKFtnQHWzwojaukAs2X/c9DQz4MQ4bsXTGlcpGxU/RCIw==",
+ 515|       "dependencies": {
+ 516|         "@vue/reactivity": "3.5.13",
+ 517|         "@vue/shared": "3.5.13"
+ 518|       }
+ 519|     },
+ 520|     "node_modules/@vue/runtime-dom": {
+ 521|       "version": "3.5.13",
+ 522|       "resolved": "https://registry.npmjs.org/@vue/runtime-dom/-/runtime-dom-3.5.13.tgz",
+ 523|       "integrity": "sha512-dLaj94s93NYLqjLiyFzVs9X6dWhTdAlEAciC3Moq7gzAc13VJUdCnjjRurNM6uTLFATRHexHCTu/Xp3eW6yoog==",
+ 524|       "dependencies": {
+ 525|         "@vue/reactivity": "3.5.13",
+ 526|         "@vue/runtime-core": "3.5.13",
+ 527|         "@vue/shared": "3.5.13",
+ 528|         "csstype": "^3.1.3"
+ 529|       }
+ 530|     },
+ 531|     "node_modules/@vue/server-renderer": {
+ 532|       "version": "3.5.13",
+ 533|       "resolved": "https://registry.npmjs.org/@vue/server-renderer/-/server-renderer-3.5.13.tgz",
+ 534|       "integrity": "sha512-wAi4IRJV/2SAW3htkTlB+dHeRmpTiVIK1OGLWV1yeStVSebSQQOwGwIq0D3ZIoBj2C2qpgz5+vX9iEBkTdk5YA==",
+ 535|       "dependencies": {
+ 536|         "@vue/compiler-ssr": "3.5.13",
+ 537|         "@vue/shared": "3.5.13"
+ 538|       },
+ 539|       "peerDependencies": {
+ 540|         "vue": "3.5.13"
+ 541|       }
+ 542|     },
+ 543|     "node_modules/@vue/shared": {
+ 544|       "version": "3.5.13",
+ 545|       "resolved": "https://registry.npmjs.org/@vue/shared/-/shared-3.5.13.tgz",
+ 546|       "integrity": "sha512-/hnE/qP5ZoGpol0a5mDi45bOd7t3tjYJBjsgCsivow7D48cJeV5l05RD82lPqi7gRiphZM37rnhW1l6ZoCNNnQ=="
+ 547|     },
+ 548|     "node_modules/asynckit": {
+ 549|       "version": "0.4.0",
+ 550|       "resolved": "https://registry.npmjs.org/asynckit/-/asynckit-0.4.0.tgz",
+ 551|       "integrity": "sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q=="
+ 552|     },
+ 553|     "node_modules/axios": {
+ 554|       "version": "1.7.9",
+ 555|       "resolved": "https://registry.npmjs.org/axios/-/axios-1.7.9.tgz",
+ 556|       "integrity": "sha512-LhLcE7Hbiryz8oMDdDptSrWowmB4Bl6RCt6sIJKpRB4XtVf0iEgewX3au/pJqm+Py1kCASkb/FFKjxQaLtxJvw==",
+ 557|       "dependencies": {
+ 558|         "follow-redirects": "^1.15.6",
+ 559|         "form-data": "^4.0.0",
+ 560|         "proxy-from-env": "^1.1.0"
+ 561|       }
+ 562|     },
+ 563|     "node_modules/call-bind-apply-helpers": {
+ 564|       "version": "1.0.2",
+ 565|       "resolved": "https://registry.npmjs.org/call-bind-apply-helpers/-/call-bind-apply-helpers-1.0.2.tgz",
+ 566|       "integrity": "sha512-Sp1ablJ0ivDkSzjcaJdxEunN5/XvksFJ2sMBFfq6x0ryhQV/2b/KwFe21cMpmHtPOSij8K99/wSfoEuTObmuMQ==",
+ 567|       "dependencies": {
+ 568|         "es-errors": "^1.3.0",
+ 569|         "function-bind": "^1.1.2"
+ 570|       },
+ 571|       "engines": {
+ 572|         "node": ">= 0.4"
+ 573|       }
+ 574|     },
+ 575|     "node_modules/combined-stream": {
+ 576|       "version": "1.0.8",
+ 577|       "resolved": "https://registry.npmjs.org/combined-stream/-/combined-stream-1.0.8.tgz",
+ 578|       "integrity": "sha512-FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg==",
+ 579|       "dependencies": {
+ 580|         "delayed-stream": "~1.0.0"
+ 581|       },
+ 582|       "engines": {
+ 583|         "node": ">= 0.8"
+ 584|       }
+ 585|     },
+ 586|     "node_modules/component-emitter": {
+ 587|       "version": "1.3.1",
+ 588|       "resolved": "https://registry.npmjs.org/component-emitter/-/component-emitter-1.3.1.tgz",
+ 589|       "integrity": "sha512-T0+barUSQRTUQASh8bx02dl+DhF54GtIDY13Y3m9oWTklKbb3Wv974meRpeZ3lp1JpLVECWWNHC4vaG2XHXouQ==",
+ 590|       "license": "MIT",
+ 591|       "peer": true,
+ 592|       "funding": {
+ 593|         "url": "https://github.com/sponsors/sindresorhus"
+ 594|       }
+ 595|     },
+ 596|     "node_modules/csstype": {
+ 597|       "version": "3.1.3",
+ 598|       "resolved": "https://registry.npmjs.org/csstype/-/csstype-3.1.3.tgz",
+ 599|       "integrity": "sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw=="
+ 600|     },
+ 601|     "node_modules/delayed-stream": {
+ 602|       "version": "1.0.0",
+ 603|       "resolved": "https://registry.npmjs.org/delayed-stream/-/delayed-stream-1.0.0.tgz",
+ 604|       "integrity": "sha512-ZySD7Nf91aLB0RxL4KGrKHBXl7Eds1DAmEdcoVawXnLD7SDhpNgtuII2aAkg7a7QS41jxPSZ17p4VdGnMHk3MQ==",
+ 605|       "engines": {
+ 606|         "node": ">=0.4.0"
+ 607|       }
+ 608|     },
+ 609|     "node_modules/dotenv": {
+ 610|       "version": "16.4.7",
+ 611|       "resolved": "https://registry.npmjs.org/dotenv/-/dotenv-16.4.7.tgz",
+ 612|       "integrity": "sha512-47qPchRCykZC03FhkYAhrvwU4xDBFIj1QPqaarj6mdM/hgUzfPHcpkHJOn3mJAufFeeAxAzeGsr5X0M4k6fLZQ==",
+ 613|       "license": "BSD-2-Clause",
+ 614|       "engines": {
+ 615|         "node": ">=12"
+ 616|       },
+ 617|       "funding": {
+ 618|         "url": "https://dotenvx.com"
+ 619|       }
+ 620|     },
+ 621|     "node_modules/dunder-proto": {
+ 622|       "version": "1.0.1",
+ 623|       "resolved": "https://registry.npmjs.org/dunder-proto/-/dunder-proto-1.0.1.tgz",
+ 624|       "integrity": "sha512-KIN/nDJBQRcXw0MLVhZE9iQHmG68qAVIBg9CqmUYjmQIhgij9U5MFvrqkUL5FbtyyzZuOeOt0zdeRe4UY7ct+A==",
+ 625|       "dependencies": {
+ 626|         "call-bind-apply-helpers": "^1.0.1",
+ 627|         "es-errors": "^1.3.0",
+ 628|         "gopd": "^1.2.0"
+ 629|       },
+ 630|       "engines": {
+ 631|         "node": ">= 0.4"
+ 632|       }
+ 633|     },
+ 634|     "node_modules/entities": {
+ 635|       "version": "4.5.0",
+ 636|       "resolved": "https://registry.npmjs.org/entities/-/entities-4.5.0.tgz",
+ 637|       "integrity": "sha512-V0hjH4dGPh9Ao5p0MoRY6BVqtwCjhz6vI5LT8AJ55H+4g9/4vbHx1I54fS0XuclLhDHArPQCiMjDxjaL8fPxhw==",
+ 638|       "engines": {
+ 639|         "node": ">=0.12"
+ 640|       },
+ 641|       "funding": {
+ 642|         "url": "https://github.com/fb55/entities?sponsor=1"
+ 643|       }
+ 644|     },
+ 645|     "node_modules/es-define-property": {
+ 646|       "version": "1.0.1",
+ 647|       "resolved": "https://registry.npmjs.org/es-define-property/-/es-define-property-1.0.1.tgz",
+ 648|       "integrity": "sha512-e3nRfgfUZ4rNGL232gUgX06QNyyez04KdjFrF+LTRoOXmrOgFKDg4BCdsjW8EnT69eqdYGmRpJwiPVYNrCaW3g==",
+ 649|       "engines": {
+ 650|         "node": ">= 0.4"
+ 651|       }
+ 652|     },
+ 653|     "node_modules/es-errors": {
+ 654|       "version": "1.3.0",
+ 655|       "resolved": "https://registry.npmjs.org/es-errors/-/es-errors-1.3.0.tgz",
+ 656|       "integrity": "sha512-Zf5H2Kxt2xjTvbJvP2ZWLEICxA6j+hAmMzIlypy4xcBg1vKVnx89Wy0GbS+kf5cwCVFFzdCFh2XSCFNULS6csw==",
+ 657|       "engines": {
+ 658|         "node": ">= 0.4"
+ 659|       }
+ 660|     },
+ 661|     "node_modules/es-object-atoms": {
+ 662|       "version": "1.1.1",
+ 663|       "resolved": "https://registry.npmjs.org/es-object-atoms/-/es-object-atoms-1.1.1.tgz",
+ 664|       "integrity": "sha512-FGgH2h8zKNim9ljj7dankFPcICIK9Cp5bm+c2gQSYePhpaG5+esrLODihIorn+Pe6FGJzWhXQotPv73jTaldXA==",
+ 665|       "dependencies": {
+ 666|         "es-errors": "^1.3.0"
+ 667|       },
+ 668|       "engines": {
+ 669|         "node": ">= 0.4"
+ 670|       }
+ 671|     },
+ 672|     "node_modules/es-set-tostringtag": {
+ 673|       "version": "2.1.0",
+ 674|       "resolved": "https://registry.npmjs.org/es-set-tostringtag/-/es-set-tostringtag-2.1.0.tgz",
+ 675|       "integrity": "sha512-j6vWzfrGVfyXxge+O0x5sh6cvxAog0a/4Rdd2K36zCMV5eJ+/+tOAngRO8cODMNWbVRdVlmGZQL2YS3yR8bIUA==",
+ 676|       "dependencies": {
+ 677|         "es-errors": "^1.3.0",
+ 678|         "get-intrinsic": "^1.2.6",
+ 679|         "has-tostringtag": "^1.0.2",
+ 680|         "hasown": "^2.0.2"
+ 681|       },
+ 682|       "engines": {
+ 683|         "node": ">= 0.4"
+ 684|       }
+ 685|     },
+ 686|     "node_modules/esbuild": {
+ 687|       "version": "0.18.20",
+ 688|       "resolved": "https://registry.npmjs.org/esbuild/-/esbuild-0.18.20.tgz",
+ 689|       "integrity": "sha512-ceqxoedUrcayh7Y7ZX6NdbbDzGROiyVBgC4PriJThBKSVPWnnFHZAkfI1lJT8QFkOwH4qOS2SJkS4wvpGl8BpA==",
+ 690|       "dev": true,
+ 691|       "hasInstallScript": true,
+ 692|       "bin": {
+ 693|         "esbuild": "bin/esbuild"
+ 694|       },
+ 695|       "engines": {
+ 696|         "node": ">=12"
+ 697|       },
+ 698|       "optionalDependencies": {
+ 699|         "@esbuild/android-arm": "0.18.20",
+ 700|         "@esbuild/android-arm64": "0.18.20",
+ 701|         "@esbuild/android-x64": "0.18.20",
+ 702|         "@esbuild/darwin-arm64": "0.18.20",
+ 703|         "@esbuild/darwin-x64": "0.18.20",
+ 704|         "@esbuild/freebsd-arm64": "0.18.20",
+ 705|         "@esbuild/freebsd-x64": "0.18.20",
+ 706|         "@esbuild/linux-arm": "0.18.20",
+ 707|         "@esbuild/linux-arm64": "0.18.20",
+ 708|         "@esbuild/linux-ia32": "0.18.20",
+ 709|         "@esbuild/linux-loong64": "0.18.20",
+ 710|         "@esbuild/linux-mips64el": "0.18.20",
+ 711|         "@esbuild/linux-ppc64": "0.18.20",
+ 712|         "@esbuild/linux-riscv64": "0.18.20",
+ 713|         "@esbuild/linux-s390x": "0.18.20",
+ 714|         "@esbuild/linux-x64": "0.18.20",
+ 715|         "@esbuild/netbsd-x64": "0.18.20",
+ 716|         "@esbuild/openbsd-x64": "0.18.20",
+ 717|         "@esbuild/sunos-x64": "0.18.20",
+ 718|         "@esbuild/win32-arm64": "0.18.20",
+ 719|         "@esbuild/win32-ia32": "0.18.20",
+ 720|         "@esbuild/win32-x64": "0.18.20"
+ 721|       }
+ 722|     },
+ 723|     "node_modules/estree-walker": {
+ 724|       "version": "2.0.2",
+ 725|       "resolved": "https://registry.npmjs.org/estree-walker/-/estree-walker-2.0.2.tgz",
+ 726|       "integrity": "sha512-Rfkk/Mp/DL7JVje3u18FxFujQlTNR2q6QfMSMB7AvCBx91NGj/ba3kCfza0f6dVDbw7YlRf/nDrn7pQrCCyQ/w=="
+ 727|     },
+ 728|     "node_modules/follow-redirects": {
+ 729|       "version": "1.15.9",
+ 730|       "resolved": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.15.9.tgz",
+ 731|       "integrity": "sha512-gew4GsXizNgdoRyqmyfMHyAmXsZDk6mHkSxZFCzW9gwlbtOW44CDtYavM+y+72qD/Vq2l550kMF52DT8fOLJqQ==",
+ 732|       "funding": [
+ 733|         {
+ 734|           "type": "individual",
+ 735|           "url": "https://github.com/sponsors/RubenVerborgh"
+ 736|         }
+ 737|       ],
+ 738|       "engines": {
+ 739|         "node": ">=4.0"
+ 740|       },
+ 741|       "peerDependenciesMeta": {
+ 742|         "debug": {
+ 743|           "optional": true
+ 744|         }
+ 745|       }
+ 746|     },
+ 747|     "node_modules/form-data": {
+ 748|       "version": "4.0.2",
+ 749|       "resolved": "https://registry.npmjs.org/form-data/-/form-data-4.0.2.tgz",
+ 750|       "integrity": "sha512-hGfm/slu0ZabnNt4oaRZ6uREyfCj6P4fT/n6A1rGV+Z0VdGXjfOhVUpkn6qVQONHGIFwmveGXyDs75+nr6FM8w==",
+ 751|       "dependencies": {
+ 752|         "asynckit": "^0.4.0",
+ 753|         "combined-stream": "^1.0.8",
+ 754|         "es-set-tostringtag": "^2.1.0",
+ 755|         "mime-types": "^2.1.12"
+ 756|       },
+ 757|       "engines": {
+ 758|         "node": ">= 6"
+ 759|       }
+ 760|     },
+ 761|     "node_modules/fsevents": {
+ 762|       "version": "2.3.3",
+ 763|       "resolved": "https://registry.npmjs.org/fsevents/-/fsevents-2.3.3.tgz",
+ 764|       "integrity": "sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==",
+ 765|       "dev": true,
+ 766|       "hasInstallScript": true,
+ 767|       "optional": true,
+ 768|       "os": [
+ 769|         "darwin"
+ 770|       ],
+ 771|       "engines": {
+ 772|         "node": "^8.16.0 || ^10.6.0 || >=11.0.0"
+ 773|       }
+ 774|     },
+ 775|     "node_modules/function-bind": {
+ 776|       "version": "1.1.2",
+ 777|       "resolved": "https://registry.npmjs.org/function-bind/-/function-bind-1.1.2.tgz",
+ 778|       "integrity": "sha512-7XHNxH7qX9xG5mIwxkhumTox/MIRNcOgDrxWsMt2pAr23WHp6MrRlN7FBSFpCpr+oVO0F744iUgR82nJMfG2SA==",
+ 779|       "funding": {
+ 780|         "url": "https://github.com/sponsors/ljharb"
+ 781|       }
+ 782|     },
+ 783|     "node_modules/get-intrinsic": {
+ 784|       "version": "1.2.7",
+ 785|       "resolved": "https://registry.npmjs.org/get-intrinsic/-/get-intrinsic-1.2.7.tgz",
+ 786|       "integrity": "sha512-VW6Pxhsrk0KAOqs3WEd0klDiF/+V7gQOpAvY1jVU/LHmaD/kQO4523aiJuikX/QAKYiW6x8Jh+RJej1almdtCA==",
+ 787|       "dependencies": {
+ 788|         "call-bind-apply-helpers": "^1.0.1",
+ 789|         "es-define-property": "^1.0.1",
+ 790|         "es-errors": "^1.3.0",
+ 791|         "es-object-atoms": "^1.0.0",
+ 792|         "function-bind": "^1.1.2",
+ 793|         "get-proto": "^1.0.0",
+ 794|         "gopd": "^1.2.0",
+ 795|         "has-symbols": "^1.1.0",
+ 796|         "hasown": "^2.0.2",
+ 797|         "math-intrinsics": "^1.1.0"
+ 798|       },
+ 799|       "engines": {
+ 800|         "node": ">= 0.4"
+ 801|       },
+ 802|       "funding": {
+ 803|         "url": "https://github.com/sponsors/ljharb"
+ 804|       }
+ 805|     },
+ 806|     "node_modules/get-proto": {
+ 807|       "version": "1.0.1",
+ 808|       "resolved": "https://registry.npmjs.org/get-proto/-/get-proto-1.0.1.tgz",
+ 809|       "integrity": "sha512-sTSfBjoXBp89JvIKIefqw7U2CCebsc74kiY6awiGogKtoSGbgjYE/G/+l9sF3MWFPNc9IcoOC4ODfKHfxFmp0g==",
+ 810|       "dependencies": {
+ 811|         "dunder-proto": "^1.0.1",
+ 812|         "es-object-atoms": "^1.0.0"
+ 813|       },
+ 814|       "engines": {
+ 815|         "node": ">= 0.4"
+ 816|       }
+ 817|     },
+ 818|     "node_modules/gopd": {
+ 819|       "version": "1.2.0",
+ 820|       "resolved": "https://registry.npmjs.org/gopd/-/gopd-1.2.0.tgz",
+ 821|       "integrity": "sha512-ZUKRh6/kUFoAiTAtTYPZJ3hw9wNxx+BIBOijnlG9PnrJsCcSjs1wyyD6vJpaYtgnzDrKYRSqf3OO6Rfa93xsRg==",
+ 822|       "engines": {
+ 823|         "node": ">= 0.4"
+ 824|       },
+ 825|       "funding": {
+ 826|         "url": "https://github.com/sponsors/ljharb"
+ 827|       }
+ 828|     },
+ 829|     "node_modules/has-symbols": {
+ 830|       "version": "1.1.0",
+ 831|       "resolved": "https://registry.npmjs.org/has-symbols/-/has-symbols-1.1.0.tgz",
+ 832|       "integrity": "sha512-1cDNdwJ2Jaohmb3sg4OmKaMBwuC48sYni5HUw2DvsC8LjGTLK9h+eb1X6RyuOHe4hT0ULCW68iomhjUoKUqlPQ==",
+ 833|       "engines": {
+ 834|         "node": ">= 0.4"
+ 835|       },
+ 836|       "funding": {
+ 837|         "url": "https://github.com/sponsors/ljharb"
+ 838|       }
+ 839|     },
+ 840|     "node_modules/has-tostringtag": {
+ 841|       "version": "1.0.2",
+ 842|       "resolved": "https://registry.npmjs.org/has-tostringtag/-/has-tostringtag-1.0.2.tgz",
+ 843|       "integrity": "sha512-NqADB8VjPFLM2V0VvHUewwwsw0ZWBaIdgo+ieHtK3hasLz4qeCRjYcqfB6AQrBggRKppKF8L52/VqdVsO47Dlw==",
+ 844|       "dependencies": {
+ 845|         "has-symbols": "^1.0.3"
+ 846|       },
+ 847|       "engines": {
+ 848|         "node": ">= 0.4"
+ 849|       },
+ 850|       "funding": {
+ 851|         "url": "https://github.com/sponsors/ljharb"
+ 852|       }
+ 853|     },
+ 854|     "node_modules/hasown": {
+ 855|       "version": "2.0.2",
+ 856|       "resolved": "https://registry.npmjs.org/hasown/-/hasown-2.0.2.tgz",
+ 857|       "integrity": "sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==",
+ 858|       "dependencies": {
+ 859|         "function-bind": "^1.1.2"
+ 860|       },
+ 861|       "engines": {
+ 862|         "node": ">= 0.4"
+ 863|       }
+ 864|     },
+ 865|     "node_modules/keycharm": {
+ 866|       "version": "0.4.0",
+ 867|       "resolved": "https://registry.npmjs.org/keycharm/-/keycharm-0.4.0.tgz",
+ 868|       "integrity": "sha512-TyQTtsabOVv3MeOpR92sIKk/br9wxS+zGj4BG7CR8YbK4jM3tyIBaF0zhzeBUMx36/Q/iQLOKKOT+3jOQtemRQ==",
+ 869|       "license": "(Apache-2.0 OR MIT)",
+ 870|       "peer": true
+ 871|     },
+ 872|     "node_modules/magic-string": {
+ 873|       "version": "0.30.17",
+ 874|       "resolved": "https://registry.npmjs.org/magic-string/-/magic-string-0.30.17.tgz",
+ 875|       "integrity": "sha512-sNPKHvyjVf7gyjwS4xGTaW/mCnF8wnjtifKBEhxfZ7E/S8tQ0rssrwGNn6q8JH/ohItJfSQp9mBtQYuTlH5QnA==",
+ 876|       "dependencies": {
+ 877|         "@jridgewell/sourcemap-codec": "^1.5.0"
+ 878|       }
+ 879|     },
+ 880|     "node_modules/math-intrinsics": {
+ 881|       "version": "1.1.0",
+ 882|       "resolved": "https://registry.npmjs.org/math-intrinsics/-/math-intrinsics-1.1.0.tgz",
+ 883|       "integrity": "sha512-/IXtbwEk5HTPyEwyKX6hGkYXxM9nbj64B+ilVJnC/R6B0pH5G4V3b0pVbL7DBj4tkhBAppbQUlf6F6Xl9LHu1g==",
+ 884|       "engines": {
+ 885|         "node": ">= 0.4"
+ 886|       }
+ 887|     },
+ 888|     "node_modules/mime-db": {
+ 889|       "version": "1.52.0",
+ 890|       "resolved": "https://registry.npmjs.org/mime-db/-/mime-db-1.52.0.tgz",
+ 891|       "integrity": "sha512-sPU4uV7dYlvtWJxwwxHD0PuihVNiE7TyAbQ5SWxDCB9mUYvOgroQOwYQQOKPJ8CIbE+1ETVlOoK1UC2nU3gYvg==",
+ 892|       "engines": {
+ 893|         "node": ">= 0.6"
+ 894|       }
+ 895|     },
+ 896|     "node_modules/mime-types": {
+ 897|       "version": "2.1.35",
+ 898|       "resolved": "https://registry.npmjs.org/mime-types/-/mime-types-2.1.35.tgz",
+ 899|       "integrity": "sha512-ZDY+bPm5zTTF+YpCrAU9nK0UgICYPT0QtT1NZWFv4s++TNkcgVaT0g6+4R2uI4MjQjzysHB1zxuWL50hzaeXiw==",
+ 900|       "dependencies": {
+ 901|         "mime-db": "1.52.0"
+ 902|       },
+ 903|       "engines": {
+ 904|         "node": ">= 0.6"
+ 905|       }
+ 906|     },
+ 907|     "node_modules/nanoid": {
+ 908|       "version": "3.3.8",
+ 909|       "resolved": "https://registry.npmjs.org/nanoid/-/nanoid-3.3.8.tgz",
+ 910|       "integrity": "sha512-WNLf5Sd8oZxOm+TzppcYk8gVOgP+l58xNy58D0nbUnOxOWRWvlcCV4kUF7ltmI6PsrLl/BgKEyS4mqsGChFN0w==",
+ 911|       "funding": [
+ 912|         {
+ 913|           "type": "github",
+ 914|           "url": "https://github.com/sponsors/ai"
+ 915|         }
+ 916|       ],
+ 917|       "bin": {
+ 918|         "nanoid": "bin/nanoid.cjs"
+ 919|       },
+ 920|       "engines": {
+ 921|         "node": "^10 || ^12 || ^13.7 || ^14 || >=15.0.1"
+ 922|       }
+ 923|     },
+ 924|     "node_modules/picocolors": {
+ 925|       "version": "1.1.1",
+ 926|       "resolved": "https://registry.npmjs.org/picocolors/-/picocolors-1.1.1.tgz",
+ 927|       "integrity": "sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA=="
+ 928|     },
+ 929|     "node_modules/postcss": {
+ 930|       "version": "8.5.3",
+ 931|       "resolved": "https://registry.npmjs.org/postcss/-/postcss-8.5.3.tgz",
+ 932|       "integrity": "sha512-dle9A3yYxlBSrt8Fu+IpjGT8SY8hN0mlaA6GY8t0P5PjIOZemULz/E2Bnm/2dcUOena75OTNkHI76uZBNUUq3A==",
+ 933|       "funding": [
+ 934|         {
+ 935|           "type": "opencollective",
+ 936|           "url": "https://opencollective.com/postcss/"
+ 937|         },
+ 938|         {
+ 939|           "type": "tidelift",
+ 940|           "url": "https://tidelift.com/funding/github/npm/postcss"
+ 941|         },
+ 942|         {
+ 943|           "type": "github",
+ 944|           "url": "https://github.com/sponsors/ai"
+ 945|         }
+ 946|       ],
+ 947|       "dependencies": {
+ 948|         "nanoid": "^3.3.8",
+ 949|         "picocolors": "^1.1.1",
+ 950|         "source-map-js": "^1.2.1"
+ 951|       },
+ 952|       "engines": {
+ 953|         "node": "^10 || ^12 || >=14"
+ 954|       }
+ 955|     },
+ 956|     "node_modules/prettier": {
+ 957|       "version": "3.0.2",
+ 958|       "resolved": "https://registry.npmjs.org/prettier/-/prettier-3.0.2.tgz",
+ 959|       "integrity": "sha512-o2YR9qtniXvwEZlOKbveKfDQVyqxbEIWn48Z8m3ZJjBjcCmUy3xZGIv+7AkaeuaTr6yPXJjwv07ZWlsWbEy1rQ==",
+ 960|       "dev": true,
+ 961|       "bin": {
+ 962|         "prettier": "bin/prettier.cjs"
+ 963|       },
+ 964|       "engines": {
+ 965|         "node": ">=14"
+ 966|       },
+ 967|       "funding": {
+ 968|         "url": "https://github.com/prettier/prettier?sponsor=1"
+ 969|       }
+ 970|     },
+ 971|     "node_modules/proxy-from-env": {
+ 972|       "version": "1.1.0",
+ 973|       "resolved": "https://registry.npmjs.org/proxy-from-env/-/proxy-from-env-1.1.0.tgz",
+ 974|       "integrity": "sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg=="
+ 975|     },
+ 976|     "node_modules/rollup": {
+ 977|       "version": "3.29.5",
+ 978|       "resolved": "https://registry.npmjs.org/rollup/-/rollup-3.29.5.tgz",
+ 979|       "integrity": "sha512-GVsDdsbJzzy4S/v3dqWPJ7EfvZJfCHiDqe80IyrF59LYuP+e6U1LJoUqeuqRbwAWoMNoXivMNeNAOf5E22VA1w==",
+ 980|       "dev": true,
+ 981|       "bin": {
+ 982|         "rollup": "dist/bin/rollup"
+ 983|       },
+ 984|       "engines": {
+ 985|         "node": ">=14.18.0",
+ 986|         "npm": ">=8.0.0"
+ 987|       },
+ 988|       "optionalDependencies": {
+ 989|         "fsevents": "~2.3.2"
+ 990|       }
+ 991|     },
+ 992|     "node_modules/source-map-js": {
+ 993|       "version": "1.2.1",
+ 994|       "resolved": "https://registry.npmjs.org/source-map-js/-/source-map-js-1.2.1.tgz",
+ 995|       "integrity": "sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==",
+ 996|       "engines": {
+ 997|         "node": ">=0.10.0"
+ 998|       }
+ 999|     },
+1000|     "node_modules/uuid": {
+1001|       "version": "9.0.1",
+1002|       "resolved": "https://registry.npmjs.org/uuid/-/uuid-9.0.1.tgz",
+1003|       "integrity": "sha512-b+1eJOlsR9K8HJpow9Ok3fiWOWSIcIzXodvv0rQjVoOVNpWMpxf1wZNpt4y9h10odCNrqnYp1OBzRktckBe3sA==",
+1004|       "funding": [
+1005|         "https://github.com/sponsors/broofa",
+1006|         "https://github.com/sponsors/ctavan"
+1007|       ],
+1008|       "license": "MIT",
+1009|       "peer": true,
+1010|       "bin": {
+1011|         "uuid": "dist/bin/uuid"
+1012|       }
+1013|     },
+1014|     "node_modules/vis-data": {
+1015|       "version": "7.1.9",
+1016|       "resolved": "https://registry.npmjs.org/vis-data/-/vis-data-7.1.9.tgz",
+1017|       "integrity": "sha512-COQsxlVrmcRIbZMMTYwD+C2bxYCFDNQ2EHESklPiInbD/Pk3JZ6qNL84Bp9wWjYjAzXfSlsNaFtRk+hO9yBPWA==",
+1018|       "funding": {
+1019|         "type": "opencollective",
+1020|         "url": "https://opencollective.com/visjs"
+1021|       },
+1022|       "peerDependencies": {
+1023|         "uuid": "^3.4.0 || ^7.0.0 || ^8.0.0 || ^9.0.0",
+1024|         "vis-util": "^5.0.1"
+1025|       }
+1026|     },
+1027|     "node_modules/vis-network": {
+1028|       "version": "9.1.9",
+1029|       "resolved": "https://registry.npmjs.org/vis-network/-/vis-network-9.1.9.tgz",
+1030|       "integrity": "sha512-Ft+hLBVyiLstVYSb69Q1OIQeh3FeUxHJn0WdFcq+BFPqs+Vq1ibMi2sb//cxgq1CP7PH4yOXnHxEH/B2VzpZYA==",
+1031|       "funding": {
+1032|         "type": "opencollective",
+1033|         "url": "https://opencollective.com/visjs"
+1034|       },
+1035|       "peerDependencies": {
+1036|         "@egjs/hammerjs": "^2.0.0",
+1037|         "component-emitter": "^1.3.0",
+1038|         "keycharm": "^0.2.0 || ^0.3.0 || ^0.4.0",
+1039|         "uuid": "^3.4.0 || ^7.0.0 || ^8.0.0 || ^9.0.0",
+1040|         "vis-data": "^6.3.0 || ^7.0.0",
+1041|         "vis-util": "^5.0.1"
+1042|       }
+1043|     },
+1044|     "node_modules/vis-util": {
+1045|       "version": "5.0.7",
+1046|       "resolved": "https://registry.npmjs.org/vis-util/-/vis-util-5.0.7.tgz",
+1047|       "integrity": "sha512-E3L03G3+trvc/X4LXvBfih3YIHcKS2WrP0XTdZefr6W6Qi/2nNCqZfe4JFfJU6DcQLm6Gxqj2Pfl+02859oL5A==",
+1048|       "engines": {
+1049|         "node": ">=8"
+1050|       },
+1051|       "funding": {
+1052|         "type": "opencollective",
+1053|         "url": "https://opencollective.com/visjs"
+1054|       },
+1055|       "peerDependencies": {
+1056|         "@egjs/hammerjs": "^2.0.0",
+1057|         "component-emitter": "^1.3.0 || ^2.0.0"
+1058|       }
+1059|     },
+1060|     "node_modules/vis.js": {
+1061|       "version": "1.1.0",
+1062|       "resolved": "https://registry.npmjs.org/vis.js/-/vis.js-1.1.0.tgz",
+1063|       "integrity": "sha512-xGTkJH4Es9orHRGeWo2OkFmX4mO0WayC0tdVTcZFwXFdRdFsWTjiF17Y8Zt530oxMTDUFyAciQcZuGBFoMdOTQ=="
+1064|     },
+1065|     "node_modules/vite": {
+1066|       "version": "4.5.9",
+1067|       "resolved": "https://registry.npmjs.org/vite/-/vite-4.5.9.tgz",
+1068|       "integrity": "sha512-qK9W4xjgD3gXbC0NmdNFFnVFLMWSNiR3swj957yutwzzN16xF/E7nmtAyp1rT9hviDroQANjE4HK3H4WqWdFtw==",
+1069|       "dev": true,
+1070|       "dependencies": {
+1071|         "esbuild": "^0.18.10",
+1072|         "postcss": "^8.4.27",
+1073|         "rollup": "^3.27.1"
+1074|       },
+1075|       "bin": {
+1076|         "vite": "bin/vite.js"
+1077|       },
+1078|       "engines": {
+1079|         "node": "^14.18.0 || >=16.0.0"
+1080|       },
+1081|       "funding": {
+1082|         "url": "https://github.com/vitejs/vite?sponsor=1"
+1083|       },
+1084|       "optionalDependencies": {
+1085|         "fsevents": "~2.3.2"
+1086|       },
+1087|       "peerDependencies": {
+1088|         "@types/node": ">= 14",
+1089|         "less": "*",
+1090|         "lightningcss": "^1.21.0",
+1091|         "sass": "*",
+1092|         "stylus": "*",
+1093|         "sugarss": "*",
+1094|         "terser": "^5.4.0"
+1095|       },
+1096|       "peerDependenciesMeta": {
+1097|         "@types/node": {
+1098|           "optional": true
+1099|         },
+1100|         "less": {
+1101|           "optional": true
+1102|         },
+1103|         "lightningcss": {
+1104|           "optional": true
+1105|         },
+1106|         "sass": {
+1107|           "optional": true
+1108|         },
+1109|         "stylus": {
+1110|           "optional": true
+1111|         },
+1112|         "sugarss": {
+1113|           "optional": true
+1114|         },
+1115|         "terser": {
+1116|           "optional": true
+1117|         }
+1118|       }
+1119|     },
+1120|     "node_modules/vue": {
+1121|       "version": "3.5.13",
+1122|       "resolved": "https://registry.npmjs.org/vue/-/vue-3.5.13.tgz",
+1123|       "integrity": "sha512-wmeiSMxkZCSc+PM2w2VRsOYAZC8GdipNFRTsLSfodVqI9mbejKeXEGr8SckuLnrQPGe3oJN5c3K0vpoU9q/wCQ==",
+1124|       "dependencies": {
+1125|         "@vue/compiler-dom": "3.5.13",
+1126|         "@vue/compiler-sfc": "3.5.13",
+1127|         "@vue/runtime-dom": "3.5.13",
+1128|         "@vue/server-renderer": "3.5.13",
+1129|         "@vue/shared": "3.5.13"
+1130|       },
+1131|       "peerDependencies": {
+1132|         "typescript": "*"
+1133|       },
+1134|       "peerDependenciesMeta": {
+1135|         "typescript": {
+1136|           "optional": true
+1137|         }
+1138|       }
+1139|     }
+1140|   }
+1141| }
+===== FIM DO ARQUIVO: mininet-gui-frontend/package-lock.json =====
+
+===== INÍCIO DO ARQUIVO: mininet-gui-frontend/package.json (24 linhas) =====
+ 1| {
+ 2|   "name": "mininet-gui",
+ 3|   "version": "0.0.1",
+ 4|   "private": true,
+ 5|   "scripts": {
+ 6|     "dev": "vite",
+ 7|     "build": "vite build",
+ 8|     "preview": "vite preview"
+ 9|   },
+10|   "dependencies": {
+11|     "axios": "^1.2.1",
+12|     "dotenv": "^16.4.7",
+13|     "vis-data": "^7.1.4",
+14|     "vis-network": "^9.1.2",
+15|     "vis-util": "^5.0.3",
+16|     "vis.js": "^1.1.0",
+17|     "vue": "^3.2.45"
+18|   },
+19|   "devDependencies": {
+20|     "@vitejs/plugin-vue": "^4.0.0",
+21|     "prettier": "3.0.2",
+22|     "vite": "^4.0.0"
+23|   }
+24| }
+===== FIM DO ARQUIVO: mininet-gui-frontend/package.json =====
+
+===== INÍCIO DO ARQUIVO: mininet-gui-frontend/src/App.vue (42 linhas) =====
+ 1| <script setup>
+ 2| import NetworkGraph from "./components/NetworkGraph.vue";
+ 3| </script>
+ 4| 
+ 5| <template>
+ 6|   <NetworkGraph />
+ 7| </template>
+ 8| 
+ 9| <style>
+10| @import url("https://fonts.googleapis.com/css?family=Fira Sans");
+11| 
+12| html {
+13|   height: 100%;
+14|   width: 100%;
+15| }
+16| 
+17| :root {
+18|   /* CSS HEX */
+19|   --middle-blue: #89d2dcff;
+20|   --slate-blue: #6564dbff;
+21|   --persian-blue: #232ed1ff;
+22|   --oxford-blue: #101d42ff;
+23|   --rich-black-fogra-29: #0d1317ff;
+24| }
+25| 
+26| body {
+27|   height: 100%;
+28|   width: 100%;
+29|   margin: 0;
+30|   padding: 0;
+31|   background-color: var(--oxford-blue);
+32| }
+33| 
+34| #app {
+35|   /* display: flex;
+36|     flex-direction: column; */
+37|   display: block;
+38|   height: 100%;
+39|   margin: 0;
+40|   padding: 0;
+41| }
+42| </style>
+===== FIM DO ARQUIVO: mininet-gui-frontend/src/App.vue =====
+
+===== INÍCIO DO ARQUIVO: mininet-gui-frontend/src/assets/controller.svg (6 linhas) =====
+1| <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+2| <svg fill="#000000" width="800px" height="800px" viewBox="0 0 36 36" version="1.1"  preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+3|     <title>server-solid</title>
+4|     <path class="clr-i-solid clr-i-solid-path-1" d="M26.5,2h-17C8.7,2,8,2.7,8,3.5V34h20V3.5C28,2.7,27.3,2,26.5,2z M18,30.5c-1.5,0-2.8-1.2-2.8-2.8S16.5,25,18,25s2.8,1.2,2.8,2.8S19.5,30.5,18,30.5z M23,22.6H13V21h10V22.6z M24,11.6H12V10h12V11.6z M24,7.6H12V6h12V7.6z"></path><circle class="clr-i-solid clr-i-solid-path-2" cx="18" cy="27.8" r="1.2"></circle>
+5|     <rect x="0" y="0" width="36" height="36" fill-opacity="0"/>
+6| </svg>
+===== FIM DO ARQUIVO: mininet-gui-frontend/src/assets/controller.svg =====
+
+===== INÍCIO DO ARQUIVO: mininet-gui-frontend/src/assets/ethernet-cable-off.svg (1 linhas) =====
+1| <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="m11 3h2v4h-2zm-3 1h2v4h4v-4h2v7h-3.18l-4.82-4.82zm12 16.72-1.27 1.28-4.73-4.73v4.73h-4v-8.73l-8-8 1.28-1.27z"/></svg>
+===== FIM DO ARQUIVO: mininet-gui-frontend/src/assets/ethernet-cable-off.svg =====
+
+===== INÍCIO DO ARQUIVO: mininet-gui-frontend/src/assets/ethernet-cable.svg (1 linhas) =====
+1| <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="m11 3v4h2v-4zm-3 1v7h8v-7h-2v4h-4v-4zm2 8v10h4v-10z"/></svg>
+===== FIM DO ARQUIVO: mininet-gui-frontend/src/assets/ethernet-cable.svg =====
+
+===== INÍCIO DO ARQUIVO: mininet-gui-frontend/src/assets/host.svg (6 linhas) =====
+1| <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+2| <svg fill="#000000" width="800px" height="800px" viewBox="0 0 36 36" version="1.1"  preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+3|     <title>computer-solid</title>
+4|     <path d="M23.81,26c-.35.9-.94,1.5-1.61,1.5H13.74c-.68,0-1.26-.6-1.61-1.5H1v1.75A2.45,2.45,0,0,0,3.6,30H32.4A2.45,2.45,0,0,0,35,27.75V26Z" class="clr-i-solid clr-i-solid-path-1"></path><path d="M7,10H29V24h3V7.57A1.54,1.54,0,0,0,30.5,6H5.5A1.54,1.54,0,0,0,4,7.57V24H7Z" class="clr-i-solid clr-i-solid-path-2"></path>
+5|     <rect x="0" y="0" width="36" height="36" fill-opacity="0"/>
+6| </svg>
+===== FIM DO ARQUIVO: mininet-gui-frontend/src/assets/host.svg =====
+
+===== INÍCIO DO ARQUIVO: mininet-gui-frontend/src/assets/light-controller.svg (64 linhas) =====
+ 1| <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+ 2| <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+ 3| 
+ 4| <svg
+ 5|    fill="#000000"
+ 6|    width="800px"
+ 7|    height="800px"
+ 8|    viewBox="0 0 36 36"
+ 9|    version="1.1"
+10|    preserveAspectRatio="xMidYMid meet"
+11|    id="svg1"
+12|    sodipodi:docname="light-controller.svg"
+13|    inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+14|    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+15|    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+16|    xmlns="http://www.w3.org/2000/svg"
+17|    xmlns:svg="http://www.w3.org/2000/svg"
+18|    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+19|    xmlns:cc="http://creativecommons.org/ns#"
+20|    xmlns:dc="http://purl.org/dc/elements/1.1/">
+21|   <defs
+22|      id="defs1" />
+23|   <sodipodi:namedview
+24|      id="namedview1"
+25|      pagecolor="#ffffff"
+26|      bordercolor="#000000"
+27|      borderopacity="0.25"
+28|      inkscape:showpageshadow="2"
+29|      inkscape:pageopacity="0.0"
+30|      inkscape:pagecheckerboard="0"
+31|      inkscape:deskcolor="#d1d1d1"
+32|      inkscape:zoom="1.00875"
+33|      inkscape:cx="399.50434"
+34|      inkscape:cy="400"
+35|      inkscape:window-width="1920"
+36|      inkscape:window-height="1009"
+37|      inkscape:window-x="-8"
+38|      inkscape:window-y="-8"
+39|      inkscape:window-maximized="1"
+40|      inkscape:current-layer="svg1" />
+41|   <title
+42|      id="title1">server-solid</title>
+43|   <path
+44|      class="clr-i-solid clr-i-solid-path-1"
+45|      d="M26.5,2h-17C8.7,2,8,2.7,8,3.5V34h20V3.5C28,2.7,27.3,2,26.5,2z M18,30.5c-1.5,0-2.8-1.2-2.8-2.8S16.5,25,18,25s2.8,1.2,2.8,2.8S19.5,30.5,18,30.5z M23,22.6H13V21h10V22.6z M24,11.6H12V10h12V11.6z M24,7.6H12V6h12V7.6z"
+46|      id="path1"
+47|      style="fill:#ffffff" />
+48|   <circle
+49|      class="clr-i-solid clr-i-solid-path-2"
+50|      cx="18"
+51|      cy="27.8"
+52|      r="1.2"
+53|      id="circle1"
+54|      style="fill:#ffffff" />
+55|   <metadata
+56|      id="metadata3">
+57|     <rdf:RDF>
+58|       <cc:Work
+59|          rdf:about="">
+60|         <dc:title>server-solid</dc:title>
+61|       </cc:Work>
+62|     </rdf:RDF>
+63|   </metadata>
+64| </svg>
+===== FIM DO ARQUIVO: mininet-gui-frontend/src/assets/light-controller.svg =====
+
+===== INÍCIO DO ARQUIVO: mininet-gui-frontend/src/assets/light-host.svg (62 linhas) =====
+ 1| <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+ 2| <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+ 3| 
+ 4| <svg
+ 5|    fill="#000000"
+ 6|    width="800px"
+ 7|    height="800px"
+ 8|    viewBox="0 0 36 36"
+ 9|    version="1.1"
+10|    preserveAspectRatio="xMidYMid meet"
+11|    id="svg2"
+12|    sodipodi:docname="light-host.svg"
+13|    inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+14|    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+15|    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+16|    xmlns="http://www.w3.org/2000/svg"
+17|    xmlns:svg="http://www.w3.org/2000/svg"
+18|    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+19|    xmlns:cc="http://creativecommons.org/ns#"
+20|    xmlns:dc="http://purl.org/dc/elements/1.1/">
+21|   <defs
+22|      id="defs2" />
+23|   <sodipodi:namedview
+24|      id="namedview2"
+25|      pagecolor="#ffffff"
+26|      bordercolor="#000000"
+27|      borderopacity="0.25"
+28|      inkscape:showpageshadow="2"
+29|      inkscape:pageopacity="0.0"
+30|      inkscape:pagecheckerboard="0"
+31|      inkscape:deskcolor="#d1d1d1"
+32|      inkscape:zoom="1.00875"
+33|      inkscape:cx="399.50434"
+34|      inkscape:cy="400"
+35|      inkscape:window-width="1920"
+36|      inkscape:window-height="1009"
+37|      inkscape:window-x="-8"
+38|      inkscape:window-y="-8"
+39|      inkscape:window-maximized="1"
+40|      inkscape:current-layer="svg2" />
+41|   <title
+42|      id="title1">computer-solid</title>
+43|   <path
+44|      d="M23.81,26c-.35.9-.94,1.5-1.61,1.5H13.74c-.68,0-1.26-.6-1.61-1.5H1v1.75A2.45,2.45,0,0,0,3.6,30H32.4A2.45,2.45,0,0,0,35,27.75V26Z"
+45|      class="clr-i-solid clr-i-solid-path-1"
+46|      id="path1"
+47|      style="fill:#ffffff" />
+48|   <path
+49|      d="M7,10H29V24h3V7.57A1.54,1.54,0,0,0,30.5,6H5.5A1.54,1.54,0,0,0,4,7.57V24H7Z"
+50|      class="clr-i-solid clr-i-solid-path-2"
+51|      id="path2"
+52|      style="fill:#ffffff" />
+53|   <metadata
+54|      id="metadata2">
+55|     <rdf:RDF>
+56|       <cc:Work
+57|          rdf:about="">
+58|         <dc:title>computer-solid</dc:title>
+59|       </cc:Work>
+60|     </rdf:RDF>
+61|   </metadata>
+62| </svg>
+===== FIM DO ARQUIVO: mininet-gui-frontend/src/assets/light-host.svg =====
+
+===== INÍCIO DO ARQUIVO: mininet-gui-frontend/src/assets/light-switch.svg (57 linhas) =====
+ 1| <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+ 2| <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+ 3| 
+ 4| <svg
+ 5|    fill="#000000"
+ 6|    width="800px"
+ 7|    height="800px"
+ 8|    viewBox="0 0 36 36"
+ 9|    version="1.1"
+10|    preserveAspectRatio="xMidYMid meet"
+11|    id="svg1"
+12|    sodipodi:docname="light-switch.svg"
+13|    inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+14|    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+15|    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+16|    xmlns="http://www.w3.org/2000/svg"
+17|    xmlns:svg="http://www.w3.org/2000/svg"
+18|    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+19|    xmlns:cc="http://creativecommons.org/ns#"
+20|    xmlns:dc="http://purl.org/dc/elements/1.1/">
+21|   <defs
+22|      id="defs1" />
+23|   <sodipodi:namedview
+24|      id="namedview1"
+25|      pagecolor="#ffffff"
+26|      bordercolor="#000000"
+27|      borderopacity="0.25"
+28|      inkscape:showpageshadow="2"
+29|      inkscape:pageopacity="0.0"
+30|      inkscape:pagecheckerboard="0"
+31|      inkscape:deskcolor="#d1d1d1"
+32|      inkscape:zoom="1.00875"
+33|      inkscape:cx="399.50434"
+34|      inkscape:cy="400"
+35|      inkscape:window-width="1920"
+36|      inkscape:window-height="1009"
+37|      inkscape:window-x="-8"
+38|      inkscape:window-y="-8"
+39|      inkscape:window-maximized="1"
+40|      inkscape:current-layer="svg1" />
+41|   <title
+42|      id="title1">network-switch-solid</title>
+43|   <path
+44|      d="M33.91,18.47,30.78,8.41A2,2,0,0,0,28.87,7H7.13A2,2,0,0,0,5.22,8.41L2.09,18.48a2,2,0,0,0-.09.59V27a2,2,0,0,0,2,2H32a2,2,0,0,0,2-2V19.06A2,2,0,0,0,33.91,18.47ZM8.92,25H7.12V22h1.8Zm5,0h-1.8V22h1.8Zm5,0h-1.8V22h1.8Zm5,0H22.1V22h1.8Zm5,0H27.1V22h1.8ZM31,19.4H5V18H31Z"
+45|      class="clr-i-solid clr-i-solid-path-1"
+46|      id="path1"
+47|      style="fill:#ffffff" />
+48|   <metadata
+49|      id="metadata1">
+50|     <rdf:RDF>
+51|       <cc:Work
+52|          rdf:about="">
+53|         <dc:title>network-switch-solid</dc:title>
+54|       </cc:Work>
+55|     </rdf:RDF>
+56|   </metadata>
+57| </svg>
+===== FIM DO ARQUIVO: mininet-gui-frontend/src/assets/light-switch.svg =====
+
+===== INÍCIO DO ARQUIVO: mininet-gui-frontend/src/assets/logo.svg (1 linhas) =====
+1| <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 261.76 226.69"  xmlns:v="https://vecta.io/nano"><path d="M161.096.001l-30.225 52.351L100.647.001H-.005l130.877 226.688L261.749.001z" fill="#41b883"/><path d="M161.096.001l-30.225 52.351L100.647.001H52.346l78.526 136.01L209.398.001z" fill="#34495e"/></svg>
+===== FIM DO ARQUIVO: mininet-gui-frontend/src/assets/logo.svg =====
+
+===== INÍCIO DO ARQUIVO: mininet-gui-frontend/src/assets/router.svg (6 linhas) =====
+1| <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+2| <svg fill="#000000" width="800px" height="800px" viewBox="0 0 36 36" version="1.1"  preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+3|     <title>router-solid</title>
+4|     <path d="M18,1.67a16,16,0,1,0,16,16A16,16,0,0,0,18,1.67ZM13.86,9.92a.8.8,0,0,1,1.13,0l2.21,2.19V5.93a.8.8,0,0,1,1.6,0v6.18L21,9.92a.8.8,0,1,1,1.13,1.14L18,15.15l-4.14-4.1A.8.8,0,0,1,13.86,9.92ZM10.32,21.74a.8.8,0,0,1-1.13,0L5,17.67l4.19-4.09a.8.8,0,1,1,1.12,1.14l-2.2,2.14h6.27a.8.8,0,0,1,0,1.6H8.11l2.2,2.15A.8.8,0,0,1,10.32,21.74Zm11.82,3.67a.8.8,0,0,1-1.13,0L18.8,23.23V29.4a.8.8,0,0,1-1.6,0V23.23L15,25.42a.8.8,0,1,1-1.13-1.14L18,20.18l4.14,4.1A.8.8,0,0,1,22.14,25.41Zm4.67-3.66a.8.8,0,1,1-1.12-1.14l2.2-2.15H21.63a.8.8,0,0,1,0-1.6h6.27l-2.2-2.14a.8.8,0,1,1,1.12-1.14L31,17.67Z" class="clr-i-solid clr-i-solid-path-1"></path>
+5|     <rect x="0" y="0" width="36" height="36" fill-opacity="0"/>
+6| </svg>
+===== FIM DO ARQUIVO: mininet-gui-frontend/src/assets/router.svg =====
+
+===== INÍCIO DO ARQUIVO: mininet-gui-frontend/src/assets/switch.svg (6 linhas) =====
+1| <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+2| <svg fill="#000000" width="800px" height="800px" viewBox="0 0 36 36" version="1.1"  preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+3|     <title>network-switch-solid</title>
+4|     <path d="M33.91,18.47,30.78,8.41A2,2,0,0,0,28.87,7H7.13A2,2,0,0,0,5.22,8.41L2.09,18.48a2,2,0,0,0-.09.59V27a2,2,0,0,0,2,2H32a2,2,0,0,0,2-2V19.06A2,2,0,0,0,33.91,18.47ZM8.92,25H7.12V22h1.8Zm5,0h-1.8V22h1.8Zm5,0h-1.8V22h1.8Zm5,0H22.1V22h1.8Zm5,0H27.1V22h1.8ZM31,19.4H5V18H31Z" class="clr-i-solid clr-i-solid-path-1"></path>
+5|     <rect x="0" y="0" width="36" height="36" fill-opacity="0"/>
+6| </svg>
+===== FIM DO ARQUIVO: mininet-gui-frontend/src/assets/switch.svg =====
+
+===== INÍCIO DO ARQUIVO: mininet-gui-frontend/src/components/ControllerForm.vue (59 linhas) =====
+ 1| <template>
+ 2|     <div>
+ 3|       <form @submit.prevent="submitForm">
+ 4|         <label for="type">Controller Type:</label>
+ 5|         <select id="type" v-model="controllerType">
+ 6|           <option value="default">Default</option>
+ 7|           <option value="remote">Remote</option>
+ 8|         </select>
+ 9|   
+10|         <div v-if="controllerType === 'remote'" class="remote-options">
+11|           <label for="ip">IP:</label>
+12|           <input id="ip" type="text" v-model="ip" required />
+13|   
+14|           <label for="port">Port:</label>
+15|           <input id="port" type="number" v-model="port" required />
+16|         </div>
+17|         <br>
+18|         <button class="submit-button" type="submit">Submit</button>
+19|       </form>
+20|     </div>
+21|   </template>
+22|   
+23|   <script>
+24|   export default {
+25|     data() {
+26|       return {
+27|         controllerType: "default",
+28|         ip: "",
+29|         port: "",
+30|       };
+31|     },
+32|     methods: {
+33|       submitForm() {
+34|         const formData = {
+35|           type: this.controllerType,
+36|           ip: this.controllerType === "remote" ? this.ip : null,
+37|           port: this.controllerType === "remote" ? this.port : null,
+38|         };
+39|         this.$emit("form-submit", formData);
+40|       },
+41|     },
+42|   };
+43|   </script>
+44|   
+45|   <style scoped>
+46|   .remote-options {
+47|     margin-top: 1rem;
+48|   }
+49| 
+50|   label {
+51|     color: black;
+52|   }
+53|   
+54|   .submit-button {
+55|     float: right;
+56| 
+57|   }
+58|   </style>
+59|   
+===== FIM DO ARQUIVO: mininet-gui-frontend/src/components/ControllerForm.vue =====
+
+===== INÍCIO DO ARQUIVO: mininet-gui-frontend/src/components/Header.vue (63 linhas) =====
+ 1| <template>
+ 2|   <header>
+ 3|     <div class="header-menu">
+ 4|       <button>File</button>
+ 5|       <button>Edit</button>
+ 6|       <button>View</button>
+ 7|       <button>Run</button>
+ 8|     </div>
+ 9|     <p class="header-logo">Mininet-GUI</p>
+10|   </header>
+11| </template>
+12| 
+13| <style>
+14| header {
+15|   position: absolute;
+16|   background-color: #0d1317ff;
+17|   width: 95%;
+18|   /* height: fit-content; */
+19|   margin: 0.5%;
+20|   margin-top: 0%;
+21|   height: 10%;
+22|   border-radius: 5px;
+23|   /* padding: 10px; */
+24| }
+25| 
+26| .header-menu {
+27|   position: absolute;
+28|   bottom: 0;
+29| }
+30| 
+31| .header-menu button {
+32|   font-size: 12pt;
+33|   font-family: Fira Sans;
+34|   margin: 5pt;
+35|   padding: 3pt 5pt 3pt 5pt;
+36|   border: none;
+37|   background-color: #0d1317ff;
+38|   color: white;
+39|   width: fit-content;
+40|   height: fit-content;
+41| }
+42| 
+43| .header-menu button:active {
+44|   background-color: var(--slate-blue);
+45|   border-radius: 5px 5px 5px 5px;
+46|   /* color: black; */
+47| }
+48| 
+49| .header-logo {
+50|   user-select: none;
+51|   font-size: 13pt;
+52|   font-family: monospace;
+53|   margin: 1%;
+54|   margin-right: 2%;
+55|   border-radius: 0px 15px 0px 30px;
+56|   padding: 8pt;
+57|   float: right;
+58|   background-color: var(--slate-blue);
+59|   color: black;
+60|   width: fit-content;
+61|   height: fit-content;
+62| }
+63| </style>
+===== FIM DO ARQUIVO: mininet-gui-frontend/src/components/Header.vue =====
+
+===== INÍCIO DO ARQUIVO: mininet-gui-frontend/src/components/Modal.vue (95 linhas) =====
+ 1| <script setup>
+ 2| const props = defineProps({
+ 3|   show: Boolean
+ 4| })
+ 5| </script>
+ 6| 
+ 7| <template>
+ 8|   <Transition name="modal">
+ 9|     <div v-if="show" class="modal-mask">
+10|       <div class="modal-container">
+11|         <div class="modal-header">
+12|           <slot name="header">default header</slot>
+13|           <button
+14|               class="modal-default-button"
+15|               @click="$emit('close')"
+16|             >X</button>
+17|         </div>
+18| 
+19|         <div class="modal-body">
+20|           <slot name="body">default body</slot>
+21|         </div>
+22|       </div>
+23|     </div>
+24|   </Transition>
+25| </template>
+26| 
+27| <style>
+28| .modal-mask {
+29|   position: fixed;
+30|   z-index: 9998;
+31|   top: 0;
+32|   left: 0;
+33|   width: 100%;
+34|   height: 100%;
+35|   background-color: rgba(0, 0, 0, 0.5);
+36|   display: flex;
+37|   align-items: center;
+38|   justify-content: center;
+39|   transition: opacity 0.3s ease;
+40|   overflow: hidden;
+41| }
+42| 
+43| .modal-container {
+44|   min-width: 200px;
+45|   max-width: 90vw;
+46|   width: auto;
+47|   max-height: 80vh;
+48|   overflow-y: auto;
+49|   padding: 20px 30px;
+50|   background-color: #fff;
+51|   border-radius: 8px;
+52|   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
+53|   transition: all 0.3s ease;
+54| }
+55| 
+56| .modal-header {
+57|   display: flex;
+58|   justify-content: space-between;
+59|   align-items: center;
+60|   flex-direction: row;
+61| }
+62| 
+63| .modal-header h3 {
+64|   margin-top: 0;
+65|   color: #42b983;
+66| }
+67| 
+68| .modal-body {
+69|   margin: 10px 0;
+70|   word-wrap: break-word;
+71|   text-align: center;
+72| }
+73| 
+74| .modal-default-button {
+75|   background: none;
+76|   color: inherit;
+77|   border: none;
+78|   padding: 0;
+79|   cursor: pointer;
+80|   outline: inherit;
+81| }
+82| 
+83| .modal-enter-from {
+84|   opacity: 0;
+85| }
+86| 
+87| .modal-leave-to {
+88|   opacity: 0;
+89| }
+90| 
+91| .modal-enter-from .modal-container,
+92| .modal-leave-to .modal-container {
+93|   transform: scale(1.1);
+94| }
+95| </style>
+===== FIM DO ARQUIVO: mininet-gui-frontend/src/components/Modal.vue =====
+
+===== INÍCIO DO ARQUIVO: mininet-gui-frontend/src/components/NetworkGraph.vue (687 linhas) =====
+  1| <script setup>
+  2| import { Network } from "vis-network/peer";
+  3| import { DataSet } from "vis-data/peer";
+  4| 
+  5| import {
+  6|   getHosts,
+  7|   getSwitches,
+  8|   getControllers,
+  9|   getEdges,
+ 10|   getNodeStats,
+ 11|   deployHost,
+ 12|   deployLink,
+ 13|   deployController,
+ 14|   deploySwitch,
+ 15|   assocSwitch,
+ 16|   isNetworkStarted,
+ 17|   requestResetNetwork,
+ 18|   requestRunPingall,
+ 19|   deleteNode,
+ 20|   deleteLink,
+ 21|   updateNodePosition,
+ 22|   requestExportNetwork,
+ 23|   requestExportMininetScript,
+ 24|   requestImportNetwork,
+ 25|   removeAssociation,
+ 26| } from "../core/api";
+ 27| import { options } from "../core/options";
+ 28| import Side from "./Side.vue";
+ 29| import Modal from "./Modal.vue";
+ 30| import Webshell from "./Webshell.vue";
+ 31| import NodeStats from "./NodeStats.vue";
+ 32| import PingallResults from "./PingallResults.vue";
+ 33| import ControllerForm from "./ControllerForm.vue";
+ 34| import TopologyForm from "./TopologyForm.vue";
+ 35| 
+ 36| import switchImg from "@/assets/light-switch.svg";
+ 37| import hostImg from "@/assets/light-host.svg";
+ 38| import controllerImg from "@/assets/light-controller.svg";
+ 39| </script>
+ 40| 
+ 41| <template>
+ 42|   <div class="layout">
+ 43|     <!-- Side panel (left) -->
+ 44| 
+ 45|       <div class="side-container">
+ 46|         <Side
+ 47|           @toggleAddEdgeMode="handleToggleAddEdgeMode"
+ 48|           @deleteSelected="doDeleteSelected"
+ 49|           @runPingall="showPingallModal"
+ 50|           @closeAllActiveModes="closeAllActiveModes"
+ 51|           @toggleShowHosts="toggleShowHosts"
+ 52|           @toggleShowControllers="toggleShowControllers"
+ 53|           @createTopology="showTopologyFormModal"
+ 54|           @resetTopology="resetTopology"
+ 55|           @exportTopology="exportTopology"
+ 56|           @importTopology="importTopology"
+ 57|           @doSelectAll="doSelectAll"
+ 58|           @exportMininetScript="exportMininetScript"
+ 59|           @keydown.ctrl.a.prevent="doSelectAll"
+ 60|           :networkStarted="networkStarted"
+ 61|           :addEdgeMode="addEdgeMode"
+ 62|         />
+ 63|       </div>
+ 64|     
+ 65|     <!-- Main Content (Graph + WebShell) -->
+ 66|     <div class="main-content">
+ 67|       <div ref="graph" id="network-graph" class="network-graph"
+ 68|         @drop.prevent="handleDrop"
+ 69|         @dragenter.prevent
+ 70|         @dragover.prevent
+ 71|         @keydown.esc="closeAllActiveModes"
+ 72|         @keydown.h="toggleShowHosts"
+ 73|         @keydown.c="toggleShowControllers"
+ 74|         @keydown.e="enterAddEdgeMode"
+ 75|         @keydown.d="doDeleteSelected"
+ 76|         @keydown.delete="doDeleteSelected"
+ 77|         @keydown.ctrl.a.prevent="doSelectAll"
+ 78|       ></div>
+ 79| 
+ 80|       <!-- WebShell at the bottom -->
+ 81|       <webshell class="webshell" :nodes="nodes" />
+ 82|     </div>
+ 83|   </div>
+ 84| 
+ 85|   <Teleport to="body">
+ 86|     <modal :show="showModal" @close="closeModal" @keydown.esc="closeModal">
+ 87|       <template #header>
+ 88|         <h3>{{ modalHeader }}</h3>
+ 89|       </template>
+ 90|       <template #body>
+ 91|         <node-stats v-if="modalOption === 'nodeStats'" :stats="modalData" />
+ 92|         <pingall-results v-if="modalOption === 'pingall'" :pingResults="modalData" />
+ 93|         <controller-form v-if="modalOption === 'controllerForm'" @form-submit="handleControllerFormSubmit" />
+ 94|         <topology-form v-if="modalOption === 'topologyForm'" :controllers="controllers" @form-submit="handleTopologyFormSubmit" />
+ 95|       </template>
+ 96|     </modal>
+ 97|   </Teleport>
+ 98| </template>
+ 99| 
+100| <script>
+101| export default {
+102|   name: "NetworkGraph",
+103|   components: {
+104|     Side,
+105|     NodeStats,
+106|     PingallResults,
+107|     ControllerForm,
+108|     TopologyForm,
+109|   },
+110|   data() {
+111|     return {
+112|       hosts: {},
+113|       switches: {},
+114|       controllers: {},
+115|       links: [],
+116|       nodes: new DataSet(),
+117|       edges: new DataSet(),
+118|       addEdgeMode: false,
+119|       networkStarted: true,
+120|       showModal: false,
+121|       modalOption: null,
+122|       modalData: {},
+123|     };
+124|   },
+125|   computed: {
+126|     network() {
+127|       console.log("computed ran again");
+128|       return this.computeNetwork();
+129|     }
+130|   },
+131|   async mounted() {
+132|     this.setupNetwork();
+133|   },
+134|   methods: {
+135|     computeNetwork() {
+136|       if (this.network)
+137|         return this.network;
+138|       return new Network(this.$refs.graph, {nodes: this.nodes, edges: this.edges}, options);
+139|     },
+140|     async setupNetwork() {
+141|       this.networkStarted = await isNetworkStarted();
+142|       this.hosts = await getHosts();
+143|       this.switches = await getSwitches();
+144|       this.controllers = await getControllers();
+145| 
+146|       Object.values(this.hosts).map((host) => {
+147|         host.shape = "circularImage";
+148| 
+149|         host.color = {
+150|           background: "#252526",
+151|           border: "#00000000",
+152|           highlight: { background: "#007acc", border: "#007acc" },
+153|         };
+154|         host.image = hostImg;
+155|         return host;
+156|       });
+157| 
+158|       Object.values(this.switches).map((sw) => {
+159|         sw.shape = "circularImage";
+160|         sw.color = {
+161|           background: "#252526",
+162|           border: "#00000000",
+163|           highlight: { background: "#007acc", border: "#007acc" },
+164|         };
+165|         sw.image = switchImg;
+166|         return sw;
+167|       });
+168| 
+169|       Object.values(this.controllers).map((ctl) => {
+170|         ctl.shape = "circularImage";
+171|         ctl.color = {
+172|           background: "#252526",
+173|           border: "#00000000",
+174|           highlight: { background: "#007acc", border: "#007acc" },
+175|         };
+176|         ctl.image = controllerImg;
+177|         return ctl;
+178|       });
+179| 
+180|       this.links = await getEdges();
+181|       for (const link of this.links) {
+182|         this.edges.add({
+183|           from: link[0],
+184|           to: link[1],
+185|           color: this.networkStarted ? "#00aa00ff" : "#999999ff",
+186|         });
+187|       }
+188|       for (const sw in this.switches) {
+189|         let ctl = this.switches[sw].controller;
+190|         if (ctl)
+191|           this.edges.add({
+192|             from: sw,
+193|             to: ctl,
+194|             color: "#777788af",
+195|             dashes: [10, 10]
+196|           });
+197|       }
+198| 
+199|       const nodes = new DataSet([
+200|         ...Object.values(this.hosts),
+201|         ...Object.values(this.switches),
+202|         ...Object.values(this.controllers),
+203|       ]);
+204|       this.nodes = nodes;
+205|       console.log("network inside mounted, before setup:", this.network);
+206|       this.network.setOptions({
+207|         manipulation: {
+208|           enabled: false,
+209|           addEdge: async (data, callback) => {
+210|             if (data.from == data.to) {
+211|               confirm("Cannot connect node to itself");
+212|               return;
+213|             }
+214|             console.log("network", this.network);
+215|             let from = this.nodes.get(data.from);
+216|             let to = this.nodes.get(data.to);
+217|             if (from.type === "controller" && to.type === "controller") {
+218|                 alert("cannot connect controller with controller");
+219|                 return;
+220|             } else if (from.type === "controller" || to.type === "controller") {
+221|                 if (from.type === "host" || to.type === "host") {
+222|                     alert("cannot associate host with controller");
+223|                     return;
+224|                 }
+225|                 let [sw, ctl] = (from.type === "controller") ? [to, from] : [from, to];
+226|                 sw.controller = ctl.id;
+227|                 await assocSwitch(sw.id, ctl.id);
+228|                 data.color = {color: "#777788af"};
+229|                 data.dashes = [10, 10];
+230|             } else {
+231|               let link = await deployLink(data.from, data.to);
+232|               data.id = link.id;
+233|               data.color = {color: this.networkStarted ? "#00aa00ff" : "#999999ff"};
+234|             }
+235|             callback(data);
+236|             this.enterAddEdgeMode();
+237|           },
+238|           deleteNode: async (data, callback) => {
+239|             console.log("node deletion", data);
+240|             let results = [];
+241|             for (const nodeId of data.nodes) {
+242|               try {
+243|                 await deleteNode(nodeId);
+244|                 results.push(nodeId);
+245|               } catch (error) {
+246|                 console.log("error deleting node", nodeId, error);
+247|               }
+248|             }
+249|             data.nodes = results;
+250|             callback(data);
+251|           },
+252|           deleteEdge: async (data, callback) => {
+253|             try {
+254|               const results = [];
+255|               for (const edge of data.edges) {
+256|                   let link = this.edges.get(edge);
+257|                   let src = this.nodes.get(link.from);
+258|                   let dst = this.nodes.get(link.to);
+259|                   console.log("src", src);
+260|                   console.log("dst", dst);
+261|                   if (src.type == "controller" || dst.type == "controller") {
+262|                     await removeAssociation(link.from, link.to);
+263|                   } else {
+264|                     await deleteLink(link.from, link.to);
+265|                   }
+266|                   results.push(link.id);
+267|               }
+268|               console.log("All edges deleted:", results);
+269|               data.edges = results;
+270|               callback(data);
+271|             } catch (error) {
+272|               console.error("Error deleting edges:", error);
+273|             }
+274|           },
+275|         },
+276|       });
+277|       this.network.on("doubleClick", async (event) => {
+278|         if (event.nodes.length === 1) {
+279|           this.showStatsModal(event.nodes[0]);
+280|         }
+281|       });
+282|       this.network.on("dragEnd", async (event) => {
+283|         this.handleNodeDragEnd(event);
+284|       });
+285|     },
+286|     intToDpid (number) {
+287|       return number.toString(16).padStart(16, '0').replace(/(..)(..)(..)(..)(..)(..)(..)(..)/, '$1:$2:$3:$4:$5:$6:$7:$8');
+288|     },
+289|     async createHost(position) {
+290|       let hostId = Object.values(this.hosts).length + 1;
+291|       while (`h${hostId}` in this.hosts) {
+292|         hostId++;
+293|       }
+294|       let host = {
+295|         id: `h${hostId}`,
+296|         type: "host",
+297|         name: `h${hostId}`,
+298|         label: null,
+299|         ip: `10.0.0.${hostId}/8`,
+300|         mac: hostId.toString(16).toUpperCase().padStart(12, "0"),
+301|         shape: "circularImage",
+302|         color: {
+303|           background: "#252526",
+304|           border: "#00000000",
+305|           highlight: { background: "#007acc", border: "#007acc" },
+306|         },
+307|       };
+308|       host.label = `${host.name}`;
+309|       host.image = hostImg;
+310|       if (position) {
+311|         host.x = position.x;
+312|         host.y = position.y;
+313|       }
+314|       if (await deployHost(host)) {
+315|         this.nodes.add(host);
+316|         this.hosts[host.name] = host;
+317|       } else {
+318|         throw "Could not create host " + hostId;
+319|       }
+320|       return host;
+321|     },
+322|     async createSwitch(switchData) {
+323|       let swId = Object.values(this.switches).length + 1;
+324|       while (`s${swId}` in this.switches) {
+325|         swId++;
+326|       }
+327|       let sw = {
+328|         id: `s${swId}`,
+329|         type: "sw",
+330|         name: `s${swId}`,
+331|         label: switchData.label || null,
+332|         ports: switchData.ports || 4,
+333|         controller: null,
+334|         shape: "circularImage",
+335|         color: {
+336|           background: "#252526",
+337|           border: "#00000000",
+338|           highlight: { background: "#007acc", border: "#007acc" },
+339|         },
+340|       };
+341|       sw.label = `${sw.name} <${this.intToDpid(swId)}>`;
+342|       sw.image = switchImg;
+343|       if (switchData) {
+344|         sw.x = switchData.x;
+345|         sw.y = switchData.y;
+346|       }
+347|       if (await deploySwitch(sw)) {
+348|         this.nodes.add(sw);
+349|         this.switches[sw.name] = sw;
+350|       } else {
+351|         throw "Could not create sw " + swId;
+352|       }
+353|       if (switchData.controller && await assocSwitch(sw.id, switchData.controller)) {
+354|         this.switches[sw.name].controller = switchData.controller;
+355|         this.edges.add({
+356|           from: sw.id,
+357|           to: switchData.controller,
+358|           color: {color: "#777788af"},
+359|           dashes: [10, 10]
+360|         });
+361|       }
+362|       return sw;
+363|     },
+364|     async showControllerFormModal(position) {
+365|       this.modalHeader = "Controller Form";
+366|       this.modalOption = "controllerForm";
+367|       this.showModal = true;
+368| 
+369|       const result = await new Promise((resolve) => {
+370|         this.modalPromiseResolve = resolve;
+371|       });
+372| 
+373|       console.log("GOT DATA:", this.formData);
+374|       await this.createController(position, this.formData.type === "remote", this.formData.ip, this.formData.port);
+375|     },
+376|     handleControllerFormSubmit(data) {
+377|       this.formData = data;
+378|       if (this.modalPromiseResolve) {
+379|         this.modalPromiseResolve(data);
+380|         this.modalPromiseResolve = null;
+381|       }
+382|       this.showModal = false;
+383|     },
+384|     async createController(position, remote, ip, port) {
+385|       let ctlId = Object.values(this.controllers).length + 1;
+386|       while (`c${ctlId}` in this.controllers) {
+387|         ctlId++;
+388|       }
+389|       let ctl = {
+390|         id: `c${ctlId}`,
+391|         type: "controller",
+392|         name: `c${ctlId}`,
+393|         label: null,
+394|         remote: remote,
+395|         ip: ip,
+396|         port: port,
+397|         x: position.x,
+398|         y: position.y,
+399|         shape: "circularImage",
+400|         color: {
+401|           background: "#252526",
+402|           border: "#00000000",
+403|           highlight: { background: "#007acc", border: "#007acc" },
+404|         },
+405|       };
+406|       if (remote) ctl.label = `${ctl.name} <${ctl.ip}:${ctl.port}>`;
+407|       else ctl.label = `${ctl.name}`;
+408|       ctl.image = controllerImg;
+409|       if (await deployController(ctl)) {
+410|         this.nodes.add(ctl);
+411|         this.controllers[ctl.name] = ctl;
+412|       } else {
+413|         throw "Could not create controller " + ctlId;
+414|       }
+415|     },
+416|     handleDrop(event) {
+417|       this.closeAllActiveModes();
+418|       event.preventDefault();
+419|       console.log("drop event triggered, text/plain", event.dataTransfer.getData("text/plain"));
+420|       var data = event.dataTransfer.getData("text/plain");
+421|       if (data === "draggable-host") {
+422|         this.createHost(
+423|           this.network.DOMtoCanvas({ x: event.clientX, y: event.clientY }),
+424|         );
+425|       } else if (data === "draggable-switch") {
+426|         this.createSwitch(
+427|           this.network.DOMtoCanvas({ x: event.clientX, y: event.clientY }),
+428|         );
+429|       } else if (data === "draggable-controller") {
+430|         this.showControllerFormModal(
+431|           this.network.DOMtoCanvas({ x: event.clientX, y: event.clientY }),
+432|         );
+433|       }
+434|     },
+435|     async handleNodeDragEnd(event) {
+436|       event.nodes.forEach(async nodeId => {
+437|         let node = this.network.body.nodes[nodeId];
+438|         await updateNodePosition(nodeId, [node.x, node.y]);
+439|       });
+440|     },
+441|     enterAddEdgeMode() {
+442|       this.addEdgeMode = true;
+443|       this.network.addEdgeMode();
+444|     },
+445|     closeAddEdgeMode() {
+446|       this.addEdgeMode = false;
+447|       this.network.disableEditMode();
+448|     },
+449|     closeModal() {
+450|       this.modalHeader = "";
+451|       this.showModal = false;
+452|       this.modalOption = null;
+453|       this.modalData = null;
+454|     },
+455|     closeAllActiveModes() {
+456|       this.closeAddEdgeMode();
+457|       this.closeModal();
+458|     },
+459|     handleToggleAddEdgeMode() {
+460|       console.log("addedgemode toggle");
+461|       if (!this.addEdgeMode) {
+462|         this.enterAddEdgeMode();
+463|       } else {
+464|         this.closeAddEdgeMode();
+465|       }
+466|     },
+467|     toggleShowHosts() {
+468|       this.hostsHidden = !this.hostsHidden;
+469|       this.nodes.forEach((node, id) => {
+470|         if (node.type == "host") {
+471|           node.hidden = this.hostsHidden;
+472|           this.nodes.updateOnly(node);
+473|         }
+474|       });
+475|     },
+476|     toggleShowControllers () {
+477|       this.controllersHidden = !this.controllersHidden;
+478|       this.nodes.forEach((node, id) => {
+479|         if (node.type == "controller") {
+480|           node.hidden = this.controllersHidden;
+481|           this.nodes.updateOnly(node);
+482|         }
+483|       });
+484|     },
+485|     async doDeleteSelected() {
+486|       this.closeAllActiveModes();
+487|       this.network.deleteSelected();
+488|     },
+489|     doSelectAll() {
+490|       console.log("CTRL A PRESSED");
+491|       this.closeAllActiveModes();
+492|       this.network.setSelection({nodes: this.nodes.getIds()});
+493|     },
+494|     async showPingallModal() {
+495|       this.closeAllActiveModes();
+496|       this.modalHeader = "Pingall Results";
+497|       this.modalOption = "pingall";
+498|       this.showModal = true;
+499| 
+500|       let pingallResults = await requestRunPingall();
+501|       this.modalData = pingallResults || null;
+502|     },
+503|     async showStatsModal(nodeId) {
+504|       this.closeAllActiveModes();
+505|       this.modalHeader = `Node Info: ${nodeId}`;
+506|       this.modalOption = "nodeStats";
+507|       let nodeStats = await getNodeStats(nodeId);
+508|       console.log("nodeStats", nodeStats);
+509|       this.modalData = nodeStats || null;
+510|       this.showModal = true;
+511|     },
+512|     async createSingleTopo(nDevices, controller) {
+513|       let newSw = await this.createSwitch({x: 250, y: 150, controller: controller});
+514|       for (var i=0; i<nDevices; i++) {
+515|         let newHost = await this.createHost({x: 200+i*90, y: 300});
+516|         let link = await deployLink(newSw.id, newHost.id);
+517|         this.edges.add({
+518|           from: newSw.id,
+519|           to: newHost.id,
+520|           color: this.networkStarted ? "#00aa00ff" : "#999999ff",
+521|         });
+522|       }
+523|     },
+524|     async createLinearTopo(nDevices, nHosts, controller) {
+525|       let prevSw = null;
+526|       for (let i = 0; i < nDevices; i++) {
+527|         let newSw = await this.createSwitch({ x: 250 + i * 90, y: 150, controller: controller});
+528|         console.log("newSw", newSw);
+529| 
+530|         for (let j = 0; j < nHosts; j++) {
+531|           let newHost = await this.createHost({ x: 200 + i * 90, y: 300 + j * 50 });
+532|           console.log("newHost", newHost);
+533| 
+534|           await deployLink(newSw.id, newHost.id);
+535|           this.edges.add({
+536|             from: newSw.id,
+537|             to: newHost.id,
+538|             color: this.networkStarted ? "#00aa00ff" : "#999999ff",
+539|           });
+540|         }
+541| 
+542|         if (prevSw) {
+543|           await deployLink(newSw.id, prevSw.id);
+544|           this.edges.add({
+545|             from: newSw.id,
+546|             to: prevSw.id,
+547|             color: this.networkStarted ? "#00aa00ff" : "#999999ff",
+548|           });
+549|         }
+550|         prevSw = newSw;
+551|       }
+552|     },
+553|     async createTreeTopo(depth, fanout, controller) {
+554|       const nodes = [];
+555|       const maxNodes = Math.pow(fanout, depth);
+556|       for (let d = depth; d >= 0; d--) {
+557|         const layer = [];
+558|         const numNodes = Math.pow(fanout, d);
+559|         for (let i = 0; i < numNodes; i++) {
+560|           let x = (i + 0.5) * maxNodes * 100 / (numNodes || 1);
+561|           let y = 150 + d * 150;
+562|           let node;
+563|           if (d === depth) {
+564|             node = await this.createHost({ x, y });
+565|             console.log("Created Host:", node);
+566|           } else {
+567|             node = await this.createSwitch({ x: x, y: y, controller: controller});
+568|             console.log("Created Switch:", node);
+569|             const startIndex = i * fanout;
+570|             const endIndex = startIndex + fanout;
+571|             for (let j = startIndex; j < endIndex && j < nodes[d + 1].length; j++) {
+572|               const child = nodes[d + 1][j];
+573|               await deployLink(node.id, child.id);
+574|               this.edges.add({
+575|                 from: node.id,
+576|                 to: child.id,
+577|                 color: this.networkStarted ? "#00aa00ff" : "#999999ff",
+578|               });
+579|             }
+580|           }
+581|           layer.push(node);
+582|         }
+583|         nodes[d] = layer;
+584|       }
+585|     },
+586|     async showTopologyFormModal() {
+587|       this.modalHeader = "Create Topology";
+588|       this.modalOption = "topologyForm";
+589|       this.showModal = true;
+590| 
+591|       const result = await new Promise((resolve) => {
+592|         this.modalPromiseResolve = resolve;
+593|       });
+594| 
+595|       console.log("GOT DATA", this.formData);
+596|       await this.handleCreateTopology(this.formData.type, this.formData.nDevices, this.formData.nLayers, this.formData.controller);
+597|     },
+598|     handleTopologyFormSubmit(data) {
+599|       this.formData = data;
+600|       console.log("FORM DATA", this.formData);
+601| 
+602|       if (this.modalPromiseResolve) {
+603|         this.modalPromiseResolve(data);
+604|         this.modalPromiseResolve = null;
+605|       }
+606|       this.showModal = false;
+607|     },
+608|     async handleCreateTopology(topologyType, nDevices, nLayers, controller){
+609|       console.log("Received createTopology event with:", topologyType, "data", nDevices, nLayers);
+610|       if (topologyType == "Single") {
+611|         await this.createSingleTopo(nDevices, controller);
+612|       } else if (topologyType == "Linear") {
+613|         await this.createLinearTopo(nDevices, nLayers, controller);
+614|       } else if (topologyType == "Tree") {
+615|         await this.createTreeTopo(nLayers, nDevices, controller);
+616|       }
+617|     },
+618|     async resetTopology() {
+619|       const confirmed = window.confirm("Are you sure you want to reset the topology? This action cannot be undone.");
+620| 
+621|       if (confirmed && await requestResetNetwork()) {
+622|         console.log("Resetting topology");
+623|         this.hosts = new Object();
+624|         this.switches = new Object();
+625|         this.controllers = new Object();
+626|         this.links = new Array();
+627|         this.nodes = new DataSet();
+628|         this.edges = new DataSet();
+629|         this.network.setData({ nodes: this.nodes, edges: this.edges });
+630|         this.network.redraw();
+631|       }
+632|     },
+633|     async exportTopology() {
+634|       await requestExportNetwork();
+635|     },
+636|     async exportMininetScript() {
+637|       await requestExportMininetScript();
+638|     },
+639|     async importTopology(file) {
+640|       await this.resetTopology();
+641|       const data = await requestImportNetwork(file);
+642|       await this.setupNetwork();
+643|       this.network.setData({nodes: this.nodes, edges: this.edges});
+644|       this.network.redraw();
+645|     }
+646|   }
+647| };
+648| </script>
+649| 
+650| <style scoped>
+651| .layout {
+652|   display: flex;
+653|   height: 100vh;
+654|   overflow: hidden;
+655| }
+656| 
+657| .main-content {
+658|   flex-grow: 1;
+659|   display: flex;
+660|   flex-direction: column;
+661|   height: 100vh;
+662| }
+663| 
+664| .side-container {
+665|   position: relative;
+666|   /* min-width: 10vw; */
+667|   max-width: 15vw;
+668|   display: flex;
+669|   flex-direction: row;
+670|   justify-content: stretch;
+671| }
+672| 
+673| .network-graph {
+674|   flex-grow: 1;
+675|   background: #252526;
+676|   overflow: hidden;
+677| }
+678| 
+679| .webshell {
+680|   height: 30%;
+681|   background: black;
+682|   color: white;
+683|   border-top: 2px solid #444;
+684|   overflow: auto;
+685|   position: relative;
+686| }
+687| </style>
+===== FIM DO ARQUIVO: mininet-gui-frontend/src/components/NetworkGraph.vue =====
+
+===== INÍCIO DO ARQUIVO: mininet-gui-frontend/src/components/NodeStats.vue (180 linhas) =====
+  1| <script>
+  2| export default {
+  3|   props: ["stats"],
+  4|   data() {
+  5|     return {
+  6|       activeTab: "details",
+  7|       tabs: [
+  8|         { key: "details", label: "Details" }
+  9|       ]
+ 10|     };
+ 11|   },
+ 12|   computed: {
+ 13|     isDetailsTab() {
+ 14|       return this.activeTab === "details";
+ 15|     },
+ 16|     isFlowTableTab() {
+ 17|       return this.activeTab === "flows";
+ 18|     },
+ 19|     isArpTableTab() {
+ 20|       return this.activeTab === "arp";
+ 21|     },
+ 22|     filteredDetails() {
+ 23|       const { flow_table, arp_table, ...details } = this.stats || {};
+ 24|       return details;
+ 25|     }
+ 26|   },
+ 27|   methods: {
+ 28|     setTab(tabKey) {
+ 29|       this.activeTab = tabKey;
+ 30|     },
+ 31|     formatMatchFields(matchFields) {
+ 32|       return Object.entries(matchFields).map(([key, value]) => `${key}: ${value}`).join(', ');
+ 33|     }
+ 34|   },
+ 35|   created() {
+ 36|     if (this.stats?.type === "sw") {
+ 37|       this.tabs.push({ key: "flows", label: "Flow Table" });
+ 38|     }
+ 39|     if (this.stats?.type === "host") {
+ 40|       this.tabs.push({ key: "arp", label: "ARP Table" });
+ 41|     }
+ 42|   }
+ 43| };
+ 44| </script>
+ 45| 
+ 46| <template>
+ 47|   <div class="tabs">
+ 48|     <button v-for="tab in tabs" :key="tab.key" :class="{ active: activeTab === tab.key }" @click="setTab(tab.key)">
+ 49|       {{ tab.label }}
+ 50|     </button>
+ 51|   </div>
+ 52| 
+ 53|   <div class="tab-content">
+ 54|     <div v-if="isDetailsTab">
+ 55|       <ul class="stats-list">
+ 56|         <li v-for="(value, key) in filteredDetails" :key="key">
+ 57|           <strong>{{ key }}:</strong> {{ value }}
+ 58|         </li>
+ 59|       </ul>
+ 60|     </div>
+ 61| 
+ 62|     <div v-if="isFlowTableTab">
+ 63|       <div class="flow-table">
+ 64|         <table>
+ 65|           <thead>
+ 66|             <tr>
+ 67|               <th>Flow ID</th>
+ 68|               <th>Cookie</th>
+ 69|               <th>Duration</th>
+ 70|               <th>Table</th>
+ 71|               <th>Packets</th>
+ 72|               <th>Bytes</th>
+ 73|               <th>Idle Timeout</th>
+ 74|               <th>Priority</th>
+ 75|               <th>Match Fields</th>
+ 76|             </tr>
+ 77|           </thead>
+ 78|           <tbody>
+ 79|             <tr v-for="(flow, index) in stats.flow_table" :key="index">
+ 80|               <td>{{ index + 1 }}</td>
+ 81|               <td>{{ flow.cookie }}</td>
+ 82|               <td>{{ flow.duration }}</td>
+ 83|               <td>{{ flow.table }}</td>
+ 84|               <td>{{ flow.n_packets }}</td>
+ 85|               <td>{{ flow.n_bytes }}</td>
+ 86|               <td>{{ flow.idle_timeout }}</td>
+ 87|               <td>{{ flow.priority }}</td>
+ 88|               <td>{{ formatMatchFields(flow.match_fields) }}</td>
+ 89|             </tr>
+ 90|           </tbody>
+ 91|         </table>
+ 92|       </div>
+ 93|     </div>
+ 94| 
+ 95|     <div v-if="isArpTableTab">
+ 96|       <div class="arp-table">
+ 97|         <table>
+ 98|           <thead>
+ 99|             <tr>
+100|               <th>IP Address</th>
+101|               <th>MAC Address</th>
+102|               <th>Interface</th>
+103|             </tr>
+104|           </thead>
+105|           <tbody>
+106|             <tr v-for="entry in stats.arp_table" :key="entry.ip">
+107|               <td>{{ entry.ip }}</td>
+108|               <td>{{ entry.mac }}</td>
+109|               <td>{{ entry.interface }}</td>
+110|             </tr>
+111|           </tbody>
+112|         </table>
+113|       </div>
+114|     </div>
+115|   </div>
+116| </template>
+117| 
+118| <style scoped>
+119| .tabs {
+120|   display: flex;
+121|   gap: 10px;
+122|   margin-bottom: 10px;
+123| }
+124| 
+125| .tabs button {
+126|   padding: 8px 12px;
+127|   border: 1px solid #ccc;
+128|   background: #f8f8f8;
+129|   cursor: pointer;
+130|   transition: background 0.2s ease-in-out;
+131| }
+132| 
+133| .tabs button:hover {
+134|   background: #e8e8e8;
+135| }
+136| 
+137| .tabs button.active {
+138|   background: #42b983;
+139|   color: white;
+140|   font-weight: bold;
+141| }
+142| 
+143| .tab-content {
+144|   width: 80vw;
+145|   max-height: 400px;
+146|   overflow-y: auto;
+147|   text-align: left;
+148| }
+149| 
+150| .stats-list, .flow-table, .arp-table {
+151|   list-style: none;
+152|   padding: 0;
+153| }
+154| 
+155| .flow-table table {
+156|   width: 100%;
+157|   border-collapse: collapse;
+158| }
+159| 
+160| .flow-table th, .flow-table td {
+161|   border: 1px solid #ddd;
+162|   padding: 8px;
+163|   text-align: left;
+164| }
+165| 
+166| .arp-table table {
+167|   width: 100%;
+168|   border-collapse: collapse;
+169| }
+170| 
+171| .arp-table th, .arp-table td {
+172|   border: 1px solid #ddd;
+173|   padding: 8px;
+174| }
+175| 
+176| .arp-table th {
+177|   background: #f1f1f1;
+178|   text-align: left;
+179| }
+180| </style>
+===== FIM DO ARQUIVO: mininet-gui-frontend/src/components/NodeStats.vue =====
+
+===== INÍCIO DO ARQUIVO: mininet-gui-frontend/src/components/PingallResults.vue (82 linhas) =====
+ 1| <template>
+ 2|   <div v-if="parsedResults.length">
+ 3|     <table class="pingall-table">
+ 4|       <thead>
+ 5|         <tr>
+ 6|           <th v-for="header in headers" :key="header">{{ header }}</th>
+ 7|         </tr>
+ 8|       </thead>
+ 9|       <tbody>
+10|         <tr v-for="(row, index) in parsedResults" :key="index">
+11|           <td v-for="(value, key) in row" :key="key">{{ value }}</td>
+12|         </tr>
+13|       </tbody>
+14|     </table>
+15|   </div>
+16|   <div v-else>
+17|     <p>No ping results available.</p>
+18|   </div>
+19| </template>
+20| 
+21| <script>
+22| export default {
+23|   props: {
+24|     pingResults: {
+25|       type: String,
+26|       required: true
+27|     }
+28|   },
+29|   computed: {
+30|     headers() {
+31|       return ["src", "dst", "packets_sent", "packets_recv", "min", "avg", "max", "mdev"];
+32|     },
+33|     parsedResults() {
+34|       if (!this.pingResults) return [];
+35| 
+36|       const cleanedData = this.pingResults
+37|         .replaceAll("min/avg/max/mdev", "")
+38|         .replaceAll("/", " ")
+39|         .replaceAll("->", " ")
+40|         .replaceAll(",", "")
+41|         .replaceAll(":", "")
+42|         .replaceAll("rtt", "")
+43|         .split(/\s+/)
+44|         .filter(Boolean);
+45| 
+46|       const rows = [];
+47|       for (let i = 0; i < cleanedData.length; i += 9) {
+48|         const row = {
+49|           src: cleanedData[i],
+50|           dst: cleanedData[i + 1],
+51|           packets_sent: cleanedData[i + 2],
+52|           packets_recv: cleanedData[i + 3],
+53|           min: cleanedData[i + 4],
+54|           avg: cleanedData[i + 5],
+55|           max: cleanedData[i + 6],
+56|           mdev: cleanedData[i + 7]
+57|         };
+58|         rows.push(row);
+59|       }
+60| 
+61|       return rows;
+62|     }
+63|   }
+64| };
+65| </script>
+66| 
+67| <style scoped>
+68| .pingall-table {
+69|   width: 100%;
+70|   border-collapse: collapse;
+71|   text-align: left;
+72| }
+73| 
+74| .pingall-table th, .pingall-table td {
+75|   border: 1px solid #ddd;
+76|   padding: 8px;
+77| }
+78| 
+79| .pingall-table th {
+80|   background-color: #f2f2f2;
+81| }
+82| </style>
+===== FIM DO ARQUIVO: mininet-gui-frontend/src/components/PingallResults.vue =====
+
+===== INÍCIO DO ARQUIVO: mininet-gui-frontend/src/components/Side.vue (308 linhas) =====
+  1| <template>
+  2|   <div
+  3|     id="side"
+  4|     class="side"
+  5|     tabindex="0"
+  6|     @dragstart="handleDragStart"
+  7|     @keydown.esc="$emit('closeAllActiveModes')"
+  8|     @keydown.h="$emit('toggleShowHosts')"
+  9|     @keydown.c="$emit('toggleShowControllers')"
+ 10|     @keydown.e="$emit('toggleAddEdgeMode')"
+ 11|     @keydown.d="$emit('deleteSelected')"
+ 12|     @keydown.delete="$emit('deleteSelected')"
+ 13|     @keydown.ctrl.a.prevent="$emit('doSelectAll')"
+ 14|   >
+ 15|     <!-- Topology Controls Group -->
+ 16|     <div class="sidebar-group">
+ 17|       <h2>Topology Controls</h2>
+ 18|       <button class="button-control-network" id="button-create-topology" @click="createTopology()">
+ 19|         <span class="material-symbols-outlined">scatter_plot</span>
+ 20|         Generate Topology
+ 21|       </button>
+ 22|       <button class="button-control-network" id="button-reset-topology" @click="$emit('resetTopology')">
+ 23|         <span class="material-symbols-outlined">restart_alt</span>
+ 24|         Reset Topology
+ 25|       </button>
+ 26|     </div>
+ 27| 
+ 28|     <!-- Link & Delete Actions Group -->
+ 29|     <div class="sidebar-group">
+ 30|       <h2>Actions</h2>
+ 31|       <button id="button-create-link" class="button-control-network" @click="$emit('toggleAddEdgeMode')">
+ 32|         <span class="material-symbols-outlined">link</span>
+ 33|         {{ !addEdgeMode ? "Create Link" : "Cancel Add Link" }}
+ 34|       </button>
+ 35|       <button id="button-delete-selected" class="button-control-network" @click="$emit('deleteSelected')">
+ 36|         <span class="material-symbols-outlined">delete</span>
+ 37|         Delete Selected
+ 38|       </button>
+ 39|       <button id="button-pingall" class="button-control-network" @click="$emit('runPingall')">
+ 40|         <span class="material-symbols-outlined">network_check</span>
+ 41|         Run Pingall Test
+ 42|       </button>
+ 43|     </div>
+ 44| 
+ 45|     <!-- Export/Import Controls Group -->
+ 46|     <div class="sidebar-group">
+ 47|       <h2>Export/Import</h2>
+ 48|       <button class="button-control-network" id="button-export-topology" @click="$emit('exportTopology')">
+ 49|         <span class="material-symbols-outlined">upload_file</span>
+ 50|         Export Topology (JSON)
+ 51|       </button>
+ 52|       <button class="button-control-network" id="button-import-topology" @click="openFileDialog">
+ 53|         <span class="material-symbols-outlined">download</span>
+ 54|         Import Topology (JSON)
+ 55|       </button>
+ 56|       <button class="button-control-network" id="button-export-script" @click="$emit('exportMininetScript')">
+ 57|         <span class="material-symbols-outlined">code</span>
+ 58|         Export Mininet Script
+ 59|       </button>
+ 60|       <!-- Hidden file input -->
+ 61|       <input 
+ 62|         type="file" 
+ 63|         id="fileInput" 
+ 64|         accept=".json" 
+ 65|         style="display: none" 
+ 66|         @change="handleFileUpload"
+ 67|       />
+ 68|     </div>
+ 69| 
+ 70|     <!-- Draggable Nodes Group -->
+ 71|     <div class="sidebar-group">
+ 72|       <h2>Nodes Palette</h2>
+ 73|       <div class="draggable-container">
+ 74|         <figure id="draggable-host" class="draggable-node" draggable="true">
+ 75|           <img alt="host" src="@/assets/host.svg" draggable="false" />
+ 76|           <figcaption>Host</figcaption>
+ 77|         </figure>
+ 78|         <figure id="draggable-switch" class="draggable-node" draggable="true">
+ 79|           <img alt="switch" src="@/assets/switch.svg" draggable="false" />
+ 80|           <figcaption>Switch</figcaption>
+ 81|         </figure>
+ 82|         <figure id="draggable-controller" class="draggable-node" draggable="true">
+ 83|           <img alt="controller" src="@/assets/controller.svg" draggable="false" />
+ 84|           <figcaption>Controller</figcaption>
+ 85|         </figure>
+ 86|       </div>
+ 87|     </div>
+ 88| 
+ 89|     <!-- Hotkeys Help Group
+ 90|     <div class="sidebar-group hotkeys">
+ 91|       <h2>Hotkeys</h2>
+ 92|       <p><strong>d</strong>: Delete selected nodes</p>
+ 93|       <p><strong>ctrl + a</strong>: Select all nodes</p>
+ 94|       <p><strong>h</strong>: Toggle hosts visibility</p>
+ 95|       <p><strong>c</strong>: Toggle controllers visibility</p>
+ 96|     </div> -->
+ 97|   </div>
+ 98| 
+ 99|   <button id="button-hide-side" class="button-hide-side" @click="toggleSide()">
+100|     <span class="material-symbols-outlined">chevron_left</span>
+101|   </button>
+102| </template>
+103| 
+104| <script>
+105| export default {
+106|   props: {
+107|     createLinkMode: { type: Boolean, default: false },
+108|     networkStarted: { type: Boolean, default: true },
+109|     addEdgeMode: { type: Boolean, default: false },
+110|   },
+111|   data() {
+112|     return {
+113|       sideIsActive: true,
+114|     };
+115|   },
+116|   emits: [
+117|     "toggleAddEdgeMode",
+118|     "networkStart",
+119|     "runPingall",
+120|     "deleteSelected",
+121|     "closeAllActiveModes",
+122|     "toggleShowHosts",
+123|     "toggleShowControllers",
+124|     "createTopology",
+125|     "resetTopology",
+126|     "exportMininetScript",
+127|     "exportTopology",
+128|     "importTopology",
+129|     "doSelectAll",
+130|   ],
+131|   methods: {
+132|     toggleSide() {
+133|       this.sideIsActive = !this.sideIsActive;
+134|       const side = document.getElementById("side");
+135|       const button = document.getElementById("button-hide-side");
+136|       if (!this.sideIsActive) {
+137|         side.style.display = "none";
+138|         button.innerHTML = '<span class="material-symbols-outlined">chevron_right</span>';
+139|       } else {
+140|         side.style.display = "block";
+141|         button.innerHTML = '<span class="material-symbols-outlined">chevron_left</span>';
+142|       }
+143|     },
+144|     handleDragStart(event) {
+145|       console.log("dragstart", event);
+146|       event.dataTransfer.setData("text", event.target.id);
+147|     },
+148|     createTopology() {
+149|       this.$emit("createTopology", {
+150|         selectedTopology: this.selectedTopology,
+151|         nDevices: this.nDevices,
+152|       });
+153|     },
+154|     openFileDialog() {
+155|       document.getElementById("fileInput").click();
+156|     },
+157|     handleFileUpload(event) {
+158|       const file = event.target.files[0];
+159|       if (file) {
+160|         this.$emit("importTopology", file);
+161|       }
+162|     },
+163|   },
+164| };
+165| </script>
+166| 
+167| <style scoped>
+168| @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0");
+169| 
+170| .side {
+171|   background-color: #1e1e1e;
+172|   height: 100%;
+173|   min-width: 10vw;
+174|   width: 15vw;
+175|   position: relative;
+176|   z-index: 2;
+177|   overflow-x: hidden;
+178|   overflow-y: auto;
+179|   padding: 10px;
+180|   box-sizing: border-box;
+181| 
+182|   /* SCROLLBAR FOR FIREFOX */
+183|   scrollbar-width: thin;
+184|   scrollbar-color: #007acc #1e1e1e;
+185| }
+186| 
+187| /* SCROLLBAR FOR WEBKIT (Chrome, Edge, Safari) */
+188| .side::-webkit-scrollbar {
+189|   width: 8px;
+190| }
+191| .side::-webkit-scrollbar-track {
+192|   background: #1e1e1e;
+193| }
+194| .side::-webkit-scrollbar-thumb {
+195|   background-color: #007acc;
+196|   border-radius: 4px;
+197| }
+198| .side::-webkit-scrollbar-thumb:hover {
+199|   background-color: #005a9e;
+200| }
+201| 
+202| .side h2 {
+203|   color: #cccccc;
+204|   font-family: 'Fira Sans', sans-serif;
+205|   margin: 10px 5px;
+206|   font-size: 14pt;
+207|   border-bottom: 1px solid #333;
+208|   padding-bottom: 5px;
+209| }
+210| 
+211| .side p,
+212| figcaption {
+213|   color: #cccccc;
+214|   font-family: 'Fira Sans', sans-serif;
+215|   /* margin: 5px 5px; */
+216|   padding: 2px;
+217|   font-size: 10pt;
+218| }
+219| 
+220| .side input,
+221| .side select {
+222|   color: #000;
+223| }
+224| 
+225| .sidebar-group {
+226|   margin-bottom: 15px;
+227| }
+228| 
+229| .button-control-network {
+230|   display: flex;
+231|   align-items: center;
+232|   gap: 5px;
+233|   color: #cccccc;
+234|   background-color: #2d2d2d;
+235|   border: solid 1px #333;
+236|   border-radius: 4px;
+237|   font-size: 10pt;
+238|   font-family: 'Fira Sans', sans-serif;
+239|   margin: 5px;
+240|   padding: 6px;
+241|   cursor: pointer;
+242|   transition: background-color 0.2s;
+243| }
+244| 
+245| .button-control-network:hover {
+246|   background-color: #3e3e3e;
+247| }
+248| 
+249| .button-control-network:active {
+250|   background-color: #007acc;
+251| }
+252| 
+253| .button-hide-side {
+254|   position: relative;
+255|   z-index: 4;
+256|   padding: 0;
+257|   height: 100%;
+258|   width: 24px;
+259|   font-size: 14pt;
+260|   border: none;
+261|   border-radius: 0 4px 4px 0;
+262|   background-color: #1e1e1e;
+263|   color: #cccccc;
+264|   display: flex;
+265|   align-items: center;
+266|   justify-content: center;
+267|   cursor: pointer;
+268| }
+269| 
+270| .button-hide-side:hover {
+271|   background-color: #2d2d2d;
+272| }
+273| 
+274| .draggable-container {
+275|   display: flex;
+276|   flex-direction: column;
+277|   align-items: center;
+278|   padding: 5px;
+279|   /* gap: 5px; */
+280| }
+281| 
+282| .draggable-node {
+283|   width: 40px;
+284|   text-align: center;
+285|   padding: 5px;
+286| }
+287| 
+288| .draggable-node > img {
+289|   width: 100%;
+290|   filter: brightness(0) invert(1);
+291| }
+292| 
+293| .draggable-node figcaption {
+294|   color: #cccccc;
+295|   font-size: 9pt;
+296|   margin-top: 4px;
+297| }
+298| 
+299| .draggable-node:hover {
+300|   cursor: grab;
+301|   opacity: 0.9;
+302| }
+303| 
+304| .hotkeys p {
+305|   font-size: 9pt;
+306|   margin: 3px 5px;
+307| }
+308| </style>
+===== FIM DO ARQUIVO: mininet-gui-frontend/src/components/Side.vue =====
+
+===== INÍCIO DO ARQUIVO: mininet-gui-frontend/src/components/TopologyForm.vue (91 linhas) =====
+ 1| <template>
+ 2|   <div>
+ 3|     <form @submit.prevent="submitForm">
+ 4|       <div>
+ 5|         <label for="type">Topology Type:</label>
+ 6|         <select id="type" v-model="topologyType">
+ 7|           <option value="Single" selected="selected">Single</option>
+ 8|           <option value="Linear">Linear</option>
+ 9|           <option value="Tree">Tree</option>
+10|         </select>
+11|       </div>
+12|       <div>
+13|         <label for="controller">Controller:</label>
+14|         <select id="controller" v-model="controller">
+15|           <option value="" selected="selected">none</option>
+16|           <option v-for="(v, k) of controllers" :key="k" :value="k">{{k}}</option>
+17|         </select>
+18|       </div>
+19|       <div v-if="topologyType === 'Single'">
+20|         <label for="nDevices">Hosts:</label>
+21|         <input id="nDevices" type="number" v-model="nDevices" required />
+22|       </div>
+23|       <div v-if="topologyType === 'Linear'" class="tree-options">
+24|         <div>
+25|           <label for="nDevices">Switches:</label>
+26|           <input id="nDevices" type="number" v-model="nDevices" required />
+27|         </div>
+28|         <div>
+29|           <label for="nLayers">Hosts per switch:</label>
+30|           <input id="nLayers" type="number" v-model="nLayers" required />
+31|         </div>
+32|       </div>
+33|       <div v-if="topologyType === 'Tree'" class="tree-options">
+34|         <div>
+35|           <label for="nLayers">Layers:</label>
+36|           <input id="nLayers" type="number" v-model="nLayers" required />
+37|         </div>
+38|         <div>
+39|           <label for="nDevices">Fanout:</label>
+40|           <input id="nDevices" type="number" v-model="nDevices" required />
+41|         </div>
+42|       </div>
+43|       <button class="submit-button" type="submit">Submit</button>
+44|     </form>
+45|   </div>
+46| </template>
+47| 
+48| <script>
+49|   export default {
+50|     props: {
+51|       controllers: new Object(),
+52|     },
+53|     data() {
+54|       return {
+55|         topologyType: "Single",
+56|         nDevices: "",
+57|         nLayers: null,
+58|         controller: null,
+59|       };
+60|     },
+61|     methods: {
+62|       submitForm() {
+63|         const formData = {
+64|           type: this.topologyType,
+65|           nDevices: this.nDevices,
+66|           nLayers: this.nLayers,
+67|           controller: this.controller,
+68|         };
+69|         this.$emit("form-submit", formData);
+70|       },
+71|     }
+72|   };
+73| </script>
+74| 
+75| <style scoped>
+76|   .tree-options {
+77|     margin-top: 1rem;
+78|   }
+79| 
+80|   label {
+81|     color: black;
+82|   }
+83|   
+84|   .submit-button {
+85|     float: right;
+86|   }
+87| 
+88|   input {
+89|     width: 80px;
+90|   }
+91|   </style>
+===== FIM DO ARQUIVO: mininet-gui-frontend/src/components/TopologyForm.vue =====
+
+===== INÍCIO DO ARQUIVO: mininet-gui-frontend/src/components/Webshell.vue (295 linhas) =====
+  1| <template>
+  2|   <div class="webshell-container">
+  3|     <div class="webshell-header">
+  4|       <i class="mdi mdi-console"></i>
+  5|       <span class="title">WebShell</span>
+  6|     </div>
+  7| 
+  8|     <div class="tabs">
+  9|       <button
+ 10|         v-for="node in nodes.get()"
+ 11|         :key="node.id"
+ 12|         @click="setActiveTab(node.id)"
+ 13|         :class="{ active: activeTab === node.id }"
+ 14|         class="tab-button"
+ 15|       >
+ 16|         {{ node.id }}
+ 17|       </button>
+ 18|     </div>
+ 19| 
+ 20|     <div class="terminal-window" @click="focusInput">
+ 21|       <pre ref="terminalOutput" class="terminal-output">
+ 22|         <!-- the cursor MUST be in the same line as the terminal text or else it breaks -->
+ 23|         {{ sanitizedTerminals[activeTab] }}<span :class="['cursor', isFocused ? 'filled' : 'empty']"></span>
+ 24|       </pre>
+ 25|       <input
+ 26|         ref="inputField"
+ 27|         v-model="userInputs[activeTab]"
+ 28|         @keydown.prevent="handleKeydown"
+ 29|         @keyup="handleKeyup"
+ 30|         @focus="isFocused = true"
+ 31|         @blur="isFocused = false"
+ 32|         class="hidden-input"
+ 33|         tabindex="-1"
+ 34|       />
+ 35|     </div>
+ 36|   </div>
+ 37| </template>
+ 38| 
+ 39| <script>
+ 40| export default {
+ 41|   props: ["nodes"],
+ 42|   data() {
+ 43|     return {
+ 44|       terminals: {},
+ 45|       sanitizedTerminals: {},
+ 46|       sockets: {},
+ 47|       userInputs: {},
+ 48|       activeTab: null,
+ 49|       isFocused: false,
+ 50|       ctrlPressed: false,
+ 51|       backendWsUrl: import.meta.env.VITE_BACKEND_WS_URL,
+ 52|     };
+ 53|   },
+ 54|   watch: {
+ 55|     nodes: {
+ 56|       handler(newNodes) {
+ 57|         if (newNodes.length === 0) {
+ 58|           this.clearTerminals();
+ 59|         }
+ 60|       },
+ 61|       deep: true,
+ 62|     },
+ 63|   },
+ 64|   beforeUnmount() {
+ 65|     Object.values(this.sockets).forEach(ws => ws?.close());
+ 66|   },
+ 67|   methods: {
+ 68|     setActiveTab(nodeId) {
+ 69|       this.activeTab = nodeId;
+ 70|       this.focusInput();
+ 71|       if (!this.sockets[nodeId]) this.initWebSocket(nodeId);
+ 72|     },
+ 73| 
+ 74|     initWebSocket(nodeId) {
+ 75|       if (this.sockets[nodeId]) return;
+ 76|       const ws = new WebSocket(`${this.backendWsUrl}/api/mininet/terminal/${nodeId}`);
+ 77|       
+ 78|       ws.onopen = () => console.log(`Connected to ${nodeId}`);
+ 79|       ws.onmessage = event => this.handleTerminalData(nodeId, event.data);
+ 80|       ws.onerror = error => console.error(`WebSocket error (${nodeId}):`, error);
+ 81|       ws.onclose = () => console.log(`WebSocket closed (${nodeId})`);
+ 82|       
+ 83|       this.sockets[nodeId] = ws;
+ 84|     },
+ 85| 
+ 86|     handleTerminalData(nodeId, data) {
+ 87|       if (!this.terminals[nodeId]) this.terminals[nodeId] = "";
+ 88| 
+ 89|       // backspace
+ 90|       if (data === ("\b \b") || data === "\b\x1b[K") {
+ 91|         this.terminals[nodeId] = this.terminals[nodeId].replace(/.$/, "");
+ 92|         this.sanitizedTerminals[nodeId] = this.terminals[nodeId];
+ 93|         return;
+ 94|       }
+ 95| 
+ 96|       // Ignore "bell" char
+ 97|       if (data === "\u0007") return;
+ 98| 
+ 99|       if (data.includes("[H\u001b[2J\u001b[3J\u001b")) {
+100|         this.terminals[nodeId] = "";
+101|         this.sanitizedTerminals[nodeId] = this.terminals[nodeId];
+102|         return;
+103|       }
+104| 
+105|       data = data.replace(/\x1b\]0;.*?\x07/g, "");
+106|       data = data.replace(/\u001b\[[0-9;]*[a-zA-Z]/g, "");
+107|       data = data.replace(/\x1b\[\?2004[hl]/g, "");
+108|       data = data.replace(/\u001b/g, "");
+109| 
+110|       this.terminals[nodeId] += data;
+111|       this.sanitizedTerminals[nodeId] = this.terminals[nodeId];
+112| 
+113|       if (this.activeTab === nodeId) this.scrollToBottom();
+114|     },
+115| 
+116|     sendChar(nodeId, char) {
+117|       const ws = this.sockets[nodeId];
+118|       if (ws?.readyState === WebSocket.OPEN) {
+119|         ws.send(char);
+120|       } else {
+121|         console.log(`WebSocket for ${nodeId} is not connected. Reconnecting...`);
+122|         this.initWebSocket(nodeId);
+123|       }
+124|     },
+125| 
+126|     handleKeydown(event) {
+127|       const nodeId = this.activeTab;
+128|       if (!nodeId) return;
+129| 
+130|       if (["Shift", "CapsLock", "Dead", "Alt"].includes(event.key)) {
+131|         return;
+132|       }
+133| 
+134|       if (event.key === "Control") {
+135|         this.ctrlPressed = true;
+136|         return;
+137|       }
+138| 
+139|       // Ctrl + C
+140|       if (this.ctrlPressed && event.key.toLowerCase() === "c") {
+141|         this.sendChar(nodeId, "\x03");
+142|       }
+143|       // Ctrl + L
+144|       else if (this.ctrlPressed && event.key.toLowerCase() === "l") {
+145|         this.sendChar(nodeId, "\u001b[H\u001b[2J\u001b[3J\u001b");
+146|       }
+147|       else if (event.key === "Backspace") {
+148|         this.sendChar(nodeId, "\b");
+149|       }
+150|       else if (event.key === "Enter") {
+151|         this.sendChar(nodeId, "\n");
+152|       }
+153|       else if (event.key === "Tab") {
+154|         this.sendChar(nodeId, "\t");
+155|       }
+156|       else {
+157|         this.sendChar(nodeId, event.key);
+158|       }
+159| 
+160|       this.scrollToBottom();
+161|     },
+162| 
+163|     handleKeyup(event) {
+164|       if (event.key === "Control") {
+165|         this.ctrlPressed = false;
+166|       }
+167|     },
+168| 
+169|     focusInput() {
+170|       this.$refs.inputField?.focus();
+171|     },
+172| 
+173|     scrollToBottom() {
+174|       this.$nextTick(() => {
+175|         const terminalOutput = this.$refs.terminalOutput;
+176|         if (terminalOutput) {
+177|           terminalOutput.scrollTop = terminalOutput.scrollHeight;
+178|         }
+179|       });
+180|     },
+181| 
+182|     clearTerminals() {
+183|       Object.values(this.sockets).forEach(ws => ws?.close());
+184|       this.terminals = {};
+185|       this.sanitizedTerminals = {};
+186|       this.userInputs = {};
+187|       this.sockets = {};
+188|       this.activeTab = null;
+189|     }
+190|   }
+191| };
+192| </script>
+193| 
+194| <style scoped>
+195| .webshell-container {
+196|   display: flex;
+197|   flex-direction: column;
+198|   height: 100%;
+199|   background-color: #1e1e1e;
+200|   color: #cccccc;
+201|   font-family: "Fira Code", Consolas, monospace;
+202|   border: 1px solid #333;
+203|   border-radius: 4px;
+204|   border-top: 3px solid #007acc;
+205| }
+206| 
+207| .webshell-header {
+208|   display: flex;
+209|   align-items: center;
+210|   background-color: #2d2d2d;
+211|   padding: 0.5rem 1rem;
+212|   border-bottom: 1px solid #333;
+213| }
+214| 
+215| .webshell-header i {
+216|   font-size: 1.2rem;
+217|   margin-right: 0.5rem;
+218| }
+219| 
+220| .webshell-header .title {
+221|   font-weight: bold;
+222|   font-size: 1rem;
+223| }
+224| 
+225| .tabs {
+226|   display: flex;
+227|   background-color: #2d2d2d;
+228|   border-bottom: 1px solid #333;
+229| }
+230| 
+231| .tab-button {
+232|   padding: 0.5rem 1rem;
+233|   background: transparent;
+234|   color: #cccccc;
+235|   border: none;
+236|   cursor: pointer;
+237|   outline: none;
+238|   transition: background-color 0.2s;
+239|   font-size: 0.9rem;
+240|   text-transform: uppercase;
+241| }
+242| 
+243| .tab-button.active {
+244|   background-color: #1e1e1e;
+245|   border-bottom: 2px solid #007acc;
+246| }
+247| 
+248| .tab-button:hover {
+249|   background-color: #333333;
+250| }
+251| 
+252| .terminal-window {
+253|   flex: 1;
+254|   display: flex;
+255|   position: relative;
+256|   flex-direction: column;
+257|   padding: 1rem;
+258|   overflow: hidden;
+259| }
+260| 
+261| .terminal-output {
+262|   flex: 1;
+263|   margin: 0;
+264|   padding: 0;
+265|   overflow-y: auto;
+266|   white-space: pre-wrap;
+267|   word-wrap: break-word;
+268| }
+269| 
+270| .hidden-input {
+271|   position: absolute;
+272|   bottom: 0;
+273|   left: 0;
+274|   width: 0;
+275|   height: 0;
+276|   opacity: 0;
+277|   pointer-events: none;
+278| }
+279| 
+280| .cursor {
+281|   display: inline-block;
+282|   width: 8px;
+283|   height: 16px;
+284|   margin-left: 2px;
+285|   vertical-align: middle;
+286| }
+287| 
+288| .filled {
+289|   background-color: #cccccc;
+290| }
+291| 
+292| .empty {
+293|   border: 1px solid #cccccc;
+294| }
+295| </style>
+===== FIM DO ARQUIVO: mininet-gui-frontend/src/components/Webshell.vue =====
+
+===== INÍCIO DO ARQUIVO: mininet-gui-frontend/src/core/api.js (342 linhas) =====
+  1| import axios from "axios";
+  2| 
+  3| const baseUrl = import.meta.env.VITE_BACKEND_URL;
+  4| 
+  5| export const deployHost = async (host) => {
+  6|   try {
+  7|     console.log(host);
+  8|     const response = await axios.post(
+  9|       baseUrl + "/api/mininet/hosts",
+ 10|       JSON.stringify(host),
+ 11|       {
+ 12|         headers: {
+ 13|           "Access-Control-Allow-Origin": "*",
+ 14|           "Content-Type": "application/json",
+ 15|         },
+ 16|       },
+ 17|     );
+ 18|     return response.status === 200;
+ 19|   } catch (error) {
+ 20|     alert(error.response ? error.response.data["detail"] : "Network Error");
+ 21|     return false;
+ 22|   }
+ 23| };
+ 24| 
+ 25| export const deploySwitch = async (sw) => {
+ 26|   try {
+ 27|     console.log(sw);
+ 28|     const response = await axios.post(
+ 29|       baseUrl + "/api/mininet/switches",
+ 30|       JSON.stringify(sw),
+ 31|       {
+ 32|         headers: {
+ 33|           "Access-Control-Allow-Origin": "*",
+ 34|           "Content-Type": "application/json",
+ 35|         },
+ 36|       },
+ 37|     );
+ 38|     return response.status === 200;
+ 39|   } catch (error) {
+ 40|     alert(error.response ? error.response.data["detail"] : "Network Error");
+ 41|     return false;
+ 42|   }
+ 43| };
+ 44| 
+ 45| export const deployController = async (ctl) => {
+ 46|   try {
+ 47|     console.log(ctl);
+ 48|     const response = await axios.post(
+ 49|       baseUrl + "/api/mininet/controllers",
+ 50|       JSON.stringify(ctl),
+ 51|       {
+ 52|         headers: {
+ 53|           "Access-Control-Allow-Origin": "*",
+ 54|           "Content-Type": "application/json",
+ 55|         },
+ 56|       },
+ 57|     );
+ 58|     if (response.status === 200)
+ 59|       return response.data;
+ 60|     throw new Error("Error deploying controller in mininet");
+ 61|   } catch (error) {
+ 62|     alert(error.response ? error.response.data["detail"] : "Network Error");
+ 63|     throw error;
+ 64|   }
+ 65| };
+ 66| 
+ 67| export const deployLink = async (src, dst) => {
+ 68|   try {
+ 69|     console.log(src, dst);
+ 70|     const response = await axios.post(
+ 71|       baseUrl + "/api/mininet/links",
+ 72|       JSON.stringify([src, dst]),
+ 73|       {
+ 74|         headers: {
+ 75|           "Access-Control-Allow-Origin": "*",
+ 76|           "Content-Type": "application/json",
+ 77|         },
+ 78|       },
+ 79|     );
+ 80|     if (response.status === 200)
+ 81|       return response.data;
+ 82|   } catch (error) {
+ 83|     alert(error.response ? error.response.data["detail"] : "Network Error");
+ 84|     throw error;
+ 85|   }
+ 86| };
+ 87| 
+ 88| export const assocSwitch = async (sw, ctl) => {
+ 89|   try {
+ 90|     console.log("assoc",sw, ctl);
+ 91|     const response = await axios.post(
+ 92|       baseUrl + `/api/mininet/associate_switch`,
+ 93|       JSON.stringify({"switch": sw, "controller": ctl}),
+ 94|       {
+ 95|         headers: {
+ 96|           "Access-Control-Allow-Origin": "*",
+ 97|           "Content-Type": "application/json",
+ 98|         },
+ 99|       },
+100|     );
+101|     if (response.status === 200)
+102|       return response.data;
+103|   } catch (error) {
+104|     alert(error.response ? error.response.data["detail"] : "Network Error");
+105|   }
+106|   throw error;
+107| };
+108| 
+109| export const deleteNode = async (nodeId) => {
+110|   try {
+111|     const response = await axios.delete(
+112|       baseUrl + `/api/mininet/delete_node/${nodeId}`,
+113|       {
+114|         headers: {
+115|           "Access-Control-Allow-Origin": "*",
+116|         },
+117|       },
+118|     );
+119|     return response.status === 200;
+120|   } catch (error) {
+121|     alert(error.response ? error.response.data["detail"] : "Network Error");
+122|     throw error;
+123|   }
+124| };
+125| 
+126| export const deleteLink = async (srcId, dstId) => {
+127|   try {
+128|     console.log("sending deleteLink for edge: ", srcId, dstId);
+129|     const response = await axios.delete(
+130|       baseUrl + `/api/mininet/delete_link/${srcId}/${dstId}`,
+131|       {
+132|         headers: {
+133|           "Access-Control-Allow-Origin": "*",
+134|         },
+135|       },
+136|     );
+137|     return response.status === 200;
+138|   } catch (error) {
+139|     alert(error.response ? error.response.data["detail"] : "Network Error");
+140|     throw error;
+141|   }
+142| };
+143| 
+144| export const removeAssociation = async (srcId, dstId) => {
+145|   try {
+146|     console.log("sending removeAssociation for edge: ", srcId, dstId);
+147|     const response = await axios.delete(
+148|       baseUrl + `/api/mininet/remove_association/${srcId}/${dstId}`,
+149|       {
+150|         headers: {
+151|           "Access-Control-Allow-Origin": "*",
+152|         },
+153|       },
+154|     );
+155|     return response.status === 200;
+156|   } catch (error) {
+157|     alert(error.response ? error.response.data["detail"] : "Network Error");
+158|     throw error;
+159|   }
+160| };
+161| 
+162| export const updateNodePosition = async (nodeId, position) => {
+163|   try {
+164|     const response = await axios.post(
+165|       baseUrl + `/api/mininet/node_position`,
+166|       JSON.stringify({"node_id": nodeId, "position": position}),
+167|       {
+168|         headers: {
+169|           "Access-Control-Allow-Origin": "*",
+170|           "Content-Type": "application/json",
+171|         },
+172|       },
+173|     );
+174|     return response.status === 200;
+175|   } catch (error) {
+176|     alert(error.response ? error.response.data["detail"] : "Network Error");
+177|     throw error;
+178|   }
+179| };
+180| 
+181| export const requestStartNetwork = async () => {
+182|   try {
+183|     const response = await axios.post(
+184|       baseUrl + "/api/mininet/start",
+185|       null,
+186|       {
+187|         headers: {
+188|           "Access-Control-Allow-Origin": "*",
+189|           "Content-Type": "application/json",
+190|         },
+191|       },
+192|     );
+193|     return response.status === 200;
+194|   } catch (error) {
+195|     alert(error.response ? error.response.data["detail"] : "Network Error");
+196|     return false;
+197|   }
+198| };
+199| 
+200| export const requestResetNetwork = async () => {
+201|   try {
+202|     const response = await axios.post(
+203|       baseUrl + "/api/mininet/reset",
+204|       null,
+205|       {
+206|         headers: {
+207|           "Access-Control-Allow-Origin": "*",
+208|           "Content-Type": "application/json",
+209|         },
+210|       },
+211|     );
+212|     return response.status === 200;
+213|   } catch (error) {
+214|     alert(error.response ? error.response.data["detail"] : "Network Error");
+215|     return false;
+216|   }
+217| };
+218| 
+219| export const requestExportNetwork = async () => {
+220|   try {
+221|     const response = await axios.get(baseUrl + "/api/mininet/export_json", {
+222|       responseType: "blob",
+223|     });
+224| 
+225|     if (response.status === 200) {
+226|       const blob = new Blob([response.data], { type: "application/json" });
+227|       const url = window.URL.createObjectURL(blob);
+228| 
+229|       const a = document.createElement("a");
+230|       a.href = url;
+231|       a.download = "network_export.json";
+232|       document.body.appendChild(a);
+233|       a.click(); 
+234|       document.body.removeChild(a);
+235|       window.URL.revokeObjectURL(url);
+236|     }
+237|   } catch (error) {
+238|     alert(error.response ? error.response.data["detail"] : "Network Error");
+239|   }
+240| };
+241| 
+242| export const requestImportNetwork = async (file) => {
+243|   const formData = new FormData();
+244|   formData.append("file", file);
+245| 
+246|   try {
+247|     const response = await axios.post(baseUrl + "/api/mininet/import_json", formData, {
+248|       headers: { "Content-Type": "multipart/form-data" }
+249|     });
+250| 
+251|     if (response.status === 200) {
+252|       return response.data;
+253|     } else {
+254|       throw new Error("Import failed.");
+255|     }
+256|   } catch (error) {
+257|     throw new Error(error.response ? error.response.data.detail : "Network Error");
+258|   }
+259| };
+260| 
+261| export const requestExportMininetScript = async () => {
+262|   try {
+263|     const response = await axios.get(baseUrl + "/api/mininet/export_script", {
+264|       responseType: "blob",
+265|     });
+266| 
+267|     if (response.status === 200) {
+268|       const blob = new Blob([response.data], { type: "text/x-python" });
+269|       const url = window.URL.createObjectURL(blob);
+270|       const a = document.createElement("a");
+271|       a.href = url;
+272|       a.download = "network_export.py";
+273|       document.body.appendChild(a);
+274|       a.click(); 
+275|       document.body.removeChild(a);
+276|       window.URL.revokeObjectURL(url);
+277|     }
+278|   } catch (error) {
+279|     alert(error.response ? error.response.data["detail"] : "Network Error");
+280|   }
+281| };
+282| 
+283| export const requestRunPingall = async () => {
+284|   try {
+285|     const response = await axios.post(
+286|       baseUrl + "/api/mininet/pingall",
+287|       null,
+288|       {
+289|         headers: {
+290|           "Access-Control-Allow-Origin": "*",
+291|           "Content-Type": "application/json",
+292|         },
+293|       },
+294|     );
+295|     return response.data;
+296|   } catch (error) {
+297|     alert(error.response ? error.response.data["detail"] : "Network Error");
+298|     return false;
+299|   }i
+300| };
+301| 
+302| export const sendGet = async (url) => {
+303|   try {
+304|     const response = await axios.get(url, {
+305|       headers: {
+306|         "Access-Control-Allow-Origin": "*",
+307|         Accept: "application/json",
+308|       },
+309|     });
+310|     console.log("response.data");
+311|     console.log(response.data);
+312|     // return JSON.parse(response.data);
+313|     return response.data;
+314|   } catch (error) {
+315|     alert(error.response ? error.response.data["detail"] : "Network Error");
+316|     return false;
+317|   }
+318| };
+319| 
+320| export const getHosts = async () => {
+321|   return await sendGet(baseUrl + "/api/mininet/hosts");
+322| };
+323| 
+324| export const getSwitches = async () => {
+325|   return await sendGet(baseUrl + "/api/mininet/switches");
+326| };
+327| 
+328| export const getControllers = async () => {
+329|   return await sendGet(baseUrl + "/api/mininet/controllers");
+330| };
+331| 
+332| export const getEdges = async () => {
+333|   return await sendGet(baseUrl + "/api/mininet/links");
+334| };
+335| 
+336| export const isNetworkStarted = async () => {
+337|   return await sendGet(baseUrl + "/api/mininet/start");
+338| };
+339| 
+340| export const getNodeStats = async (nodeId) => {
+341|   return await sendGet(baseUrl + `/api/mininet/stats/${nodeId}`);
+342| };
+===== FIM DO ARQUIVO: mininet-gui-frontend/src/core/api.js =====
+
+===== INÍCIO DO ARQUIVO: mininet-gui-frontend/src/core/options.js (43 linhas) =====
+ 1| export const options = {
+ 2|   edges: {
+ 3|     width: 5,
+ 4|     color: {
+ 5|       color: "#848484",
+ 6|       highlight: "#848484",
+ 7|       hover: "#848484",
+ 8|       inherit: "from",
+ 9|       opacity: 1.0,
+10|     },
+11|     smooth: false,
+12|   },
+13|   nodes: {
+14|     margin: 10,
+15|     widthConstraint: {
+16|       maximum: 200,
+17|     },
+18|     font: {
+19|       color: "#cccccc",
+20|       size: 14,
+21|       face: "Fira Sans",
+22|     },
+23|     color: {
+24|       border: "#00000000",
+25|       background: "#252526",
+26|       highlight: {
+27|         border: "#007acc",
+28|         background: "#ffffffff",
+29|       },
+30|       hover: {
+31|         border: "#007acc",
+32|         background: "#ffffffff",
+33|       },
+34|     },
+35|   },
+36|   interaction: {
+37|     keyboard: true,
+38|     multiselect: true,
+39|   },
+40|   physics: {
+41|     enabled: false,
+42|   },
+43| };
+===== FIM DO ARQUIVO: mininet-gui-frontend/src/core/options.js =====
+
+===== INÍCIO DO ARQUIVO: mininet-gui-frontend/src/main.js (6 linhas) =====
+1| import { createApp } from "vue";
+2| import App from "./App.vue";
+3| 
+4| // import './assets/main.css'
+5| 
+6| createApp(App).mount("#app");
+===== FIM DO ARQUIVO: mininet-gui-frontend/src/main.js =====
+
+===== INÍCIO DO ARQUIVO: mininet-gui-frontend/vite.config.js (17 linhas) =====
+ 1| import { fileURLToPath, URL } from "node:url";
+ 2| 
+ 3| import { defineConfig } from "vite";
+ 4| import vue from "@vitejs/plugin-vue";
+ 5| 
+ 6| // https://vitejs.dev/config/
+ 7| export default defineConfig({
+ 8|   plugins: [vue()],
+ 9|   resolve: {
+10|     alias: {
+11|       "@": fileURLToPath(new URL("./src", import.meta.url)),
+12|     },
+13|   },
+14|   server: {
+15|     host: true,
+16|   },
+17| });
+===== FIM DO ARQUIVO: mininet-gui-frontend/vite.config.js =====
+
+===== INÍCIO DO ARQUIVO: run.sh (28 linhas) =====
+ 1| #!/bin/bash
+ 2| 
+ 3| sudo pkill uvicorn
+ 4| sudo pkill vite
+ 5| 
+ 6| 
+ 7| MININET_GUI_DIR="/home/mininet/mininet-gui"
+ 8| BACKEND_DIR="$MININET_GUI_DIR/mininet-gui-backend"
+ 9| FRONTEND_DIR="$MININET_GUI_DIR/mininet-gui-frontend"
+10| 
+11| export MININET_GUI_ADDRESS=$(hostname --all-ip-addresses | awk '{print $1}')
+12| 
+13| echo "Running mininet-gui-backend in background"
+14| (cd $BACKEND_DIR ; sudo nohup uvicorn mininet_gui_backend.api:app --host=0.0.0.0 --port=8000 --log-level debug &)
+15| 
+16| echo "VITE_BACKEND_URL=http://$MININET_GUI_ADDRESS:8000" > $FRONTEND_DIR/.env
+17| echo "VITE_BACKEND_WS_URL=ws://$MININET_GUI_ADDRESS:8000" >> $FRONTEND_DIR/.env
+18| 
+19| echo "Running mininet-gui-frontend in background"
+20| (cd $FRONTEND_DIR ; nvm use 18.20.7 ; nohup npm run dev &)
+21| 
+22| echo "Mininet-GUI bootstrap complete"
+23| echo "Backend log file: $BACKEND_DIR/nohup.out"
+24| echo "Frontend log file: $FRONTEND_DIR/nohup.out"
+25| 
+26| 
+27| echo -e "\n\n#### Mininet-GUI is available at: ####\n"
+28| echo "http://$MININET_GUI_ADDRESS:5173"
+===== FIM DO ARQUIVO: run.sh =====
+
+===== INÍCIO DO ARQUIVO: setup.sh (24 linhas) =====
+ 1| #!/bin/bash
+ 2| 
+ 3| sudo apt update && sudo apt install -y curl npm
+ 4| 
+ 5| MININET_GUI_DIR="/home/mininet/mininet-gui"
+ 6| BACKEND_DIR="$MININET_GUI_DIR/mininet-gui-backend"
+ 7| FRONTEND_DIR="$MININET_GUI_DIR/mininet-gui-frontend"
+ 8| 
+ 9| echo "Installing backend deps"
+10| (cd $BACKEND_DIR ; sudo python3 -m pip install -r requirements.txt)
+11| 
+12| echo "Installing nvm"
+13| curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | bash
+14| 
+15| echo "Installing node 18.20.7"
+16| export NVM_DIR="$HOME/.nvm"
+17| source $NVM_DIR/nvm.sh
+18| 
+19| nvm install 18.20.7
+20| 
+21| echo "Installing frontend deps"
+22| (cd $FRONTEND_DIR ; npm install)
+23| 
+24| echo "alias mininet_gui=$MININET_GUI_DIR/run.sh" >> /home/mininet/.bashrc
+===== FIM DO ARQUIVO: setup.sh =====

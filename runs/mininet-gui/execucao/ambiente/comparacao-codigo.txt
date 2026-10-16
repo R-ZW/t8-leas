@@ -1,0 +1,65 @@
+VM: 41 arquivos no manifesto
+
+## VM x vm-be68302 (41 arquivos)
+iguais=41 diferentes=0 so_na_vm=0 so_na_referencia=0
+
+## VM x tag-v0.0.1-4a5d5764 (41 arquivos)
+iguais=38 diferentes=3 so_na_vm=0 so_na_referencia=0
+  diferentes: README.md
+  diferentes: run.sh
+  diferentes: setup.sh
+
+## VM x proxy-465648a4 (43 arquivos)
+iguais=39 diferentes=2 so_na_vm=0 so_na_referencia=2
+  diferentes: README.md
+  diferentes: run.sh
+  só na referência: example_network_export.json
+  só na referência: example_network_export.py
+
+## VM x pacote-artefato.zip-bruto (43 arquivos)
+iguais=5 diferentes=36 so_na_vm=0 so_na_referencia=2
+  diferentes: LICENSE
+  diferentes: README.md
+  diferentes: mininet-gui-backend/.gitignore
+  diferentes: mininet-gui-backend/mininet_gui_backend/api.py
+  diferentes: mininet-gui-backend/mininet_gui_backend/cli.py
+  diferentes: mininet-gui-backend/mininet_gui_backend/export.py
+  diferentes: mininet-gui-backend/mininet_gui_backend/schema.py
+  diferentes: mininet-gui-backend/requirements.txt
+  diferentes: mininet-gui-frontend/.gitignore
+  diferentes: mininet-gui-frontend/.prettierrc.json
+  diferentes: mininet-gui-frontend/index.html
+  diferentes: mininet-gui-frontend/package-lock.json
+  diferentes: mininet-gui-frontend/package.json
+  diferentes: mininet-gui-frontend/src/App.vue
+  diferentes: mininet-gui-frontend/src/assets/controller.svg
+  diferentes: mininet-gui-frontend/src/assets/host.svg
+  diferentes: mininet-gui-frontend/src/assets/light-controller.svg
+  diferentes: mininet-gui-frontend/src/assets/light-host.svg
+  diferentes: mininet-gui-frontend/src/assets/light-switch.svg
+  diferentes: mininet-gui-frontend/src/assets/router.svg
+  diferentes: mininet-gui-frontend/src/assets/switch.svg
+  diferentes: mininet-gui-frontend/src/components/ControllerForm.vue
+  diferentes: mininet-gui-frontend/src/components/Header.vue
+  diferentes: mininet-gui-frontend/src/components/Modal.vue
+  diferentes: mininet-gui-frontend/src/components/NetworkGraph.vue
+  diferentes: mininet-gui-frontend/src/components/NodeStats.vue
+  diferentes: mininet-gui-frontend/src/components/PingallResults.vue
+  diferentes: mininet-gui-frontend/src/components/Side.vue
+  diferentes: mininet-gui-frontend/src/components/TopologyForm.vue
+  diferentes: mininet-gui-frontend/src/components/Webshell.vue
+  diferentes: mininet-gui-frontend/src/core/api.js
+  diferentes: mininet-gui-frontend/src/core/options.js
+  diferentes: mininet-gui-frontend/src/main.js
+  diferentes: mininet-gui-frontend/vite.config.js
+  diferentes: run.sh
+  diferentes: setup.sh
+  só na referência: example_network_export.json
+  só na referência: example_network_export.py
+
+## VM x lf:pacote-artefato.zip-EOL-LF (43 arquivos)
+iguais=39 diferentes=2 so_na_vm=0 so_na_referencia=2
+  diferentes: README.md
+  diferentes: run.sh
+  só na referência: example_network_export.json
+  só na referência: example_network_export.py

@@ -1,0 +1,8 @@
+# Insumos externos baixados: binários fora do Git (ver ../insumos.md).
+*
+!.gitignore
+!*/
+!SHA256SUMS.txt
+!MD5SUMS.txt
+!downloads.txt
+!pagina-*.html

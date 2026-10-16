@@ -1,12 +1,12 @@
 # Pré-registro metodológico — Mininet-GUI
 
-**Congelamento inicial:** 15/10/2026 (America/Sao_Paulo), **antes de qualquer Prompt A/conversa avaliadora**. Versão 1 da lista: [`pacote/reivindicacoes.md`](pacote/reivindicacoes.md), IDs C1–C6. O arquivo [`CONGELAMENTO.sha256`](CONGELAMENTO.sha256) será gerado depois de finalizar este pré-registro e a lista; fica fora do pacote das LLMs.
+**Congelamento inicial:** 15/10/2026 (America/Sao_Paulo), **antes de qualquer Prompt A/conversa avaliadora**. Versão 2 da lista (15/10/2026, ainda antes de qualquer Prompt A): [`pacote/reivindicacoes.md`](pacote/reivindicacoes.md), IDs C1–C6, no formato do §4.4 do protocolo e sem juízos sobre disponibilidade ou resultado. A versão 1, com os critérios de observação detalhados, foi preservada sem alteração em [`criterios-observacao.md`](criterios-observacao.md), que nunca é anexado às LLMs; motivo em [`../registro-mudancas-pre-A.md`](../registro-mudancas-pre-A.md). IDs, regra de R e reivindicações principais não mudaram. O arquivo [`CONGELAMENTO.sha256`](CONGELAMENTO.sha256) será gerado depois de finalizar este pré-registro e a lista; fica fora do pacote das LLMs.
 
 ## Fontes e separação de papéis
 
 - Artigo recebido `fontes/mininet-gui.pdf` (pp. 1–9), [README no SHA fixado](https://github.com/latarc/mininet-gui/blob/465648a4425a4457af0348ab951cf7f71d37a86f/README.md), [instruções oficiais de revisão SBRC 2025](https://doc-artefatos.github.io/sbrc2025/revinstrucoes.html) e [`versao.md`](versao.md). O SHA é **proxy de 2025**; identidade com o código da OVA e com o checkout do CTA não foi demonstrada.
 - **Os selos oficiais arquivados em `referencia/` não foram usados para escolher C1–C6, prioridade ou critérios de sucesso.** Os grafismos de selos impressos na p. 1 do artigo também não determinaram a lista. As regras oficiais F/R dão o padrão de prova, sem fornecer o resultado desta T8.
-- `reivindicacoes.md` é mapa prévio, não parecer. As três demonstrações do artigo e os passos opcionais do README foram mapeados como suporte/complemento, sem transformar automaticamente cada caso em experimento principal.
+- `reivindicacoes.md` é mapa prévio, não parecer; o mapeamento detalhado (v1) está em `criterios-observacao.md`. As três demonstrações do artigo e os passos opcionais do README foram mapeados como suporte/complemento, sem transformar automaticamente cada caso em experimento principal.
 
 ## Regra de seleção para R, fixada antes do teste
 

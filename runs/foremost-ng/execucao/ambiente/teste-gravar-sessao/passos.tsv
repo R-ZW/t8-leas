@@ -1,0 +1,7 @@
+id	inicio_utc	fim_utc	duracao_s	codigo_saida	diretorio	comando
+01	2026-10-16T01:39:59.299Z	2026-10-16T01:39:59.311Z	0.009	0	/home/revisor/teste	echo ola
+02	2026-10-16T01:39:59.351Z	2026-10-16T01:39:59.359Z	0.005	0	/home/revisor/teste	uname -a
+03	2026-10-16T01:39:59.416Z	2026-10-16T01:39:59.423Z	0.005	0	/home/revisor/teste	sh -c echo\ conteudo\ \>\ arquivo-teste.txt
+04	2026-10-16T01:39:59.476Z	2026-10-16T01:39:59.485Z	0.006	1	/home/revisor/teste	false
+05	2026-10-16T01:40:11.977Z	2026-10-16T01:40:11.983Z	0.005	0	/home/revisor/teste	cp -p antigo.txt copia-mtime-antigo.txt
+06	2026-10-16T01:40:12.047Z	2026-10-16T01:40:12.059Z	0.009	0	/execucao/ambiente/teste-gravar-sessao/montado	sh -c echo\ y\ \>\ no-montado.txt

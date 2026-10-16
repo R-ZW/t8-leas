@@ -1,0 +1,12 @@
+2026-10-16T01:39:12Z GET https://prdownloads.sourceforge.net/dftt/11-carve-fat.zip?download
+200 11596213 https://sitsa.dl.sourceforge.net/project/dftt/Test%20Images/11_%20Basic%20Data%20Carving%20%231/11-carve-fat.zip?viasf=1&fid=d4f7ba5e4cc1ecaf&e=1792201153&st=OaUJaxK8g0rAT7N7fAWFxg
+2026-10-16T01:39:26Z fim dftt-11/11-carve-fat.zip rc=0
+2026-10-16T01:39:26Z GET https://prdownloads.sourceforge.net/dftt/12-carve-ext2.zip?download
+200 1101117 https://netactuate.dl.sourceforge.net/project/dftt/Test%20Images/12_%20Basic%20Data%20Carving%20%232/12-carve-ext2.zip?viasf=1&fid=9bf898dcce6f6a86&e=1792201167&st=mBidI8sV1K2DU2e-u2AcEg
+2026-10-16T01:39:28Z fim dftt-12/12-carve-ext2.zip rc=0
+2026-10-16T01:39:28Z GET https://downloads.sourceforge.net/dftt/boomer-win2003.zip
+200 38892469 https://master.dl.sourceforge.net/project/dftt/Test%20Images/13_%20Windows%20Memory%20Analysis%20%231/boomer-win2003.zip?viasf=1&fid=e6a0e4406ff9d31f&e=1792201169&st=GEEy4QUtgQUhTlzRYgSxOA
+2026-10-16T01:42:21Z fim dftt-13/boomer-win2003.zip rc=0
+2026-10-16T01:42:21Z GET https://downloads.sourceforge.net/dftt/boomer-win2k.zip
+200 89230163 https://master.dl.sourceforge.net/project/dftt/Test%20Images/13_%20Windows%20Memory%20Analysis%20%231/boomer-win2k.zip?viasf=1&fid=fc0b892201393cfc&e=1792201343&st=n7CTE8PMKqkqCtmu0kCQ-A
+2026-10-16T01:48:19Z fim dftt-13/boomer-win2k.zip rc=0

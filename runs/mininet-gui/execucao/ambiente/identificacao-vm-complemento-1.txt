@@ -1,0 +1,100 @@
+$ sed -n 115,140p ~/.bashrc
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+alias mininet_gui=/home/mininet/mininet-gui/run.sh
+[saida=0]
+$ ls -l $P/run.sh $P/setup.sh
+ls: cannot access '/run.sh': No such file or directory
+ls: cannot access '/setup.sh': No such file or directory
+[saida=2]
+$ sha256sum $P/run.sh
+sha256sum: /run.sh: No such file or directory
+[saida=1]
+$ cat $P/run.sh
+cat: /run.sh: No such file or directory
+[saida=1]
+$ bash -ic "type mininet_gui; command -v node; node --version; command -v npm; npm --version; command -v python3; python3 --version"
+bash: cannot set terminal process group (860): Inappropriate ioctl for device
+bash: no job control in this shell
+mininet_gui is aliased to `/home/mininet/mininet-gui/run.sh'
+/home/mininet/.nvm/versions/node/v18.20.7/bin/node
+v18.20.7
+/home/mininet/.nvm/versions/node/v18.20.7/bin/npm
+10.8.2
+/usr/bin/python3
+Python 3.8.5
+[saida=0]
+$ ls -la ~ | head -40
+total 76
+drwxr-xr-x 13 mininet mininet 4096 Mar 17  2025 .
+drwxr-xr-x  3 root    root    4096 Feb 10  2021 ..
+-rw-------  1 mininet mininet  673 Mar 17  2025 .bash_history
+-rw-r--r--  1 mininet mininet  220 Feb 10  2021 .bash_logout
+-rw-r--r--  1 mininet mininet 4037 Mar 17  2025 .bashrc
+drwx------  2 mininet mininet 4096 Feb 10  2021 .cache
+drwx------  3 mininet mininet 4096 Mar 17  2025 .config
+-rw-rw-r--  1 mininet mininet   85 Feb 10  2021 .gitconfig
+drwxrwxr-x 11 mininet mininet 4096 Feb 10  2021 mininet
+drwxrwxr-x  5 mininet mininet 4096 Mar 17  2025 mininet-gui
+drwxrwxr-x  4 mininet mininet 4096 Mar 17  2025 .npm
+drwxrwxr-x  8 mininet mininet 4096 Mar 17  2025 .nvm
+drwxrwxr-x 14 mininet mininet 4096 Feb 10  2021 oflops
+drwxrwxr-x 11 mininet mininet 4096 Feb 10  2021 oftest
+drwxrwxr-x 19 mininet mininet 4096 Feb 10  2021 openflow
+drwxrwxr-x  7 mininet mininet 4096 Feb 10  2021 pox
+-rw-r--r--  1 mininet mininet  807 Feb 10  2021 .profile
+-rw-r--r--  1 mininet mininet    0 Feb 10  2021 .sudo_as_admin_successful
+-rw-rw-r--  1 mininet mininet  223 Feb 10  2021 .wget-hsts
+drwxrwxr-x  3 mininet mininet 4096 Feb 10  2021 .wireshark
+[saida=0]
+$ ls $P/mininet-gui-frontend | head
+ls: cannot access '/mininet-gui-frontend': No such file or directory
+[saida=0]
+$ cat $P/mininet-gui-frontend/package.json
+cat: /mininet-gui-frontend/package.json: No such file or directory
+[saida=1]
+$ ls -d $P/mininet-gui-frontend/node_modules $P/mininet-gui-backend/venv $P/*/.venv 2>&1
+ls: cannot access '/mininet-gui-frontend/node_modules': No such file or directory
+ls: cannot access '/mininet-gui-backend/venv': No such file or directory
+ls: cannot access '/*/.venv': No such file or directory
+[saida=2]
+$ git -C $P log --oneline -5
+fatal: cannot change to 'log': No such file or directory
+[saida=128]
+$ git -C $P rev-parse origin/main origin/sbrc2025 origin/dev v0.0.1^{commit}
+fatal: cannot change to 'rev-parse': No such file or directory
+[saida=128]
+$ git -C $P log -1 --format=%ci FETCH_HEAD 2>&1; ls -l --time-style=full-iso $P/.git/FETCH_HEAD $P/.git/ORIG_HEAD 2>&1
+fatal: cannot change to 'log': No such file or directory
+ls: cannot access '/.git/FETCH_HEAD': No such file or directory
+ls: cannot access '/.git/ORIG_HEAD': No such file or directory
+[saida=2]
+$ ryu-manager --version 2>&1 | head -2
+bash: ryu-manager: command not found
+[saida=0]
+$ python3 -m pip --version
+pip 20.0.2 from /usr/lib/python3/dist-packages/pip (python 3.8)
+[saida=0]
+$ ip -br addr
+lo               UNKNOWN        127.0.0.1/8 
+eth0             UP             192.168.56.101/24 
+[saida=0]
+$ free -m; nproc
+              total        used        free      shared  buff/cache   available
+Mem:           7962          76        7597           0         288        7642
+Swap:           352           0         352
+2
+[saida=0]
+$ systemctl is-active ssh
+active
+[saida=0]
+$ systemctl status vboxadd-service virtualbox-guest-utils 2>&1 | head -6
+Unit vboxadd-service.service could not be found.
+Unit virtualbox-guest-utils.service could not be found.
+[saida=0]

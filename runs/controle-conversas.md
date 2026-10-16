@@ -2,7 +2,7 @@
 
 **Estado inicial: 15/10/2026.** Nenhuma conversa experimental foi aberta. O identificador único é **provedor + ID**: cada provedor tem FN-1…FN-3 e MG-1…MG-3. “Não iniciada” significa que nenhum Prompt A, B1 ou B2 foi enviado. Os caminhos abaixo estão **reservados**, não são exportações existentes.
 
-**Agenda provisória:** A/B1 em 16/10/2026, 10h–18h (America/Sao_Paulo), somente se os dois pacotes C03, hashes, acesso aos anexos e configurações de [Foremost-NG](foremost-ng/llms.md) e [Mininet-GUI](mininet-gui/llms.md) estiverem conferidos. B2 depois da execução comum e do registro factual congelado; registrar nova previsão se houver adiamento. Os colegas responsáveis por Claude e Gemini devem confirmar seu horário real; não presumir que aceitaram a janela.
+**Agenda provisória:** A/B1 em 16/10/2026, 10h–18h (America/Sao_Paulo), somente se os dois pacotes C03, hashes, acesso aos anexos e configurações de [Foremost-NG](foremost-ng/llms.md) e [Mininet-GUI](mininet-gui/llms.md) estiverem conferidos. B2 depois da execução comum e do registro factual congelado; registrar nova previsão se houver adiamento. Responsáveis: Eduardo (Claude, app desktop) e colegas de GPT e Gemini (apps desktop). Os colegas de GPT e Gemini devem confirmar seu horário real; não presumir que aceitaram a janela.
 
 | Provedor | ID | Artefato | A | B1 | B2 | Exportação integral prevista | Método/horários reais |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -12,11 +12,11 @@
 | GPT / OpenAI | MG-1 | Mininet-GUI | Não iniciada | Não iniciada | Não iniciada | `runs/mininet-gui/llm-openai/cadeia-1.md` | — |
 | GPT / OpenAI | MG-2 | Mininet-GUI | Não iniciada | Não iniciada | Não iniciada | `runs/mininet-gui/llm-openai/cadeia-2.md` | — |
 | GPT / OpenAI | MG-3 | Mininet-GUI | Não iniciada | Não iniciada | Não iniciada | `runs/mininet-gui/llm-openai/cadeia-3.md` | — |
-| Claude / Anthropic | FN-1 | Foremost-NG | Não iniciada | Não iniciada | Não iniciada | `runs/foremost-ng/llm-anthropic/cadeia-1.md` | — |
-| Claude / Anthropic | FN-2 | Foremost-NG | Não iniciada | Não iniciada | Não iniciada | `runs/foremost-ng/llm-anthropic/cadeia-2.md` | — |
-| Claude / Anthropic | FN-3 | Foremost-NG | Não iniciada | Não iniciada | Não iniciada | `runs/foremost-ng/llm-anthropic/cadeia-3.md` | — |
-| Claude / Anthropic | MG-1 | Mininet-GUI | Não iniciada | Não iniciada | Não iniciada | `runs/mininet-gui/llm-anthropic/cadeia-1.md` | — |
-| Claude / Anthropic | MG-2 | Mininet-GUI | Não iniciada | Não iniciada | Não iniciada | `runs/mininet-gui/llm-anthropic/cadeia-2.md` | — |
+| Claude / Anthropic | FN-1 | Foremost-NG | Concluída 2026-10-15 23:13 BRT | Concluída 2026-10-15 23:16 BRT | Não iniciada | `runs/foremost-ng/llm-anthropic/cadeia-1.md` | claude.ai web via Claude in Chrome (agente); conversa `adeeb21b-6f25-490a-9c41-f2f93f52efa8`; transcrição pela API com SHA-256 conferido contra a página; roteiro B1 em `anexos-saida/cadeia-1-B1-documento.md` |
+| Claude / Anthropic | FN-2 | Foremost-NG | Concluída 2026-10-15 23:25 BRT | Concluída 2026-10-15 23:28 BRT | Não iniciada | `runs/foremost-ng/llm-anthropic/cadeia-2.md` | claude.ai web via Claude in Chrome (agente); conversa `9ad3f94e-378e-4bff-aa64-107a8b15f1b7`; transcrição pela API com SHA-256 conferido contra a página; roteiro B1 em `anexos-saida/cadeia-2-B1-documento.md` |
+| Claude / Anthropic | FN-3 | Foremost-NG | Concluída 2026-10-15 23:28 BRT | Concluída 2026-10-15 23:32 BRT | Não iniciada | `runs/foremost-ng/llm-anthropic/cadeia-3.md` | claude.ai web via Claude in Chrome (agente); conversa `2fc81d78-e8c6-4ae0-abe8-079e17e0cd22`; transcrição pela API com SHA-256 conferido contra a página; roteiro B1 em `anexos-saida/cadeia-3-B1-documento.md`; etapa B1 retomada com a frase fixa após corte por limite de uso |
+| Claude / Anthropic | MG-1 | Mininet-GUI | Concluída 2026-10-15 23:29 BRT | Concluída 2026-10-15 23:32 BRT | Não iniciada | `runs/mininet-gui/llm-anthropic/cadeia-1.md` | claude.ai web via Claude in Chrome (agente); conversa `b8a3bba4-b676-48f3-acbe-01e879a7639d`; transcrição pela API com SHA-256 conferido contra a página; roteiro B1 em `anexos-saida/cadeia-1-B1-documento.md` |
+| Claude / Anthropic | MG-2 | Mininet-GUI | Concluída 2026-10-15 23:34 BRT | Concluída 2026-10-16 00:16 BRT | Não iniciada | `runs/mininet-gui/llm-anthropic/cadeia-2.md` | claude.ai web via Claude in Chrome (agente); conversa `f48dd41c-49b5-46ce-b8c7-35adc70dd399`; transcrição pela API com SHA-256 conferido contra a página; roteiro B1 em `anexos-saida/cadeia-2-B1-documento.md` |
 | Claude / Anthropic | MG-3 | Mininet-GUI | Não iniciada | Não iniciada | Não iniciada | `runs/mininet-gui/llm-anthropic/cadeia-3.md` | — |
 | Gemini / Google | FN-1 | Foremost-NG | Não iniciada | Não iniciada | Não iniciada | `runs/foremost-ng/llm-google/cadeia-1.md` | — |
 | Gemini / Google | FN-2 | Foremost-NG | Não iniciada | Não iniciada | Não iniciada | `runs/foremost-ng/llm-google/cadeia-2.md` | — |
@@ -26,6 +26,8 @@
 | Gemini / Google | MG-3 | Mininet-GUI | Não iniciada | Não iniciada | Não iniciada | `runs/mininet-gui/llm-google/cadeia-3.md` | — |
 
 ## Como atualizar cada linha
+
+O passo a passo operacional está em [GUIA-CONVERSAS.md](GUIA-CONVERSAS.md), e o formato da exportação, em [MODELO-cadeia.md](MODELO-cadeia.md).
 
 1. Antes de A, preencher em `llms.md` do artefato o nome/versão **mostrados na tela**, interface/plano com anexos, nível de raciocínio visível, navegação, memória/personalização, horário previsto revisado e método de exportação disponível. Conferir que os quatro arquivos de A tenham exatamente os mesmos hashes entre provedores para o mesmo artefato; se ZIP falhar, aplicar a mesma apresentação extraída a todos, documentando-a antes de A. Para B2, conferir o mesmo hash do registro factual nas nove cadeias do artefato.
 2. Marcar A, B1 e B2 separadamente como `não iniciada`, `concluída` ou `bloqueada: motivo`, com data/hora real em BRT. Não marcar B2 antes do registro factual. Manter A→B1→B2 **na mesma conversa** e não reutilizar uma conversa entre IDs.
