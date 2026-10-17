@@ -10,3 +10,11 @@ O aluno Eduardo Prates Tiadoro delegou estas decisões e a condução operaciona
 | Ambiente Mininet-GUI | **VM dos autores** (release `v0.0.1`, "VM SBRC 2025") no VirtualBox 7.1.6, com 8 GB de RAM. Docker foi descartado como substituto. | §12 e avaliação crítica §4.5: um ambiente fora dos requisitos não gera evidência sobre o artefato. |
 | Linha de base humana (§3) | **Não é delegável.** O agente não preenche `humano/` em nome do aluno, porque isso produziria um quarto julgamento de LLM rotulado como humano. Se o aluno não preencher `humano/decisao-analitica.md` antes de abrir respostas de LLM, a linha de base é declarada **ausente** no relatório. | Integridade dos dados. A linha de base é recomendada pelo protocolo, mas não é item obrigatório da tarefa. |
 | Mensagem aos autores (§4.5) | O rascunho fica em `foremost-ng/execucao/mensagem-autores.md`. O envio fica com o aluno, pela conta dele. | Comunicação externa em nome do aluno. |
+
+## Adendo — 17/10/2026
+
+| Tema | Decisão | Motivo |
+| --- | --- | --- |
+| Interfaces efetivamente usadas | Claude no claude.ai (web, chat); GPT no **Codex** (agente com terminal); Gemini no **Antigravity** (subagente isolado só de leitura). As três ficam como estão, com o desvio declarado. Esforço: Claude Médio; GPT e Gemini High. | Decisão do grupo em 17/10/2026. Conferiu-se nas transcrições que nenhum dos três leu arquivos fora de `pacote/` nem executou o artefato. Resta a ameaça da avaliação crítica §4.4 (produto + modelo), que deve constar no relatório. |
+| Transparência do executor | O agente que opera a execução de referência também operou as conversas do Claude e, ao testar o extrator, viu decisões da etapa A e a coluna `oficial` (selos oficiais). As sessões de execução recebem a instrução de ler só os roteiros B1, nunca as respostas A nem `referencia/`. | O registro factual é só de fatos e é idêntico para as três LLMs, mas a exposição prévia deve ser declarada. |
+| Ordem da consolidação | O roteiro consolidado usa os B1 da cadeia 1 de cada provedor (§6.2). Os B1 das cadeias 2 e 3 são consultados só para achar passo essencial ausente (§6.5). | Protocolo. |
