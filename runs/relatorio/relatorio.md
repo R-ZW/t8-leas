@@ -323,7 +323,7 @@ Cada item diz o que aconteceu, o efeito possível e a fonte.
 
 ### 5.12 Linha de base humana ausente
 
-Os quatro arquivos `humano/` continuam com o modelo, sem preencher, e `extrair_decisoes.py` registra 4 pendências por artefato. Pela [decisão de 15/10](../decisoes-operacionais.md), o agente não os preenche, e a linha de base é declarada **ausente**. Se tivesse sido feita, ela não seria cega: os autores já conheciam os selos e os resultados da T7.
+Não há linha de base humana porque as avaliações dos modelos já haviam sido abertas e o aluno não emitiu parecer prévio às cegas, como o §3 do protocolo prevê ("antes de abrir qualquer resposta de LLM"). Em 18/10/2026 o grupo decidiu não preenchê-la depois, porque ela não seria cega: os integrantes já conheciam os selos oficiais, os resultados da T7 e as respostas das LLMs. Pela [decisão de 15/10](../decisoes-operacionais.md), o agente também não a preenche em nome do aluno. Os quatro arquivos `humano/` continuam com o modelo, e `extrair_decisoes.py` registra 4 pendências por artefato. A linha de base não é item obrigatório da tarefa; sua ausência é um **desvio declarado**.
 
 ### 5.13 Tabela §3.1 não preenchida antes da coleta
 
