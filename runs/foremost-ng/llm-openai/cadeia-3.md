@@ -1,9 +1,9 @@
 # Cadeia FN-3 — openai
 
 - provedor: openai
-- modelo_exibido: GPT 6.1 Sol (informado de memória por Eduardo em 17/10/2026; o link de compartilhamento do Codex não exibe o modelo; a confirmar por Reinaldo)
+- modelo_exibido: GPT 6.1 Sol (confirmado por Reinaldo em 18/10/2026; o link de compartilhamento do Codex não exibe o modelo)
 - versao: não registrado
-- esforco: High (informado de memória por Eduardo em 17/10/2026; a confirmar por Reinaldo)
+- esforco: High (confirmado por Reinaldo em 18/10/2026)
 - interface: Codex (agente com workspace local e terminal), operado por Reinaldo Zimmer Wendt; anexos lidos do disco por caminho em `runs/<artefato>/pacote/` (desvio: agente em vez do chat do ChatGPT)
 - data_hora_A: não registrado no link (duração do turno: A=198s; B1=206s)
 - data_hora_B1: não registrado no link

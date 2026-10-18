@@ -118,7 +118,7 @@ São 3 provedores × 2 artefatos × 3 cadeias = **18 conversas** e **36 decisõe
 | Provedor | Modelo e esforço exibidos | Interface efetiva | A/B1 | B2 | Transcrição |
 |---|---|---|---|---|---|
 | Claude (Anthropic) | `Opus 5.5 Médio` (`claude-opus-5-5`, `effort_level=medium`) | claude.ai web, chat avulso, operado pelo agente por Claude in Chrome; `bash_tool` e skills ativos e não desligáveis | 15/10 23:13 → 16/10 00:26 BRT | 17/10 22:54–22:59 BRT, mesma conversa; registro `2041606f…`/`0efda099…` | API do claude.ai, SHA-256 conferido com a página |
-| GPT (OpenAI) | `GPT 6.1 Sol`, `High` (informados de memória; não confirmados) | **Codex** (agente com workspace e terminal) | 16/10, horário não registrado | 17–18/10, em **conversa nova** e outro workspace: **não comparável** (5.10) | A/B1: JSON dos links (`transcrever_codex.py`); B2: Session Exporter (`extrair_b2_session_export.py`), não literal |
+| GPT (OpenAI) | `GPT 6.1 Sol`, `High` (confirmado por Reinaldo em 18/10/2026) | **Codex** (agente com workspace e terminal) | 16/10, horário não registrado | 17–18/10, em **conversa nova** e outro workspace: **não comparável** (5.10) | A/B1: JSON dos links (`transcrever_codex.py`); B2: Session Exporter (`extrair_b2_session_export.py`), não literal |
 | Gemini (Google) | `Gemini Pro (High)` | **Antigravity**, subagente isolado `revisor-cega-gemini`, só leitura | 17/10 13:52–13:59 BRT | 17/10 23:26–23:27 BRT, mesma conversa; hash completo do registro conferido | `transcript_full.jsonl` |
 
 Pré-checagem de leitura dos anexos em conversa descartável: Claude em 15/10 23:07 BRT; Gemini em 17/10 13:49 BRT; GPT sem registro. Nas transcrições de A/B1 dos três provedores não se encontrou acesso fora de `pacote/` nem execução do artefato (adendo de 17/10).
@@ -170,7 +170,7 @@ flowchart TD
   M2 --> H0["Linha de base humana analítica<br/>(não preenchida)"]:::fora
   M2 --> PC["Pré-checagem de leitura dos anexos<br/>Claude 15/10 · Gemini 17/10"]
   PC --> AC["Claude · A + B1 × 6<br/>15–16/10 · claude.ai web · Opus 5.5 Médio"]
-  PC --> AO["GPT · A + B1 × 6<br/>16/10 · Codex · High não confirmado"]
+  PC --> AO["GPT · A + B1 × 6<br/>16/10 · Codex · GPT 6.1 Sol High"]
   PC --> AG["Gemini · A + B1 × 6<br/>17/10 · Antigravity · Pro High"]
   AO --> TX["Transcrições do GPT refeitas<br/>a partir dos links do Codex"]
   AC --> RC["Roteiros consolidados<br/>B1 da cadeia 1 + consulta às cadeias 2 e 3"]
@@ -213,8 +213,8 @@ O §3.1 manda copiar esta tabela para `preregistro.md` e preencher "Valor adotad
 | Fixo | Pacote de entrada | 4 arquivos + manifesto | `artigo.pdf` sem selos, `artefato.txt`, `instrucoes-oficiais.md`, `reivindicacoes.md` v2 | `pacote/MANIFESTO.sha256` |
 | Fixo | Lista de reivindicações | C1 a Cn | FN C1–C7; MG C1–C6 | `pacote/reivindicacoes.md` |
 | Fixo | Regra para R | as indicadas pelos autores ou C1–Cn | FN: C1–C6; MG: C4 e C5 | idem |
-| Fixo | Modelo e versão | nome exibido; data e hora | Claude `Opus 5.5 Médio`; GPT `GPT 6.1 Sol` (não confirmado); Gemini `Gemini Pro (High)`; datas em 2.5 | `llms.md`, cabeçalho das cadeias |
-| Fixo | Nível de raciocínio | o mesmo nível nominal | **diferente**: Claude Médio; GPT High (não confirmado); Gemini High | `llms.md` |
+| Fixo | Modelo e versão | nome exibido; data e hora | Claude `Opus 5.5 Médio`; GPT `GPT 6.1 Sol`, High (confirmado por Reinaldo em 18/10/2026); Gemini `Gemini Pro (High)`; datas em 2.5 | `llms.md`, cabeçalho das cadeias |
+| Fixo | Nível de raciocínio | o mesmo nível nominal | **diferente**: Claude Médio; GPT High (confirmado por Reinaldo); Gemini High | `llms.md` |
 | Fixo | Interface | chat com upload para as três | **diferente**: claude.ai web (chat); Codex (agente); Antigravity (subagente só leitura) | `llms.md`, `decisoes-operacionais.md` |
 | Fixo | Navegação web | desativada | Claude: desabilitada; Gemini: desativada no subagente; GPT: estado não registrado; nas três, proibida no Prompt A | `llms.md`, `prompt-A.txt` |
 | Fixo | Memória e personalização | desativadas | Claude: memória pausada, sem busca em conversas; Gemini: contexto isolado; GPT: estado não registrado | `llms.md` |
