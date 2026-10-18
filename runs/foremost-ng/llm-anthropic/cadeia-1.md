@@ -7,11 +7,11 @@
 - interface: claude.ai (web) no Google Chrome, operado pelo agente Claude Code pela extensão Claude in Chrome com autorização do aluno; chat avulso com anexos; memória pausada; busca na web indisponível
 - data_hora_A: 2026-10-15 23:13 BRT
 - data_hora_B1: 2026-10-15 23:16 BRT
-- data_hora_B2: pendente
+- data_hora_B2: 2026-10-17 22:54 BRT
 - anexos_A: artigo.pdf=d9b12aa44caeab3d8374fd9ad092c3b9ecec1f18d589125f0ca2f8d00dc9e715, artefato.txt=6de9ecff1194121da658fd3684742c0b2a42b7899ed73b7d3649b9e928330446, instrucoes-oficiais.md=446e5f94605b2fe60ac9c4028f7be57b0488bc79c3c8ef2ef782428f8e290a47, reivindicacoes.md=3d27bc26b64ae7c16272dc9d7a68c25ccacf98d82dbfcdc5bfd7d3ab7932dbac
-- anexo_B2: pendente
+- anexo_B2: registro-factual.md=2041606f1236e737
 - metodo_exportacao: transcrição gerada da API do claude.ai (conversa adeeb21b-6f25-490a-9c41-f2f93f52efa8, https://claude.ai/chat/adeeb21b-6f25-490a-9c41-f2f93f52efa8); blocos de texto de prompts e respostas sem alteração; raciocínio e saídas de ferramentas omitidos; o original permanece na conta
-- desvios: resposta A usou 8 chamada(s) de ferramenta do claude.ai: bash_tool ("Inspect artifact file"); bash_tool ("Read README and Makefile"); bash_tool ("Locate files and key features"); bash_tool ("ELF and main.c"); bash_tool ("Check data, dir.c VT and vt_query.c"); bash_tool ("Read ELF/Mach-O/EVTX/script parsers"); bash_tool ("Builtin registry in state.c"); bash_tool ("Config defaults") | resposta A contém raciocínio (thinking) exibido pela interface, omitido nesta transcrição | resposta B1 usou 25 chamada(s) de ferramenta do claude.ai: view ("Read docs skill before creating the runbook"); Claude Docs:guide (""); Claude Docs:batch (""); Artifact (""); Claude Docs:guide (""); bash_tool ("Check Fig. 2 offsets vs names"); Claude Docs:update (""); Claude Docs:update (""); Claude Docs:update (""); Claude Docs:update (""); Claude Docs:update (""); Claude Docs:update (""); Claude Docs:update (""); Claude Docs:update (""); Claude Docs:update (""); Claude Docs:update (""); Claude Docs:update (""); Claude Docs:update (""); Claude Docs:update (""); Claude Docs:update (""); Claude Docs:update (""); Claude Docs:update (""); tool_search (""); Claude Docs:read (""); Claude Docs:update ("") | resposta B1 contém raciocínio (thinking) exibido pela interface, omitido nesta transcrição | resposta B1 entregou o roteiro como documento do Claude Docs (https://claude.ai/code/artifact/a46da080-a8cd-45db-a001-65818b35a151), salvo sem alteração pela função "Copiar como Markdown" do claude.ai em `anexos-saida/cadeia-1-B1-documento.md`
+- desvios: resposta A usou 8 chamada(s) de ferramenta do claude.ai: bash_tool ("Inspect artifact file"); bash_tool ("Read README and Makefile"); bash_tool ("Locate files and key features"); bash_tool ("ELF and main.c"); bash_tool ("Check data, dir.c VT and vt_query.c"); bash_tool ("Read ELF/Mach-O/EVTX/script parsers"); bash_tool ("Builtin registry in state.c"); bash_tool ("Config defaults") | resposta A contém raciocínio (thinking) exibido pela interface, omitido nesta transcrição | resposta B1 usou 25 chamada(s) de ferramenta do claude.ai: view ("Read docs skill before creating the runbook"); Claude Docs:guide (""); Claude Docs:batch (""); Artifact (""); Claude Docs:guide (""); bash_tool ("Check Fig. 2 offsets vs names"); Claude Docs:update (""); Claude Docs:update (""); Claude Docs:update (""); Claude Docs:update (""); Claude Docs:update (""); Claude Docs:update (""); Claude Docs:update (""); Claude Docs:update (""); Claude Docs:update (""); Claude Docs:update (""); Claude Docs:update (""); Claude Docs:update (""); Claude Docs:update (""); Claude Docs:update (""); Claude Docs:update (""); Claude Docs:update (""); tool_search (""); Claude Docs:read (""); Claude Docs:update ("") | resposta B1 contém raciocínio (thinking) exibido pela interface, omitido nesta transcrição | resposta B2 usou 1 chamada(s) de ferramenta do claude.ai: bash_tool ("Read execution record") | resposta B2 contém raciocínio (thinking) exibido pela interface, omitido nesta transcrição | resposta B1 entregou o roteiro como documento do Claude Docs (https://claude.ai/code/artifact/a46da080-a8cd-45db-a001-65818b35a151), salvo sem alteração pela função "Copiar como Markdown" do claude.ai em `anexos-saida/cadeia-1-B1-documento.md`
 
 ## Prompt A
 
@@ -241,3 +241,103 @@ Quatro pontos mudam a forma de executar:
 - **Tabela da Fig. 2 em P32:** transcrevi a partir de uma figura de baixa resolução. Confira contra o PDF antes de comparar. Os 12 offsets são coerentes com os nomes dos arquivos (offset ÷ 512).
 
 O tempo estimado é de 4 h 30 min a 7 h de trabalho ativo, sem contar a espera pela resposta dos autores.
+
+## Prompt B2
+
+Segue em anexo o registro factual da execução do artefato (registro-factual.md), feita em ambiente que atende (Linux, como pede o README; contêiner Docker com Ubuntu 24.04 sobre WSL2, detalhado na seção 1 do registro) aos requisitos dos autores. O roteiro executado consolidou os planos de três revisores, incluindo o seu.
+
+Com base no registro e no material anterior:
+1. Para cada passo relevante, diga se o resultado confirma, contradiz ou não altera sua avaliação analítica.
+2. Decida novamente F e R (Atribuir, Não atribuir ou Indeterminado) com a mesma regra de antes. Use Indeterminado somente se faltar evidência que o registro não fornece; diga exatamente qual.
+3. Trate passos marcados D2 e D3 como evidência complementar, não como reprodução das reivindicações dos autores.
+4. Informe confiança de 0 a 100 e explique a mudança em relação à decisão analítica, se houver.
+Repita o bloco JSON da etapa A com as novas decisões e acrescente "mudou": true/false para cada selo.
+
+## Resposta B2
+
+# Reavaliação de F e R com base no registro de execução
+
+As duas decisões continuam **Não atribuir**. O que muda é o fundamento: em F, a execução resolveu tudo que dependia dela, e só os critérios de documentação seguem falhando. Em R, a execução confirmou a falta de `evidence2.dd` e revelou dois defeitos de código que eu não tinha identificado na leitura.
+
+Trato o registro como relato do revisor que executou; não executei nada.
+
+## 1. Efeito de cada passo relevante sobre a avaliação analítica
+
+**Compilação, instalação e uso básico (F)**
+
+| Passo | Resultado observado | Efeito |
+|---|---|---|
+| P01, P10, P11, P11-2 | Clone conferido contra o commit `bb812a22`; zip com SHA-256 igual ao do pacote; a árvore difere só no fim de linha (CRLF/LF) | Não altera. Garante que o código executado é o avaliado. |
+| P02 | `make` na raiz: "No targets specified and no makefile found" | **Confirma** a inconsistência entre artigo e artefato [artigo.pdf:p. 6]. |
+| P03 | O `foremost-ng-<version>.tar.gz` citado no README não existe; foi usado o zip | **Confirma** que a instalação do README não é seguível ao pé da letra [README.md:27]. |
+| P04, P05, P06 | Falha por falta de `ctype.h` (`libc6-dev`) | Não altera F por si. O ambiente inicial usou `--no-install-recommends`, e o `apt-get install -y` do Dockerfile dos autores instalaria o `libc6-dev`. Ainda assim, **confirma** que a seção Linux do README não lista dependências [README.md:31–35]. |
+| P04-2, P05-2 | `make` e `sudo make install` com código 0 (gcc 13.3.0, OpenSSL 3.0.13, libcurl 8.5.0, Ubuntu 24.04); binário, manual e configuração instalados | **Resolve a favor** o que antes era "só verificável por execução": o artefato compila e instala. |
+| P06-2 | O manual não lista `evtx`, `elf`, `macho` nem `script`, e indica `/etc/foremost.conf`, enquanto o código usa `/usr/local/etc` | **Confirma**, e reforça: a documentação de uso está desatualizada em relação ao código. |
+| P13a, P13b | `-h` e `-V` funcionam; a ajuda só exemplifica `jpeg,pdf` | **Confirma** a leitura de [src/main.c:101]. |
+| P15a, P16a (D2) | Script recuperado idêntico, no offset 524288, registrado em `audit.txt` | **Resolve a favor**: funcionalidade observada, com prova de saída. A entrada é do revisor. |
+| P15b, P15b-2 (D2) | A sintaxe literal do artigo (`-o /temp/output/carved`) falha sem o diretório-pai; com ele criado, extrai 5 arquivos | Não altera a decisão; é uma imprecisão menor do exemplo do artigo. |
+| P39, P41 (D3) | Imagens DFTT: 14 e 6 arquivos extraídos, reconhecidos por `file`; 10/15 e 1/10 idênticos por MD5 | Evidência complementar de funcionamento nos formatos herdados, que não são reivindicações. |
+| P39, P41 | Nenhum `recovery.log` gerado | **Confirma** a divergência que eu havia apontado [artigo.pdf:p. 7, §4.2]. |
+
+**Reivindicações (R)**
+
+| Passo | Resultado observado | Efeito |
+|---|---|---|
+| P17b–P19b, P16-G-cmp (C1, D2) | EVTX sintético com campo em 0x18 = 1: recorte de 65.536 B, quando o original tinha 69.632 B (truncado em 4.096 B) | **Confirma** o risco que apontei: o tamanho é calculado a partir do campo em 0x18 e ignora o cabeçalho [src/extract.c:2479, 2489]. |
+| P28d, P19a (C1, D3) | EVTX público: 1601 eventos, XML idêntico ao original; mas o recorte tem 10.570.240 B contra 1.118.208 B e vai até o fim da imagem | **Confirma** o mesmo risco. O leitor tolera os bytes extras, então o resultado esperado ("legível") foi observado, mas só em entrada do revisor. |
+| P15b-2, P16-G-cmp (C1, D2) | 3 `.evtx` falsos extraídos de dentro do binário ELF | Achado novo, não previsto. Provavelmente vem da string `ElfFile\0\0` embutida no próprio binário. Indica falsos positivos. |
+| P21b, P28d negativos (C2, D2) | Os dois scripts com shebang e só comentários (62 B e 45 B) foram extraídos | **Contradiz minha avaliação.** Eu havia lido que o código recusa scripts só com comentários. O laço de [src/extract.c:2599–2609] pula apenas o caractere `#`, e a primeira letra do comentário já marca "corpo real". O filtro não funciona. |
+| P28d scripts (C2, D2) | Scripts válidos idênticos, com shebang; os menores que 32 B foram descartados | Confirma o resto da leitura de C2. |
+| P24b, P28d Mach-O (C3, D2) | Fat extraído idêntico; thin 64-bit (bytes `CF FA ED FE`) não extraído em nenhuma imagem | **Contradiz minha avaliação**, que deixava C3 dependente de execução. O código lê o magic com `read_le32` e compara com `0xCFFAEDFE` e `0xCEFAEDFE` [src/extract.c:2360, 2363, 2409]. Lidos como little-endian, os bytes reais dão `0xFEEDFACF` e `0xFEEDFACE`. Com isso, nenhum Mach-O thin pode ser extraído, com qualquer entrada. |
+| P27b-conf, P28d, P28d-readelf (C4, D2) | ELF real: recorte é prefixo idêntico até o fim do último `PT_LOAD`; `readelf -h -l` lê cabeçalho e segmentos, mas acusa a tabela de seções além do fim do arquivo | **Confirma** o risco que apontei. "Estruturalmente legível" vale para cabeçalho e segmentos, e a afirmação do artigo de que o arquivo "retains … symbol information" é contrariada. |
+| P29a, P29b (C5, D2) | Sem chave: aviso uma vez por arquivo, carving normal, mas a coluna VT mostra `Clean (0)` (sem `-x`, mostra `N/A`) | **Confirma** a leitura de [src/vt_query.c:140–142] com [src/dir.c:281]: aparece um veredito de consulta que não ocorreu. |
+| P30–P33 (C5) | Consulta com chave inválida, com chave válida, conferência manual e envio: não executados ou bloqueados | Não altera; C5 segue sem a evidência decisiva. |
+| P08-2, P34–P37 (C6) | `evidence2.dd` ausente no artefato, no contêiner e em fontes públicas; pedido aos autores não enviado | **Confirma** a ausência do dado necessário. |
+| P38a, P38b (C7) | Despachante em cadeia `if/else` por tipo; `s_spec` e `init_builtin` presentes | **Confirma** a contradição com [artigo.pdf:p. 3]. |
+
+Um detalhe sobre P38a: o registro diz que o `grep` em `main.h` não devolveu linhas, mas `artefato.txt` mostra `#define ELF 27` a `#define SCRIPT 35` [src/main.h:193–201]. Isso parece problema no comando ou nas aspas e não muda a conclusão.
+
+## 2. Novas decisões
+
+### Selo F: Não atribuir (inalterado)
+
+| Critério | Antes | Agora |
+|---|---|---|
+| F1: executável e funcionalidades observáveis | Só verificável por execução | **Atendido** [registro-factual.md:P04-2, P05-2, P15a, P16a, P39, P41] |
+| F3: prova de execução e saídas | Só verificável por execução | **Atendido** [registro-factual.md:Convenções; evidências em `passos/`] |
+| F2a: dependências no README | Não atendido | **Não atendido**, agravado: P04 mostra que a lista do README não basta num Ubuntu mínimo, e só o Dockerfile cobre a lacuna [README.md:31–35; registro-factual.md:P04] |
+| F2b: versões | Não atendido | **Não atendido**: as versões que funcionaram foram registradas pelo revisor, não pelos autores [registro-factual.md:seção 1] |
+| F2d: instalação | Atendido com ressalva | **Parcial**: o tar.gz do README não existe e o `make` do artigo falha [registro-factual.md:P02, P03] |
+| F2e/F2f: execução e exemplo mínimo | Parcial / Não atendido | **Não atendido**: o exemplo mínimo executado foi criado pelo revisor (D2), e o manual não documenta os novos formatos [registro-factual.md:P06-2, P14a] |
+
+Pela regra, um critério obrigatório não atendido leva a "Não atribuir". Todos os critérios que dependiam de execução foram resolvidos a favor, e os que falham são exclusivamente de documentação. Não há motivo para Indeterminado.
+
+**Confiança de que o comitê atribuiu F: 65** (antes, 50). O artefato compila, instala e recupera arquivos sem alteração de código, o que torna mais provável que um comitê tenha concedido F apesar das lacunas do README.
+
+### Selo R: Não atribuir (inalterado)
+
+Avaliação por reivindicação, tratando D2 e D3 como evidência complementar:
+
+- **C1: não reproduzível** pelo processo dos autores. Não há entrada nem instrução dos autores. A evidência complementar é favorável à legibilidade (1601 eventos idênticos), mas mostra recorte com tamanho errado e falsos positivos.
+- **C2: não reproduzível.** Não há entrada dos autores. Além disso, o filtro de "mais que só comentários" falha por defeito de código; isso não depende da entrada.
+- **C3: não reproduzível.** Não há entrada dos autores, e a variante thin é inalcançável pelo código, com qualquer entrada.
+- **C4: não reproduzível** pelo processo dos autores. Não há entrada dos autores. A evidência complementar mostra cabeçalho e segmentos legíveis, com a tabela de seções truncada.
+- **C5: depende de execução.** A evidência que falta, e que o registro não fornece, é a execução com uma chave válida do VirusTotal e a conferência manual pelo SHA-256 (P31–P33). O caminho sem chave mostra `Clean (0)` para consultas que não ocorreram.
+- **C6: não reproduzível.** Falta `evidence2.dd` [registro-factual.md:P34, seção 4].
+
+O critério R2, de documentação das reivindicações e do processo dos autores, continua não atendido. Pela regra de `reivindicacoes.md`, R exige C1 a C6, e C6 falha por ausência de dado. A decisão não depende de C5, por isso não cabe Indeterminado.
+
+**Confiança de que o comitê atribuiu R: 10** (antes, 15). Mesmo com `evidence2.dd`, o registro mostra que C2 e C3 falham por defeitos que independem da entrada.
+
+## 3. Mudança em relação à avaliação analítica
+
+- **F:** a decisão é a mesma. Antes, o veredito juntava uma falha de documentação com critérios ainda indeterminados. Agora, só a documentação falha, e a confiança sobe.
+- **R:** a decisão é a mesma, com base mais forte. Antes, C1–C5 dependiam de execução. Agora, C1 e C4 têm evidência complementar favorável, mas não contam como reprodução; C2 e C3 têm defeitos de código que eu não tinha identificado; C6 continua sem dado. A confiança cai.
+
+Erro meu: a avaliação analítica deu o filtro de comentários de C2 como implementado e não percebeu a comparação invertida do magic Mach-O em C3. A execução corrigiu as duas leituras.
+
+```json
+{"F": {"decisao": "Não atribuir", "confianca": 65, "mudou": false, "evidencias": ["artefato.txt:README.md:27", "artefato.txt:README.md:31-35", "artefato.txt:README.md:74-85", "artefato.txt:Dockerfile:1", "artefato.txt:Dockerfile:5", "registro-factual.md:P02", "registro-factual.md:P03", "registro-factual.md:P04", "registro-factual.md:P04-2", "registro-factual.md:P05-2", "registro-factual.md:P06-2", "registro-factual.md:P15a", "registro-factual.md:P16a", "registro-factual.md:P39", "registro-factual.md:P41"]},
+ "R": {"decisao": "Não atribuir", "confianca": 10, "mudou": false, "evidencias": ["artefato.txt:README.md:1-119", "artefato.txt:src/extract.c:2479-2489", "artefato.txt:src/extract.c:2599-2609", "artefato.txt:src/extract.c:2360-2409", "artefato.txt:src/dir.c:281", "artefato.txt:src/vt_query.c:140-142", "registro-factual.md:P18b", "registro-factual.md:P28d", "registro-factual.md:P19a", "registro-factual.md:P21b", "registro-factual.md:P24b", "registro-factual.md:P27b-conf", "registro-factual.md:P29a", "registro-factual.md:P29b", "registro-factual.md:P34", "registro-factual.md:P08-2", "registro-factual.md:seção 4", "reivindicacoes.md:Regra para o selo R"],
+       "por_reivindicacao": {"C1": "nao_reproduzivel", "C2": "nao_reproduzivel", "C3": "nao_reproduzivel", "C4": "nao_reproduzivel", "C5": "depende_execucao", "C6": "nao_reproduzivel"}}}
+```

@@ -7,11 +7,11 @@
 - interface: claude.ai (web) no Google Chrome, operado pelo agente Claude Code pela extensão Claude in Chrome com autorização do aluno; chat avulso com anexos; memória pausada; busca na web indisponível
 - data_hora_A: 2026-10-16 00:23 BRT
 - data_hora_B1: 2026-10-16 00:26 BRT
-- data_hora_B2: pendente
+- data_hora_B2: 2026-10-17 22:59 BRT
 - anexos_A: artigo.pdf=4e3ff858506f2f9e6da30af4412caa402890ac154b910df390b74e2ee2a2bf08, artefato.txt=5e1da9b36fe62beddfdb9b8dbbceefa67c1c38e14f45c8bd3247519bcf83c8eb, instrucoes-oficiais.md=fc8e01dd0ffdbff06af86a07bd44662c3394903c0d3a6be0222e678963989059, reivindicacoes.md=100366e5dfad9c560f9d5066e67d1e23df8f6ad7c3d5ce2e62aff02a529ed0bc
-- anexo_B2: pendente
+- anexo_B2: registro-factual.md=0efda099a39c28b4
 - metodo_exportacao: transcrição gerada da API do claude.ai (conversa 54ea4ed0-f2a2-47b8-9732-8b34e3ddfec2, https://claude.ai/chat/54ea4ed0-f2a2-47b8-9732-8b34e3ddfec2); blocos de texto de prompts e respostas sem alteração; raciocínio e saídas de ferramentas omitidos; o original permanece na conta
-- desvios: resposta A usou 9 chamada(s) de ferramenta do claude.ai: view ("Ler skill de leitura de arquivos antes de abrir o artefato"); bash_tool ("Inspecionar tamanho e início do artefato"); bash_tool ("Ler resto do README e localizar arquivos"); bash_tool ("Ler backend api.py e cli.py"); bash_tool ("Ler requirements, package.json, TopologyForm, run.sh, setup.sh"); bash_tool ("Buscar geração de topologia e regras de fluxo"); bash_tool ("Ler geração de topologias em NetworkGraph.vue"); bash_tool ("Ler Webshell.vue e conexão websocket"); bash_tool ("Verificar endpoints usados pelo frontend e exemplo de exportação") | resposta A contém raciocínio (thinking) exibido pela interface, omitido nesta transcrição | resposta B1 usou 14 chamada(s) de ferramenta do claude.ai: view ("Ler a skill de docs antes de criar o roteiro"); Claude Docs:guide (""); Claude Docs:batch (""); Artifact (""); Claude Docs:guide (""); bash_tool ("Localizar gatilhos da interface (estatísticas, botões)"); Claude Docs:update (""); Claude Docs:update (""); Claude Docs:update (""); Claude Docs:update (""); Claude Docs:update (""); Claude Docs:update (""); Claude Docs:update (""); Claude Docs:update ("") | resposta B1 contém raciocínio (thinking) exibido pela interface, omitido nesta transcrição | resposta B1 entregou o roteiro como documento do Claude Docs (https://claude.ai/code/artifact/e56c6f32-fbe3-491c-8449-424cd98bb77e), salvo sem alteração pela função "Copiar como Markdown" do claude.ai em `anexos-saida/cadeia-3-B1-documento.md`
+- desvios: resposta A usou 9 chamada(s) de ferramenta do claude.ai: view ("Ler skill de leitura de arquivos antes de abrir o artefato"); bash_tool ("Inspecionar tamanho e início do artefato"); bash_tool ("Ler resto do README e localizar arquivos"); bash_tool ("Ler backend api.py e cli.py"); bash_tool ("Ler requirements, package.json, TopologyForm, run.sh, setup.sh"); bash_tool ("Buscar geração de topologia e regras de fluxo"); bash_tool ("Ler geração de topologias em NetworkGraph.vue"); bash_tool ("Ler Webshell.vue e conexão websocket"); bash_tool ("Verificar endpoints usados pelo frontend e exemplo de exportação") | resposta A contém raciocínio (thinking) exibido pela interface, omitido nesta transcrição | resposta B1 usou 14 chamada(s) de ferramenta do claude.ai: view ("Ler a skill de docs antes de criar o roteiro"); Claude Docs:guide (""); Claude Docs:batch (""); Artifact (""); Claude Docs:guide (""); bash_tool ("Localizar gatilhos da interface (estatísticas, botões)"); Claude Docs:update (""); Claude Docs:update (""); Claude Docs:update (""); Claude Docs:update (""); Claude Docs:update (""); Claude Docs:update (""); Claude Docs:update (""); Claude Docs:update ("") | resposta B1 contém raciocínio (thinking) exibido pela interface, omitido nesta transcrição | resposta B2 usou 2 chamada(s) de ferramenta do claude.ai: bash_tool ("Ler registro factual da execução"); bash_tool ("Verificar se as evidências citadas no registro foram anexadas") | resposta B2 contém raciocínio (thinking) exibido pela interface, omitido nesta transcrição | resposta B1 entregou o roteiro como documento do Claude Docs (https://claude.ai/code/artifact/e56c6f32-fbe3-491c-8449-424cd98bb77e), salvo sem alteração pela função "Copiar como Markdown" do claude.ai em `anexos-saida/cadeia-3-B1-documento.md`
 
 ## Prompt A
 
@@ -230,3 +230,88 @@ Teste mínimo pronto; agora os blocos de R por reivindicação (P15–P28).
 Blocos R prontos; agora o tempo estimado e a tabela-resumo, e ajusto a contagem de passos não documentados no escopo.
 
 O roteiro está pronto no documento aberto ao lado: 28 passos, sendo 12 marcados como [NÃO DOCUMENTADO]. Edite diretamente ou comente para eu revisar.
+
+## Prompt B2
+
+Segue em anexo o registro factual da execução do artefato (registro-factual.md), feita em ambiente que atende parcialmente (VM dos autores no VirtualBox 7.1.6 com 8 GB de RAM, mas sobre o Hyper-V em modo NEM e com o navegador do host em vez de um navegador dentro da VM, como detalhado na seção 1 do registro) aos requisitos dos autores. O roteiro executado consolidou os planos de três revisores, incluindo o seu.
+
+Com base no registro e no material anterior:
+1. Para cada passo relevante, diga se o resultado confirma, contradiz ou não altera sua avaliação analítica.
+2. Decida novamente F e R (Atribuir, Não atribuir ou Indeterminado) com a mesma regra de antes. Use Indeterminado somente se faltar evidência que o registro não fornece; diga exatamente qual.
+3. Trate passos marcados D2 e D3 como evidência complementar, não como reprodução das reivindicações dos autores.
+4. Informe confiança de 0 a 100 e explique a mudança em relação à decisão analítica, se houver.
+Repita o bloco JSON da etapa A com as novas decisões e acrescente "mudou": true/false para cada selo.
+
+## Resposta B2
+
+Baseio esta reavaliação no `registro-factual.md`. Os arquivos que ele cita (`terminal.txt`, capturas, logs, exportados) não foram anexados, então tomo as observações do registro como fato, sem conferir capturas ou hashes. Não executei nada.
+
+## 1. Efeito de cada passo sobre a avaliação analítica
+
+**Passos documentados pelos autores (D0/D1)**
+
+| Passo | Resultado | Efeito |
+|---|---|---|
+| E02 | O link do Google Drive (README:53) está inativo. A VM veio da release `v0.0.1` dos próprios autores, e o nome do `.ova` difere de README:55. | **Contradiz em parte.** Eu tinha marcado a VM como evidência ausente. Agora há um defeito concreto na documentação de instalação, mas a fonte alternativa é dos autores, então F não fica bloqueado. |
+| E04 | Importação sem erro. | Confirma. |
+| E06 | A VM não tem ambiente gráfico; o acesso foi por SSH. | **Contradiz** o que o README pressupõe: terminal por Ctrl+Alt+T (README:84) e navegador dentro da VM (README:86). É divergência de documentação, sem efeito sobre as funcionalidades. |
+| E09 | `mininet_gui` imprimiu a URL; backend e frontend subiram. | **Confirma.** O risco que apontei no `nvm` de run.sh:20 não se materializou: a VM roda um run.sh sem essa linha e carrega o Node pelo `~/.bashrc`. |
+| E10 | Interface com barra lateral, grafo e WebShell. | Confirma (P7; C1). |
+| E11–E13 | c1 criado; Single com 2 hosts e links verdes; pingall 1/1 nos dois sentidos. | **Confirma** o teste mínimo (P8–P10) e o comportamento esperado de C1 e C2. |
+| E14 | O iperf (opcional) mediu 6,62 Gbit/s entre as abas h1 e h2. | Confirma; apoio a C5. |
+| E16 | Ryu ausente; sem conectividade entre as duas topologias. O link s1–s2 ficou verde com a rede ativa. Os nós novos nasceram sobrepostos aos antigos. | **Confirma** dois riscos que eu tinha apontado: Ryu não garantido na VM e coordenadas fixas em `createSingleTopo` (NetworkGraph.vue:513). O passo 8 é opcional, então não bloqueia F. A criação de link com a rede ativa é evidência documentada para C3. |
+| E17 | JSON e script exportados com a topologia corrente. | Confirma (P13). |
+| E19–E22 | Grafos e contagens: Single 3 hosts; Linear 3×2 (3 switches, 6 hosts, 8 links); Linear 2×1; Tree 2×2 (3 switches, 4 hosts, 6 links). | **Confirma** C4 nos três modelos. As contagens coincidem com as que derivei do código. As quantidades foram escolhidas pelos revisores, mas o README manda o usuário escolhê-las. |
+| E24 | Aba h1: `h1-eth0` 10.0.0.1/8. | **Confirma** C5. O procedimento é dos autores; só o comando foi escolhido. |
+
+**Passos não documentados (D2), usados só como evidência complementar**
+
+| Passo | Resultado | Efeito |
+|---|---|---|
+| E07 | A VM está no commit `be68302`, não em `465648a4`. Backend e frontend são idênticos (registro, 1.3). | Não altera. Era a ressalva prevista em P5, e o código executado é o que analisei. |
+| E25–E27 | Cada aba está no namespace de rede do seu nó, diferente do da VM; ping h1→h2 sem perda. | Reforça C5. |
+| E28a–E28b | Nó arrastado mantém a posição após recarregar; nós soltos da paleta podem ser ligados. | Reforça C1. |
+| E29 | Pingall 20/20 incluindo h5, criado com a rede ativa. | Reforça C2 e a parte de criação de C3. |
+| E30a–E30b, E30d | Link e nó removidos sem reiniciar a emulação; h1 continua alcançando h3. | Reforça a parte de remoção de C3, que o README não documenta. |
+| E30c | Após as remoções, o pingall retorna HTTP 500 (`AttributeError` em `pingFull`), e `/links` mantém a entrada `h4–s2`. | **Achado novo, mas coerente com o código:** `delete_node` (api.py:298–316) não limpa `app.links`. É um defeito a registrar. Não decide R. |
+| E31 | A Flow Table de s1 mostra 5 regras. | Confirma a parte de visualização de C6. |
+| E32 | Nenhum controle para criar ou remover regras de fluxo. | **Confirma** minha classificação de C6 como não reproduzível. |
+| E15, E05, E08, E18, E23 | Diversos. | Não alteram. E15 confirma o Ryu ausente. E05 mostra que a OVA vinha com 1536 MB e 1 vCPU, o que reforça a inconsistência entre README:38 e README:103. |
+
+## 2. Novas decisões
+
+**F: Atribuir.**
+- O artefato foi executado e suas funcionalidades foram observadas pelo procedimento dos autores: passos 1–6 e 9 do teste mínimo (E06, E09–E13, E17), mais o passo 7 opcional (E14).
+- O README informa ambiente, versão do VirtualBox, instalação, execução e um exemplo mínimo.
+- Nenhum critério obrigatório falhou:
+  - o link quebrado tem substituto oficial dos autores;
+  - a VM sem interface gráfica não impediu nenhuma funcionalidade;
+  - o passo 8 com Ryu é declarado opcional.
+- Esses três pontos entram na revisão como problemas encontrados, como pedem as instruções.
+
+**R: Atribuir.**
+- **C4 reproduzida:** E19–E22 mostram os três modelos com a quantidade escolhida, observada no grafo dentro de passos documentados. A contagem pela API (E23) só reforça.
+- **C5 reproduzida:** E24 mostra a saída na aba do nó selecionado. E14 também é documentado e mostra o mesmo comportamento.
+- Pela regra de reivindicacoes.md, isso basta para R.
+
+**Classificação por reivindicação**
+
+- **C1 e C2:** reproduzíveis por E10–E13.
+- **C3: reproduzível, com ressalva.** O resultado esperado ("rede alterada enquanto a emulação continua ativa") foi observado no passo documentado E16: segundo controlador, segunda topologia e link s1–s2 com a rede ativa.
+  - A remoção só aparece em D2 (E30).
+  - Depois da remoção, o pingall falha com HTTP 500 (E30c).
+- **C6: não reproduzível.** Os autores não documentam procedimento, e E32 mostra que não há como criar ou remover regras pela interface. Só a visualização existe (E31).
+
+Não restou motivo para Indeterminado: o registro fornece as observações que faltavam.
+
+## 3. Confiança e mudança
+
+- **F, confiança 85** (antes: Indeterminado, 70). A mudança vem de observar diretamente o teste mínimo. Os 15 pontos de dúvida refletem três divergências da documentação que um revisor do comitê, em 2025, talvez não tenha encontrado ou tenha julgado de outra forma: link, VM sem área gráfica e Ryu ausente.
+- **R, confiança 80** (antes: Indeterminado, 60). As duas reivindicações da regra foram observadas por passos documentados, com resultado inequívoco. Resta o risco de o comitê ter cobrado C6, contribuição do artigo sem implementação de criação e remoção.
+- **Limites do ambiente:** são uma execução única, Hyper-V em modo NEM, navegador do host, operação automatizada por CDP e commit `be68302`. Nada disso afeta as reivindicações, que não têm valores de desempenho e cujo código é idêntico ao do commit avaliado. Por isso não reduzi a decisão por esses fatores.
+
+```json
+{"F": {"decisao": "Atribuir", "confianca": 85, "mudou": true, "evidencias": ["registro-factual.md:E09", "registro-factual.md:E10", "registro-factual.md:E11", "registro-factual.md:E12", "registro-factual.md:E13", "registro-factual.md:E14", "registro-factual.md:E17", "registro-factual.md:E02", "registro-factual.md:E06", "registro-factual.md:E16", "artefato.txt:README.md:84-98"]},
+ "R": {"decisao": "Atribuir", "confianca": 80, "mudou": true, "evidencias": ["reivindicacoes.md:Regra para o selo R", "registro-factual.md:E19", "registro-factual.md:E20", "registro-factual.md:E21", "registro-factual.md:E22", "registro-factual.md:E24", "registro-factual.md:E14", "registro-factual.md:1.3", "registro-factual.md:E23 (D2, complementar)", "registro-factual.md:E25-E27 (D2, complementar)", "registro-factual.md:E30c (D2, defeito)", "registro-factual.md:E32 (D2, C6)"],
+       "por_reivindicacao": {"C1": "reproduzivel", "C2": "reproduzivel", "C3": "reproduzivel", "C4": "reproduzivel", "C5": "reproduzivel", "C6": "nao_reproduzivel"}}}
+```

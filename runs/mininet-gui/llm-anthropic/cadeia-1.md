@@ -7,11 +7,11 @@
 - interface: claude.ai (web) no Google Chrome, operado pelo agente Claude Code pela extensão Claude in Chrome com autorização do aluno; chat avulso com anexos; memória pausada; busca na web indisponível
 - data_hora_A: 2026-10-15 23:29 BRT
 - data_hora_B1: 2026-10-15 23:32 BRT
-- data_hora_B2: pendente
+- data_hora_B2: 2026-10-17 22:55 BRT
 - anexos_A: artigo.pdf=4e3ff858506f2f9e6da30af4412caa402890ac154b910df390b74e2ee2a2bf08, artefato.txt=5e1da9b36fe62beddfdb9b8dbbceefa67c1c38e14f45c8bd3247519bcf83c8eb, instrucoes-oficiais.md=fc8e01dd0ffdbff06af86a07bd44662c3394903c0d3a6be0222e678963989059, reivindicacoes.md=100366e5dfad9c560f9d5066e67d1e23df8f6ad7c3d5ce2e62aff02a529ed0bc
-- anexo_B2: pendente
+- anexo_B2: registro-factual.md=0efda099a39c28b4
 - metodo_exportacao: transcrição gerada da API do claude.ai (conversa b8a3bba4-b676-48f3-acbe-01e879a7639d, https://claude.ai/chat/b8a3bba4-b676-48f3-acbe-01e879a7639d); blocos de texto de prompts e respostas sem alteração; raciocínio e saídas de ferramentas omitidos; o original permanece na conta
-- desvios: resposta A usou 8 chamada(s) de ferramenta do claude.ai: view ("Ler skill de leitura de arquivos antes de abrir o artefato"); bash_tool ("Dimensionar e orientar no artefato"); bash_tool ("Ler resto do README e mapa de arquivos"); bash_tool ("Ler backend api.py e cli.py"); bash_tool ("Procurar suporte a regras de fluxo e ler scripts/dependências"); bash_tool ("Ler formulário de geração de topologia e localizar lógica"); bash_tool ("Ler lógica de geração Single/Linear/Tree"); bash_tool ("Ler componente Webshell") | resposta A contém raciocínio (thinking) exibido pela interface, omitido nesta transcrição | resposta B1 usou 15 chamada(s) de ferramenta do claude.ai: view ("Ler skill de docs antes de criar o roteiro"); Claude Docs:guide (""); Claude Docs:batch (""); Artifact (""); Claude Docs:guide (""); bash_tool ("Rótulos dos botões e como abrir estatísticas do nó"); bash_tool ("Textos dos botões da barra lateral"); Claude Docs:update (""); Claude Docs:update (""); Claude Docs:update (""); Claude Docs:update (""); Claude Docs:update (""); Claude Docs:update (""); Claude Docs:update (""); Claude Docs:update ("") | resposta B1 contém raciocínio (thinking) exibido pela interface, omitido nesta transcrição | resposta B1 entregou o roteiro como documento do Claude Docs (https://claude.ai/code/artifact/0c151d67-d420-4c51-9c15-0084a233efa1), salvo sem alteração pela função "Copiar como Markdown" do claude.ai em `anexos-saida/cadeia-1-B1-documento.md`
+- desvios: resposta A usou 8 chamada(s) de ferramenta do claude.ai: view ("Ler skill de leitura de arquivos antes de abrir o artefato"); bash_tool ("Dimensionar e orientar no artefato"); bash_tool ("Ler resto do README e mapa de arquivos"); bash_tool ("Ler backend api.py e cli.py"); bash_tool ("Procurar suporte a regras de fluxo e ler scripts/dependências"); bash_tool ("Ler formulário de geração de topologia e localizar lógica"); bash_tool ("Ler lógica de geração Single/Linear/Tree"); bash_tool ("Ler componente Webshell") | resposta A contém raciocínio (thinking) exibido pela interface, omitido nesta transcrição | resposta B1 usou 15 chamada(s) de ferramenta do claude.ai: view ("Ler skill de docs antes de criar o roteiro"); Claude Docs:guide (""); Claude Docs:batch (""); Artifact (""); Claude Docs:guide (""); bash_tool ("Rótulos dos botões e como abrir estatísticas do nó"); bash_tool ("Textos dos botões da barra lateral"); Claude Docs:update (""); Claude Docs:update (""); Claude Docs:update (""); Claude Docs:update (""); Claude Docs:update (""); Claude Docs:update (""); Claude Docs:update (""); Claude Docs:update ("") | resposta B1 contém raciocínio (thinking) exibido pela interface, omitido nesta transcrição | resposta B2 usou 1 chamada(s) de ferramenta do claude.ai: bash_tool ("Ler o registro factual da execução") | resposta B2 contém raciocínio (thinking) exibido pela interface, omitido nesta transcrição | resposta B1 entregou o roteiro como documento do Claude Docs (https://claude.ai/code/artifact/0c151d67-d420-4c51-9c15-0084a233efa1), salvo sem alteração pela função "Copiar como Markdown" do claude.ai em `anexos-saida/cadeia-1-B1-documento.md`
 
 ## Prompt A
 
@@ -249,3 +249,111 @@ Agora o tempo estimado, e corrijo a contagem de passos no escopo (são 27).
 Por fim, a tabela-resumo; também ajusto o total de tempo para bater com a soma da tabela.
 
 O roteiro está pronto no documento aberto ao lado, com 27 passos, dos quais 12 estão marcados como [NÃO DOCUMENTADO] com justificativa. Você pode editar direto no texto ou comentar, e eu reviso.
+
+## Prompt B2
+
+Segue em anexo o registro factual da execução do artefato (registro-factual.md), feita em ambiente que atende parcialmente (VM dos autores no VirtualBox 7.1.6 com 8 GB de RAM, mas sobre o Hyper-V em modo NEM e com o navegador do host em vez de um navegador dentro da VM, como detalhado na seção 1 do registro) aos requisitos dos autores. O roteiro executado consolidou os planos de três revisores, incluindo o seu.
+
+Com base no registro e no material anterior:
+1. Para cada passo relevante, diga se o resultado confirma, contradiz ou não altera sua avaliação analítica.
+2. Decida novamente F e R (Atribuir, Não atribuir ou Indeterminado) com a mesma regra de antes. Use Indeterminado somente se faltar evidência que o registro não fornece; diga exatamente qual.
+3. Trate passos marcados D2 e D3 como evidência complementar, não como reprodução das reivindicações dos autores.
+4. Informe confiança de 0 a 100 e explique a mudança em relação à decisão analítica, se houver.
+Repita o bloco JSON da etapa A com as novas decisões e acrescente "mudou": true/false para cada selo.
+
+## Resposta B2
+
+# Reavaliação de F e R após a execução de referência
+
+**Resultado:** os dois selos passam de Indeterminado para **Atribuir**. A execução forneceu a observação que faltava, e nenhum critério obrigatório falhou nos passos documentados pelos autores. Abaixo estão o efeito de cada passo, as novas decisões e os problemas que o parecer deve apontar.
+
+Citações no formato [registro-factual.md:§seção passo] e, quando necessário, [artefato.txt:arquivo:linha].
+
+## 1. Efeito de cada passo sobre a avaliação analítica
+
+### Passos documentados pelos autores
+
+| Passo | O que eu tinha previsto | O que foi observado | Efeito |
+|---|---|---|---|
+| E02 | Risco: a VM está fora dos anexos e poderia estar indisponível. | "link do README inativo; ZIP/OVA da release dos autores obtido e íntegro" [§2 E02]. | **Confirma o risco.** Não muda F, porque a imagem veio de fonte dos próprios autores (release `v0.0.1`). |
+| E04, E05 | Lacuna: RAM mínima conflitante (8 GB e 2 GB). | Importação sem erro; "OVA com 1536 MB e 1 vCPU; ajustada para 8192 MB" [§3 E05]. | **Confirma a lacuna.** Não muda a decisão. |
+| E06 | O README fala em navegador "dentro da VM" e em Ctrl+Alt+T. | A VM sobe em "console texto (tty1)", sem área de trabalho [§1.2]. | **Contradiz a documentação, não a minha avaliação.** É um problema de documentação a apontar; contornado por SSH e navegador do host (D1). |
+| E07 | Risco: a VM poderia conter outra versão. | Commit `be68302`, mas "Nenhum arquivo de `mininet-gui-backend/` ou `mininet-gui-frontend/` difere" [§1.3]. | **Confirma o risco e o neutraliza.** O código executado é o mesmo da versão avaliada. |
+| E09 | Risco: `nvm use` dentro de `run.sh` não interativo [artefato.txt:run.sh:20]. | Saída "Mininet-GUI bootstrap complete" e `http://192.168.56.101:5173`. O `run.sh` da VM não tem a linha do `nvm` [§2 E09; §1.3]. | **Confirma F2d** (a execução funciona). O risco do `nvm` continua não testado no `run.sh` de 465648a. |
+| E10–E12 | F1/F3 só verificáveis por execução. | Interface com as três áreas; `c1` criado; `s1`, `h1`, `h2` com "links … em verde" [§2 E10–E12]. | **Altera F.** Supre a observação exigida. Confirma C1. |
+| E13 | Pingall implementado; perda aceitável não definida pelos autores. | "h1→h2 e h2→h1, 1 enviado/1 recebido cada" [§2 E13]. | **Altera F.** Confirma C2. |
+| E14 | iperf opcional, apoio a C5. | "7.71 GBytes 6.62 Gbits/sec" [§2 E14]. | Confirma. Reforça C5 sem fazer parte da regra de R. |
+| E16 (com E15) | Risco: Ryu possivelmente ausente na VM. | "Command 'ryu-manager' not found"; link `s1`–`s2` verde; nós de `s2` "sobrepostos"; 10 pares sem resposta no pingall [§2 E16]. | **Confirma o risco.** O passo 8 é opcional para os autores e falhou por ausência do Ryu, então não muda F. Problema a apontar: a VM não inclui o software que o próprio README usa. |
+| E17 | Exportação documentada. | JSON e `.py` não vazios; o `.py` passa em `ast.parse` [§2 E17]. | **Altera F.** Conclui o exemplo mínimo. |
+| E19–E22 | C4 só verificável por execução; divergências entre README e interface ("OK"/"Submit", dois parâmetros). | Single 3; Linear 3×2 e 2×1; Tree 2/2. "API: 3 switches, 4 hosts, 6 links" no Tree, com contagens iguais nos quatro casos [§2 E19–E22]. | **Altera R.** C4 reproduzida nos três modelos. As divergências do README não impediram a reprodução e seguem como problema de documentação. |
+| E24 | C5 só verificável por execução. | "na aba `h1`: `lo` 127.0.0.1/8 e `h1-eth0@if40` 10.0.0.1/8" [§2 E24]. | **Altera R.** C5 reproduzida. |
+
+### Passos [NÃO DOCUMENTADO] (D2): só evidência complementar
+
+| Passo | Efeito |
+|---|---|
+| E08 | **Achado novo.** `api.js:299` contém `}i`, mas "o frontend compilou e funcionou" [§3 E08]. Não muda a decisão; é um defeito de código a apontar. |
+| E18, E23 | Reforçam a objetividade de C4: reset entre modelos e contagem pela API. |
+| E25–E27 | Reforçam C5: cada aba roda no namespace do seu nó. Aba `h1` em "`net:[4026532228]`, o mesmo do processo `mininet:h1`"; shell da VM em outro namespace [§3 E27]. |
+| E28a, E28b | Reforçam C1: posição mantida após recarregar; nós da paleta podem ser ligados. |
+| E29 | Reforça C2 e a parte de criação de C3: "Pingall: 20/20 pares", incluindo `h5`, criado com a rede em execução [§3 E29]. |
+| E30a–E30d | **Contradiz em parte o que eu esperava em P19.** A remoção funciona sem reiniciar a emulação ("nenhuma nova" ocorrência de "Creating network"). Porém, depois das remoções, o pingall retorna "500 Internal Server Error, `AttributeError: 'NoneType' object has no attribute 'IP'`" [§3 E30c], e `/links` "continua listando `['h4','s2']`" [§3 E30b]. Não afeta R; é um defeito a apontar. |
+| E31 | Confirma a parte de visualização de C6: "Flow Table com 5 regras" [§3 E31]. |
+| E32 | **Confirma minha avaliação de C6.** "Nenhum controle para criar ou remover regra de fluxo" [§3 E32]. |
+
+## 2. Novas decisões
+
+### Selo F: Atribuir
+
+Os passos obrigatórios do exemplo mínimo (README passos 1–6 e 9) tiveram o resultado descrito pelos autores [§4, "Teste mínimo"]. Assim, os critérios oficiais estão atendidos: o artefato foi executado e as funcionalidades foram observadas, o que vai além da simples presença das instruções.
+
+Os desvios D1 não descaracterizam o procedimento:
+- a VM veio da release dos próprios autores, porque o link do README estava inativo;
+- o acesso foi por SSH e pelo navegador do host;
+- o ambiente rodou em NEM sobre o Hyper-V.
+
+O passo 8 falhou, mas é opcional para os autores e falhou pela ausência do Ryu.
+
+Problemas que o parecer deve apontar:
+- link do Google Drive inativo;
+- nome da OVA diferente do citado no README;
+- VM sem ambiente gráfico, embora o README peça navegador "dentro da VM";
+- Ryu ausente na VM;
+- RAM da OVA (1536 MB) abaixo dos 8 GB declarados;
+- pingall com HTTP 500 após remoções [§3 E30c];
+- `}i` em `api.js:299`.
+
+### Selo R: Atribuir
+
+Pela regra fixada, R depende de C4 e C5, e as duas foram reproduzidas pelo procedimento dos autores:
+- **C4** nos três modelos [§2 E19–E22];
+- **C5** na aba `h1` [§2 E24].
+
+As escolhas de quantidades e de comando foram dos revisores (D2), mas fazem parte do que a própria reivindicação pede ao usuário: "o número de dispositivos" e "executar comandos".
+
+Fora da regra de R, mas registrado:
+- **C6:** a criação e a remoção de regras não existem nesta versão [§3 E32].
+- **C3:** a remoção funciona, mas deixa o pingall inoperante.
+
+### Evidência ausente
+
+Não há evidência faltando para aplicar a regra. Por isso, nenhum selo fica Indeterminado.
+
+## 3. Confiança e mudança em relação à etapa analítica
+
+| Selo | Antes | Agora | Por que mudou |
+|---|---|---|---|
+| F | 75 | **88** | A dúvida da etapa analítica era só a falta de observação; ela foi suprida, e a VM funciona. Os 12 pontos restantes refletem que o comitê avaliou em outra data e talvez em outras condições: com o link ativo e possivelmente a VM "Desktop" com navegador interno. Não sei se ele teria considerado os problemas acima suficientes para negar o selo. |
+| R | 60 | **75** | C4 e C5 foram observadas sem ambiguidade. A confiança não sobe mais porque C6, uma das seis contribuições enumeradas no artigo, não existe nesta versão. Um comitê que lesse "principais reivindicações do artigo" de forma ampla poderia negar R. A regra fixada para esta avaliação não inclui C6. |
+
+## 4. Bloco JSON
+
+Sobre os valores de C3 e C6:
+- **C3** está como `reproduzivel` porque o resultado esperado ("rede alterada enquanto a emulação continua ativa") foi observado no passo documentado E16, com criação de topologia e link sem reinício. A metade de remoção só tem evidência D2 e veio com defeito.
+- **C6** está como `nao_reproduzivel` com base em E32 e no código.
+
+```json
+{"F": {"decisao": "Atribuir", "confianca": 88, "mudou": true, "evidencias": ["registro-factual.md:§2 E09", "registro-factual.md:§2 E10", "registro-factual.md:§2 E11", "registro-factual.md:§2 E12", "registro-factual.md:§2 E13", "registro-factual.md:§2 E17", "registro-factual.md:§4 Teste mínimo", "registro-factual.md:§1.3", "registro-factual.md:§2 E16", "registro-factual.md:§3 E30c", "artefato.txt:README.md:80-98"]},
+ "R": {"decisao": "Atribuir", "confianca": 75, "mudou": true, "evidencias": ["reivindicacoes.md:Regra para o selo R", "registro-factual.md:§2 E19", "registro-factual.md:§2 E20", "registro-factual.md:§2 E21", "registro-factual.md:§2 E22", "registro-factual.md:§2 E24", "registro-factual.md:§3 E23", "registro-factual.md:§3 E27", "registro-factual.md:§3 E32", "artefato.txt:README.md:105-114"],
+       "por_reivindicacao": {"C1": "reproduzivel", "C2": "reproduzivel", "C3": "reproduzivel", "C4": "reproduzivel", "C5": "reproduzivel", "C6": "nao_reproduzivel"}}}
+```
