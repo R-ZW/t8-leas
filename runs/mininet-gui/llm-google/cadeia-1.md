@@ -4,14 +4,14 @@
 - modelo_exibido: Gemini Pro (High)
 - versao: gemini-pro (Antigravity desktop)
 - esforco: High
-- interface: Antigravity (desktop), subagente isolado (`revisor-cega-gemini`, conversa `73e04a19-b48e-41c6-a308-5c268212514c`) com acesso somente-leitura restrito aos 4 anexos do pacote; sem memória entre conversas; busca na web desativada
+- interface: Antigravity (desktop), subagente isolado (`revisor-cega-gemini`, conversa `73e04a19-b48e-41c6-a308-5c268212514c`) com acesso somente-leitura restrito aos anexos do pacote e ao registro factual; sem memória entre conversas; busca na web desativada
 - data_hora_A: 2026-10-17 13:52 BRT
 - data_hora_B1: 2026-10-17 13:56 BRT
-- data_hora_B2: pendente
+- data_hora_B2: 2026-10-17 23:26 BRT
 - anexos_A: artigo.pdf=4e3ff858506f2f9e6da30af4412caa402890ac154b910df390b74e2ee2a2bf08, artefato.txt=5e1da9b36fe62beddfdb9b8dbbceefa67c1c38e14f45c8bd3247519bcf83c8eb, instrucoes-oficiais.md=fc8e01dd0ffdbff06af86a07bd44662c3394903c0d3a6be0222e678963989059, reivindicacoes.md=100366e5dfad9c560f9d5066e67d1e23df8f6ad7c3d5ce2e62aff02a529ed0bc
-- anexo_B2: pendente
+- anexo_B2: registro-factual.md=0efda099a39c28b4fd3a91e0c5e38290c3238aa87ccde3281ad3ec9062df9b0e
 - metodo_exportacao: transcrição integral gerada a partir do log oficial da sessão isolada (`73e04a19-b48e-41c6-a308-5c268212514c`, `transcript_full.jsonl`); blocos de texto de prompts e respostas sem alteração; raciocínio e saídas de ferramentas omitidos
-- desvios: resposta A usou 10 chamada(s) de ferramenta somente-leitura para abrir os 4 anexos: view_file ("Read instrucoes-oficiais.md"); view_file ("Read reivindicacoes.md"); view_file ("Read artigo.pdf"); view_file ("Read first 800 lines of artefato.txt"); view_file ("Read lines 801-1600 of artefato.txt"); view_file ("Read lines 2401-3200 of artefato.txt"); view_file ("Read lines 3201-4000 of artefato.txt"); view_file ("Read lines 4001-4930 of artefato.txt"); view_file ("Read lines 2200-2400 of artefato.txt"); view_file ("Read lines 4801-4930 of artefato.txt") | resposta A contém raciocínio (thinking) omitido nesta transcrição | resposta B1 contém raciocínio (thinking) omitido nesta transcrição
+- desvios: resposta A usou 10 chamada(s) de ferramenta somente-leitura para abrir os 4 anexos: view_file ("Read instrucoes-oficiais.md"); view_file ("Read reivindicacoes.md"); view_file ("Read artigo.pdf"); view_file ("Read first 800 lines of artefato.txt"); view_file ("Read lines 801-1600 of artefato.txt"); view_file ("Read lines 2401-3200 of artefato.txt"); view_file ("Read lines 3201-4000 of artefato.txt"); view_file ("Read lines 4001-4930 of artefato.txt"); view_file ("Read lines 2200-2400 of artefato.txt"); view_file ("Read lines 4801-4930 of artefato.txt") | resposta A contém raciocínio (thinking) omitido nesta transcrição | resposta B1 contém raciocínio (thinking) omitido nesta transcrição | resposta B2 usou 1 chamada(s) de ferramenta somente-leitura para abrir o registro factual: view_file ("Read registro-factual.md") | resposta B2 contém raciocínio (thinking) omitido nesta transcrição
 
 ## Prompt A
 
@@ -609,3 +609,101 @@ Ao final, uma tabela com todos os passos.
 | **P14** | Sim (`README.md:105-108`) | R — **C4 (Tree)** | Interface Web (`:5173`) | `Reset Topology`; `Generate Topology` -> `Tree`, `Layers=2`, `Fanout=2` -> `Submit` | Topologia `Tree` gerada com 3 switches em árvore e 4 hosts | `p14_c4_tree.png` | 2 min |
 | **P15** | Sim (`README.md:110-114`) | R — **C5 (WebShell)** | Interface Web (WebShell) | Selecionar aba `H1` no WebShell e rodar `ip addr show` e `ping -c 2 10.0.0.2` | Saída dos comandos Bash executados no namespace de `h1` exibida na aba `H1` | `p15_c5_webshell.png` | 2 min |
 | **P16** | **[NÃO DOCUMENTADO]** (`reivindicacoes.md:12`) | F, R — **C6 (Flow Rules)** | Interface Web (`:5173`) | Duplo clique no switch `s1` -> aba `"Flow Table"`; procurar controles de inserção/remoção de regras | Tabela de fluxos exibida (somente leitura); constatação da ausência de criação/remoção na GUI | `p16_c6_flow_table.png` | 2 min |
+
+## Prompt B2
+
+Segue em anexo o registro factual da execução do artefato (registro-factual.md), feita em ambiente que atende parcialmente (VM dos autores no VirtualBox 7.1.6 com 8 GB de RAM, mas sobre o Hyper-V em modo NEM e com o navegador do host em vez de um navegador dentro da VM, como detalhado na seção 1 do registro) aos requisitos dos autores. O roteiro executado consolidou os planos de três revisores, incluindo o seu.
+
+Com base no registro e no material anterior:
+1. Para cada passo relevante, diga se o resultado confirma, contradiz ou não altera sua avaliação analítica.
+2. Decida novamente F e R (Atribuir, Não atribuir ou Indeterminado) com a mesma regra de antes. Use Indeterminado somente se faltar evidência que o registro não fornece; diga exatamente qual.
+3. Trate passos marcados D2 e D3 como evidência complementar, não como reprodução das reivindicações dos autores.
+4. Informe confiança de 0 a 100 e explique a mudança em relação à decisão analítica, se houver.
+Repita o bloco JSON da etapa A com as novas decisões e acrescente "mudou": true/false para cada selo.
+
+## Resposta B2
+
+# Avaliação Pós-Execução — Mininet-GUI (SBRC 2025)
+
+## A. Materiais examinados
+
+Além dos 4 arquivos examinados na etapa analítica (`instrucoes-oficiais.md`, `reivindicacoes.md`, `artigo.pdf` e `artefato.txt`), foi examinado integralmente o arquivo anexado:
+- `runs/mininet-gui/execucao/registro-factual.md` (linhas 1–157)
+
+---
+
+## 1. Confronto dos Passos Executados com a Avaliação Analítica
+
+Abaixo, cada passo relevante do `registro-factual.md` (Tabelas 2 e 3, passos `E01` a `E32`) é confrontado com a avaliação analítica anterior. Os passos marcados como `D2` (`[NÃO DOCUMENTADO]`) são tratados exclusivamente como **evidência complementar**, e não como reprodução direta das reivindicações documentadas pelos autores.
+
+### 1.1 Ambiente, Instalação e Pré-condições (`E01`–`E08`)
+
+- **`E01`, `E04`, `E05` (Host, importação da OVA no VirtualBox 7.1.6 r167084 e ajuste para 8192 MB RAM / 2 vCPUs — `D2`/`D0`)**: **Confirma** a avaliação analítica quanto à adequação das instruções de importação da VM (`[registro-factual.md:19, 30, 75, 99, 101]`). Revela como detalhe complementar (`E05`, `D2`) que a OVA vinha pré-configurada com 1536 MB de RAM e 1 vCPU, exigindo ajuste manual para atender aos 8 GB recomendados em `README.md:38` (embora o pico real de uso tenha sido de apenas 257 MB, confirmando os 2 GB mínimos de `README.md:103`). A execução sobre Hyper-V em modo NEM (`[registro-factual.md:20]`) não impediu o funcionamento.
+- **`E02`, `E03` (Obtenção da VM — `D1`/`D2`)**: **Confirma** o risco apontado na Seção D (item 5) da avaliação analítica sobre a dependência de link externo no Google Drive: o link em `README.md:53` estava inativo (`"O arquivo que você solicitou não existe"`, `[registro-factual.md:27, 74, 138]`). Contudo, a imagem oficial `Mininet-GUI-VM-SBRC-2025.ova` estava disponível e íntegra na seção *Releases* (`v0.0.1`) do próprio repositório GitHub dos autores (`D1`), viabilizando a execução.
+- **`E06`, `E10` (Boot da VM sem interface gráfica, login via SSH `mininet`/`mininet` e acesso pelo navegador do host — `D1`)**: **Confirma parcialmente / refina** a avaliação analítica (`[registro-factual.md:32, 55-56, 76, 78, 139]`). Enquanto `README.md:55, 86` mencionava `Mininet-GUI-Desktop-VM-SBRC-2025.ova` e abertura da URL em navegador *dentro da VM*, a VM disponibilizada na release `v0.0.1` não possui ambiente gráfico (inicia em `tty1`), devendo ser acessada pelo navegador do host via rede host-only (`http://192.168.56.101:5173`), exatamente como descrito nas notas da própria release `v0.0.1`.
+- **`E07` (Inspeção do commit na VM — `D2`, evidência complementar)**: **Não altera** a avaliação analítica do código (`[registro-factual.md:35, 39-44, 102]`). Embora a VM esteja no commit `be68302` (16 commits antes de `465648a4`), **nenhum arquivo** de `mininet-gui-backend/` ou `mininet-gui-frontend/` difere entre os dois commits.
+- **`E08` (Inspeção de `api.js:299` e do `nvm` sem correção — `D2`, evidência complementar)**: **Confirma** o achado estático (a linha 299 de `mininet-gui-frontend/src/core/api.js` de fato contém `}i`), mas **contradiz** a previsão analítica de que esse caractere impediria a compilação do frontend (`[registro-factual.md:44, 103]`). Mesmo sem editar `api.js`, o Vite (`v4.5.9`) compilou e serviu a aplicação normalmente (pois, após o bloco `catch { ... return false; }`, a sequência `}i\n};` é interpretada pelo parser JS/esbuild como o fim do `try/catch` seguido de uma instrução de expressão `i` inalcançável antes do `};` que encerra `requestRunPingall`). Também confirma que na VM o `~/.bashrc` já carrega o `nvm` em sessão interativa.
+
+### 1.2 Inicialização e Teste Mínimo — Selo F (`E09`–`E17`)
+
+- **`E09`, `E10` (Execução de `mininet_gui` e abertura da interface web — `D0`/`D1`)**: **Confirma** a avaliação analítica de que o script inicializa o backend (`uvicorn` na porta 8000) e o frontend (`vite` na porta 5173) e imprime a URL de acesso, carregando a SPA com barra lateral, área de grafo e WebShell (`[registro-factual.md:77-78]`).
+- **`E11` (Passo 4 do Teste Mínimo: criar Controller Default `c1` — `D0`)**: **Confirma** a avaliação analítica (Selo F e reivindicação C1). O modal abriu, criou `c1` no grafo e a aba `C1` no WebShell (`[registro-factual.md:79]`).
+- **`E12` (Passo 5 do Teste Mínimo: Generate Topology `Single`, `c1`, 2 hosts — `D0`)**: **Confirma** a avaliação analítica (Selo F e reivindicações C1, C2 e C4-Single). Criou `s1`, `h1`, `h2`, links verdes `s1–h1` e `s1–h2` e associação tracejada `s1–c1` com a rede iniciada (`[registro-factual.md:80]`).
+- **`E13` (Passo 6 do Teste Mínimo: Run Pingall Test — `D0`)**: **Confirma** a avaliação analítica (Selo F e reivindicação C2). Em menos de 2 s, exibiu o modal "Pingall Results" com 100% de entrega (`1/1`) entre `h1→h2` e `h2→h1` (`[registro-factual.md:81]`).
+- **`E14` (Passo 7 opcional do Teste Mínimo: teste `iperf` entre `h1` e `h2` no WebShell — `D0`)**: **Confirma** a avaliação analítica (Selo F e reivindicação C5). O servidor `iperf -s` em `h1` e o cliente `iperf -c 10.0.0.1` em `h2` comunicaram-se pelo WebShell, medindo `6.62 Gbits/sec` (`[registro-factual.md:82]`).
+- **`E16` (Passo 8 opcional do Teste Mínimo: segundo controlador Remote `127.0.0.1:6633`, segunda topologia Single, link `s1–s2`, `ryu-manager` e Pingall — `D0`/`D1`) e `E15` (`D2`)**: **Contradiz parcialmente** a expectativa de funcionamento integral do Passo 8 opcional (`[registro-factual.md:33, 83, 104, 137]`). A parte interna ao Mininet-GUI funcionou (criou `c2`, gerou `s2`, `h3`, `h4` — que nasceram sobrepostos às coordenadas de `s1`, `h1`, `h2` e precisaram ser afastados manualmente, `D1` — e criou o link verde `s1–s2` em tempo real). Porém, o pacote opcional `ryu` (`ryu-manager`) **não está instalado na VM** (o `README.md:75-78` só instrui `pip3 install ryu...` na seção de instalação manual, e a VM opera sem Internet). Sem o controlador Ryu na porta 6633, `s2` não encaminhou pacotes e o Pingall teve sucesso apenas entre `h1↔h2`.
+- **`E17` (Passo 9 do Teste Mínimo: Export Topology JSON e Export Mininet Script — `D0`)**: **Confirma** a avaliação analítica (Selo F). Os arquivos `network_export.json` (2514 bytes) e `network_export.py` (1105 bytes, sintaxe Python válida) foram exportados corretamente (`[registro-factual.md:84]`).
+
+### 1.3 Experimentos e Reivindicações — Selo R (`E18`–`E32`)
+
+- **`E19`, `E20`, `E21`, `E22` (Geração automatizada de topologias `Single`, `Linear` e `Tree` — `D0` com valores `D2`) e `E18`, `E23` (Reset e contagem via API — `D2`, evidência complementar)**: **Confirma** integralmente a avaliação analítica da reivindicação **C4** (`[registro-factual.md:85-88, 105-106, 129]`). Os três modelos (`Single` com 3 hosts; `Linear` com 3×2 e 2×1; `Tree` com 2 camadas e fanout 2) geraram no grafo e no Mininet exatamente a quantidade de switches, hosts e links escolhida.
+- **`E24` (Comando `ip addr show` na aba `h1` do WebShell — `D0` com comando `D2`) e `E25`, `E26`, `E27` (Verificação em `h2`, `ping` e namespaces `/proc/$$/ns/net` — `D2`, evidência complementar)**: **Confirma** integralmente a avaliação analítica da reivindicação **C5** (`[registro-factual.md:89, 107-109, 130]`). A saída do comando Bash executado no namespace do nó (`h1-eth0@if40` com IP `10.0.0.1/8` e MAC `00:00:00:00:00:01`) foi exibida na aba `H1`, e a evidência complementar `E27` (`D2`) comprovou que cada aba opera no `netns` exclusivo do processo Mininet daquele nó.
+- **`E28a`, `E28b`, `E29` (Persistência de posição após arraste, criação via paleta e Pingall 20/20 com 5 hosts — `D2`, evidência complementar)**: **Confirma** como evidência complementar o funcionamento de **C1**, **C2** e da **adição em tempo real de C3** (`[registro-factual.md:110-112]`).
+- **`E30a`, `E30b`, `E30c`, `E30d` (Remoção de link e de nó com a emulação em andamento — `D2`, evidência complementar)**: **Confirma com ressalva importante (bug revelado na execução)** a análise de **C3** (`[registro-factual.md:113-116, 128]`). Por um lado, a remoção do link `h2–s1` (`E30a`) e do nó `h4` (`E30b`) alterou a rede sem reiniciar a emulação (`E30d`: `start=true`, sem novo `"Creating network"` no log e com `h1` mantendo conectividade ICMP com `h3`). Por outro lado, `delete_node` em `api.py:299-316` não remove de `app.links` os links associados ao nó excluído (`['h4','s2']` permaneceu em `/links`) e deixa referências que fazem `app.net.pingFull()` (`api.py:157`) lançar `AttributeError: 'NoneType' object has no attribute 'IP'`, resultando em erro **HTTP 500** ao clicar em "Run Pingall Test" após remover um nó (`E30c`). Além disso, como a remoção não era documentada no README (sendo `E30a–E30d` passos `D2` complementares) e o único passo documentado pelos autores relacionado a C3 (`E16`) falhou por ausência do Ryu na VM, **C3** não se sustenta pelos passos documentados pelos autores.
+- **`E31`, `E32` (Visualização da tabela de fluxos de `s1` e busca por controles de inserção/remoção de regras — `D2`, evidência complementar)**: **Confirma** integralmente a avaliação analítica da reivindicação **C6** (`[registro-factual.md:117-118, 131]`). O duplo clique em `s1` (`E31`, não documentado no README) exibe a aba "Flow Table" com 5 regras OpenFlow instaladas após o Pingall, mas `E32` confirma que **não existe nenhum controle na interface para criar/inserir ou remover regras de fluxo**, ratificando que C6 é `nao_reproduzivel`.
+
+---
+
+## B. Selo F (Decisão Pós-Execução)
+
+1. **Avaliação dos critérios com base no registro factual**:
+   - **Documentação (dependências, ambiente, instalação, execução e teste mínimo)**: Atendido na documentação (`[README.md:26-99]`), com as ressalvas observadas em execução de que o link do Google Drive estava inativo (`E02`, contornado pela OVA oficial da release `v0.0.1` do próprio repositório), a VM da release não possui interface gráfica (`E06`/`E10`, acessada via SSH e navegador do host conforme instruções da release) e o pacote opcional `ryu` não veio pré-instalado na VM (`E15`/`E16`).
+   - **Execução e observação de funcionalidades (`[instrucoes-oficiais.md:15]`)**: **Atendido na execução**. O artefato foi executado com sucesso (`E09`–`E14`, `E17`, `E19`–`E24`), permitindo observar na prática a inicialização integrada do Mininet e da interface web (`E09`–`E10`), criação de controladores (`E11`), geração de topologias (`E12`, `E19`–`E22`), teste de conectividade `pingall` (`E13`), execução de comandos e teste de vazão `iperf` no WebShell (`E14`, `E24`) e exportação da topologia para JSON e script Python (`E17`).
+2. **Decisão**: **Atribuir** (`"mudou": true`, alterada de `Indeterminado` para `Atribuir`).
+3. **Confiança (0 a 100)**: **95** (subiu de 85 para 95).
+   - **Explicação da mudança**: Na fase analítica, a decisão era `Indeterminado` exclusivamente porque o critério oficial do Selo F exige a observação prática do artefato em execução (`[instrucoes-oficiais.md:15]`) e havia dúvida sobre o efeito do erro de digitação `}i` em `api.js:299`. O registro factual comprovou que o frontend compila e funciona sem necessidade de edição (`E08`–`E10`) e que todos os passos obrigatórios do Teste Mínimo (Passos 1–6 e 9) e o Passo 7 opcional funcionaram conforme descrito pelos autores.
+
+---
+
+## C. Selo R — Por Reivindicação (Decisão Pós-Execução)
+
+Conforme a regra explícita de `[reivindicacoes.md:16-20]`:
+> "Na seção 'Experimentos', o README marca duas reivindicações a reproduzir, correspondentes a **C4** e **C5**. **R é atribuído se C4 e C5 forem reproduzidas.** C1, C2, C3 e C6 são contribuições do artigo que podem embasar F, mas não entram na regra de R."
+
+Avaliação de cada reivindicação após a execução (tratando `D2` apenas como evidência complementar):
+
+- **C1 (Interface web dinâmica para criar e manipular visualmente topologias em um grafo interativo)**: **`reproduzivel`** (mudou de `depende_execucao`).
+  - Pelos passos documentados pelos autores (`E10`–`E12`, `E16` — `D0`/`D1`), controladores, switches, hosts e links criados na interface foram representados no grafo interativo e responderam às ações do usuário (`[registro-factual.md:78-80, 83, 126]`). Como evidência complementar (`E28a`–`E28b`, `D2`), confirmou-se também a persistência de coordenadas após arraste e a criação direta via paleta.
+- **C2 (Emulação integrada: a ferramenta inicia e gerencia a emulação Mininet pela interface, permitindo testar a conectividade)**: **`reproduzivel`** (mudou de `depende_execucao`).
+  - Pelos passos documentados pelos autores (`E12`–`E13` — `D0`), a emulação Mininet foi iniciada pela ferramenta e o resultado de `pingall` foi exibido na interface com conectividade entre `h1` e `h2` (`[registro-factual.md:80-81, 127]`), corroborado pela evidência complementar `E29` (`D2`, 20/20 pares com 5 hosts).
+- **C3 (Modificação da topologia em tempo real: criar e remover nós e links com a emulação em andamento, sem reiniciá-la)**: **`nao_reproduzivel`** (mudou de `depende_execucao`).
+  - O único procedimento documentado pelos autores no README relacionado a C3 (`E16`, Passo 8 opcional) cobre apenas **adição** (não documenta remoção de nós/links) e teve status de **falha** na execução porque o `ryu-manager` não está instalado na VM, impedindo a conectividade entre as duas subtopologias (`[registro-factual.md:83, 128]`). Nos passos de evidência complementar (`E28b`, `E29`, `E30a`–`E30d` — `D2`, que não contam como reprodução pelos passos dos autores), embora a adição (`E28b`/`E29`) e a remoção no Mininet sem reinício (`E30a`/`E30b`/`E30d`) tenham alterado a rede com a emulação ativa, a remoção de um nó (`E30b`) deixou link órfão em `/links` e quebrou o `Run Pingall Test` da interface com erro HTTP 500 (`E30c`). Assim, C3 é classificada como `nao_reproduzivel` (não afetando a decisão do selo R conforme `[reivindicacoes.md:16]`).
+- **C4 (Geração automatizada de topologias nos modelos Single, Linear e Tree, com número de dispositivos escolhido)** *(Obrigatória para R)*: **`reproduzivel`** (mudou de `depende_execucao`).
+  - Pelos passos documentados pelos autores em `README.md:90, 105-108` (`E12`, `E19`, `E20`, `E21`, `E22` — `D0`), foram geradas com sucesso topologias nos **três modelos** exigidos: `Single` (2 e 3 hosts), `Linear` (3 switches × 2 hosts e 2 switches × 1 host) e `Tree` (2 camadas × fanout 2), todas com o número de dispositivos escolhido (`[registro-factual.md:80, 85-88, 129]`), o que também foi corroborado pela evidência complementar da API (`E18`, `E23` — `D2`).
+- **C5 (Terminal dos nós via WebShell: executar comandos Bash no namespace de um nó emulado)** *(Obrigatória para R)*: **`reproduzivel`** (mudou de `depende_execucao`).
+  - Pelos passos documentados pelos autores em `README.md:94, 110-114` (`E14` e `E24` — `D0`), comandos Bash executados nas abas dos nós no painel WebShell (`iperf` em `E14` e `ip addr show` na aba `h1` em `E24`) exibiram na respectiva aba a saída produzida dentro do namespace de rede do nó emulado (`h1-eth0@if40` com IP `10.0.0.1/8`, `[registro-factual.md:82, 89, 130]`), corroborado pelas evidências complementares `E25`–`E27` (`D2`).
+- **C6 (Visualização, criação e remoção de regras de fluxo OpenFlow nas tabelas dos switches)**: **`nao_reproduzivel`** (mantida da avaliação analítica).
+  - Os autores não documentaram procedimento no README (`[reivindicacoes.md:12]`), e os passos complementares (`E31`–`E32` — `D2`) confirmaram que a interface exibe apenas a tabela de fluxos em modo leitura (`E31`), não existindo qualquer controle ou editor para inserir ou remover regras de fluxo OpenFlow (`E32`, `[registro-factual.md:117-118, 131]`). Conforme `[reivindicacoes.md:16]`, C6 não entra na regra de atribuição de R.
+
+### Decisão Final para o Selo R
+- **Decisão**: **Atribuir** (`"mudou": true`, alterada de `Indeterminado` para `Atribuir`).
+- **Confiança (0 a 100)**: **90** (subiu de 80 para 90).
+  - **Explicação da mudança**: Na etapa analítica, R estava `Indeterminado` porque dependia da execução para verificar C4 (nos três modelos) e C5. Como `registro-factual.md` comprovou a reprodução integral de **C4** (`E12`, `E19`–`E22`) e **C5** (`E14`, `E24`) seguindo as instruções da seção `# Experimentos` do README (`[reivindicacoes.md:16]`), todos os requisitos para atribuir R foram atendidos. A confiança é 90 (e não 100) apenas porque contribuições secundárias fora da seção `# Experimentos` (Passo 8 opcional em E16/C3 e edição de regras de fluxo em C6) apresentaram falhas/lacunas que poderiam ser discutidas pelo comitê.
+
+---
+
+```json
+{"F": {"decisao": "Atribuir", "confianca": 95, "mudou": true, "evidencias": ["instrucoes-oficiais.md:13-15", "README.md:26-99", "registro-factual.md:74-84", "registro-factual.md:103", "registro-factual.md:133"]},
+ "R": {"decisao": "Atribuir", "confianca": 90, "mudou": true, "evidencias": ["instrucoes-oficiais.md:17-19", "reivindicacoes.md:7-20", "README.md:90-114", "registro-factual.md:79-89", "registro-factual.md:105-118", "registro-factual.md:124-131"],
+       "por_reivindicacao": {"C1": "reproduzivel", "C2": "reproduzivel", "C3": "nao_reproduzivel", "C4": "reproduzivel", "C5": "reproduzivel", "C6": "nao_reproduzivel"}}}
+```

@@ -4,14 +4,14 @@
 - modelo_exibido: Gemini Pro (High)
 - versao: gemini-pro (Antigravity desktop)
 - esforco: High
-- interface: Antigravity (desktop), subagente isolado (`revisor-cega-gemini`, conversa `c50a3f54-b004-4345-a74c-4d49bc79770d`) com acesso somente-leitura restrito aos 4 anexos do pacote; sem memória entre conversas; busca na web desativada
+- interface: Antigravity (desktop), subagente isolado (`revisor-cega-gemini`, conversa `c50a3f54-b004-4345-a74c-4d49bc79770d`) com acesso somente-leitura restrito aos anexos do pacote e ao registro factual; sem memória entre conversas; busca na web desativada
 - data_hora_A: 2026-10-17 13:53 BRT
 - data_hora_B1: 2026-10-17 13:58 BRT
-- data_hora_B2: pendente
+- data_hora_B2: 2026-10-17 23:26 BRT
 - anexos_A: artigo.pdf=d9b12aa44caeab3d8374fd9ad092c3b9ecec1f18d589125f0ca2f8d00dc9e715, artefato.txt=6de9ecff1194121da658fd3684742c0b2a42b7899ed73b7d3649b9e928330446, instrucoes-oficiais.md=446e5f94605b2fe60ac9c4028f7be57b0488bc79c3c8ef2ef782428f8e290a47, reivindicacoes.md=3d27bc26b64ae7c16272dc9d7a68c25ccacf98d82dbfcdc5bfd7d3ab7932dbac
-- anexo_B2: pendente
+- anexo_B2: registro-factual.md=2041606f1236e737f2b6191d2ff9f06944c7fea87f32996f0f12fff2d51281fb
 - metodo_exportacao: transcrição integral gerada a partir do log oficial da sessão isolada (`c50a3f54-b004-4345-a74c-4d49bc79770d`, `transcript_full.jsonl`); blocos de texto de prompts e respostas sem alteração; raciocínio e saídas de ferramentas omitidos
-- desvios: resposta A usou 13 chamada(s) de ferramenta somente-leitura para abrir os 4 anexos: view_file ("Read instrucoes-oficiais.md"); view_file ("Read reivindicacoes.md"); view_file ("Read artigo.pdf"); view_file ("Read start of artefato.txt"); view_file ("Read artefato.txt 251-1050"); view_file ("Read artefato.txt 1051-1850"); view_file ("Read artefato.txt 1851-2650"); view_file ("Read artefato.txt 2651-3450"); view_file ("Read artefato.txt 3451-4250"); view_file ("Read artefato.txt 4251-5050"); view_file ("Read artefato.txt 5051-5850"); view_file ("Read artefato.txt 5851-6650"); view_file ("Read artefato.txt 6651-7331") | resposta A contém raciocínio (thinking) omitido nesta transcrição | resposta B1 contém raciocínio (thinking) omitido nesta transcrição
+- desvios: resposta A usou 13 chamada(s) de ferramenta somente-leitura para abrir os 4 anexos: view_file ("Read instrucoes-oficiais.md"); view_file ("Read reivindicacoes.md"); view_file ("Read artigo.pdf"); view_file ("Read start of artefato.txt"); view_file ("Read artefato.txt 251-1050"); view_file ("Read artefato.txt 1051-1850"); view_file ("Read artefato.txt 1851-2650"); view_file ("Read artefato.txt 2651-3450"); view_file ("Read artefato.txt 3451-4250"); view_file ("Read artefato.txt 4251-5050"); view_file ("Read artefato.txt 5051-5850"); view_file ("Read artefato.txt 5851-6650"); view_file ("Read artefato.txt 6651-7331") | resposta A contém raciocínio (thinking) omitido nesta transcrição | resposta B1 contém raciocínio (thinking) omitido nesta transcrição | resposta B2 usou 2 chamada(s) de ferramenta somente-leitura para abrir o registro factual: view_file ("Read registro-factual.md"); view_file ("Read end of registro-factual.md") | resposta B2 contém raciocínio (thinking) omitido nesta transcrição
 
 ## Prompt A
 
@@ -702,3 +702,75 @@ Conforme `reivindicacoes.md:17`: *"O README não marca reivindicações a reprod
 | **P15** | Doc. em `README.md:101`, `artigo.pdf:p. 7, §4.1` | Selo R / **C5** (com chave) | `<raiz>/src` | `export VT_API_KEY="..." && ./foremost-ng -x -t elf -i memory.dump -o ./carved-files` | Consulta por SHA-256 no VirusTotal e registro na coluna `VT` do `audit.txt` | `p15_c5_vt.log` e `audit.txt` | Consulta HTTP bem-sucedida e detecções válidas registradas na coluna `VT` | Erro HTTP/cURL ou falha de parsing (`Clean (-1)`) | Prosseguir para Bloco C6 |
 | **P16** | Doc. em `artigo.pdf:p. 8, Fig. 2` (`find` `[NÃO DOCUMENTADO]`) | Selo R / **C6** | `<raiz>/src` | `find .. -name "evidence2.dd" && ./foremost-ng -v -x evidence2.dd` | Autores: tabela da Fig. 2; Real: erro `File not found` pois `evidence2.dd` falta no pacote | `p16_c6_fig2.log` | Reprodução dos 12 arquivos e offsets da Fig. 2 | Arquivo `evidence2.dd` ausente (`EXIT_FAILURE`) | Prosseguir para P17 |
 | **P17** | `[NÃO DOCUMENTADO]` (inspeção estática de código) | **C7** (Fora da regra de R) | `<raiz>/src` | `grep -n "typedef struct s_spec" -A 19 main.h && grep -n "extract_file" -A 69 extract.c` | Confirmação da organização do código frente à Fig. 1 | `p17_c7_arch.log` | Módulos de CLI, validação, motor de busca e extração presentes | Ausência dos módulos ou parsers no código | Fim do roteiro |
+
+## Prompt B2
+
+Segue em anexo o registro factual da execução do artefato (registro-factual.md), feita em ambiente que atende (Linux, como pede o README; contêiner Docker com Ubuntu 24.04 sobre WSL2, detalhado na seção 1 do registro) aos requisitos dos autores. O roteiro executado consolidou os planos de três revisores, incluindo o seu.
+
+Com base no registro e no material anterior:
+1. Para cada passo relevante, diga se o resultado confirma, contradiz ou não altera sua avaliação analítica.
+2. Decida novamente F e R (Atribuir, Não atribuir ou Indeterminado) com a mesma regra de antes. Use Indeterminado somente se faltar evidência que o registro não fornece; diga exatamente qual.
+3. Trate passos marcados D2 e D3 como evidência complementar, não como reprodução das reivindicações dos autores.
+4. Informe confiança de 0 a 100 e explique a mudança em relação à decisão analítica, se houver.
+Repita o bloco JSON da etapa A com as novas decisões e acrescente "mudou": true/false para cada selo.
+
+## Resposta B2
+
+# Avaliação Pós-Execução — Foremost-NG (Selos F e R)
+
+### 1. Confronto entre o Registro Factual de Execução e a Avaliação Analítica (Passo a Passo)
+
+#### 1.1. Compilação, instalação e CLI documentadas pelos autores (`D0` / `D1`)
+- **`P01` e `P02` (`[registro-factual.md:50-51]` — `git clone` e `make` na raiz do clone):** **Confirmam** a avaliação analítica (Seção D, item 3). O comando `make` executado na raiz do repositório clonado (como instruído em `[artigo.pdf:p. 6, §4]`) falha com `make: *** No targets specified and no makefile found. Stop.` (código 2), pois o único `Makefile` está em `src/Makefile`.
+- **`P03` (`[registro-factual.md:52]` — descompactação do pacote e entrada em `src/`):** **Confirma** que o arquivo `foremost-ng-<version>.tar.gz` mencionado em `[README.md:27]` não existe no repositório nem em releases, mas a árvore do commit avaliado contém `src/Makefile` e todos os fontes.
+- **`P04`, `P05`, `P06`, `P00a`, `P00b`, `P04-2`, `P05-2` (`[registro-factual.md:53-55, 58-61]` — dependências, `make` e `sudo make install` em `src/`):** **Confirmam** a avaliação analítica. No ambiente inicial construído com `--no-install-recommends`, faltava `libc6-dev` (`ctype.h: No such file or directory`), que o comando `apt-get install -y gcc ...` do `[Dockerfile:4-5]` dos autores instala por padrão como recomendação do `gcc`. Após instalar `libc6-dev` (`P00b`), `make` (`P04-2`) compilou os 10 arquivos `.c` com `-D__UNIX -D__LINUX -DLARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64` e ligou com `-lssl -lcrypto -lcurl` (código 0, gerando binário de 87.200 B), e `sudo make install` (`P05-2`) instalou `/usr/local/bin/foremost-ng`, `/usr/share/man/man8/foremost-ng.8.gz` e `/usr/local/etc/foremost.conf` (código 0).
+- **`P06-2`, `P13a`, `P13b` (`[registro-factual.md:62, 78-79]` — `man foremost-ng`, `-h` e `-V`):** **Confirmam** a avaliação analítica quanto ao funcionamento da CLI e da página de manual, e acrescentam o detalhe de que a seção `BUILT-IN FORMATS` do manual instalado lista apenas os formatos legados, omitindo `evtx`, `elf`, `macho` e `script`.
+
+#### 1.2. Verificação de integridade e ambiente (`D2` — evidência complementar)
+- **`P09`, `P10`, `P11`, `P11-2`, `P12` (`[registro-factual.md:73-77]`):** **Confirmam** a integridade do pacote avaliado (`bb812a22cb06ef87b5a2d877dfb6f40eb12d460d`) e a disponibilidade das bibliotecas e ferramentas auxiliares de verificação.
+
+#### 1.3. Teste mínimo Funcional e testes externos DFTT (`D2` / `D3` — evidência complementar para R, prova de execução para F)
+- **`P14a`, `P15a`, `P16a` (`[registro-factual.md:85, 87-88]` — carving mínimo sobre `min.dd`):** **Confirmam** que o binário executa sem erros (`[INFO] Processing finished.`, código 0), cria `audit.txt` e recupera byte a byte o script embutido (`00001024.script`, 72 B).
+- **`P14b`, `P15b`, `P14b-2`, `P15b-2`, `P16-G-cmp (disk.img)` (`[registro-factual.md:86, 89-92]` — comando literal do artigo `./foremost-ng -i disk.img -o /temp/output/carved`):** **Confirmam** que o comando funciona (código 0) uma vez criado o diretório-pai `/temp/output` (`P14b-2`, já que `mkdir` em `dir.c` não cria diretórios-pai nem tem permissão em `/` sem `sudo`). A execução confirmou a extração do ELF64 (`00000008.elf`, 73.752 B correspondentes aos segmentos `PT_LOAD`), do script (`00001024.script`, 65 B idêntico) e a geração de `audit.txt` (sem `recovery.log`, confirmando a Seção D, item 4 da análise). Revelou ainda 3 extrações `.evtx` espúrias disparadas por bytes internos ao binário ELF embutido.
+- **`P39`, `P39-gabarito`, `P39-t`, `P41`, `P41-gabarito`, `P41-t` (`[registro-factual.md:178-183]` — imagens externas DFTT #11 e #12 citadas em `[artigo.pdf:p. 7, §4]`):** **Confirmam** tanto a funcionalidade geral de carving em imagens forenses públicas (14 arquivos extraídos em DFTT #11, 10 com MD5 idêntico ao gabarito; 6 extraídos em DFTT #12) quanto a nossa avaliação analítica de que o repositório DFTT não contém arquivos dos novos formatos (`P39-t` e `P41-t` com `-t evtx,elf,exe` extraíram `0 FILES EXTRACTED`).
+
+#### 1.4. Passos relativos às reivindicações C1 a C7 (com distinção entre `D0` e evidência complementar `D2`/`D3`)
+- **Bloco C1 — EVTX (`P17b`, `P18b`, `P18b-conf`, `P19b`, `P16-G-cmp (EVTX)`, `P20a`, `P28b`, `P28c`, `P28d — EVTX`, `P19a` — `D2`/`D3`, evidência complementar):** **Confirmam** integralmente a avaliação analítica, inclusive a falha de cálculo de tamanho que apontamos em `extract_evtx` (`[src/extract.c:2479-2490]`). No EVTX sintético (`P18b`, `P16-G-cmp`), o arquivo original de 69.632 B (4 KiB de cabeçalho + 64 KiB de chunk) teve apenas 65.536 B extraídos (truncando os 4 KiB finais porque `chunk_count * 65536` ignora o cabeçalho de 4 KiB). No EVTX público real `system.evtx` (`P28d — EVTX`, 1.118.208 B), como o offset `0x18` contém `HeaderBlockSize` (4096) em vez de `NumberOfChunks` (offset `0x2A`), o parser calculou `4096 * 65536 = 268 MB` e extraiu 10.570.240 B (do início do EVTX até o fim de `teste.dd`). Ainda assim, em ambos os casos, `file` e `evtx_dump.py` leram os arquivos `.evtx` extraídos sem erro, recuperando todos os 1601 eventos com XML idêntico ao original em `P19a`.
+- **Bloco C2 — Scripts (`P20b`, `P21b`, `P16-G-cmp (scripts)`, `P28d — scripts`, `P28d — negativos` — `D2`, evidência complementar):** **Confirmam parcialmente e contradizem a eficácia do filtro de comentários previsto na leitura estática**. Os 7 scripts válidos (Bash, Python, PowerShell) foram extraídos byte a byte idênticos com shebang na 1ª linha (`P21b`, `P28d — scripts`), e os scripts menores que 32 B (`s3` de 18 B e `neg_curto.sh` de 13 B) foram descartados. Entretanto, os scripts compostos apenas por shebang e linhas de comentário (`s4` de 62 B em `P21b` e `neg_comentario.sh` de 45 B em `P28d — negativos`) **foram extraídos indevidamente**, porque o laço em `src/extract.c:2599-2609` avança caractere a caractere (`p++`) em vez de linha a linha, tratando o primeiro caractere após `#` como código válido. Logo, a condição *"mais que só comentários"* de C2 (`[reivindicacoes.md:8]`) falhou nos testes complementares.
+- **Bloco C3 — Mach-O (`P23b`, `P24b`, `P24b-conf`, `P25`, `P28d — Mach-O` — `D2`, evidência complementar):** **Confirmam para `fat`, mas contradizem a expectativa de funcionamento para `thin`**. O binário Mach-O `fat` (`0xCAFEBABE`, 8192 B) foi extraído idêntico e reconhecido por `file` (`P24b-conf`, `P28d — Mach-O`). Porém, o binário Mach-O `thin` de 64 bits (`0xCFFAEDFE`, 4096 B) **não foi extraído em nenhuma execução** (`P24b` e `P28d — Mach-O` falharam). Isso ocorre porque `extract_macho` (`[src/extract.c:2360, 2363, 2409]`) lê os bytes `CF FA ED FE` com `read_le32(buf)` (que retorna `0xFEEDFACF`), mas compara o resultado com o literal invertido `0xCFFAEDFE` (e `0xCEFAEDFE` para 32 bits), fazendo com que binários Mach-O `thin` nunca sejam extraídos.
+- **Bloco C4 — ELF (`P26b`, `P27b`, `P27b-conf`, `P28d — ELF`, `P28d-readelf` — `D2`, evidência complementar):** **Confirmam integralmente** a avaliação analítica. Os binários ELF de 32 e 64 bits foram extraídos exatamente até o fim do último segmento `PT_LOAD` (`4096 B` para o ELF32 sintético; `12.296 B`, `139.896 B` e `73.752 B` para os ELFs compilados), e `readelf -h -l` leu sem erro o cabeçalho ELF e todos os cabeçalhos de programa (`LOAD`), acusando erro apenas na leitura da tabela de seções (`section headers`) localizada após o último `PT_LOAD`, tal como previsto na análise estática.
+- **Bloco C5 — VirusTotal (`P07`, `P29b`, `P29a`, `P30`–`P33`):**
+  - `P29b` e `P29a` (`[registro-factual.md:149-150]` — `D2`, sem `VT_API_KEY`): **Confirmam** exatamente o que apontamos na Seção D, item 5 da análise: sem `VT_API_KEY`, o programa imprime `Error: VT_API_KEY environment variable is not set.` para cada arquivo e realiza o carving normalmente, mas grava `Clean (0)` na coluna `VT` do `audit.txt` como se o arquivo tivesse sido verificado e considerado limpo.
+  - `P07` e `P31`–`P33` (`[registro-factual.md:56, 152-154]` — com `VT_API_KEY`): **Não alteram** a avaliação analítica, pois permaneceram bloqueados por ausência de chave de API do VirusTotal (`depende_execucao`).
+- **Bloco C6 — Figura 2 (`P08`, `P08-2`, `P34`–`P37` — `D0`):** **Confirmam integralmente** a avaliação analítica. O arquivo `evidence2.dd` não está presente no repositório, no contêiner nem em fontes públicas (`P34`), e a execução de `./foremost-ng -v -x evidence2.dd` (`P08-2` / `P36`) falha imediatamente com `[!] File not found or is a directory: evidence2.dd` (código 1).
+- **Bloco C7 — Arquitetura (`P38a`, `P38b` — `D2`):** **Confirmam integralmente** a avaliação analítica: a estrutura `s_spec`, o registro em `init_all` e os módulos da Figura 1 existem (`P38b`), mas o despachante `extract_file` utiliza uma cadeia `if/else if` fixa por tipo (`P38a`). Conforme `[reivindicacoes.md:17]`, C7 não entra na regra de R.
+
+---
+
+### 2. Nova Decisão para os Selos F e R
+
+#### Selo F (Funcional)
+- **Decisão:** **Atribuir** (mudou: `true` — na etapa analítica era `Indeterminado`).
+- **Justificativa:** Na etapa analítica, a decisão foi `Indeterminado` unicamente porque a atribuição de F exige execução e observação prática de saídas (`[instrucoes-oficiais.md:15]`). O registro factual comprova que, em ambiente Linux compatível com o `Dockerfile` dos autores (`Ubuntu 24.04` com `gcc`, `make`, `libssl-dev`, `libcurl4-openssl-dev` e `libc6-dev`), o artefato compila sem erros (`P04-2`), instala o binário, o arquivo de configuração e o manual (`P05-2`), responde às opções da CLI (`P06-2`, `P13a`, `P13b`) e executa o carving gerando subdiretórios por formato, arquivos recuperados e `audit.txt` tanto em imagens sintéticas (`P15a`, `P15b-2`, `P28b`, `P28c`) quanto em imagens forenses públicas DFTT (`P39`, `P41`). Todos os critérios obrigatórios do Selo F foram atendidos.
+
+#### Selo R (Reprodutível)
+- **Decisão:** **Não atribuir** (mudou: `false` — manteve `Não atribuir`).
+- **Justificativa:**
+  1. Conforme `[instrucoes-oficiais.md:19]` e `[reivindicacoes.md:17]`, o Selo R exige que a documentação traga instruções de execução das principais reivindicações e que **C1 a C6 sejam reproduzidas**.
+  2. Os autores não forneceram nenhuma imagem de entrada (`evidence2.dd`, `disk.img`, `memory.dump`) no artefato (`[registro-factual.md:298-301, 311]`). A reivindicação principal **C6** (`./foremost-ng -v -x evidence2.dd`, Figura 2) falhou diretamente no passo documentado `P08-2` / `P36` (`File not found: evidence2.dd`, código 1), sendo **não reproduzível**.
+  3. Tratando os passos `D2` e `D3` estritamente como evidência complementar (e não como reprodução de experimentos fornecidos pelos autores), tais testes não suprem a falta dos dados originais dos autores; pelo contrário, demonstraram falhas adicionais de implementação nas próprias reivindicações **C3** (incapacidade total de extrair binários Mach-O `thin` em `P24b` e `P28d — Mach-O`) e **C2** (extração indevida de scripts compostos apenas por comentários em `P21b` e `P28d — negativos`), além do truncamento/excesso de tamanho em **C1** (`P16-G-cmp (EVTX)`, `P28d — EVTX`) e do falso rótulo `Clean (0)` sem chave em **C5** (`P29a`, `P29b`).
+
+---
+
+### 3. Confiança (0 a 100) e Explicação da Mudança
+
+- **Selo F — Confiança: `95`** (aumentou de `85` para `95`).
+  - *Explicação da mudança:* A decisão passou de `Indeterminado` para `Atribuir` porque o registro factual forneceu a prova de compilação, instalação e funcionamento real que faltava na avaliação puramente estática. A confiança subiu para 95/100 pois o código compilou sem necessidade de editar uma única linha de código ou `Makefile` e extraiu artefatos corretamente em múltiplos testes.
+- **Selo R — Confiança: `5`** de que o comitê oficial atribuiu o selo (isto é, **95%** de confiança de que o comitê oficial **não** atribuiu o Selo R; reduziu de `15` para `5`).
+  - *Explicação da mudança:* A decisão permaneceu `Não atribuir`, mas a probabilidade estimada de o comitê ter atribuído o Selo R caiu de 15 para 5 porque a execução não apenas confirmou a impossibilidade de reproduzir a Figura 2 (**C6**) por ausência de `evidence2.dd`, como também revelou bugs funcionais na extração de Mach-O `thin` (**C3**) e na filtragem de scripts só com comentários (**C2**).
+
+```json
+{"F": {"decisao": "Atribuir", "mudou": true, "confianca": 95, "evidencias": ["instrucoes-oficiais.md:13-15", "README.md:3-85", "Dockerfile:1-12", "src/Makefile:1-124", "registro-factual.md:50-62", "registro-factual.md:78-92", "registro-factual.md:178-183", "registro-factual.md:230-235"]},
+ "R": {"decisao": "Não atribuir", "mudou": false, "confianca": 5, "evidencias": ["instrucoes-oficiais.md:17-19", "reivindicacoes.md:7-21", "artefato.txt:9-49", "artigo.pdf:p. 7-8, §4.2 e Fig. 2", "registro-factual.md:56-63", "registro-factual.md:98-170", "registro-factual.md:237-305"],
+       "por_reivindicacao": {"C1": "reproduzivel", "C2": "nao_reproduzivel", "C3": "nao_reproduzivel", "C4": "reproduzivel", "C5": "depende_execucao", "C6": "nao_reproduzivel", "C7": "reproduzivel"}}}
+```
