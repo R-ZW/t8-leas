@@ -7,11 +7,11 @@
 - interface: Codex (agente com workspace local e terminal), operado por Reinaldo Zimmer Wendt; anexos lidos do disco por caminho em `runs/<artefato>/pacote/` (desvio: agente em vez do chat do ChatGPT)
 - data_hora_A: não registrado no link (duração do turno: A=198s; B1=206s)
 - data_hora_B1: não registrado no link
-- data_hora_B2: pendente
+- data_hora_B2: não registrado (17–18/10/2026, conversa nova)
 - anexos_A: artigo.pdf=d9b12aa44caeab3d8374fd9ad092c3b9ecec1f18d589125f0ca2f8d00dc9e715, artefato.txt=6de9ecff1194121da658fd3684742c0b2a42b7899ed73b7d3649b9e928330446, instrucoes-oficiais.md=446e5f94605b2fe60ac9c4028f7be57b0488bc79c3c8ef2ef782428f8e290a47, reivindicacoes.md=3d27bc26b64ae7c16272dc9d7a68c25ccacf98d82dbfcdc5bfd7d3ab7932dbac (lidos do disco; bytes não conferidos dentro da conversa)
-- anexo_B2: pendente
+- anexo_B2: registro-factual.md (lido do disco no novo workspace; bytes não conferidos)
 - metodo_exportacao: transcrição gerada por `ferramentas/transcrever_codex.py` do JSON público do link https://chatgpt.com/s/cx_6ad246a596e481918f0074d9ddcd1658 (cópia bruta em `exportacao-bruta/`); textos de userMessage e agentMessage sem alteração; reasoning, imageView, fileChange e chamadas de ferramenta (não incluídas no link) omitidos. O export anterior, escrito pelo próprio modelo via Session Exporter, está em `exportacao-bruta/` e não é usado na análise
-- desvios: resposta A: 1 visualização(ões) de imagem (páginas do artigo.pdf) omitidas | resposta A: contém marcações :codex-file-citation da interface, mantidas sem alteração | resposta B1: contém marcações :codex-file-citation da interface, mantidas sem alteração | turno 3 fora do roteiro, omitido da transcrição: "[@Session Exporter](plugin://session-exporter@openai-curated-remote) Export this entire co"
+- desvios: resposta A: 1 visualização(ões) de imagem (páginas do artigo.pdf) omitidas | resposta A: contém marcações :codex-file-citation da interface, mantidas sem alteração | resposta B1: contém marcações :codex-file-citation da interface, mantidas sem alteração | turno 3 fora do roteiro, omitido da transcrição: "[@Session Exporter](plugin://session-exporter@openai-curated-remote) Export this entire co" | B2 NÃO COMPARÁVEL: enviado em conversa NOVA do Codex (contexto restaurado a partir do export do Session Exporter de A/B1), em outro workspace com o repositório inteiro acessível; texto extraído do export escrito pelo modelo (`exportacao-bruta/cadeia-3+b2.md`), sem link de compartilhamento, logo não literal
 
 ## Prompt A
 
@@ -286,3 +286,74 @@ C7 pode ser inspecionada no código, mas não exige bloco de execução para R p
 | P9 | R/C6 | `src` | `./foremost-ng -v -x evidence2.dd` | tabela e offsets | a imagem original estiver disponível |
 
 Cada resultado deve ser registrado como **observado**, **divergente** ou **não executado por falta de pré-requisito**. Não trate uma etapa interrompida como sucesso ou como prova de funcionamento.
+
+## Prompt B2
+
+Segue em anexo o registro factual da execução do artefato (registro-factual.md), feita em ambiente que atende (Linux, como pede o README; contêiner Docker com Ubuntu 24.04 sobre WSL2, detalhado na seção 1 do registro) aos requisitos dos autores. O roteiro executado consolidou os planos de três revisores, incluindo o seu.
+Com base no registro e no material anterior:
+1. Para cada passo relevante, diga se o resultado confirma, contradiz ou não altera sua avaliação analítica.
+2. Decida novamente F e R (Atribuir, Não atribuir ou Indeterminado) com a mesma regra de antes. Use Indeterminado somente se faltar evidência que o registro não fornece; diga exatamente qual.
+3. Trate passos marcados D2 e D3 como evidência complementar, não como reprodução das reivindicações dos autores.
+4. Informe confiança de 0 a 100 e explique a mudança em relação à decisão analítica, se houver.
+Repita o bloco JSON da etapa A com as novas decisões e acrescente "mudou": true/false para cada selo.
+
+## Resposta B2
+
+Reavaliei o [registro factual](<D:/user/unipampa/8º Semestre/LEAS/atividades/t8/t8-leas/runs/foremost-ng/execucao/registro-factual.md>) à luz dos [critérios fornecidos](<D:/user/unipampa/8º Semestre/LEAS/atividades/t8/t8-leas/runs/foremost-ng/pacote/instrucoes-oficiais.md:13>) e da [regra para C1–C6](<D:/user/unipampa/8º Semestre/LEAS/atividades/t8/t8-leas/runs/foremost-ng/pacote/reivindicacoes.md:15>). Esta é uma avaliação do registro e das evidências anexas; não executei o artefato nesta conversa. **D2 e D3 são evidência complementar**, pois usam procedimentos ou entradas escolhidos pelos revisores, não a reprodução dos experimentos dos autores.
+
+| Passos relevantes | Relação com a avaliação analítica | Resultado |
+|---|---|---|
+| [P01–P03](<D:/user/unipampa/8º Semestre/LEAS/atividades/t8/t8-leas/runs/foremost-ng/execucao/registro-factual.md:50>), P10–P11 | **Confirma** a lacuna nas instruções: `make` na raiz, indicado no artigo, falhou; o `.tar.gz` indicado no README não estava disponível. O ZIP do commit permitiu prosseguir, com conferência complementar da versão. |
+| [P04–P06, P00a–P00b e P04-2–P06-2](<D:/user/unipampa/8º Semestre/LEAS/atividades/t8/t8-leas/runs/foremost-ng/execucao/registro-factual.md:53>) | **Não altera** a decisão anterior de F. A falta inicial de `libc6-dev` foi corrigida; depois, compilação, instalação e manual funcionaram. Isso fornece a prova de executabilidade que faltava à análise documental. |
+| [P14–P16](<D:/user/unipampa/8º Semestre/LEAS/atividades/t8/t8-leas/runs/foremost-ng/execucao/registro-factual.md:85>) | **Não altera** a decisão de F. As entradas D2 demonstram recuperação básica, inclusive um script idêntico ao original. O comando literal do artigo precisou da criação prévia de `/temp/output`; também produziu três aparentes EVTX dentro de um ELF e um ELF truncado. |
+| [P18b–P19b, P19a e P28c–P28d](<D:/user/unipampa/8º Semestre/LEAS/atividades/t8/t8-leas/runs/foremost-ng/execucao/registro-factual.md:98>) — C1 | **Não altera** a conclusão de R. Houve extração e leitura de EVTX D2/D3, inclusive 1.601 eventos com XML idêntico na amostra pública. Isso apoia o funcionamento do parser, mas não reproduz uma entrada ou resultado fornecido pelos autores. |
+| [P21b e P28d](<D:/user/unipampa/8º Semestre/LEAS/atividades/t8/t8-leas/runs/foremost-ng/execucao/registro-factual.md:108>) — C2 | **Confirma** a falha apontada na análise: scripts válidos foram recuperados, mas os dois casos compostos de shebang e comentários também foram extraídos, contrariando a condição declarada para C2. |
+| [P24b e P28d](<D:/user/unipampa/8º Semestre/LEAS/atividades/t8/t8-leas/runs/foremost-ng/execucao/registro-factual.md:116>) — C3 | **Confirma** a discrepância apontada no código: Mach-O *fat* foi recuperado; *thin*, com bytes correspondentes à assinatura registrada, não foi recuperado nas duas imagens D2. |
+| [P27b e P28d](<D:/user/unipampa/8º Semestre/LEAS/atividades/t8/t8-leas/runs/foremost-ng/execucao/registro-factual.md:125>) — C4 | **Não altera** a conclusão de R. ELF32 e ELF64 foram detectados e seus cabeçalhos de programa puderam ser lidos, mas ELF reais saíram como prefixos truncados, com erros de leitura da tabela de seções. A evidência é parcial para a legibilidade estrutural reivindicada. |
+| [P07, P29a–P29b e P31–P33](<D:/user/unipampa/8º Semestre/LEAS/atividades/t8/t8-leas/runs/foremost-ng/execucao/registro-factual.md:149>) — C5 | **Não altera** a avaliação de R. Sem chave, houve aviso e recuperação dos ELF, mas o `audit.txt` exibiu `Clean (0)` mesmo sem consulta verificada. Falta uma execução com **chave válida**, resposta da API associada ao hash extraído e resultado registrado para verificar a parte principal de C5. |
+| [P08-2 e P34–P37](<D:/user/unipampa/8º Semestre/LEAS/atividades/t8/t8-leas/runs/foremost-ng/execucao/registro-factual.md:158>) — C6 | **Confirma** o impedimento documental: `evidence2.dd` não foi obtido; o comando dos autores terminou com “File not found”. Faltam a **imagem original** e, consequentemente, a saída que permitiria comparar os 12 arquivos e offsets da Figura 2. |
+| [P39–P41](<D:/user/unipampa/8º Semestre/LEAS/atividades/t8/t8-leas/runs/foremost-ng/execucao/registro-factual.md:174>) e P38 — D3/C7 | **Não altera** F ou R. DFTT demonstra recuperação de formatos gerais, sem entradas para C1–C4; C7 está expressamente fora da regra de R. |
+
+### Novas decisões
+
+**F — Não atribuir; não mudou.** A execução agora comprova compilação e funcionalidade básica após o ajuste do ambiente. Porém, o critério fornecido exige também que o **README** informe versões de dependências, linguagem e ambiente e ofereça um exemplo mínimo. O [README do artefato](<D:/user/unipampa/8º Semestre/LEAS/atividades/t8/t8-leas/runs/foremost-ng/pacote/artefato.txt:169>) continua sem essas versões e apresenta apenas a sintaxe `foremost-ng [options] [image_or_device]`. Há, portanto, falha documental obrigatória; não cabe *Indeterminado*. Minha estimativa de que o comitê atribuiria F sobe de **15 para 25/100**, porque agora existe prova de funcionamento, embora a falha obrigatória permaneça.
+
+**R — Não atribuir; não mudou.** A regra exige reproduzir **todas** as C1–C6. Os resultados complementares reforçam as contradições de C2 e C3; C6 continua impossível de confrontar com a Figura 2 sem `evidence2.dd`. Também faltam a chave e a resposta da API para verificar C5. As evidências D2/D3 de C1 e C4 não substituem o processo e as entradas dos autores exigidos para R. Há falhas suficientes para **Não atribuir**, sem recorrer a *Indeterminado*. Minha estimativa de que o comitê atribuiria R cai de **5 para 2/100**, pois os defeitos antes identificados apenas no código foram observados nos testes complementares.
+
+```json
+{
+  "F": {
+    "decisao": "Não atribuir",
+    "confianca": 25,
+    "mudou": false,
+    "evidencias": [
+      "instrucoes-oficiais.md:15",
+      "README.md:21-35",
+      "README.md:74-85",
+      "registro-factual.md:50-63",
+      "registro-factual.md:83-92"
+    ]
+  },
+  "R": {
+    "decisao": "Não atribuir",
+    "confianca": 2,
+    "mudou": false,
+    "evidencias": [
+      "instrucoes-oficiais.md:19",
+      "reivindicacoes.md:7-12",
+      "reivindicacoes.md:15-21",
+      "registro-factual.md:98-142",
+      "registro-factual.md:149-162",
+      "registro-factual.md:273-286"
+    ],
+    "por_reivindicacao": {
+      "C1": "depende_execucao",
+      "C2": "nao_reproduzivel",
+      "C3": "nao_reproduzivel",
+      "C4": "depende_execucao",
+      "C5": "depende_execucao",
+      "C6": "nao_reproduzivel"
+    }
+  }
+}
+```

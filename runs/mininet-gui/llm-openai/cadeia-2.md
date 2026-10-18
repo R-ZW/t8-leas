@@ -7,11 +7,11 @@
 - interface: Codex (agente com workspace local e terminal), operado por Reinaldo Zimmer Wendt; anexos lidos do disco por caminho em `runs/<artefato>/pacote/` (desvio: agente em vez do chat do ChatGPT)
 - data_hora_A: não registrado no link (duração do turno: A=164s; B1=156s)
 - data_hora_B1: não registrado no link
-- data_hora_B2: pendente
+- data_hora_B2: não registrado (17–18/10/2026, conversa nova)
 - anexos_A: artigo.pdf=4e3ff858506f2f9e6da30af4412caa402890ac154b910df390b74e2ee2a2bf08, artefato.txt=5e1da9b36fe62beddfdb9b8dbbceefa67c1c38e14f45c8bd3247519bcf83c8eb, instrucoes-oficiais.md=fc8e01dd0ffdbff06af86a07bd44662c3394903c0d3a6be0222e678963989059, reivindicacoes.md=100366e5dfad9c560f9d5066e67d1e23df8f6ad7c3d5ce2e62aff02a529ed0bc (lidos do disco; bytes não conferidos dentro da conversa)
-- anexo_B2: pendente
+- anexo_B2: registro-factual.md (lido do disco no novo workspace; bytes não conferidos)
 - metodo_exportacao: transcrição gerada por `ferramentas/transcrever_codex.py` do JSON público do link https://chatgpt.com/s/cx_6ad2538ebef48191a2bf6e04b4a73678 (cópia bruta em `exportacao-bruta/`); textos de userMessage e agentMessage sem alteração; reasoning, imageView, fileChange e chamadas de ferramenta (não incluídas no link) omitidos. O export anterior, escrito pelo próprio modelo via Session Exporter, está em `exportacao-bruta/` e não é usado na análise
-- desvios: resposta A: 9 visualização(ões) de imagem (páginas do artigo.pdf) omitidas | turno 3 fora do roteiro, omitido da transcrição: "[@Session Exporter](plugin://session-exporter@openai-curated-remote) Export this entire co"
+- desvios: resposta A: 9 visualização(ões) de imagem (páginas do artigo.pdf) omitidas | turno 3 fora do roteiro, omitido da transcrição: "[@Session Exporter](plugin://session-exporter@openai-curated-remote) Export this entire co" | B2 NÃO COMPARÁVEL: enviado em conversa NOVA do Codex (contexto restaurado a partir do export do Session Exporter de A/B1), em outro workspace com o repositório inteiro acessível; texto extraído do export escrito pelo modelo (`exportacao-bruta/cadeia-2+b2.md`), sem link de compartilhamento, logo não literal
 
 ## Prompt A
 
@@ -249,3 +249,96 @@ A ordem prática é P1–P9, **P17–P18**, P11–P12 se desejar examinar C3, P1
 | P16 | Gerar Tree | R/C4 | README; valores **[NÃO DOCUMENTADO]** |
 | P17 | `iperf -s` em h1 | R/C5 | README |
 | P18 | `iperf -c 10.0.0.1` em h2 | R/C5 | README |
+
+## Prompt B2
+
+Segue em anexo o registro factual da execução do artefato (registro-factual.md), feita em ambiente que atende parcialmente (VM dos autores no VirtualBox 7.1.6 com 8 GB de RAM, mas sobre o Hyper-V em modo NEM e com o navegador do host em vez de um navegador dentro da VM, como detalhado na seção 1 do registro) aos requisitos dos autores. O roteiro executado consolidou os planos de três revisores, incluindo o seu.
+Com base no registro e no material anterior:
+1. Para cada passo relevante, diga se o resultado confirma, contradiz ou não altera sua avaliação analítica.
+2. Decida novamente F e R (Atribuir, Não atribuir ou Indeterminado) com a mesma regra de antes. Use Indeterminado somente se faltar evidência que o registro não fornece; diga exatamente qual.
+3. Trate passos marcados D2 e D3 como evidência complementar, não como reprodução das reivindicações dos autores.
+4. Informe confiança de 0 a 100 e explique a mudança em relação à decisão analítica, se houver.
+Repita o bloco JSON da etapa A com as novas decisões e acrescente "mudou": true/false para cada selo.
+````
+
+## Resposta B2
+
+````text
+Reavaliei os selos a partir do [registro factual](<D:/user/unipampa/8º Semestre/LEAS/atividades/t8/t8-leas/runs/mininet-gui/execucao/registro-factual.md>) e do material anterior. Os resultados abaixo são os **relatados na execução do aluno**; não executei o artefato nesta conversa.
+
+Uso **confirma** quando o passo sustenta um critério ou uma expectativa que a análise documental deixara para verificar, **contradiz** quando o resultado diverge do esperado pelos autores e **não altera** quando o passo apenas delimita o alcance da prova. Os passos D2 são evidência complementar. O registro não identifica nenhum passo executado como D3.
+
+### Confronto por passo
+
+| Passo | Efeito sobre a análise anterior |
+|---|---|
+| E01–E06 | **Confirma** a disponibilidade de uma VM dos autores no VirtualBox exigido, ajustada para 8 GB. O link e o nome da OVA do README não corresponderam à imagem obtida na release; o acesso foi por SSH. Esses desvios delimitam o ambiente, sem impedir o teste ([registro, §§1–2](<D:/user/unipampa/8º Semestre/LEAS/atividades/t8/t8-leas/runs/mininet-gui/execucao/registro-factual.md:9>)). |
+| E07–E08 | **Não altera** a decisão por si só. A VM contém `be68302`, enquanto a documentação examinada é de `465648a4`; o registro afirma que backend e frontend são idênticos entre eles. A inspeção de código não substitui execução ([registro, §1.3 e §3](<D:/user/unipampa/8º Semestre/LEAS/atividades/t8/t8-leas/runs/mininet-gui/execucao/registro-factual.md:37>)). |
+| E09 | **Confirma** que o comando documentado iniciou backend e frontend e imprimiu a URL. Resolve a pendência de inicialização de F ([registro:77](<D:/user/unipampa/8º Semestre/LEAS/atividades/t8/t8-leas/runs/mininet-gui/execucao/registro-factual.md:77>)). |
+| E10 | **Confirma** que a interface abriu. O navegador estava no host, desvio D1 em relação ao README; isso limita a fidelidade ao ambiente descrito, mas a interface foi alcançada pela URL da VM ([registro:78](<D:/user/unipampa/8º Semestre/LEAS/atividades/t8/t8-leas/runs/mininet-gui/execucao/registro-factual.md:78>)). |
+| E11–E12 | **Confirma** C1 e a criação da topologia Single do teste mínimo: `c1`, `s1`, `h1`, `h2` e seus links apareceram ([registro:79–80](<D:/user/unipampa/8º Semestre/LEAS/atividades/t8/t8-leas/runs/mininet-gui/execucao/registro-factual.md:79>)). |
+| E13 | **Confirma** C2 e a funcionalidade básica: o Pingall mostrou 1 envio e 1 recebimento nos dois sentidos ([registro:81](<D:/user/unipampa/8º Semestre/LEAS/atividades/t8/t8-leas/runs/mininet-gui/execucao/registro-factual.md:81>)). |
+| E14 | **Confirma** C5 como teste autoral adicional: o `iperf` executado nas abas de `h1` e `h2` produziu saídas correspondentes. A primeira tentativa bloqueada pelo modal foi repetida com sucesso ([registro:82](<D:/user/unipampa/8º Semestre/LEAS/atividades/t8/t8-leas/runs/mininet-gui/execucao/registro-factual.md:82>)). |
+| E15 | **Não altera** os selos isoladamente. A checagem D2 constatou a ausência de Ryu e ajuda a explicar E16 ([registro:104](<D:/user/unipampa/8º Semestre/LEAS/atividades/t8/t8-leas/runs/mininet-gui/execucao/registro-factual.md:104>)). |
+| E16 | **Contradiz** o resultado completo do passo opcional dos autores: o link verde foi criado, mas `ryu-manager` não existia na VM e não houve conectividade entre as duas topologias. Não é C4 nem C5 e, portanto, não decide R ([registro:83](<D:/user/unipampa/8º Semestre/LEAS/atividades/t8/t8-leas/runs/mininet-gui/execucao/registro-factual.md:83>)). |
+| E17 | **Confirma** a exportação dos arquivos JSON e Python prevista no teste mínimo. A validação adicional dos arquivos é D2 ([registro:84](<D:/user/unipampa/8º Semestre/LEAS/atividades/t8/t8-leas/runs/mininet-gui/execucao/registro-factual.md:84>)). |
+| E18 | **Não altera** sozinho C4: o reset D2 isolou os ensaios, mas não é reprodução de um modelo ([registro:105](<D:/user/unipampa/8º Semestre/LEAS/atividades/t8/t8-leas/runs/mininet-gui/execucao/registro-factual.md:105>)). |
+| E19 | **Confirma** Single com três hosts escolhidos ([registro:85](<D:/user/unipampa/8º Semestre/LEAS/atividades/t8/t8-leas/runs/mininet-gui/execucao/registro-factual.md:85>)). |
+| E20–E21 | **Confirma** Linear nas duas configurações escolhidas; E20 registrou rótulos encobertos, mas grafo e contagens mostraram os nós e links ([registro:86–87](<D:/user/unipampa/8º Semestre/LEAS/atividades/t8/t8-leas/runs/mininet-gui/execucao/registro-factual.md:86>)). |
+| E22 | **Confirma** Tree com dois níveis e fanout 2. Foi preciso deslocar a vista para enxergar todos os hosts ([registro:88](<D:/user/unipampa/8º Semestre/LEAS/atividades/t8/t8-leas/runs/mininet-gui/execucao/registro-factual.md:88>)). |
+| E23 | **Confirma**, como evidência **complementar D2**, as contagens dos quatro ensaios de C4 obtidas pela API. A reprodução de C4 se apoia em E19–E22 ([registro:106](<D:/user/unipampa/8º Semestre/LEAS/atividades/t8/t8-leas/runs/mininet-gui/execucao/registro-factual.md:106>)). |
+| E24 | **Confirma** C5 pelo procedimento do README: `ip addr show` na aba `h1` exibiu `h1-eth0` e `10.0.0.1/8` ([registro:89](<D:/user/unipampa/8º Semestre/LEAS/atividades/t8/t8-leas/runs/mininet-gui/execucao/registro-factual.md:89>)). |
+| E25–E27 | **Confirma**, como evidência **complementar D2**, que `h1` e `h2` tinham endereços e namespaces distintos, também diferentes do shell da VM. Reforça a interpretação de E14 e E24, sem substituir os passos dos autores ([registro:107–109](<D:/user/unipampa/8º Semestre/LEAS/atividades/t8/t8-leas/runs/mininet-gui/execucao/registro-factual.md:107>)). |
+| E28a–E29 | **Confirma**, como evidência **complementar D2**, a manipulação do grafo, a adição de nós com a rede ativa e o Pingall de 20/20 pares. Não amplia a regra de R para C1–C3 ([registro:110–112](<D:/user/unipampa/8º Semestre/LEAS/atividades/t8/t8-leas/runs/mininet-gui/execucao/registro-factual.md:110>)). |
+| E30a–E30b | **Confirma parcialmente** C3, como D2: link e nó foram removidos sem reinício observado. A entrada residual de `h4` em `/links` limita o resultado ([registro:113–114](<D:/user/unipampa/8º Semestre/LEAS/atividades/t8/t8-leas/runs/mininet-gui/execucao/registro-factual.md:113>)). |
+| E30c | **Contradiz** a expectativa de conectividade após as remoções: o Pingall retornou HTTP 500. É um defeito observado em D2, fora da regra de R ([registro:115](<D:/user/unipampa/8º Semestre/LEAS/atividades/t8/t8-leas/runs/mininet-gui/execucao/registro-factual.md:115>)). |
+| E30d | **Confirma**, como D2, que a emulação permanecia ativa apesar da falha de Pingall: não houve novo registro de criação da rede e `h1` alcançou `h3` ([registro:116](<D:/user/unipampa/8º Semestre/LEAS/atividades/t8/t8-leas/runs/mininet-gui/execucao/registro-factual.md:116>)). |
+| E31 | **Confirma apenas** a visualização de regras de fluxo de C6, como D2 ([registro:117](<D:/user/unipampa/8º Semestre/LEAS/atividades/t8/t8-leas/runs/mininet-gui/execucao/registro-factual.md:117>)). |
+| E32 | **Confirma a lacuna** apontada na análise documental de C6: não foi encontrado controle para inserir ou remover regras. A busca D2 não reproduz C6 e não decide R ([registro:118](<D:/user/unipampa/8º Semestre/LEAS/atividades/t8/t8-leas/runs/mininet-gui/execucao/registro-factual.md:118>)). |
+
+### Novas decisões
+
+**F — Não atribuir; não mudou.** A execução agora demonstra inicialização, interface, topologia, conectividade, WebShell e exportação. Resolve a antiga pendência de observação funcional. Permanece, porém, o critério obrigatório usado na primeira decisão: o README deve informar **dependências e versões**, e a instalação manual não fixa a versão do Mininet nem das dependências Python. As versões descobertas *na VM durante a execução* não passam a constar do README ([instruções: Funcional](<D:/user/unipampa/8º Semestre/LEAS/atividades/t8/t8-leas/runs/mininet-gui/pacote/instrucoes-oficiais.md>); [artefato.txt, README:60–73 e requirements.txt:1–4](<D:/user/unipampa/8º Semestre/LEAS/atividades/t8/t8-leas/runs/mininet-gui/pacote/artefato.txt:145>)). Pela regra anterior, essa falta documental basta para **Não atribuir**. A falha opcional de E16 é uma ressalva adicional, não a razão necessária da decisão.
+
+**R — Atribuir; mudou de Indeterminado.** A regra fornecida faz R depender de **C4 e C5** ([reivindicações: Regra para o selo R](<D:/user/unipampa/8º Semestre/LEAS/atividades/t8/t8-leas/runs/mininet-gui/pacote/reivindicacoes.md>)). E19–E22 observaram Single, Linear e Tree com as quantidades escolhidas; E14 e E24 observaram comandos e saída nas abas dos nós. E23 e E25–E27 apenas reforçam esses resultados. A diferença de commit e o uso de NEM e navegador no host limitam a generalização para outros ambientes, mas o registro informa que o código backend/frontend é idêntico entre os commits e não deixa uma evidência específica de C4 ou C5 por obter. Assim, **não cabe Indeterminado**.
+
+Como na etapa anterior, **confiança** significa minha estimativa de que *o comitê oficial atribuiu o selo*, não a certeza sobre sua decisão, que não consta dos materiais. Para **F: 55/100**, ante 45/100: o teste funcional bem-sucedido eleva essa estimativa, embora minha decisão pela regra estrita permaneça negativa. Para **R: 90/100**, ante 50/100: as duas reivindicações que determinam R foram observadas; a execução única e os desvios de ambiente impedem confiança máxima.
+
+```json
+{
+  "F": {
+    "decisao": "Não atribuir",
+    "confianca": 55,
+    "mudou": false,
+    "evidencias": [
+      "instrucoes-oficiais.md:Funcional",
+      "README.md:60-73",
+      "mininet-gui-backend/requirements.txt:1-4",
+      "registro-factual.md:1.3-1.4",
+      "registro-factual.md:E09-E17"
+    ]
+  },
+  "R": {
+    "decisao": "Atribuir",
+    "confianca": 90,
+    "mudou": true,
+    "evidencias": [
+      "instrucoes-oficiais.md:Reprodutível",
+      "reivindicacoes.md:Regra para o selo R",
+      "README.md:105-114",
+      "registro-factual.md:E14",
+      "registro-factual.md:E19-E24",
+      "registro-factual.md:E23-E27"
+    ],
+    "por_reivindicacao": {
+      "C1": "reproduzivel",
+      "C2": "reproduzivel",
+      "C3": "nao_reproduzivel",
+      "C4": "reproduzivel",
+      "C5": "reproduzivel",
+      "C6": "nao_reproduzivel"
+    }
+  }
+}
+```
+````

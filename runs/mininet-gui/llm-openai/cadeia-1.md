@@ -7,11 +7,11 @@
 - interface: Codex (agente com workspace local e terminal), operado por Reinaldo Zimmer Wendt; anexos lidos do disco por caminho em `runs/<artefato>/pacote/` (desvio: agente em vez do chat do ChatGPT)
 - data_hora_A: não registrado no link (duração do turno: A=158s; B1=181s)
 - data_hora_B1: não registrado no link
-- data_hora_B2: pendente
+- data_hora_B2: não registrado (17–18/10/2026, conversa nova)
 - anexos_A: artigo.pdf=4e3ff858506f2f9e6da30af4412caa402890ac154b910df390b74e2ee2a2bf08, artefato.txt=5e1da9b36fe62beddfdb9b8dbbceefa67c1c38e14f45c8bd3247519bcf83c8eb, instrucoes-oficiais.md=fc8e01dd0ffdbff06af86a07bd44662c3394903c0d3a6be0222e678963989059, reivindicacoes.md=100366e5dfad9c560f9d5066e67d1e23df8f6ad7c3d5ce2e62aff02a529ed0bc (lidos do disco; bytes não conferidos dentro da conversa)
-- anexo_B2: pendente
+- anexo_B2: registro-factual.md (lido do disco no novo workspace; bytes não conferidos)
 - metodo_exportacao: transcrição gerada por `ferramentas/transcrever_codex.py` do JSON público do link https://chatgpt.com/s/cx_6ad24fb33d348191b7241a14752470d3 (cópia bruta em `exportacao-bruta/`); textos de userMessage e agentMessage sem alteração; reasoning, imageView, fileChange e chamadas de ferramenta (não incluídas no link) omitidos. O export anterior, escrito pelo próprio modelo via Session Exporter, está em `exportacao-bruta/` e não é usado na análise
-- desvios: resposta A: contém marcações :codex-file-citation da interface, mantidas sem alteração | resposta B1: contém marcações :codex-file-citation da interface, mantidas sem alteração | turno 3 fora do roteiro, omitido da transcrição: "[@Session Exporter](plugin://session-exporter@openai-curated-remote) Export this entire co"
+- desvios: resposta A: contém marcações :codex-file-citation da interface, mantidas sem alteração | resposta B1: contém marcações :codex-file-citation da interface, mantidas sem alteração | turno 3 fora do roteiro, omitido da transcrição: "[@Session Exporter](plugin://session-exporter@openai-curated-remote) Export this entire co" | B2 NÃO COMPARÁVEL: enviado em conversa NOVA do Codex (contexto restaurado a partir do export do Session Exporter de A/B1), em outro workspace com o repositório inteiro acessível; texto extraído do export escrito pelo modelo (`exportacao-bruta/cadeia-1+b2.md`), sem link de compartilhamento, logo não literal
 
 ## Prompt A
 
@@ -187,3 +187,77 @@ Use **P12–P13**, que repetem os comandos `iperf` do teste opcional dos autores
 | **P15** | F; C3, complementar e opcional | Interface web e aba WebShell de `c2` | Seguir [README.md:96]: criar **Controller / Remote / 127.0.0.1 / 6633**; gerar **Single / 2 hosts / c2**; **Create Link** de `s1` a `s2`; em `c2`, `ryu-manager --ofp-tcp-listen-port 6633 ryu.app.simple_switch_13`; depois **Run Pingall Test**. | Linha verde entre switches e teste de conexão [README.md:96]. | **[NÃO DOCUMENTADO]** Capturas antes/depois, saída do Ryu e `pingall`. | Novos elementos e link aparecem; resultados são exibidos. | Elementos/link/comando/teste falham. | Ryu não estiver disponível ou a emulação deixar de responder; este passo não prova, sozinho, ausência de reinício. |
 | **P16** | F; C3, verificação completa | Não especificado | **[NÃO DOCUMENTADO]** Os autores não fornecem sequência para remover nó e link nem método para demonstrar continuidade sem reinício. O passo seria necessário para a reivindicação completa [reivindicacoes.md:C3]. **Não há comando exato a executar neste roteiro.** | Rede alterada enquanto a emulação permanece ativa [reivindicacoes.md:C3]. | Registrar que o procedimento está ausente. | Não julgável pelo roteiro dos autores. | Não julgável sem executar um procedimento adicional definido. | Aqui: não declare C3 integralmente verificada com P15. |
 | **P17** | F; C6, verificação completa | Não especificado | **[NÃO DOCUMENTADO]** Não há comando, regra OpenFlow de exemplo ou sequência de interface para consultar, criar e remover regra [README.md:101-114; reivindicacoes.md:C6]. **Não há comando exato a executar neste roteiro.** | Tabela exibida e regra inserida/removida [reivindicacoes.md:C6]. | Registrar a ausência do procedimento. | Não julgável pelo roteiro dos autores. | Não julgável sem procedimento adicional definido. | Aqui: não declare C6 verificada. |
+
+## Prompt B2
+
+Segue em anexo o registro factual da execução do artefato (registro-factual.md), feita em ambiente que atende parcialmente (VM dos autores no VirtualBox 7.1.6 com 8 GB de RAM, mas sobre o Hyper-V em modo NEM e com o navegador do host em vez de um navegador dentro da VM, como detalhado na seção 1 do registro) aos requisitos dos autores. O roteiro executado consolidou os planos de três revisores, incluindo o seu.
+Com base no registro e no material anterior:
+1. Para cada passo relevante, diga se o resultado confirma, contradiz ou não altera sua avaliação analítica.
+2. Decida novamente F e R (Atribuir, Não atribuir ou Indeterminado) com a mesma regra de antes. Use Indeterminado somente se faltar evidência que o registro não fornece; diga exatamente qual.
+3. Trate passos marcados D2 e D3 como evidência complementar, não como reprodução das reivindicações dos autores.
+4. Informe confiança de 0 a 100 e explique a mudança em relação à decisão analítica, se houver.
+Repita o bloco JSON da etapa A com as novas decisões e acrescente "mudou": true/false para cada selo.
+
+## Resposta B2
+
+Reavaliei os selos com o [registro factual](<D:/user/unipampa/8º Semestre/LEAS/atividades/t8/t8-leas/runs/mininet-gui/execucao/registro-factual.md>), os [critérios fornecidos](<D:/user/unipampa/8º Semestre/LEAS/atividades/t8/t8-leas/runs/mininet-gui/pacote/instrucoes-oficiais.md>) e a [regra das reivindicações](<D:/user/unipampa/8º Semestre/LEAS/atividades/t8/t8-leas/runs/mininet-gui/pacote/reivindicacoes.md>). Trato as observações como uma execução registrada pelo aluno, não como uma execução feita por mim. “Confirma” e “contradiz” abaixo referem-se à expectativa funcional examinada na avaliação analítica; uma confirmação não elimina, por si só, uma lacuna documental.
+
+| Passos do registro | Efeito sobre a avaliação analítica |
+|---|---|
+| E01–E08 | **Não alteram diretamente os selos.** Confirmam que a VM foi obtida, importada e iniciada, mas documentam os desvios de ambiente e o commit diferente. O backend e o frontend são idênticos entre os commits; o `run.sh` mudou. O registro não demonstra a execução da revisão `465648a4` inteira. |
+| E09–E13 | **Confirmam** a execução da aplicação, a interface, a criação da topologia Single e o `pingall` com 2/2 pares. Resolvem a dúvida anterior sobre observar funções básicas, embora não corrijam o README. |
+| E14 | **Confirma** o WebShell e o teste opcional de `iperf`; também apoia C5. |
+| E15–E16 | **Contradizem** a conclusão bem-sucedida do passo opcional de múltiplos controladores: o Ryu está ausente da VM e não houve conectividade entre as duas topologias. Isso limita F, mas não integra a regra de R. |
+| E17 | **Confirma** a exportação de JSON e Python. A checagem de sintaxe complementar não equivale a executar o script exportado. |
+| E19–E22 | **Confirmam C4:** Single, Linear e Tree foram geradas com as quantidades escolhidas. São os passos dos autores que resolvem a primeira pendência de R. |
+| E24 | **Confirma C5:** `ip addr show` apareceu na aba `h1` do WebShell. Resolve a segunda pendência de R. |
+| E18, E23, E25–E27 | **Reforçam, sem substituir, E19–E22 e E24.** Resets, contagens pela API e comparação dos namespaces são verificações D2 dos revisores. |
+| E28a–E29 | **Confirmam complementarmente** a manipulação visual, a adição de nós com a rede ativa e o `pingall` com 20/20 pares. São D2, não reprodução formal de uma reivindicação dos autores. |
+| E30a–E30b, E30d | **Confirmam complementarmente** remoções sem reiniciar a emulação: o grafo mudou e `h1` continuou alcançando `h3`. |
+| E30c | **Contradiz** o funcionamento íntegro após as remoções: o `pingall` da interface retornou HTTP 500, e a API ainda listava um link do nó removido. |
+| E31–E32 | **Confirmam** a visualização da tabela de fluxo, mas **contradizem** a parte de C6 sobre criar ou remover regras pela interface testada: nenhum controle foi encontrado. São D2 e não entram na regra de R. |
+
+Esses resultados estão nas [tabelas de passos documentados](<D:/user/unipampa/8º Semestre/LEAS/atividades/t8/t8-leas/runs/mininet-gui/execucao/registro-factual.md:68>) e [complementares](<D:/user/unipampa/8º Semestre/LEAS/atividades/t8/t8-leas/runs/mininet-gui/execucao/registro-factual.md:93>). O registro não identifica nenhum passo **D3**; portanto, não atribuo a D3 qualquer reprodução.
+
+### Novas decisões
+
+**F — Não atribuir; não mudou.** A execução confirmou várias funcionalidades e fortaleceu a parte prática de F. Permanece, porém, a falha documental obrigatória que fundamentou a decisão anterior: os [critérios de F](<D:/user/unipampa/8º Semestre/LEAS/atividades/t8/t8-leas/runs/mininet-gui/pacote/instrucoes-oficiais.md>) exigem que o README informe dependências **e versões**; sua [seção “Dependências”](<D:/user/unipampa/8º Semestre/LEAS/atividades/t8/t8-leas/runs/mininet-gui/pacote/artefato.txt:119>) informa a versão do VirtualBox, mas não as versões dos demais componentes necessários. As versões medidas na VM não passam a constar do README. A ausência do Ryu no passo opcional reforça a ressalva, mas não é o fundamento isolado da decisão. **Confiança de que o comitê oficial atribuiu F: 30/100**, ante 35/100 na análise anterior. Isso é uma estimativa sobre uma decisão oficial desconhecida, não uma consulta ao resultado do comitê.
+
+**R — Atribuir; mudou de Indeterminado.** Pela regra previamente fornecida, R depende de **C4 e C5**. Os passos documentados E19–E22 observaram os três modelos de C4, e E24 observou a saída do comando no WebShell para C5. Não falta evidência de execução para essa regra. **Confiança de que o comitê oficial atribuiu R: 85/100**, ante 55/100. Mantenho alguma reserva porque a VM continha um commit anterior, o navegador foi usado no host e a execução ocorreu sobre NEM; o registro delimita esses desvios e informa que o código do backend e do frontend não mudou entre os commits.
+
+Para o bloco abaixo, “reproduzivel” em C1/C2 registra os resultados observados nos passos dos autores; **somente C4 e C5 determinam R**. C3 e C6 permanecem sem reprodução formal por procedimento dos autores, apesar da evidência complementar.
+
+```json
+{
+  "F": {
+    "decisao": "Não atribuir",
+    "confianca": 30,
+    "mudou": false,
+    "evidencias": [
+      "instrucoes-oficiais.md:Funcional (F)",
+      "artefato.txt:README.md:35-38",
+      "registro-factual.md:seção 2/E09-E17",
+      "registro-factual.md:seção 2/E16"
+    ]
+  },
+  "R": {
+    "decisao": "Atribuir",
+    "confianca": 85,
+    "mudou": true,
+    "evidencias": [
+      "reivindicacoes.md:Regra para o selo R",
+      "registro-factual.md:seção 2/E19-E22",
+      "registro-factual.md:seção 2/E24",
+      "registro-factual.md:seção 1.3"
+    ],
+    "por_reivindicacao": {
+      "C1": "reproduzivel",
+      "C2": "reproduzivel",
+      "C3": "depende_execucao",
+      "C4": "reproduzivel",
+      "C5": "reproduzivel",
+      "C6": "depende_execucao"
+    }
+  }
+}
+```

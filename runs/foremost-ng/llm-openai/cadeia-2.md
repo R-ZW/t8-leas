@@ -7,11 +7,11 @@
 - interface: Codex (agente com workspace local e terminal), operado por Reinaldo Zimmer Wendt; anexos lidos do disco por caminho em `runs/<artefato>/pacote/` (desvio: agente em vez do chat do ChatGPT)
 - data_hora_A: não registrado no link (duração do turno: A=220s; B1=136s)
 - data_hora_B1: não registrado no link
-- data_hora_B2: pendente
+- data_hora_B2: não registrado (17–18/10/2026, conversa nova)
 - anexos_A: artigo.pdf=d9b12aa44caeab3d8374fd9ad092c3b9ecec1f18d589125f0ca2f8d00dc9e715, artefato.txt=6de9ecff1194121da658fd3684742c0b2a42b7899ed73b7d3649b9e928330446, instrucoes-oficiais.md=446e5f94605b2fe60ac9c4028f7be57b0488bc79c3c8ef2ef782428f8e290a47, reivindicacoes.md=3d27bc26b64ae7c16272dc9d7a68c25ccacf98d82dbfcdc5bfd7d3ab7932dbac (lidos do disco; bytes não conferidos dentro da conversa)
-- anexo_B2: pendente
+- anexo_B2: registro-factual.md (lido do disco no novo workspace; bytes não conferidos)
 - metodo_exportacao: transcrição gerada por `ferramentas/transcrever_codex.py` do JSON público do link https://chatgpt.com/s/cx_6ad23a4f9b4481918a7429e5ff50aa5b (cópia bruta em `exportacao-bruta/`); textos de userMessage e agentMessage sem alteração; reasoning, imageView, fileChange e chamadas de ferramenta (não incluídas no link) omitidos. O export anterior, escrito pelo próprio modelo via Session Exporter, está em `exportacao-bruta/` e não é usado na análise
-- desvios: resposta A: 1 visualização(ões) de imagem (páginas do artigo.pdf) omitidas | resposta A: contém marcações :codex-file-citation da interface, mantidas sem alteração | resposta B1: contém marcações :codex-file-citation da interface, mantidas sem alteração | turno 3 fora do roteiro, omitido da transcrição: "[@Session Exporter](plugin://session-exporter@openai-curated-remote) Export this entire co"
+- desvios: resposta A: 1 visualização(ões) de imagem (páginas do artigo.pdf) omitidas | resposta A: contém marcações :codex-file-citation da interface, mantidas sem alteração | resposta B1: contém marcações :codex-file-citation da interface, mantidas sem alteração | turno 3 fora do roteiro, omitido da transcrição: "[@Session Exporter](plugin://session-exporter@openai-curated-remote) Export this entire co" | B2 NÃO COMPARÁVEL: enviado em conversa NOVA do Codex (contexto restaurado a partir do export do Session Exporter de A/B1), em outro workspace com o repositório inteiro acessível; texto extraído do export escrito pelo modelo (`exportacao-bruta/cadeia-2+b2.md`), sem link de compartilhamento, logo não literal
 
 ## Prompt A
 
@@ -215,3 +215,72 @@ Em cada passo abaixo, **“falha” pressupõe entrada adequada e conhecida**. S
 | P11 | R / C5 | `foremost-ng -x -t elf -i memory.dump -o ./carved-files` | **Interromper:** `memory.dump` ausente |
 | P12 | R / C6 | `./foremost-ng -v -x evidence2.dd` | **Interromper:** `evidence2.dd` ausente |
 | P13 | R / C7, fora da regra | **[NÃO DOCUMENTADO]** comando de experimento | Inspeção estática condicional a P1 |
+
+## Prompt B2
+
+Segue em anexo o registro factual da execução do artefato (registro-factual.md), feita em ambiente que atende (Linux, como pede o README; contêiner Docker com Ubuntu 24.04 sobre WSL2, detalhado na seção 1 do registro) aos requisitos dos autores. O roteiro executado consolidou os planos de três revisores, incluindo o seu.
+Com base no registro e no material anterior:
+1. Para cada passo relevante, diga se o resultado confirma, contradiz ou não altera sua avaliação analítica.
+2. Decida novamente F e R (Atribuir, Não atribuir ou Indeterminado) com a mesma regra de antes. Use Indeterminado somente se faltar evidência que o registro não fornece; diga exatamente qual.
+3. Trate passos marcados D2 e D3 como evidência complementar, não como reprodução das reivindicações dos autores.
+4. Informe confiança de 0 a 100 e explique a mudança em relação à decisão analítica, se houver.
+Repita o bloco JSON da etapa A com as novas decisões e acrescente "mudou": true/false para cada selo.
+
+## Resposta B2
+
+Revisei o [registro factual](<D:/user/unipampa/8º Semestre/LEAS/atividades/t8/t8-leas/runs/foremost-ng/execucao/registro-factual.md>), conferi saídas selecionadas e retomei os critérios de [F e R](<D:/user/unipampa/8º Semestre/LEAS/atividades/t8/t8-leas/runs/foremost-ng/pacote/instrucoes-oficiais.md>) e a [regra de C1–C6](<D:/user/unipampa/8º Semestre/LEAS/atividades/t8/t8-leas/runs/foremost-ng/pacote/reivindicacoes.md>). **Não reexecutei o artefato.** Uso “confirma” quando o resultado sustenta uma conclusão anterior; “não altera” quando acrescenta evidência sem resolver o critério; e “contradiz” apenas se refutar uma conclusão anterior. Os testes D2 e D3 são evidência complementar, não reprodução dos experimentos dos autores.
+
+| Passos relevantes | Relação com a avaliação analítica |
+|---|---|
+| P01–P03 | **Confirma** a dificuldade documental de preparação: o clone funcionou, mas `make` na raiz, como indicado no artigo, falhou; a compilação exigiu entrar em `src`. |
+| P04–P06, P00a–P00b, P04-2–P06-2 | **Não altera** a decisão F. A falha inicial decorria da ausência de `libc6-dev` no contêiner preparado com `--no-install-recommends`. Corrigido o ambiente, compilação, instalação, manual e ajuda funcionaram. Isso resolve a incerteza sobre executabilidade nesse ambiente, sem preencher o que falta no README. |
+| P07–P08 e P08-2 | **Confirma** que a consulta VT com chave e a Figura 2 não foram verificadas: faltaram, respectivamente, `VT_API_KEY` e `evidence2.dd`. |
+| P09–P13b | **Não altera** as decisões. Registram ambiente, versão do commit, correspondência do pacote e ferramentas; ajudam a atribuir os resultados ao artefato avaliado. |
+| P14a–P16a, P14b–P16b e P16-G-cmp (`disk.img`) — D2 | **Confirma** funcionamento básico: houve recuperação de um script idêntico ao original e geração de `audit.txt`. O comando com `/temp/output/carved` precisou que o diretório-pai fosse criado; na imagem combinada, o ELF foi truncado e houve três detecções EVTX dentro dele. São evidências de execução, não um exemplo mínimo presente no README. |
+| P17b–P19b e P16-G-cmp (EVTX) — D2; P20a, P28a–P28d e P19a — D2/D3 | **Não altera** a classificação anterior de C1 como dependente de reprodução. Há forte evidência complementar de capacidade EVTX: a amostra pública recuperada produziu os mesmos 1.601 eventos e XML idêntico. A saída foi maior que o original e avançou até o fim da imagem; não corresponde a uma entrada ou resultado fornecido pelos autores. |
+| P20b–P21b, P16-G-cmp (scripts) e P28d (negativos) — D2 | **Confirma C2 não reproduzível:** scripts válidos foram recuperados e os curtos descartados, mas dois scripts com shebang e somente comentários também foram recuperados, contrariando a condição reivindicada. Conferi a saída de P21b, inclusive o conteúdo do arquivo de 62 bytes. |
+| P23b–P24b, P24b-conf e P28d (Mach-O) — D2 | **Confirma C3 não reproduzível:** os exemplares `fat` foram recuperados; o `thin` de 64 bits, com assinatura registrada no código, não foi recuperado nas duas imagens. P25 não ocorreu por falta de macOS, mas isso não desfaz o resultado observado nem a incompatibilidade estática anterior. |
+| P26b–P27b, P27b-conf e P28d (ELF) — D2 | **Não altera** a decisão R. ELF32 e ELF64 tiveram cabeçalhos e segmentos de programa legíveis, apoiando parte de C4. Os ELF reais saíram como prefixos e `readelf` apontou tabelas de seções ausentes; como a reivindicação delimita pelo fim dos segmentos, não trato esse erro isoladamente como refutação de C4. |
+| P29a–P29b — D2; P30–P33 | **Não altera** C5. Sem chave, houve aviso e o carving prosseguiu, mas `audit.txt` registrou `Clean (0)` sem consulta demonstrada. A consulta por hash com chave válida e o registro de seu resultado continuam sem evidência. |
+| P34–P37, inclusive P08-2 | **Confirma** o impedimento de C6: sem `evidence2.dd`, não houve execução comparável nem confronto dos arquivos e offsets com a Figura 2. |
+| P38a–P38b — D2; P39–P41 e comparações DFTT — D3 | **Não altera** F ou R. A inspeção acrescenta detalhe sobre C7, que está fora da regra de R. DFTT demonstra recuperação de formatos gerais, mas não reproduz C1–C6. |
+
+**Nova decisão — F: Não atribuir.** A execução agora demonstra compilação, instalação e funcionalidades observáveis após preparar o ambiente. Permanecem, porém, requisitos obrigatórios do README não atendidos: versões e dependências completas para o ambiente Linux e uma invocação mínima concreta; a seção de uso traz apenas `foremost-ng [options] [image_or_device]` ([artefato.txt, README:21–35, 74–85](<D:/user/unipampa/8º Semestre/LEAS/atividades/t8/t8-leas/runs/foremost-ng/pacote/artefato.txt>)). Pela mesma regra, uma falha documental obrigatória basta para “Não atribuir”. Minha estimativa de que o comitê oficial **atribuiria F** sobe de **10 para 15/100**, porque agora há prova de funcionamento; a decisão não mudou.
+
+**Nova decisão — R: Não atribuir.** Os resultados complementares confirmam as falhas de C2 e C3. C6 continua impossível de confrontar sem `evidence2.dd`; C5 carece da consulta com chave válida. Também persistem as instruções insuficientes para reproduzir C1–C6 a partir dos materiais dos autores. Não uso “Indeterminado”, pois já há evidência positiva de que critérios obrigatórios falham, independentemente dessas lacunas. Minha estimativa de que o comitê oficial **atribuiria R** cai de **5 para 2/100**; a decisão não mudou.
+
+```json
+{
+  "F": {
+    "decisao": "Não atribuir",
+    "confianca": 15,
+    "mudou": false,
+    "evidencias": [
+      "instrucoes-oficiais.md:Funcional (F)",
+      "artefato.txt:README.md:21-35",
+      "artefato.txt:README.md:74-85",
+      "registro-factual.md:§2/P04-2,P05-2,P15a,P16a,P15b-2"
+    ]
+  },
+  "R": {
+    "decisao": "Não atribuir",
+    "confianca": 2,
+    "mudou": false,
+    "evidencias": [
+      "instrucoes-oficiais.md:Reprodutível (R)",
+      "reivindicacoes.md:Regra para o selo R",
+      "registro-factual.md:§2/P21b,P24b,P29b,P08-2",
+      "registro-factual.md:§3/C2,C3,C5,C6",
+      "registro-factual.md:§4/Insumos ausentes"
+    ],
+    "por_reivindicacao": {
+      "C1": "depende_execucao",
+      "C2": "nao_reproduzivel",
+      "C3": "nao_reproduzivel",
+      "C4": "depende_execucao",
+      "C5": "depende_execucao",
+      "C6": "nao_reproduzivel"
+    }
+  }
+}
+```
