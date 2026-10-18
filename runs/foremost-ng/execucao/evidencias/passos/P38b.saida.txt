@@ -1,0 +1,173 @@
+262:typedef struct s_spec {
+263-    char      *suffix;
+264-    int        type;
+265-    uint64_t   max_len;
+266-    unsigned char *header;
+267-    unsigned int   header_len;
+268-    size_t         header_bm_table[UCHAR_MAX + 1];
+269-    unsigned char *footer;
+270-    unsigned int   footer_len;
+271-    size_t         footer_bm_table[UCHAR_MAX + 1];
+272-    marker        markerlist[5];
+273-    int           num_markers;
+274-    int           searchtype;
+275-    int           case_sen;
+276-    int           found;
+277-    char          comment[MAX_STRING_LENGTH];
+278-    char          vt_label[30];
+279-    int           written;
+280-} s_spec;
+281-
+321:void init_all(f_state *state) {
+322-    int index = 0;
+323-
+324-    init_builtin(state, JPEG, "jpg",
+325-                 "\xff\xd8\xff", "\xff\xd9",
+326-                 3, 2, 20 * MEGABYTE, TRUE);
+327-
+328-    index = init_builtin(state, GIF, "gif",
+329-                         "\x47\x49\x46\x38", "\x00\x3b",
+330-                         4, 2, MEGABYTE, TRUE);
+331-    add_marker(state, index, "\x00\x00\x3b", 3);
+332-
+333-    init_builtin(state, BMP, "bmp", "BM", NULL,
+334-                 2, 0, 2 * MEGABYTE, TRUE);
+335-
+336-    init_builtin(state, WMV, "wmv",
+337-                 "\x30\x26\xB2\x75\x8E\x66\xCF\x11",
+338-                 "\xA1\xDC\xAB\x8C\x47\xA9",
+339-                 8, 6, 40 * MEGABYTE, TRUE);
+340-
+341-    init_builtin(state, MOV, "mov", "moov", NULL,
+342-                 4, 0, 40 * MEGABYTE, TRUE);
+343-
+344-    init_builtin(state, MP4, "mp4",
+345-                 "\x00\x00\x00\x1c\x66\x74\x79\x70",
+346-                 NULL, 8, 0, 600 * MEGABYTE, TRUE);
+347-
+348-    init_builtin(state, RIFF, "rif", "RIFF", "INFO",
+349-                 4, 4, 20 * MEGABYTE, TRUE);
+350-
+351-    init_builtin(state, HTM, "htm", "<html", "</html>",
+352-                 5, 7, MEGABYTE, FALSE);
+353-
+354-    init_builtin(state, OLE, "ole",
+355-                 "\xd0\xcf\x11\xe0\xa1\xb1\x1a\xe1\x00\x00\x00\x00\x00\x00\x00\x00",
+356-                 NULL, 16, 0, 5 * MEGABYTE, TRUE);
+357-
+358-    init_builtin(state, ZIP, "zip", "\x50\x4B\x03\x04",
+359-                 "\x50\x4b\x05\x06", 4, 4, 100 * MEGABYTE, TRUE);
+360-
+361-    init_builtin(state, RAR, "rar",
+362-                 "\x52\x61\x72\x21\x1A\x07\x00",
+363-                 "\x00\x00\x00\x00\x00\x00\x00\x00",
+364-                 7, 8, 100 * MEGABYTE, TRUE);
+365-
+366-    init_builtin(state, EXE, "exe", "MZ", NULL,
+367-                 2, 0, 1 * MEGABYTE, TRUE);
+368-
+369-    init_builtin(state, ELF, "elf", "\x7F\x45\x4C\x46",
+370-                 NULL, 4, 0, 50 * MEGABYTE, TRUE);
+371-
+372-    init_builtin(state, MACHO, "macho", "\xCA\xFE\xBA\xBE",
+373-                 NULL, 4, 0, 10 * MEGABYTE, TRUE);
+374-
+375-    init_builtin(state, MACHO, "macho", "\xCE\xFA\xED\xFE",
+376-                 NULL, 4, 0, 10 * MEGABYTE, TRUE);
+377-
+378-    init_builtin(state, MACHO, "macho", "\xCF\xFA\xED\xFE",
+379-                 NULL, 4, 0, 10 * MEGABYTE, TRUE);
+380-
+381-    init_builtin(state, EVTX, "evtx", "ElfFile\0\0",
+382-                 NULL, 8, 0, 100 * MEGABYTE, TRUE);
+383-
+384-    init_builtin(state, SCRIPT, "script", "#!",
+385-                 NULL, 2, 0, 2 * MEGABYTE, TRUE);
+386-
+387-    index = init_builtin(state, PNG, "png",
+388-                         "\x89\x50\x4E\x47\x0D\x0A\x1A\x0A",
+389-                         "IEND", 8, 4, 1 * MEGABYTE, TRUE);
+390-
+391-    index = init_builtin(state, MPG, "mpg", "\x00\x00\x01\xba",
+392-                         "\x00\x00\x01\xb9", 4, 4, 50 * MEGABYTE, TRUE);
+393-
+394-    add_marker(state, index, "\x00\x00\x01", 3);
+395-
+396-    index = init_builtin(state, PDF, "pdf", "%PDF-1.", "%%EOF",
+397-                         7, 5, 40 * MEGABYTE, TRUE);
+398-
+399-    add_marker(state, index, "/L ", 3);
+400-    add_marker(state, index, "obj", 3);
+401-    add_marker(state, index, "/Linearized", 11);
+402-    add_marker(state, index, "/Length", 7);
+403-}
+2628:unsigned char *extract_file(f_state *s, uint64_t c_offset, unsigned char *foundat, uint64_t buflen,
+2629-                            s_spec *needle, uint64_t f_offset) {
+2630-    if (needle->type == JPEG) {
+2631-        return extract_jpeg(s, c_offset, foundat, buflen, needle, f_offset);
+2632-    } else if (needle->type == GIF) {
+2633-        return extract_gif(s, c_offset, foundat, buflen, needle, f_offset);
+2634-    } else if (needle->type == PNG) {
+2635-        return extract_png(s, c_offset, foundat, buflen, needle, f_offset);
+2636-    } else if (needle->type == BMP) {
+2637-        return extract_bmp(s, c_offset, foundat, buflen, needle, f_offset);
+2638-    } else if (needle->type == RIFF) {
+2639-        needle->suffix = "rif";
+2640-        return extract_riff(s, c_offset, foundat, buflen, needle, f_offset, "all");
+2641-    } else if (needle->type == AVI) {
+2642-        return extract_riff(s, c_offset, foundat, buflen, needle, f_offset, "avi");
+2643-    } else if (needle->type == WAV) {
+2644-        needle->suffix = "rif";
+2645-        return extract_riff(s, c_offset, foundat, buflen, needle, f_offset, "wav");
+2646-    } else if (needle->type == WMV) {
+2647-        return extract_wmv(s, c_offset, foundat, buflen, needle, f_offset);
+2648-    } else if (needle->type == OLE) {
+2649-        needle->suffix = "ole";
+2650-        return extract_ole(s, c_offset, foundat, buflen, needle, f_offset, "all");
+2651-    } else if (needle->type == DOC) {
+2652-        return extract_ole(s, c_offset, foundat, buflen, needle, f_offset, "doc");
+2653-    } else if (needle->type == PPT) {
+2654-        return extract_ole(s, c_offset, foundat, buflen, needle, f_offset, "ppt");
+2655-    } else if (needle->type == XLS) {
+2656-        needle->suffix = "ole";
+2657-        return extract_ole(s, c_offset, foundat, buflen, needle, f_offset, "xls");
+2658-    } else if (needle->type == PDF) {
+2659-        return extract_pdf(s, c_offset, foundat, buflen, needle, f_offset);
+2660-    } else if (needle->type == CPP) {
+2661-        return extract_cpp(s, c_offset, foundat, buflen, needle, f_offset);
+2662-    } else if (needle->type == HTM) {
+2663-        return extract_htm(s, c_offset, foundat, buflen, needle, f_offset);
+2664-    } else if (needle->type == MPG) {
+2665-        return extract_mpg(s, c_offset, foundat, buflen, needle, f_offset);
+2666-    } else if (needle->type == MP4) {
+2667-        return extract_mp4(s, c_offset, foundat, buflen, needle, f_offset);
+2668-    } else if (needle->type == ZIP) {
+2669-        return extract_zip(s, c_offset, foundat, buflen, needle, f_offset, "all");
+2670-    } else if (needle->type == RAR) {
+2671-        return extract_rar(s, c_offset, foundat, buflen, needle, f_offset);
+2672-    } else if (needle->type == SXW) {
+2673-        return extract_zip(s, c_offset, foundat, buflen, needle, f_offset, "sxw");
+2674-    } else if (needle->type == SXC) {
+2675-        return extract_zip(s, c_offset, foundat, buflen, needle, f_offset, "sxc");
+2676-    } else if (needle->type == SXI) {
+2677-        return extract_zip(s, c_offset, foundat, buflen, needle, f_offset, "sxi");
+2678-    } else if (needle->type == EXE) {
+2679-        return extract_exe(s, c_offset, foundat, buflen, needle, f_offset);
+2680-    } else if (needle->type == ELF) {
+2681-        return extract_elf(s, c_offset, foundat, buflen, needle, f_offset);
+2682-    } else if (needle->type == MACHO) {
+2683-        return extract_macho(s, c_offset, foundat, buflen, needle, f_offset);
+2684-    } else if (needle->type == EVTX) {
+2685-        return extract_evtx(s, c_offset, foundat, buflen, needle, f_offset);
+2686-    } else if (needle->type == SCRIPT) {
+2687-        return extract_script(s, c_offset, foundat, buflen, needle, f_offset);
+2688-    } else if (needle->type == MOV || needle->type == VJPEG) {
+2689-        return extract_mov(s, c_offset, foundat, buflen, needle, f_offset);
+2690-    } else if (needle->type == CONF) {
+2691-        return extract_generic(s, c_offset, foundat, buflen, needle, f_offset);
+2692-    } else {
+2693-        return NULL;
+2694-    }
+2695-
+2696-    return NULL;
+2697-}

@@ -1,0 +1,38 @@
+# 2026-10-17T18:34:47Z restore 02
+0%...10%...20%...30%...40%...50%...60%...70%...80%...90%...100%
+Restoring snapshot '02-apos-identificacao' (152e74f6-1793-4e41-afb1-b1c8566f2aab)
+exit=0
+7.1.6r167084
+
+
+FreePhysicalMemory     : 771428
+TotalVisibleMemorySize : 16454352
+FreeVirtualMemory      : 10072824
+
+
+
+memory=8192
+cpus=2
+VMState="poweroff"
+hostonlyadapter1="VirtualBox Host-Only Ethernet Adapter"
+nic1="hostonly"
+# 2026-10-17T18:34:48Z startvm headless
+Waiting for VM "Mininet-GUI-VM-SBRC-2025" to power on...
+VM "Mininet-GUI-VM-SBRC-2025" has been successfully started.
+exit=0
+2026-10-17T18:34:53Z
+# 2026-10-17T19:03:24Z acpipowerbutton
+exit=0
+# 2026-10-17T19:03:35Z VMState="poweroff"
+# 2026-10-17T19:03:42Z snapshot take 03
+0%...10%...20%...30%...40%...50%...60%...70%...80%...90%...100%
+Snapshot taken. UUID: 5f637a1e-6174-4415-a261-ab4f3f35ab43
+exit=0
+   Name: 00-importada-original (UUID: a28d277d-92ad-42c4-9888-2105d2d2fc65)
+   Description: Configuração da OVA v0.0.1 sem alteração, 2026-10-16T01:59:22Z
+      Name: 01-configurada-antes-do-boot (UUID: 2ab0f93f-ef31-4dea-8ced-2cb0b3d396b9)
+      Description: 8192 MB, 2 vCPU, nic1 host-only (MAC original), antes do primeiro boot, 2026-10-16T01:59:22Z
+         Name: 02-apos-identificacao (UUID: 152e74f6-1793-4e41-afb1-b1c8566f2aab)
+         Description: Após boot de identificação (SSH, git status reescreveu .git/index; ~/evidencias de teste removido), desligada por poweroff, 2026-10-16T02:05:57Z
+            Name: 03-apos-execucao-referencia (UUID: 5f637a1e-6174-4415-a261-ab4f3f35ab43) *
+            Description: Após a execução de referência de 2026-10-17 (18:34–19:03Z), desligada por ACPI. O snapshot 02 não foi alterado.

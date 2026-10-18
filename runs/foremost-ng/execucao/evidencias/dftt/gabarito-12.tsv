@@ -1,0 +1,11 @@
+n	nome	md5	tamanho	setor_inicial	nota
+1	haxor2.bmp	f9633fe6b9ef2a0a5edd6de70d22c0f5	163878	5162	A deleted BMP
+2	jimmy.doc	2f3f914dd74819df42d1d941c7275c16	12800	5486	A deleted DOC
+3	jn.jpg	270a0a913fa9603db8121fdf78d63aca	28949	5514	A valid JPG
+4	lin_test.pdf	1c64456776075d1f0a662e1f6c09e340	26618	5574	A valid PDF
+5	main_dive.jpg	937846adb96773ee25fcb34821230976	8463	5628	A valid jpeg
+6	n_lin_ss.pdf	97be95ed3e710b63bc75e5c0775062d9	734652	5646	A valid pdf
+7	blogo.gif	5e10b2176016885a85bffc074a142524	18663	5122	A valid gif
+8	sherry.jpg	3834e72d2ee266ccfb9733d716b89f2b	133249	7090	A valid JPEG
+9	stats.xls	6351df9c1543c41c3df8eea63e06a219	15360	7354	A valid XLS
+10	test.ppt	99941c129cc8cfbadc15c55086982efc	17408	7386	A valid PPT

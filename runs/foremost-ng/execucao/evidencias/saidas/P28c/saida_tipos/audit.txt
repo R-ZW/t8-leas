@@ -1,0 +1,25 @@
+foremost-ng version 1.5.7 by Cristian Souza
+Audit File
+
+foremost-ng started at Sat Oct 17 18:43:41 2026
+Invocation: foremost-ng -t evtx,elf,exe -i teste.dd -o /home/revisor/aval/saida_tipos 
+Output directory: /home/revisor/aval/saida_tipos
+Configuration file: /usr/local/etc/foremost.conf
+------------------------------------------------------------------
+File: teste.dd
+Start: Sat Oct 17 18:43:41 2026
+Length: 13 MB (13873664 bytes)
+ 
+  ID  Name (bs=512)              Size       Offset  Comment                   VT             
+   0: 00006452.evtx             10 MB      3303424                            N/A            
+   1: 00002048.elf              12 KB      1048576                            N/A            
+   2: 00004126.elf             136 KB      2112512                            N/A            
+Finish: Sat Oct 17 18:43:42 2026
+
+3 FILES EXTRACTED
+	
+evtx=1
+elf=2
+------------------------------------------------------------------
+
+foremost-ng finished at Sat Oct 17 18:43:42 2026

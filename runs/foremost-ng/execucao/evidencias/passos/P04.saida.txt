@@ -1,0 +1,7 @@
+gcc -Wall -O2 -DVERSION="\"1.5.7\"" -D__UNIX -D__LINUX -DLARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -c main.c
+In file included from main.c:7:
+main.h:25:10: fatal error: ctype.h: No such file or directory
+   25 | #include <ctype.h>
+      |          ^~~~~~~~~
+compilation terminated.
+make: *** [Makefile:52: main.o] Error 1

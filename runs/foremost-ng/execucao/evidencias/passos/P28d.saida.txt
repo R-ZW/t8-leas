@@ -1,0 +1,106 @@
+##### A:P18 (C1)
+amostras/evtx_system.evtx 3303424 00006452 ccb83cfefc9038017224cd97b800b66e248fe14529649ddf47907e5a2021449e
+saida_todos/audit.txt:   3: 00006452.evtx             10 MB      3303424                            N/A            
+saida_todos/audit.txt:evtx=1
+saida_tipos/audit.txt:Invocation: foremost-ng -t evtx,elf,exe -i teste.dd -o /home/revisor/aval/saida_tipos 
+saida_tipos/audit.txt:   0: 00006452.evtx             10 MB      3303424                            N/A            
+saida_tipos/audit.txt:evtx=1
+saida_tipos/evtx:
+total 10324
+-rw-r--r-- 1 revisor revisor 10570240 Oct 17 18:43 00006452.evtx
+
+saida_todos/evtx:
+total 10324
+-rw-r--r-- 1 revisor revisor 10570240 Oct 17 18:43 00006452.evtx
+1118208
+cmp: EOF on amostras/evtx_system.evtx after byte 1118208, in line 2438
+##### A:P20 (C2)
+total 16
+-rw-r--r-- 1 revisor revisor 45 Oct 17 18:43 00014804.script
+-rw-r--r-- 1 revisor revisor 54 Oct 17 18:43 00018902.script
+-rw-r--r-- 1 revisor revisor 71 Oct 17 18:43 00020951.script
+-rw-r--r-- 1 revisor revisor 57 Oct 17 18:43 00023000.script
+== amostras/s_bash.sh -> saida_todos/script/00018902.script
+#!/bin/bash
+IDENTICO
+== amostras/s_ps.ps1 -> saida_todos/script/00020951.script
+#!/usr/bin/env pwsh
+IDENTICO
+== amostras/s_py.py -> saida_todos/script/00023000.script
+#!/usr/bin/env python3
+IDENTICO
+   4: 00014804.script            45 B      7579648                            N/A            
+   5: 00018902.script            54 B      9677824                            N/A            
+   6: 00020951.script            71 B     10726912                            N/A            
+   7: 00023000.script            57 B     11776000                            N/A            
+script=4
+##### A:P21 (C2 negativos)
+amostras/neg_comentario.sh RECUPERADO
+amostras/neg_curto.sh descartado
+##### A:P22 (C3)
+total 8
+-rw-r--r-- 1 revisor revisor 8192 Oct 17 18:43 00010684.macho
+   2: 00010684.macho             8 KB      5470208                            N/A            
+macho=1
+== amostras/macho_fat -> saida_todos/macho/00010684.macho
+saida_todos/macho/00010684.macho: Mach-O universal binary with 1 architecture: [x86_64:\012- Mach-O 64-bit x86_64 executable, flags:<NOUNDEFS>]
+8192
+8192
+IDENTICO
+== amostras/macho_thin -> saida_todos/macho/00012748.macho
+saida_todos/macho/00012748.macho: cannot open `saida_todos/macho/00012748.macho' (No such file or directory)
+stat: 4096
+cannot statx 'saida_todos/macho/00012748.macho': No such file or directory
+cmp: saida_todos/macho/00012748.macho: No such file or directory
+##### A:P24 (C4)
+saida_tipos/elf:
+total 156
+-rw-r--r-- 1 revisor revisor  12296 Oct 17 18:43 00002048.elf
+-rw-r--r-- 1 revisor revisor 139896 Oct 17 18:43 00004126.elf
+
+saida_todos/elf:
+total 156
+-rw-r--r-- 1 revisor revisor  12296 Oct 17 18:43 00002048.elf
+-rw-r--r-- 1 revisor revisor 139896 Oct 17 18:43 00004126.elf
+== amostras/elf32_ola -> saida_todos/elf/00002048.elf
+saida_todos/elf/00002048.elf: ELF 32-bit LSB pie executable, Intel 80386, version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux.so.2, missing section headers at 14896
+readelf: Error: Reading 1160 bytes extends past end of file for section headers
+readelf: Error: Reading 1160 bytes extends past end of file for section headers
+14936
+12296
+PREFIXO_IDENTICO
+== amostras/elf32_ola -> saida_tipos/elf/00002048.elf
+saida_tipos/elf/00002048.elf: ELF 32-bit LSB pie executable, Intel 80386, version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux.so.2, missing section headers at 14896
+readelf: Error: Reading 1160 bytes extends past end of file for section headers
+readelf: Error: Reading 1160 bytes extends past end of file for section headers
+14936
+12296
+PREFIXO_IDENTICO
+== amostras/elf64_ls -> saida_todos/elf/00004126.elf
+saida_todos/elf/00004126.elf: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, missing section headers at 142248
+readelf: Error: Reading 1984 bytes extends past end of file for section headers
+readelf: Error: Reading 1984 bytes extends past end of file for section headers
+142312
+139896
+PREFIXO_IDENTICO
+== amostras/elf64_ls -> saida_tipos/elf/00004126.elf
+saida_tipos/elf/00004126.elf: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, missing section headers at 142248
+readelf: Error: Reading 1984 bytes extends past end of file for section headers
+readelf: Error: Reading 1984 bytes extends past end of file for section headers
+142312
+139896
+PREFIXO_IDENTICO
+##### arquivos fora dos esperados (todas as saidas)
+saida_tipos/audit.txt
+saida_tipos/elf/00002048.elf
+saida_tipos/elf/00004126.elf
+saida_tipos/evtx/00006452.evtx
+saida_todos/audit.txt
+saida_todos/elf/00002048.elf
+saida_todos/elf/00004126.elf
+saida_todos/evtx/00006452.evtx
+saida_todos/macho/00010684.macho
+saida_todos/script/00014804.script
+saida_todos/script/00018902.script
+saida_todos/script/00020951.script
+saida_todos/script/00023000.script

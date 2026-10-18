@@ -1,0 +1,50 @@
++ cd /home/revisor/aval
++ cp /bin/ls amostras/elf64_ls
++ printf '#include <stdio.h>\nint main(void){puts("ola");return 0;}\n'
++ gcc -m32 -o amostras/elf32_ola /tmp/ola.c
++ printf '#!/bin/bash\nfor i in 1 2 3; do\n  echo "linha $i"\ndone\n'
++ printf '#!/usr/bin/env python3\nimport sys\nprint("ola", sys.argv)\n'
++ printf '#!/usr/bin/env pwsh\nGet-ChildItem -Path . | ForEach-Object { $_.Name }\n'
++ printf '#!/bin/sh\n# so comentario\n# outro comentario\n'
++ printf '#!/bin/sh\nls\n'
++ curl -fsSL -o amostras/evtx_system.evtx https://raw.githubusercontent.com/williballenthin/python-evtx/c0007441657899c39180de10a2be1a0e43dbeaf9/tests/data/system.evtx
++ SRC=/home/revisor/trabalho/foremost-ng-bb812a22/src
++ dd if=/home/revisor/trabalho/foremost-ng-bb812a22/src/c3_macho.img of=amostras/macho_thin bs=4096 skip=2 count=1 status=none
++ dd if=/home/revisor/trabalho/foremost-ng-bb812a22/src/c3_macho.img of=amostras/macho_fat bs=4096 skip=8 count=2 status=none
++ file amostras/elf32_ola amostras/elf64_ls amostras/evtx_system.evtx amostras/macho_fat amostras/macho_thin amostras/min.sh amostras/neg_comentario.sh amostras/neg_curto.sh amostras/s_bash.sh amostras/s_ps.ps1 amostras/s_py.py
++ sha256sum amostras/elf32_ola amostras/elf64_ls amostras/evtx_system.evtx amostras/macho_fat amostras/macho_thin amostras/min.sh amostras/neg_comentario.sh amostras/neg_curto.sh amostras/s_bash.sh amostras/s_ps.ps1 amostras/s_py.py
++ cat evidencias/P14_file.txt evidencias/P14_amostras.txt
+amostras/elf32_ola:         ELF 32-bit LSB pie executable, Intel 80386, version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux.so.2, BuildID[sha1]=279e81be63b67656ddbdd94f6da48a5cc7090c97, for GNU/Linux 3.2.0, not stripped
+amostras/elf64_ls:          ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=3eca7e3905b37d48cf0a88b576faa7b95cc3097b, for GNU/Linux 3.2.0, stripped
+amostras/evtx_system.evtx:  MS Windows Vista-8.1 Event Log, 9 chunks (no. 8 in use), next record no. 13528, DIRTY
+amostras/macho_fat:         Mach-O universal binary with 1 architecture: [x86_64:\012- Mach-O 64-bit x86_64 executable, flags:<NOUNDEFS>]
+amostras/macho_thin:        Mach-O 64-bit x86_64 executable, flags:<NOUNDEFS>
+amostras/min.sh:            Bourne-Again shell script, ASCII text executable
+amostras/neg_comentario.sh: POSIX shell script, ASCII text executable
+amostras/neg_curto.sh:      POSIX shell script, ASCII text executable
+amostras/s_bash.sh:         Bourne-Again shell script, ASCII text executable
+amostras/s_ps.ps1:          a pwsh script, ASCII text executable
+amostras/s_py.py:           Python script, ASCII text executable
+ea24744eaa0ad1ea7e5d232d784ca368835b8a1883610e4cbd331f873f8dc6ae  amostras/elf32_ola
+1bea8094b78a3910345d80af3d182390fda07ae5788352651eb7773505dc39af  amostras/elf64_ls
+ccb83cfefc9038017224cd97b800b66e248fe14529649ddf47907e5a2021449e  amostras/evtx_system.evtx
+b3b68df00027ed0452b71ef0fef1f85c7eaa8c45333731bd04a794e164b3172c  amostras/macho_fat
+71debe4b0caf7f26c34f229064b7d6e9a49c2b539f9573edc9f1c988f9ff0c73  amostras/macho_thin
+e69727dcd140e384a88e7c62ab90c8152098997f3668f699431acb2ca6ffb1f4  amostras/min.sh
+bc67143e3ea3fa47a6d2592e8133e6c37d0c3a7ef3c67a173c7c056df2698666  amostras/neg_comentario.sh
+5b3dbd68f440faeb4c62a7dfcad22421295dd518141b4604c356c418f95629dc  amostras/neg_curto.sh
+9b81e7b772a1ebd922efda26be54011be448de272eec1e55a7f98da7c7b7842c  amostras/s_bash.sh
+7a24f84689497e0344fbf9fb4c3356f430228f88228ebede46bcd6a041c315fa  amostras/s_ps.ps1
+6b950511a5f6bbc9b2f5cb9b9ca4e33d8ea15c49ee4f320717e1933defc96375  amostras/s_py.py
++ stat -c '%n %s' amostras/elf32_ola amostras/elf64_ls amostras/evtx_system.evtx amostras/macho_fat amostras/macho_thin amostras/min.sh amostras/neg_comentario.sh amostras/neg_curto.sh amostras/s_bash.sh amostras/s_ps.ps1 amostras/s_py.py
+amostras/elf32_ola 14936
+amostras/elf64_ls 142312
+amostras/evtx_system.evtx 1118208
+amostras/macho_fat 8192
+amostras/macho_thin 4096
+amostras/min.sh 72
+amostras/neg_comentario.sh 45
+amostras/neg_curto.sh 13
+amostras/s_bash.sh 54
+amostras/s_ps.ps1 71
+amostras/s_py.py 57

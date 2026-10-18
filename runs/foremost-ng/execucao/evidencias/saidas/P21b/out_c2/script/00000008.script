@@ -1,0 +1,4 @@
+#!/bin/bash
+# Valid bash script
+echo "Hello from carved bash script"
+exit 0

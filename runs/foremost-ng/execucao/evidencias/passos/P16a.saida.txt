@@ -1,0 +1,31 @@
+foremost-ng version 1.5.7 by Cristian Souza
+Audit File
+
+foremost-ng started at Sat Oct 17 18:43:38 2026
+Invocation: foremost-ng -i min.dd -o /home/revisor/aval/saida_min 
+Output directory: /home/revisor/aval/saida_min
+Configuration file: /usr/local/etc/foremost.conf
+------------------------------------------------------------------
+File: min.dd
+Start: Sat Oct 17 18:43:38 2026
+Length: 1 MB (1048576 bytes)
+ 
+  ID  Name (bs=512)              Size       Offset  Comment                   VT             
+   0: 00001024.script            72 B       524288                            N/A            
+Finish: Sat Oct 17 18:43:38 2026
+
+1 FILES EXTRACTED
+	
+script=1
+------------------------------------------------------------------
+
+foremost-ng finished at Sat Oct 17 18:43:38 2026
+saida_min:
+audit.txt
+script
+
+saida_min/script:
+00001024.script
+IDENTICO
+/home/revisor/aval/saida_min/audit.txt
+/home/revisor/aval/saida_min/script/00001024.script

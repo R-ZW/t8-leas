@@ -1,0 +1,7 @@
+[ -f ~/.bashrc ] && . ~/.bashrc
+export REG_DIR='/execucao'
+export HISTFILE="$REG_DIR/historico.txt" HISTTIMEFORMAT='%Y-%m-%dT%H:%M:%S%z  '
+shopt -s histappend
+PROMPT_COMMAND='history -a'
+PS1='[\D{%Y-%m-%dT%H:%M:%S%z}] \u@\h:\w ($?)\$ '
+passo() { '/execucao/ambiente/gravar-sessao.sh' passo "$@"; }

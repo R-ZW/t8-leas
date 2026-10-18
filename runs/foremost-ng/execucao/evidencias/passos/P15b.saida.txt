@@ -1,0 +1,2 @@
+foremost-ng: /temp: Permission denied
+foremost-ng: Unable to open output directory

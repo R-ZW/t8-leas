@@ -1,0 +1,29 @@
+[1m[34m[INFO] Processing: teste.dd
+[0mError: VT_API_KEY environment variable is not set.
+Error: VT_API_KEY environment variable is not set.
+[33m[=     ][0m[1m[34m
+[INFO] Processing finished.
+[0mexit foremost-ng=0
+foremost-ng version 1.5.7 by Cristian Souza
+Audit File
+
+foremost-ng started at Sat Oct 17 18:43:50 2026
+Invocation: foremost-ng -x -t elf -i teste.dd -o /home/revisor/aval/saida_vt_semchave 
+Output directory: /home/revisor/aval/saida_vt_semchave
+Configuration file: /usr/local/etc/foremost.conf
+------------------------------------------------------------------
+File: teste.dd
+Start: Sat Oct 17 18:43:50 2026
+Length: 13 MB (13873664 bytes)
+ 
+  ID  Name (bs=512)              Size       Offset  Comment                   VT             
+   0: 00002048.elf              12 KB      1048576                            Clean (0)      
+   1: 00004126.elf             136 KB      2112512                            Clean (0)      
+Finish: Sat Oct 17 18:43:50 2026
+
+2 FILES EXTRACTED
+	
+elf=2
+------------------------------------------------------------------
+
+foremost-ng finished at Sat Oct 17 18:43:50 2026

@@ -1,0 +1,2 @@
+/home/revisor/aval/saida_min/audit.txt
+/home/revisor/aval/saida_min/script/00001024.script

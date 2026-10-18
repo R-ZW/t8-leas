@@ -1,0 +1,25 @@
+Linux fn-ref 6.18.33.2-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Thu Jun 18 21:54:43 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+16
+CPU(s):                                  16
+Model name:                              13th Gen Intel(R) Core(TM) i5-13450HX
+Thread(s) per core:                      2
+Core(s) per socket:                      8
+Socket(s):                               1
+Hypervisor vendor:                       Microsoft
+               total        used        free      shared  buff/cache   available
+Mem:      8161751040   872972288  7072768000    27418624   401862656  7288778752
+Swap:     2147483648           0  2147483648
+Filesystem      Size  Used Avail Use% Mounted on
+overlay        1007G  4.2G  952G   1% /
+overlay        1007G  4.2G  952G   1% /
+ldd (Ubuntu GLIBC 2.39-0ubuntu8.4) 2.39
+GNU ld (GNU Binutils for Ubuntu) 2.42
+gcc (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0
+GNU Make 4.3
+OpenSSL 3.0.13 30 Jan 2024 (Library: OpenSSL 3.0.13 30 Jan 2024)
+libcurl 8.5.0
+git version 2.43.0
+ii  gcc-13            13.3.0-6ubuntu2~24.04 amd64        GNU C compiler
+ii  libc6-dev:amd64   2.39-0ubuntu8.4       amd64        GNU C Library: Development Libraries and Header Files
+ii  libcurl4t64:amd64 8.5.0-2ubuntu10.6     amd64        easy-to-use client-side URL transfer library (OpenSSL flavour)
+ii  libssl3t64:amd64  3.0.13-0ubuntu3.5     amd64        Secure Sockets Layer toolkit - shared libraries

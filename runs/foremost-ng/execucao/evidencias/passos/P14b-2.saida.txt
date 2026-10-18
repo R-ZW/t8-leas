@@ -1,0 +1,1 @@
+drwxr-xr-x 2 revisor revisor 4096 Oct 17 18:43 /temp/output

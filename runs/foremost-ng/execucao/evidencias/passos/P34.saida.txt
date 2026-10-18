@@ -1,0 +1,2 @@
+find exit=0 (sem linhas = nenhum arquivo)
+busca em / concluida

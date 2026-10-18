@@ -1,0 +1,10 @@
+# Host da execução de referência — registrado em 2026-10-17T19:04:11Z
+SO: Microsoft Windows 11 Home build 26300
+CPU: 13th Gen Intel(R) Core(TM) i5-13450HX (10 nucleos, 16 logicos)
+RAM total (MB): 16069
+RAM livre agora (MB): 4605
+HypervisorPresent: True
+Disco D: livre (GB): 660.1
+VirtualBox: 7.1.6r167084
+Navegador da interface: Microsoft Edge 155.0.4283.45, headless (--headless=new), viewport emulado 1600x1000, controlado via Chrome DevTools Protocol pelo script evidencias/ferramentas/cdp.mjs (Node.js v24.18.0)
+RAM livre do host antes de ligar a VM (2026-10-17T18:34:47Z): 771428 KB (~753 MB); VBox.log: 'Host RAM: 16068MB (15.6GB) total, 725MB available'

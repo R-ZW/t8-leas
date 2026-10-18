@@ -1,0 +1,4 @@
+#!/usr/bin/env python3
+# Valid python script
+import sys
+print(sys.version)

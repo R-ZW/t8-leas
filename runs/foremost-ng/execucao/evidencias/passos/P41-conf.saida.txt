@@ -1,0 +1,14 @@
+saida12/audit.txt
+saida12/bmp/00005162.bmp
+saida12/gif/00005122.gif
+saida12/jpg/00005514.jpg
+saida12/jpg/00005628.jpg
+saida12/jpg/00007090.jpg
+saida12/ole/00005486.ole
+ls: cannot access 'saida12/recovery.log': No such file or directory
+saida12/ole/00005486.ole: Composite Document File V2 Document, Cannot read section info
+saida12/bmp/00005162.bmp: PC bitmap, Windows 3.x format, 400 x 407 x 8, image size 162800, resolution 11808 x 11808 px/m, 128 important colors, cbSize 163878, bits offset 1078
+saida12/jpg/00007090.jpg: JPEG image data, JFIF standard 1.01, resolution (DPI), density 72x72, segment length 16, Exif Standard: [TIFF image data, little-endian, direntries=12, description=OLYMPUS DIGITAL CAMERA         , manufacturer=OLYMPUS CORPORATION, model=C765UZ, orientation=upper-left, xresolution=217, yresolution=225, resolutionunit=2, software=v777-78, datetime=2004:12:01 00:11:44], baseline, precision 8, 1000x748, components 3
+saida12/jpg/00005628.jpg: JPEG image data, JFIF standard 1.01, aspect ratio, density 300x300, segment length 16, baseline, precision 8, 358x68, components 3
+saida12/jpg/00005514.jpg: JPEG image data, JFIF standard 1.01, resolution (DPI), density 300x300, segment length 16, baseline, precision 8, 346x333, components 3
+saida12/gif/00005122.gif: GIF image data, version 89a, 620 x 802

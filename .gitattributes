@@ -6,3 +6,5 @@ runs/*/execucao/registro-factual.md -text
 runs/*/CONGELAMENTO.sha256 -text
 runs/*/llm-*/** -text
 runs/*/humano/** -text
+runs/*/execucao/CONGELAMENTO.sha256 -text
+runs/*/execucao/roteiro-consolidado.md -text

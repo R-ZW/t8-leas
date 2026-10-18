@@ -1,0 +1,7 @@
+exit original=0
+exit recuperado=0
+evidencias/P19_original.xml:1601
+evidencias/P19_recuperado.xml:1601
+XML_IDENTICO
+exit recuperado (saida_tipos)=0
+1601

@@ -1,0 +1,28 @@
+foremost-ng version 1.5.7 by Cristian Souza
+Audit File
+
+foremost-ng started at Sat Oct 17 18:43:38 2026
+Invocation: ./foremost-ng -i disk.img -o /temp/output/carved 
+Output directory: /temp/output/carved
+Configuration file: /home/revisor/trabalho/foremost-ng-bb812a22/src/foremost.conf
+------------------------------------------------------------------
+File: disk.img
+Start: Sat Oct 17 18:43:38 2026
+Length: 2 MB (2097152 bytes)
+ 
+  ID  Name (bs=512)              Size       Offset  Comment                   VT             
+   0: 00000008.elf              72 KB         4096                            N/A            
+   1: 00000097.evtx             12 KB        50128                            N/A            
+   2: 00000122.evtx             534 B        62954                            N/A            
+   3: 00000124.evtx              1 MB        63488                            N/A            
+   4: 00001024.script            65 B       524288                            N/A            
+Finish: Sat Oct 17 18:43:39 2026
+
+5 FILES EXTRACTED
+	
+elf=1
+evtx=3
+script=1
+------------------------------------------------------------------
+
+foremost-ng finished at Sat Oct 17 18:43:39 2026

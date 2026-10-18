@@ -1,0 +1,61 @@
+### docker build iniciado 2026-10-17T18:33:58Z
+f8470addef7cf85ab257ca2d99bc5beab87df8a18ba08cafa28052c5280ee224 *ambiente/Dockerfile
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 2.77kB 0.0s done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/ubuntu:noble-20250619@sha256:440dcf6a5640b2ae5c77724e68787a906afb8ddee98bf86db94eea8528c2c076
+#2 ...
+
+#3 [auth] library/ubuntu:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/ubuntu:noble-20250619@sha256:440dcf6a5640b2ae5c77724e68787a906afb8ddee98bf86db94eea8528c2c076
+#2 DONE 1.7s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [1/8] FROM docker.io/library/ubuntu:noble-20250619@sha256:440dcf6a5640b2ae5c77724e68787a906afb8ddee98bf86db94eea8528c2c076
+#5 resolve docker.io/library/ubuntu:noble-20250619@sha256:440dcf6a5640b2ae5c77724e68787a906afb8ddee98bf86db94eea8528c2c076 0.0s done
+#5 DONE 0.0s
+
+#6 [7/8] RUN useradd -m -s /bin/bash revisor  && echo 'revisor ALL=(ALL) NOPASSWD:ALL' > /etc/sudoers.d/revisor  && chmod 0440 /etc/sudoers.d/revisor
+#6 CACHED
+
+#7 [2/8] RUN echo "APT::Snapshot "20250708T190020Z";" > /etc/apt/apt.conf.d/50snapshot
+#7 CACHED
+
+#8 [4/8] RUN apt-get update  && apt-get install -y --no-install-recommends       gcc=4:13.2.0-7ubuntu1       gcc-13=13.3.0-6ubuntu2~24.04       make=4.3-4.1build2       libssl-dev=3.0.13-0ubuntu3.5       libcurl4-openssl-dev=8.5.0-2ubuntu10.6       git=1:2.43.0-1ubuntu7.3       sudo=1.9.15p5-3ubuntu5.24.04.1       man-db=2.12.0-4build2  && rm -rf /var/lib/apt/lists/*
+#8 CACHED
+
+#9 [3/8] RUN apt-get update -o Acquire::https::Verify-Peer=false  && apt-get install -y --no-install-recommends -o Acquire::https::Verify-Peer=false       ca-certificates=20240203  && rm -rf /var/lib/apt/lists/*
+#9 CACHED
+
+#10 [5/8] RUN apt-get update  && apt-get install -y --no-install-recommends       unzip=6.0-28ubuntu4.1  && rm -rf /var/lib/apt/lists/*
+#10 CACHED
+
+#11 [6/8] RUN if [ -f /usr/bin/man.REAL ]; then       rm -f /usr/bin/man && dpkg-divert --quiet --remove --rename /usr/bin/man;     fi
+#11 CACHED
+
+#12 [8/8] WORKDIR /home/revisor
+#12 CACHED
+
+#13 exporting to image
+#13 exporting layers done
+#13 exporting manifest sha256:cc8a1ef158f33fc7a9e00770e4b45b53e0274636324e1f08415157d2affef482 done
+#13 exporting config sha256:71e443e5910b7e632b683b12ab61891febcaf4c0f011cf11c4ed46ac57851198 done
+#13 exporting attestation manifest sha256:9a7ef0c386b9806a0135bd0f9410c31c7049de3c46326d4b0a905395bbd76df7 0.0s done
+#13 exporting manifest list sha256:ad7ad8e1d453ab82925430228edf86c2d528b38f589023e5de1a366d2ef3687c
+#13 exporting manifest list sha256:ad7ad8e1d453ab82925430228edf86c2d528b38f589023e5de1a366d2ef3687c 0.2s done
+#13 naming to docker.io/t8/foremost-ng-ref:noble-20250619-snap20250708
+#13 naming to docker.io/t8/foremost-ng-ref:noble-20250619-snap20250708 done
+#13 unpacking to docker.io/t8/foremost-ng-ref:noble-20250619-snap20250708 done
+#13 DONE 0.3s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/hxocawuptza2lobczgmhdm7pf
+### codigo=0 fim 2026-10-17T18:34:01Z
+ID=sha256:ad7ad8e1d453ab82925430228edf86c2d528b38f589023e5de1a366d2ef3687c Created=2026-10-16T01:38:53.384006803Z Size=128509168

@@ -69,6 +69,15 @@ Não leia as respostas de outro provedor antes de concluir as suas 6 cadeias A/B
 
 Crie `<artefato>/llm-<openai|anthropic|google>/cadeia-<N>.md` a partir de [MODELO-cadeia.md](MODELO-cadeia.md). Cole cada prompt e cada resposta **na íntegra**, usando o botão de copiar da própria mensagem, sem corrigir nada. Os cabeçalhos `## Prompt A`, `## Resposta A`… precisam ficar exatamente como no modelo, porque o script de análise depende deles. Se o app oferecer exportação nativa (exportação de dados da conta), guarde o arquivo bruto em `llm-<provedor>/exportacao-bruta/` e anote o caminho. Uma exportação parcial fica `pendente de conferência`.
 
-## 6. B2 (depois da execução)
+## 6. B2 (depois da execução) — LIBERADO em 17/10/2026
 
-O B2 só começa quando `<artefato>/execucao/registro-factual.md` estiver congelado e o hash estiver anotado na folha. Nas **nove** cadeias do artefato: anexe esse mesmo arquivo, cole `prompt-B2-modelo.txt` com `{CONDICAO}` já preenchido pelo grupo (texto idêntico para todos), envie e exporte a resposta em `## Prompt B2` e `## Resposta B2`.
+Os registros factuais estão congelados (hashes em `<artefato>/execucao/CONGELAMENTO.sha256`). Nas **nove** conversas de cada artefato, na **mesma conversa** de A e B1:
+
+1. Anexe **só** `<artefato>/execucao/registro-factual.md` (Foremost-NG `2041606f1236e737…`; Mininet-GUI `0efda099a39c28b4…`).
+2. Cole o conteúdo de `<artefato>/pacote/prompts/prompt-B2.txt` **sem alterar nada**. O `{CONDICAO}` já vem preenchido e é idêntico para os três provedores.
+3. Exporte a conversa inteira de novo (A, B1 e B2) para o mesmo `cadeia-N.md`, com as seções `## Prompt B2` e `## Resposta B2`.
+
+Observações por provedor:
+- **GPT (Codex):** cada conversa tem um 3º turno fora do roteiro (o pedido ao Session Exporter). Envie o B2 assim mesmo e **não** use o Session Exporter de novo: compartilhe o link (`chatgpt.com/s/cx_…`), porque a transcrição é gerada do link por `ferramentas/transcrever_codex.py`.
+- **Gemini (Antigravity):** continue o mesmo subagente/conversa de cada cadeia, com acesso somente de leitura ao `registro-factual.md`.
+- **Não** anexe roteiro consolidado, evidências, terminal ou nada de `referencia/`.

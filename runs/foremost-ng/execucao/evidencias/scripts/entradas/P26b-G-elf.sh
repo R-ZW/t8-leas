@@ -1,0 +1,23 @@
+# Roteiro G, P12 (comandos literais; diretório <raiz>/src)
+set -x
+python3 -c '
+import struct
+# 1. Usa um ELF 64-bit real compilado (./foremost-ng)
+elf64 = open("foremost-ng", "rb").read()
+
+# 2. Constrói um ELF 32-bit little-endian válido de 4096 bytes com 1 segmento PT_LOAD
+elf32 = bytearray(4096)
+elf32[0:16] = b"\x7fELF\x01\x01\x01\x00" + b"\x00"*8
+# e_type=2 (ET_EXEC), e_machine=3 (EM_386), e_version=1, e_entry=0x08048000, e_phoff=52, e_shoff=0, e_flags=0, e_ehsize=52, e_phentsize=32, e_phnum=1
+struct.pack_into("<HHIIIIIHHHHHH", elf32, 16, 2, 3, 1, 0x08048000, 52, 0, 0, 52, 32, 1, 40, 0, 0)
+# Elf32_Phdr: p_type=1 (PT_LOAD), p_offset=0, p_vaddr=0x08048000, p_paddr=0x08048000, p_filesz=4096, p_memsz=4096, p_flags=5, p_align=4096
+struct.pack_into("<IIIIIIII", elf32, 52, 1, 0, 0x08048000, 0x08048000, 4096, 4096, 5, 4096)
+
+dump = bytearray(512 * 1024)
+dump[4096:4096+len(elf32)] = elf32
+dump[65536:65536+len(elf64)] = elf64
+with open("memory.dump", "wb") as f:
+    f.write(dump)
+'
+rm -rf /tmp/out_c4
+ls -l memory.dump; sha256sum memory.dump

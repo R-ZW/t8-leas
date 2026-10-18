@@ -1,0 +1,4 @@
+### sessao iniciada 2026-10-17T18:49:30.307Z
+### host=fn-ref Linux 6.18.33.2-microsoft-standard-WSL2 x86_64
+### so=Ubuntu 24.04.2 LTS
+### usuario=revisor diretorio=/home/revisor

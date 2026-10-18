@@ -1,0 +1,18 @@
++ python3 -c '
+with open("foremost-ng", "rb") as f:
+    elf_data = f.read()
+script_data = b"#!/bin/bash\n# Script de teste\necho \"Foremost-NG functional test\"\n"
+img = bytearray(2 * 1024 * 1024)
+img[4096:4096+len(elf_data)] = elf_data
+img[524288:524288+len(script_data)] = script_data
+with open("disk.img", "wb") as out:
+    out.write(img)
+'
++ mkdir -p /temp/output
+mkdir: cannot create directory ‘/temp’: Permission denied
++ rm -rf /temp/output/carved
++ ls -l disk.img
+-rw-r--r-- 1 revisor revisor 2097152 Oct 17 18:43 disk.img
++ sha256sum disk.img foremost-ng
+569dec637dfd0f930813924a14f9f8aa5083e74914c8a28912762f48d0375241  disk.img
+c479c4c48ac7d83cddc33e6b82815278f6ff07caf8152cdb2cf0b3cc9a2ea5a6  foremost-ng

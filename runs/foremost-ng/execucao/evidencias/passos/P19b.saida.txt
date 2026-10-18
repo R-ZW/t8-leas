@@ -1,0 +1,6 @@
+== /tmp/out_c1/evtx/00000016.evtx
+<?xml version="1.1" encoding="utf-8" standalone="yes" ?>
+
+<Events>
+</Events>
+exit=0

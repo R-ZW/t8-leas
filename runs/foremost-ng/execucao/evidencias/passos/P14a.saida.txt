@@ -1,0 +1,15 @@
++ mkdir -p /home/revisor/aval/evidencias /home/revisor/aval/amostras
++ cd /home/revisor/aval
++ printf '#!/bin/bash\n# teste minimo\necho "foremost-ng teste minimo F"\nls -l /tmp\n'
++ truncate -s 1M min.dd
++ dd if=amostras/min.sh of=min.dd bs=512 seek=1024 conv=notrunc
+0+1 records in
+0+1 records out
+72 bytes copied, 3.96e-05 s, 1.8 MB/s
++ sha256sum amostras/min.sh min.dd
++ cat evidencias/P11_hashes.txt
+e69727dcd140e384a88e7c62ab90c8152098997f3668f699431acb2ca6ffb1f4  amostras/min.sh
+24a7f89dd0a5e1b1082d02dc5e8a882095681017e989969d6fd68cfac499fff1  min.dd
++ stat -c '%n %s' amostras/min.sh min.dd
+amostras/min.sh 72
+min.dd 1048576

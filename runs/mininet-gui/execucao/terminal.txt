@@ -1,0 +1,379 @@
+Script started on 2026-10-17 11:36:48-07:00 [<not executed on terminal>]
+[2026-10-17T11:36:50-0700] mininet@mininet-vm:~$ <inicio=$(date -u +%FT%T.%3NZ)]"; echo ola; uname -r
+[passo=teste0 inicio=2026-10-17T18:39:10.277Z]
+ola
+5.4.0-42-generic
+[2026-10-17T11:39:10-0700] mininet@mininet-vm:~$ <[passo=teste0 saida=$? fim=$(date -u +%FT%T.%3NZ)]"
+[passo=teste0 saida=0 fim=2026-10-17T18:39:10.296Z]
+[2026-10-17T11:39:10-0700] mininet@mininet-vm:~$ <cio=$(date -u +%FT%T.%3NZ)]"; stty cols 220 rows 50
+[passo=setup inicio=2026-10-17T18:39:20.886Z]
+[2026-10-17T11:39:20-0700] mininet@mininet-vm:~$ echo "[passo=setup saida=$? fim=$(date -u +%FT%T.%3NZ)]"
+[passo=setup saida=0 fim=2026-10-17T18:39:20.924Z]
+[2026-10-17T11:39:20-0700] mininet@mininet-vm:~$ < -m; df -h /; ip -br addr; mn --version; ovs-vsctl --version | head -1; python3 --version; node --version; npm --version; iperf -v 2>&1 | head -1
+[passo=E01-vm inicio=2026-10-17T18:39:22.253Z]
+   Static hostname: mininet-vm
+         Icon name: computer-vm
+           Chassis: vm
+        Machine ID: 5a3de05197724352a5cc20af25585d4f
+           Boot ID: be607492dac04658b5486c813b6bb88b
+    Virtualization: oracle
+  Operating System: Ubuntu 20.04.1 LTS
+            Kernel: Linux 5.4.0-42-generic
+      Architecture: x86-64
+Linux mininet-vm 5.4.0-42-generic #46-Ubuntu SMP Fri Jul 10 00:24:02 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
+2
+              total        used        free      shared  buff/cache   available
+Mem:           7962          92        7663           0         205        7628
+Swap:           352           0         352
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda5       7.4G  3.8G  3.2G  55% /
+lo               UNKNOWN        127.0.0.1/8 
+eth0             UP             192.168.56.101/24 
+2.3.0
+ovs-vsctl (Open vSwitch) 2.13.1
+Python 3.8.5
+v18.20.7
+10.8.2
+[1G[0Kiperf version 2.0.13 (21 Jan 2019) pthreads
+[2026-10-17T11:39:25-0700] mininet@mininet-vm:~$ echo "[passo=E01-vm saida=$? fim=$(date -u +%FT%T.%3NZ)]"
+[passo=E01-vm saida=0 fim=2026-10-17T18:39:25.860Z]
+[2026-10-17T11:39:25-0700] mininet@mininet-vm:~$ <d /home/mininet/mininet-gui && git rev-parse HEAD && git status --short && git describe --tags --always && git log -1 --format="%H %ad %s" ; cd ~
+[passo=E07 inicio=2026-10-17T18:39:26.899Z]
+be68302a9d3e17acf740d002090f7191098ac03d
+v0.0.1-2-gbe68302
+WARNING: terminal is not fully functional
+-  (press RETURN)be68302a9d3e17acf740d002090f7191098ac03d Mon Mar 17 09:53:46 2025 -0700 update setup and run scripts[m
+[2026-10-17T11:39:27-0700] mininet@mininet-vm:~$ cho "[passo=E07 saida=$? fim=$(date -u +%FT%T.%3NZ)]"
+
+Command 'cho' not found, did you mean:
+
+  command 'cht' from deb chemtool (1.6.14-5)
+  command 'co' from deb rcs (5.9.4-6)
+  command 'cdo' from deb cdo (1.9.9~rc1-1)
+  command 'who' from deb coreutils (8.30-3ubuntu2)
+  command 'echo' from deb coreutils (8.30-3ubuntu2)
+
+Try: sudo apt install <deb name>
+
+[2026-10-17T11:39:27-0700] mininet@mininet-vm:~$ < /home/mininet/mininet-gui/mininet-gui-frontend/src/core/api.js; cat -n /home/mininet/mininet-gui/run.sh; type mininet_gui; grep -n nvm ~/.bashrc
+[passo=E08 inicio=2026-10-17T18:39:48.621Z]
+299:  }i
+  } catch (error) {
+    alert(error.response ? error.response.data["detail"] : "Network Error");
+    return false;
+  }i
+};
+
+     1	#!/bin/bash
+     2	
+     3	sudo pkill uvicorn
+     4	sudo pkill vite
+     5	
+     6	
+     7	MININET_GUI_DIR="/home/mininet/mininet-gui"
+     8	BACKEND_DIR="$MININET_GUI_DIR/mininet-gui-backend"
+     9	FRONTEND_DIR="$MININET_GUI_DIR/mininet-gui-frontend"
+    10	
+    11	export MININET_GUI_ADDRESS=$(hostname --all-ip-addresses | awk '{print $1}')
+    12	
+    13	echo "Running mininet-gui-backend in background"
+    14	(cd $BACKEND_DIR ; sudo nohup uvicorn mininet_gui_backend.api:app --host=0.0.0.0 --port=8000 --log-level debug &)
+    15	
+    16	echo "VITE_BACKEND_URL=http://$MININET_GUI_ADDRESS:8000" > $FRONTEND_DIR/.env
+    17	echo "VITE_BACKEND_WS_URL=ws://$MININET_GUI_ADDRESS:8000" >> $FRONTEND_DIR/.env
+    18	
+    19	echo "Running mininet-gui-frontend in background"
+    20	(cd $FRONTEND_DIR ; nohup npm run dev &)
+    21	
+    22	echo "Mininet-GUI bootstrap complete"
+    23	echo "Backend log file: $BACKEND_DIR/nohup.out"
+    24	echo "Frontend log file: $FRONTEND_DIR/nohup.out"
+    25	
+    26	
+    27	echo -e "\n\n#### Mininet-GUI is available at: ####\n"
+    28	echo "http://$MININET_GUI_ADDRESS:5173"mininet_gui is aliased to `/home/mininet/mininet-gui/run.sh'
+120:export NVM_DIR="$HOME/.nvm"
+121:[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+122:[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[2026-10-17T11:39:48-0700] mininet@mininet-vm:~$ echo "[passo=E08 saida=$? fim=$(date -u +%FT%T.%3NZ)]"
+[passo=E08 saida=0 fim=2026-10-17T18:39:48.690Z]
+[2026-10-17T11:39:48-0700] mininet@mininet-vm:~$ echo "[passo=E15 inicio=$(date -u +%FT%T.%3NZ)]"; command -v ryu-manager; echo "command-v=$?"; python3 -c "import ryu" ; pip3 list 2>/dev/null | grep -i ryu
+[passo=E15 inicio=2026-10-17T18:39:49.984Z]
+command-v=1
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+ModuleNotFoundError: No module named 'ryu'
+[2026-10-17T11:39:55-0700] mininet@mininet-vm:~$ echo "[passo=E15 saida=$? fim=$(date -u +%FT%T.%3NZ)]"
+[passo=E15 saida=1 fim=2026-10-17T18:39:55.292Z]
+[2026-10-17T11:39:55-0700] mininet@mininet-vm:~$ echo "[passo=setup2 inicio=$(date -u +%FT%T.%3NZ)]"; export PAGER=cat GIT_PAGER=cat
+[passo=setup2 inicio=2026-10-17T18:41:09.999Z]
+[2026-10-17T11:41:09-0700] mininet@mininet-vm:~$ echo "[passo=setup2 saida=$? fim=$(date -u +%FT%T.%3NZ)]"
+[passo=setup2 saida=0 fim=2026-10-17T18:41:10.007Z]
+[2026-10-17T11:41:10-0700] mininet@mininet-vm:~$ echo "[passo=E09 inicio=$(date -u +%FT%T.%3NZ)]"; mininet_gui
+[passo=E09 inicio=2026-10-17T18:41:10.720Z]
+Running mininet-gui-backend in background
+Running mininet-gui-frontend in background
+Mininet-GUI bootstrap complete
+Backend log file: /home/mininet/mininet-gui/mininet-gui-backend/nohup.out
+Frontend log file: /home/mininet/mininet-gui/mininet-gui-frontend/nohup.out
+
+
+#### Mininet-GUI is available at: ####
+
+http://192.168.56.101:5173
+[2026-10-17T11:41:10-0700] mininet@mininet-vm:~$ echo "[passo=E09 saida=$? fim=$(date -u +%FT%T.%3NZ)]"
+nohup: appending output to 'nohup.out'
+nohup: appending output to 'nohup.out'
+[passo=E09 saida=0 fim=2026-10-17T18:41:10.942Z]
+[2026-10-17T11:41:10-0700] mininet@mininet-vm:~$ <rontend/.env; tail -20 /home/mininet/mininet-gui/mininet-gui-frontend/nohup.out; tail -20 /home/mininet/mininet-gui/mininet-gui-backend/nohup.out
+[passo=E09-verif inicio=2026-10-17T18:41:32.345Z]
+LISTEN    0         511                0.0.0.0:5173             0.0.0.0:*        users:(("node",pid=1664,fd=19))                                                
+LISTEN    0         2048               0.0.0.0:8000             0.0.0.0:*                                                                                       
+LISTEN    0         511                0.0.0.0:5173             0.0.0.0:*        users:(("node",pid=1664,fd=19))                                                
+LISTEN    0         2048               0.0.0.0:8000             0.0.0.0:*        users:(("uvicorn",pid=1647,fd=8))                                              
+VITE_BACKEND_URL=http://192.168.56.101:8000
+VITE_BACKEND_WS_URL=ws://192.168.56.101:8000
+
+> mininet-gui@0.0.1 dev
+> vite
+
+
+  VITE v4.5.9  ready in 4713 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: http://192.168.56.101:5173/
+tail: cannot open '/home/mininet/mininet-gui/mininet-gui-backend/nohup.out' for reading: Permission denied
+[2026-10-17T11:41:37-0700] mininet@mininet-vm:~$ echo "[passo=E09-verif saida=$? fim=$(date -u +%FT%T.%3NZ)]"
+[passo=E09-verif saida=1 fim=2026-10-17T18:41:37.596Z]
+[2026-10-17T11:41:37-0700] mininet@mininet-vm:~$ echo "[passo=def-contar inicio=$(date -u +%FT%T.%3NZ)]"; . ~/evidencias/contar.sh; type contar | head -3
+[passo=def-contar inicio=2026-10-17T18:51:28.183Z]
+contar is a function
+contar () 
+{ 
+[2026-10-17T11:51:28-0700] mininet@mininet-vm:~$ echo "[passo=def-contar saida=$? fim=$(date -u +%FT%T.%3NZ)]"
+[passo=def-contar saida=0 fim=2026-10-17T18:51:28.213Z]
+[2026-10-17T11:51:28-0700] mininet@mininet-vm:~$ echo "[passo=E18-antes inicio=$(date -u +%FT%T.%3NZ)]"; contar
+[passo=E18-antes inicio=2026-10-17T18:51:29.793Z]
+controllers=2 ['c1', 'c2']
+switches=2 ['s1', 's2']
+hosts=4 ['h1', 'h2', 'h3', 'h4']
+links=5 [['s1', 'h1'], ['h2', 's1'], ['h3', 's2'], ['h4', 's2'], ['s1', 's2']]
+start=true
+[2026-10-17T11:51:30-0700] mininet@mininet-vm:~$ echo "[passo=E18-antes saida=$? fim=$(date -u +%FT%T.%3NZ)]"
+[passo=E18-antes saida=0 fim=2026-10-17T18:51:30.443Z]
+[2026-10-17T11:51:30-0700] mininet@mininet-vm:~$ echo "[passo=E18-depois inicio=$(date -u +%FT%T.%3NZ)]"; contar
+[passo=E18-depois inicio=2026-10-17T18:51:43.954Z]
+controllers=0 []
+switches=0 []
+hosts=0 []
+links=0 []
+start=true
+[2026-10-17T11:51:44-0700] mininet@mininet-vm:~$ echo "[passo=E18-depois saida=$? fim=$(date -u +%FT%T.%3NZ)]"
+[passo=E18-depois saida=0 fim=2026-10-17T18:51:44.450Z]
+[2026-10-17T11:51:44-0700] mininet@mininet-vm:~$ echo "[passo=E19-api inicio=$(date -u +%FT%T.%3NZ)]"; contar
+echo "[passo=E19-api saida=$? fim=$(date -u +%FT%T.%3NZ)]"
+[passo=E19-api inicio=2026-10-17T18:52:17.612Z]
+controllers=1 ['c1']
+switches=1 ['s1']
+hosts=3 ['h1', 'h2', 'h3']
+links=3 [['s1', 'h1'], ['h2', 's1'], ['s1', 'h3']]
+start=true
+[2026-10-17T11:52:18-0700] mininet@mininet-vm:~$ echo "[passo=E19-api saida=$? fim=$(date -u +%FT%T.%3NZ)]"
+[passo=E19-api saida=0 fim=2026-10-17T18:52:18.100Z]
+[2026-10-17T11:52:18-0700] mininet@mininet-vm:~$ echo "[passo=E18-reset-2 inicio=$(date -u +%FT%T.%3NZ)]"; contar
+echo "[passo=E18-reset-2 saida=$? fim=$(date -u +%FT%T.%3NZ)]"
+[passo=E18-reset-2 inicio=2026-10-17T18:52:32.797Z]
+controllers=0 []
+switches=0 []
+hosts=0 []
+links=0 []
+start=true
+[2026-10-17T11:52:33-0700] mininet@mininet-vm:~$ echo "[passo=E18-reset-2 saida=$? fim=$(date -u +%FT%T.%3NZ)]"
+[passo=E18-reset-2 saida=0 fim=2026-10-17T18:52:33.307Z]
+[2026-10-17T11:52:33-0700] mininet@mininet-vm:~$ echo "[passo=E20-api inicio=$(date -u +%FT%T.%3NZ)]"; contar
+echo "[passo=E20-api saida=$? fim=$(date -u +%FT%T.%3NZ)]"
+[passo=E20-api inicio=2026-10-17T18:52:54.908Z]
+controllers=1 ['c1']
+switches=3 ['s1', 's2', 's3']
+hosts=6 ['h1', 'h2', 'h3', 'h4', 'h5', 'h6']
+links=8 [['s1', 'h1'], ['h2', 's1'], ['h3', 's2'], ['h4', 's2'], ['s1', 's2'], ['h5', 's3'], ['h6', 's3'], ['s2', 's3']]
+start=true
+[2026-10-17T11:52:55-0700] mininet@mininet-vm:~$ echo "[passo=E20-api saida=$? fim=$(date -u +%FT%T.%3NZ)]"
+[passo=E20-api saida=0 fim=2026-10-17T18:52:55.428Z]
+[2026-10-17T11:52:55-0700] mininet@mininet-vm:~$ echo "[passo=E18-reset-3 inicio=$(date -u +%FT%T.%3NZ)]"; contar
+[passo=E18-reset-3 inicio=2026-10-17T18:53:11.654Z]
+controllers=0 []
+switches=0 []
+hosts=0 []
+links=0 []
+start=true
+[2026-10-17T11:53:12-0700] mininet@mininet-vm:~$ echo "[passo=E18-reset-3 saida=$? fim=$(date -u +%FT%T.%3NZ)]"
+[passo=E18-reset-3 saida=0 fim=2026-10-17T18:53:12.150Z]
+[2026-10-17T11:53:12-0700] mininet@mininet-vm:~$ echo "[passo=E21-api inicio=$(date -u +%FT%T.%3NZ)]"; contar
+[passo=E21-api inicio=2026-10-17T18:53:33.817Z]
+controllers=1 ['c1']
+switches=2 ['s1', 's2']
+hosts=2 ['h1', 'h2']
+links=3 [['s1', 'h1'], ['h2', 's2'], ['s1', 's2']]
+start=true
+[2026-10-17T11:53:34-0700] mininet@mininet-vm:~$ echo "[passo=E21-api saida=$? fim=$(date -u +%FT%T.%3NZ)]"
+[passo=E21-api saida=0 fim=2026-10-17T18:53:34.353Z]
+[2026-10-17T11:53:34-0700] mininet@mininet-vm:~$ echo "[passo=E18-reset-4 inicio=$(date -u +%FT%T.%3NZ)]"; contar
+[passo=E18-reset-4 inicio=2026-10-17T18:53:42.374Z]
+controllers=0 []
+switches=0 []
+hosts=0 []
+links=0 []
+start=true
+[2026-10-17T11:53:42-0700] mininet@mininet-vm:~$ echo "[passo=E18-reset-4 saida=$? fim=$(date -u +%FT%T.%3NZ)]"
+[passo=E18-reset-4 saida=0 fim=2026-10-17T18:53:42.889Z]
+[2026-10-17T11:53:42-0700] mininet@mininet-vm:~$ echo "[passo=E22-api inicio=$(date -u +%FT%T.%3NZ)]"; contar
+[passo=E22-api inicio=2026-10-17T18:54:04.613Z]
+controllers=1 ['c1']
+switches=3 ['s1', 's2', 's3']
+hosts=4 ['h1', 'h2', 'h3', 'h4']
+links=6 [['s1', 'h1'], ['h2', 's1'], ['h3', 's2'], ['h4', 's2'], ['s1', 's3'], ['s2', 's3']]
+start=true
+[2026-10-17T11:54:05-0700] mininet@mininet-vm:~$ echo "[passo=E22-api saida=$? fim=$(date -u +%FT%T.%3NZ)]"
+[passo=E22-api saida=0 fim=2026-10-17T18:54:05.131Z]
+[2026-10-17T11:54:05-0700] mininet@mininet-vm:~$ <ep -f "mininet:$h\$" | head -1); echo "$h pid=$p netns=$(sudo readlink /proc/$p/ns/net)"; done; echo "vm-shell netns=$(readlink /proc/$$/ns/net)"
+[passo=E27-vm inicio=2026-10-17T18:55:11.145Z]
+lo               UNKNOWN        127.0.0.1/8 
+eth0             UP             192.168.56.101/24 
+ovs-system       DOWN           
+s1               DOWN           
+s1-eth1@if2      UP             
+s1-eth2@if2      UP             
+s2               DOWN           
+s2-eth1@if2      UP             
+s2-eth2@if2      UP             
+s3               DOWN           
+s1-eth3@s3-eth1  UP             
+s3-eth1@s1-eth3  UP             
+s2-eth3@s3-eth2  UP             
+s3-eth2@s2-eth3  UP             
+
+   3801 bash --norc --noediting -is mininet:h1
+   3803 bash --norc --noediting -is mininet:h2
+h1 pid=3801 netns=net:[4026532228]
+h2 pid=3803 netns=net:[4026532269]
+vm-shell netns=net:[4026531992]
+[2026-10-17T11:55:11-0700] mininet@mininet-vm:~$ echo "[passo=E27-vm saida=$? fim=$(date -u +%FT%T.%3NZ)]"
+[passo=E27-vm saida=0 fim=2026-10-17T18:55:11.894Z]
+[2026-10-17T11:55:11-0700] mininet@mininet-vm:~$ <Z)]"; ps -o pid,ppid,cmd -p $(pgrep -d, -f "mininet:h[12]$") ; sudo ss -tnp | grep 8000 | head; ps -ef | grep -E "bash" | grep -v grep | head -20
+[passo=E27-ps inicio=2026-10-17T18:55:37.278Z]
+    PID    PPID CMD
+   3801    1647 bash --norc --noediting -is mininet:h1
+   3803    1647 bash --norc --noediting -is mininet:h2
+ESTAB    0         0            192.168.56.101:8000        192.168.56.1:65258    users:(("uvicorn",pid=1647,fd=95))                                             
+ESTAB    0         0            192.168.56.101:8000        192.168.56.1:63542    users:(("uvicorn",pid=1647,fd=20))                                             
+mininet      796     791  0 11:36 ?        00:00:00 script -q -t/home/mininet/evidencias/20261017T183648Z-execucao.tempo -c bash --rcfile '/home/mininet/evidencias/.bashrc-gravacao' -i /home/mininet/evidencias/20261017T183648Z-execucao.terminal
+mininet      797     796  0 11:36 pts/0    00:00:00 bash --rcfile /home/mininet/evidencias/.bashrc-gravacao -i
+root        1718    1647  0 11:41 ?        00:00:00 [bash] <defunct>
+root        2180    1647  0 11:43 ?        00:00:00 [bash] <defunct>
+root        2190    1647  0 11:43 ?        00:00:00 [bash] <defunct>
+root        2217    1647  0 11:43 ?        00:00:00 [bash] <defunct>
+root        2235    1647  0 11:43 ?        00:00:00 [bash] <defunct>
+root        2288    1647  0 11:48 ?        00:00:00 [bash] <defunct>
+root        2292    1647  0 11:48 ?        00:00:00 [bash] <defunct>
+root        2308    1647  0 11:48 ?        00:00:00 [bash] <defunct>
+root        2324    1647  0 11:48 ?        00:00:00 [bash] <defunct>
+root        2740    1647  0 11:51 ?        00:00:00 [bash] <defunct>
+root        2812    1647  0 11:52 ?        00:00:00 [bash] <defunct>
+root        2819    1647  0 11:52 ?        00:00:00 [bash] <defunct>
+root        2843    1647  0 11:52 ?        00:00:00 [bash] <defunct>
+root        2860    1647  0 11:52 ?        00:00:00 [bash] <defunct>
+root        2875    1647  0 11:52 ?        00:00:00 [bash] <defunct>
+root        3011    1647  0 11:52 ?        00:00:00 [bash] <defunct>
+root        3085    1647  0 11:52 ?        00:00:00 [bash] <defunct>
+root        3092    1647  0 11:52 ?        00:00:00 [bash] <defunct>
+[2026-10-17T11:55:37-0700] mininet@mininet-vm:~$ echo "[passo=E27-ps saida=$? fim=$(date -u +%FT%T.%3NZ)]"
+[passo=E27-ps saida=0 fim=2026-10-17T18:55:37.623Z]
+[2026-10-17T11:55:37-0700] mininet@mininet-vm:~$ <l -s localhost:8000/api/mininet/hosts | python3 -c "import json,sys; d=json.load(sys.stdin); print({k:(v[\"x\"],v[\"y\"]) for k,v in d.items()})"
+[passo=E28-api inicio=2026-10-17T18:55:52.783Z]
+{'h1': (50.0, 450.0), 'h2': (150.0, 450.0), 'h3': (250.0, 450.0), 'h4': (350.0, 450.0)}
+[2026-10-17T11:55:52-0700] mininet@mininet-vm:~$ echo "[passo=E28-api saida=$? fim=$(date -u +%FT%T.%3NZ)]"
+[passo=E28-api saida=0 fim=2026-10-17T18:55:52.924Z]
+[2026-10-17T11:55:52-0700] mininet@mininet-vm:~$ <l -s localhost:8000/api/mininet/hosts | python3 -c "import json,sys; d=json.load(sys.stdin); print({k:(v[\"x\"],v[\"y\"]) for k,v in d.items()})"
+[passo=E28-api inicio=2026-10-17T18:56:29.428Z]
+{'h1': (-204.7328110514078, 388.864125347662), 'h2': (150.0, 450.0), 'h3': (250.0, 450.0), 'h4': (350.0, 450.0)}
+[2026-10-17T11:56:29-0700] mininet@mininet-vm:~$ echo "[passo=E28-api saida=$? fim=$(date -u +%FT%T.%3NZ)]"
+[passo=E28-api saida=0 fim=2026-10-17T18:56:29.553Z]
+[2026-10-17T11:56:29-0700] mininet@mininet-vm:~$ echo "[passo=E28-api2 inicio=$(date -u +%FT%T.%3NZ)]"; contar
+[passo=E28-api2 inicio=2026-10-17T18:57:22.844Z]
+controllers=1 ['c1']
+switches=4 ['s1', 's2', 's3', 's4']
+hosts=5 ['h1', 'h2', 'h3', 'h4', 'h5']
+links=8 [['s1', 'h1'], ['h2', 's1'], ['h3', 's2'], ['h4', 's2'], ['s1', 's3'], ['s2', 's3'], ['s4', 'h5'], ['s1', 's4']]
+start=true
+[2026-10-17T11:57:23-0700] mininet@mininet-vm:~$ echo "[passo=E28-api2 saida=$? fim=$(date -u +%FT%T.%3NZ)]"
+[passo=E28-api2 saida=0 fim=2026-10-17T18:57:23.375Z]
+[2026-10-17T11:57:23-0700] mininet@mininet-vm:~$ echo "[passo=E29-api inicio=$(date -u +%FT%T.%3NZ)]"; curl -s http://localhost:8000/api/mininet/start; echo; curl -s http://localhost:8000/api/mininet/hosts; echo
+[passo=E29-api inicio=2026-10-17T18:57:34.710Z]
+true
+{"h1":{"id":"h1","type":"host","name":"h1","label":"h1","x":-204.7328110514078,"y":388.864125347662,"ip":"10.0.0.1/8","mac":"000000000001"},"h2":{"id":"h2","type":"host","name":"h2","label":"h2","x":150.0,"y":450.0,"ip":"10.0.0.2/8","mac":"000000000002"},"h3":{"id":"h3","type":"host","name":"h3","label":"h3","x":250.0,"y":450.0,"ip":"10.0.0.3/8","mac":"000000000003"},"h4":{"id":"h4","type":"host","name":"h4","label":"h4","x":350.0,"y":450.0,"ip":"10.0.0.4/8","mac":"000000000004"},"h5":{"id":"h5","type":"host","name":"h5","label":"h5","x":-165.54348939071332,"y":266.676475907597,"ip":"10.0.0.5/8","mac":"000000000005"}}
+[2026-10-17T11:57:34-0700] mininet@mininet-vm:~$ echo "[passo=E29-api saida=$? fim=$(date -u +%FT%T.%3NZ)]"
+[passo=E29-api saida=0 fim=2026-10-17T18:57:34.837Z]
+[2026-10-17T11:57:34-0700] mininet@mininet-vm:~$ echo "[passo=E30-api-link inicio=$(date -u +%FT%T.%3NZ)]"; contar
+[passo=E30-api-link inicio=2026-10-17T18:58:08.703Z]
+controllers=1 ['c1']
+switches=4 ['s1', 's2', 's3', 's4']
+hosts=5 ['h1', 'h2', 'h3', 'h4', 'h5']
+links=7 [['s1', 'h1'], ['h3', 's2'], ['h4', 's2'], ['s1', 's3'], ['s2', 's3'], ['s4', 'h5'], ['s1', 's4']]
+start=true
+[2026-10-17T11:58:09-0700] mininet@mininet-vm:~$ echo "[passo=E30-api-link saida=$? fim=$(date -u +%FT%T.%3NZ)]"
+[passo=E30-api-link saida=0 fim=2026-10-17T18:58:09.201Z]
+[2026-10-17T11:58:09-0700] mininet@mininet-vm:~$ <p.out; sudo sed -n "2495,\$p" /home/mininet/mininet-gui/mininet-gui-backend/nohup.out | grep -vE "keepalive|PING|PONG|DEBUG:    [<>%]" | head -60
+[passo=E30-api-no inicio=2026-10-17T18:58:30.599Z]
+controllers=1 ['c1']
+switches=4 ['s1', 's2', 's3', 's4']
+hosts=4 ['h1', 'h2', 'h3', 'h5']
+links=7 [['s1', 'h1'], ['h3', 's2'], ['h4', 's2'], ['s1', 's3'], ['s2', 's3'], ['s4', 'h5'], ['s1', 's4']]
+start=true
+10
+INFO:     192.168.56.1:57930 - "POST /api/mininet/pingall HTTP/1.1" 200 OK
+INFO:     192.168.56.1:50967 - "OPTIONS /api/mininet/delete_link/h2/s1 HTTP/1.1" 200 OK
+*** s1 : ('ip link del s1-eth2',)
+*** h2 : ('ip link del h2-eth0',)
+Cannot find device "h2-eth0"
+INFO:     192.168.56.1:50967 - "DELETE /api/mininet/delete_link/h2/s1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49684 - "GET /api/mininet/controllers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49686 - "GET /api/mininet/switches HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49688 - "GET /api/mininet/hosts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49690 - "GET /api/mininet/links HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49692 - "GET /api/mininet/start HTTP/1.1" 200 OK
+INFO:     192.168.56.1:58866 - "OPTIONS /api/mininet/delete_node/h4 HTTP/1.1" 200 OK
+*** h4 : ('ip link del h4-eth0',)
+.waiting for 3807 to terminate
+INFO:     192.168.56.1:58866 - "DELETE /api/mininet/delete_node/h4 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49694 - "GET /api/mininet/controllers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49696 - "GET /api/mininet/switches HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49698 - "GET /api/mininet/hosts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49700 - "GET /api/mininet/links HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49702 - "GET /api/mininet/start HTTP/1.1" 200 OK
+[2026-10-17T11:58:31-0700] mininet@mininet-vm:~$ echo "[passo=E30-api-no saida=$? fim=$(date -u +%FT%T.%3NZ)]"
+[passo=E30-api-no saida=0 fim=2026-10-17T18:58:31.210Z]
+[2026-10-17T11:58:31-0700] mininet@mininet-vm:~$ <ork" /home/mininet/mininet-gui/mininet-gui-backend/nohup.out; sudo grep -n "500 Internal" /home/mininet/mininet-gui/mininet-gui-backend/nohup.out
+[passo=E30-depois inicio=2026-10-17T19:01:07.650Z]
+true
+10
+2517:INFO:     192.168.56.1:59057 - "POST /api/mininet/pingall HTTP/1.1" 500 Internal Server Error
+[2026-10-17T12:01:07-0700] mininet@mininet-vm:~$ echo "[passo=E30-depois saida=$? fim=$(date -u +%FT%T.%3NZ)]"
+[passo=E30-depois saida=0 fim=2026-10-17T19:01:07.803Z]
+[2026-10-17T12:01:07-0700] mininet@mininet-vm:~$ <dencias/frontend-env.txt; cd /home/mininet/mininet-gui && git status --short; git rev-parse HEAD; cd ~; free -m; uptime; wc -l ~/evidencias/*.txt
+[passo=coleta inicio=2026-10-17T19:02:53.450Z]
+be68302a9d3e17acf740d002090f7191098ac03d
+              total        used        free      shared  buff/cache   available
+Mem:           7962         257        7387           0         317        7458
+Swap:           352           0         352
+ 12:02:53 up 27 min,  0 users,  load average: 0.02, 0.09, 0.11
+  2873 /home/mininet/evidencias/backend-nohup.txt
+     2 /home/mininet/evidencias/frontend-env.txt
+     9 /home/mininet/evidencias/frontend-nohup.txt
+  2884 total
+[2026-10-17T12:02:53-0700] mininet@mininet-vm:~$ echo "[passo=coleta saida=$? fim=$(date -u +%FT%T.%3NZ)]"
+[passo=coleta saida=0 fim=2026-10-17T19:02:53.649Z]
+[2026-10-17T12:02:53-0700] mininet@mininet-vm:~$ exit
+exit
+
+Script done on 2026-10-17 12:02:59-07:00 [COMMAND_EXIT_CODE="0"]

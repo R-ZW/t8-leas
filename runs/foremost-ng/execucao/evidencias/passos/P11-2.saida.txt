@@ -1,0 +1,22 @@
+igual sem CR: ./.gitignore
+igual sem CR: ./Dockerfile
+igual sem CR: ./LICENSE
+igual sem CR: ./README.md
+igual sem CR: ./src/Makefile
+igual sem CR: ./src/ansi_colors.h
+igual sem CR: ./src/api.c
+igual sem CR: ./src/cli.c
+igual sem CR: ./src/config.c
+igual sem CR: ./src/dir.c
+igual sem CR: ./src/engine.c
+igual sem CR: ./src/extract.c
+igual sem CR: ./src/extract.h
+igual sem CR: ./src/foremost.conf
+igual sem CR: ./src/helpers.c
+igual sem CR: ./src/main.c
+igual sem CR: ./src/ole.h
+igual sem CR: ./src/state.c
+igual sem CR: ./src/vt_query.c
+igual sem CR: ./src/vt_query.h
+arquivos no zip: 40; iguais byte a byte: 20; iguais apos remover CR: 20; diferentes: 0
+arquivos no clone (sem .git): 40

@@ -1,0 +1,26 @@
+foremost-ng version 1.5.7 by Cristian Souza
+Audit File
+
+foremost-ng started at Sat Oct 17 18:43:39 2026
+Invocation: ./foremost-ng -v -t evtx -i c1_evtx.img -o /tmp/out_c1 
+Output directory: /tmp/out_c1
+Configuration file: /home/revisor/trabalho/foremost-ng-bb812a22/src/foremost.conf
+------------------------------------------------------------------
+File: c1_evtx.img
+Start: Sat Oct 17 18:43:39 2026
+Length: 256 KB (262144 bytes)
+ 
+  ID  Name (bs=512)              Size       Offset  Comment                   VT             
+   0: 00000016.evtx             64 KB         8192                            N/A            
+Finish: Sat Oct 17 18:43:39 2026
+
+1 FILES EXTRACTED
+	
+evtx=1
+------------------------------------------------------------------
+
+foremost-ng finished at Sat Oct 17 18:43:39 2026
+/tmp/out_c1/evtx/00000016.evtx: MS Windows Vista-8.1 Event Log, 1 chunks (no. 1 in use), empty
+total 64
+-rw-r--r-- 1 revisor revisor 65536 Oct 17 18:43 00000016.evtx
+Arquivo: /tmp/out_c1/evtx/00000016.evtx Tamanho: 65536 Magic: b'ElfFile\x00'

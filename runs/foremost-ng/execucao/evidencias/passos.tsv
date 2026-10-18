@@ -1,0 +1,69 @@
+id	inicio_utc	fim_utc	duracao_s	codigo_saida	diretorio	comando
+P01	2026-10-17T18:37:33.711Z	2026-10-17T18:37:37.398Z	3.685	0	/home/revisor/trabalho	git clone https://github.com/cristianzsh/foremost-ng.git
+P02	2026-10-17T18:37:37.600Z	2026-10-17T18:37:37.607Z	0.006	2	/home/revisor/trabalho/foremost-ng	make
+P03	2026-10-17T18:37:37.653Z	2026-10-17T18:37:38.466Z	0.811	0	/home/revisor/trabalho	unzip /pacote/artefato.zip -d /home/revisor/trabalho
+P04	2026-10-17T18:37:38.581Z	2026-10-17T18:37:38.628Z	0.046	2	/home/revisor/trabalho/foremost-ng-bb812a22/src	make
+P05	2026-10-17T18:37:38.680Z	2026-10-17T18:37:38.710Z	0.029	2	/home/revisor/trabalho/foremost-ng-bb812a22/src	sudo make install
+P06	2026-10-17T18:37:38.804Z	2026-10-17T18:37:38.817Z	0.012	16	/home/revisor	env MANPAGER=cat MANWIDTH=100 man foremost-ng
+P07	2026-10-17T18:37:38.877Z	2026-10-17T18:37:38.887Z	0.009	0	/home/revisor	sh -c if\ \[\ -n\ \"\$\{VT_API_KEY:-\}\"\ \]\;\ then\ echo\ \"VT_API_KEY\ definida\"\;\ else\ echo\ \"VT_API_KEY\ nao\ definida\ \(nenhuma\ chave\ disponivel\)\"\;\ fi
+P08	2026-10-17T18:37:38.936Z	2026-10-17T18:37:38.943Z	0.006	127	/home/revisor/trabalho/foremost-ng-bb812a22/src	./foremost-ng -v -x evidence2.dd
+P00a	2026-10-17T18:38:36.262Z	2026-10-17T18:38:51.241Z	14.978	0	/home/revisor/trabalho	sh -c sudo\ apt-get\ update\ \&\&\ sudo\ DEBIAN_FRONTEND=noninteractive\ apt-get\ install\ -y\ gcc\ make\ git\ libssl-dev\ libcurl4-openssl-dev
+P00b	2026-10-17T18:38:51.325Z	2026-10-17T18:39:08.507Z	17.180	0	/home/revisor/trabalho	sudo DEBIAN_FRONTEND=noninteractive apt-get install -y libc6-dev
+P04-2	2026-10-17T18:39:08.571Z	2026-10-17T18:39:09.699Z	1.126	0	/home/revisor/trabalho/foremost-ng-bb812a22/src	make
+P05-2	2026-10-17T18:39:09.788Z	2026-10-17T18:39:09.805Z	0.016	0	/home/revisor/trabalho/foremost-ng-bb812a22/src	sudo make install
+P06-2	2026-10-17T18:39:09.901Z	2026-10-17T18:39:09.926Z	0.024	0	/home/revisor	env MANPAGER=cat MANWIDTH=100 man foremost-ng
+P08-2	2026-10-17T18:39:09.986Z	2026-10-17T18:39:09.993Z	0.006	1	/home/revisor/trabalho/foremost-ng-bb812a22/src	./foremost-ng -v -x evidence2.dd
+P09	2026-10-17T18:43:09.929Z	2026-10-17T18:43:09.960Z	0.030	0	/home/revisor/trabalho	sh -c \{\ cat\ /etc/os-release\;\ uname\ -m\;\ gcc\ --version\ \|\ head\ -1\;\ make\ --version\ \|\ head\ -1\;\ openssl\ version\;\ curl\ --version\ \|\ head\ -1\;\ dpkg\ -l\ libssl-dev\ libcurl4-openssl-dev\ \|\ tail\ -2\;\ \}\ 2\>\&1
+P09-amb	2026-10-17T18:43:10.024Z	2026-10-17T18:43:10.094Z	0.068	0	/home/revisor/trabalho	bash /execucao/evidencias/scripts/entradas/P09-ambiente.sh
+P10	2026-10-17T18:43:10.150Z	2026-10-17T18:43:10.211Z	0.060	0	/home/revisor/trabalho/foremost-ng	sh -c git\ checkout\ bb812a22cb06ef87b5a2d877dfb6f40eb12d460d\ \&\&\ git\ rev-parse\ HEAD\ \&\&\ git\ status\ --short\ \&\&\ git\ log\ -1\ --format=\"%H\ %cI\ %s\"
+P11	2026-10-17T18:43:10.281Z	2026-10-17T18:43:11.485Z	1.202	0	/home/revisor/trabalho	bash /execucao/evidencias/scripts/entradas/P11-integridade.sh
+P12	2026-10-17T18:43:11.587Z	2026-10-17T18:43:38.071Z	26.482	0	/home/revisor/trabalho	sudo DEBIAN_FRONTEND=noninteractive apt-get install -y gcc-multilib file binutils python3 python3-evtx curl jq
+P12-versoes	2026-10-17T18:43:38.125Z	2026-10-17T18:43:38.140Z	0.014	0	/home/revisor/trabalho	sh -c file\ --version\ \|\ head\ -1\;\ readelf\ --version\ \|\ head\ -1\;\ python3\ --version\;\ dpkg\ -l\ python3-evtx\ gcc-multilib\ file\ jq\ curl\ \|\ tail\ -5\;\ ls\ /usr/bin\ \|\ grep\ -i\ evtx
+P13a	2026-10-17T18:43:38.192Z	2026-10-17T18:43:38.213Z	0.020	0	/home/revisor	foremost-ng -h
+P13b	2026-10-17T18:43:38.260Z	2026-10-17T18:43:38.291Z	0.029	0	/home/revisor/trabalho/foremost-ng-bb812a22/src	sh -c ./foremost-ng\ -V\;\ echo\ \"exit\ -V=\$\?\"\;\ ./foremost-ng\ -h\;\ echo\ \"exit\ -h=\$\?\"\;\ MANPAGER=cat\ man\ foremost-ng\ \|\ head\ -n\ 30
+P14a	2026-10-17T18:43:38.351Z	2026-10-17T18:43:38.378Z	0.025	0	/home/revisor	bash /execucao/evidencias/scripts/entradas/P14a-A-min.sh
+P14b	2026-10-17T18:43:38.456Z	2026-10-17T18:43:38.484Z	0.026	0	/home/revisor/trabalho/foremost-ng-bb812a22/src	bash /execucao/evidencias/scripts/entradas/P14b-G-disk.sh
+P15a	2026-10-17T18:43:38.557Z	2026-10-17T18:43:38.588Z	0.029	0	/home/revisor/aval	foremost-ng -i min.dd -o /home/revisor/aval/saida_min
+P16a	2026-10-17T18:43:38.654Z	2026-10-17T18:43:38.666Z	0.011	0	/home/revisor/aval	sh -c cat\ saida_min/audit.txt\;\ ls\ -R\ saida_min\;\ cmp\ amostras/min.sh\ saida_min/script/00001024.script\ \&\&\ echo\ IDENTICO\;\ find\ ~/aval/saida_min\ -type\ f\ \|\ sort\ \>\ evidencias/P12_arquivos.txt\;\ cat\ evidencias/P12_arquivos.txt
+P15b	2026-10-17T18:43:38.809Z	2026-10-17T18:43:38.817Z	0.007	1	/home/revisor/trabalho/foremost-ng-bb812a22/src	./foremost-ng -i disk.img -o /temp/output/carved
+P14b-2	2026-10-17T18:43:38.907Z	2026-10-17T18:43:38.921Z	0.013	0	/home/revisor/trabalho/foremost-ng-bb812a22/src	sh -c sudo\ mkdir\ -p\ /temp/output\ \&\&\ sudo\ chown\ revisor:revisor\ /temp/output\ \&\&\ ls\ -ld\ /temp/output
+P15b-2	2026-10-17T18:43:38.990Z	2026-10-17T18:43:39.041Z	0.050	0	/home/revisor/trabalho/foremost-ng-bb812a22/src	./foremost-ng -i disk.img -o /temp/output/carved
+P16b	2026-10-17T18:43:39.132Z	2026-10-17T18:43:39.140Z	0.006	0	/home/revisor/trabalho/foremost-ng-bb812a22/src	sh -c cat\ /temp/output/carved/audit.txt\;\ ls\ -la\ /temp/output/carved/\*
+P17b	2026-10-17T18:43:39.357Z	2026-10-17T18:43:39.383Z	0.025	0	/home/revisor/trabalho/foremost-ng-bb812a22/src	bash /execucao/evidencias/scripts/entradas/P17b-G-evtx.sh
+P18b	2026-10-17T18:43:39.462Z	2026-10-17T18:43:39.470Z	0.006	0	/home/revisor/trabalho/foremost-ng-bb812a22/src	./foremost-ng -v -t evtx -i c1_evtx.img -o /tmp/out_c1
+P18b-conf	2026-10-17T18:43:39.555Z	2026-10-17T18:43:39.586Z	0.030	0	/home/revisor/trabalho/foremost-ng-bb812a22/src	bash /execucao/evidencias/scripts/entradas/P18b-G-conf.sh
+P19b	2026-10-17T18:43:39.643Z	2026-10-17T18:43:39.694Z	0.050	0	/home/revisor/trabalho/foremost-ng-bb812a22/src	sh -c for\ f\ in\ /tmp/out_c1/evtx/\*.evtx\;\ do\ echo\ \"==\ \$f\"\;\ evtx_dump.py\ \"\$f\"\;\ echo\ \"exit=\$\?\"\;\ done
+P20b	2026-10-17T18:43:39.836Z	2026-10-17T18:43:39.858Z	0.021	0	/home/revisor/trabalho/foremost-ng-bb812a22/src	bash /execucao/evidencias/scripts/entradas/P20b-G-script.sh
+P21b	2026-10-17T18:43:39.935Z	2026-10-17T18:43:39.946Z	0.010	0	/home/revisor/trabalho/foremost-ng-bb812a22/src	./foremost-ng -v -t script -i c2_script.img -o /tmp/out_c2
+P21b-conf	2026-10-17T18:43:40.028Z	2026-10-17T18:43:40.036Z	0.007	0	/home/revisor/trabalho/foremost-ng-bb812a22/src	sh -c cat\ /tmp/out_c2/audit.txt\;\ ls\ -l\ /tmp/out_c2/script/\;\ head\ -n\ 20\ /tmp/out_c2/script/\*
+P23b	2026-10-17T18:43:40.203Z	2026-10-17T18:43:40.226Z	0.022	0	/home/revisor/trabalho/foremost-ng-bb812a22/src	bash /execucao/evidencias/scripts/entradas/P23b-G-macho.sh
+P24b	2026-10-17T18:43:40.288Z	2026-10-17T18:43:40.298Z	0.008	0	/home/revisor/trabalho/foremost-ng-bb812a22/src	./foremost-ng -v -t macho -i c3_macho.img -o /tmp/out_c3
+P24b-conf	2026-10-17T18:43:40.376Z	2026-10-17T18:43:40.385Z	0.007	0	/home/revisor/trabalho/foremost-ng-bb812a22/src	sh -c cat\ /tmp/out_c3/audit.txt\;\ file\ /tmp/out_c3/macho/\*.macho\;\ ls\ -l\ /tmp/out_c3/macho/\*.macho
+P26b	2026-10-17T18:43:40.498Z	2026-10-17T18:43:40.521Z	0.022	0	/home/revisor/trabalho/foremost-ng-bb812a22/src	bash /execucao/evidencias/scripts/entradas/P26b-G-elf.sh
+P27b	2026-10-17T18:43:40.579Z	2026-10-17T18:43:40.595Z	0.015	0	/home/revisor/trabalho/foremost-ng-bb812a22/src	./foremost-ng -v -t elf -i memory.dump -o /tmp/out_c4
+P27b-conf	2026-10-17T18:43:40.673Z	2026-10-17T18:43:40.681Z	0.007	0	/home/revisor/trabalho/foremost-ng-bb812a22/src	sh -c cat\ /tmp/out_c4/audit.txt\;\ file\ /tmp/out_c4/elf/\*.elf\;\ ls\ -l\ /tmp/out_c4/elf/\;\ for\ f\ in\ /tmp/out_c4/elf/\*.elf\;\ do\ echo\ \"===\ Analisando\ \$f\ ===\"\;\ readelf\ -h\ -l\ \"\$f\"\;\ done
+P20a	2026-10-17T18:43:40.802Z	2026-10-17T18:43:41.380Z	0.577	0	/home/revisor/aval	bash /execucao/evidencias/scripts/entradas/P20a-A-amostras.sh
+P28a	2026-10-17T18:43:41.464Z	2026-10-17T18:43:41.536Z	0.071	0	/home/revisor/aval	bash /execucao/evidencias/scripts/entradas/P28a-A-teste-dd.sh
+P28b	2026-10-17T18:43:41.603Z	2026-10-17T18:43:41.869Z	0.264	0	/home/revisor/aval	foremost-ng -i teste.dd -o /home/revisor/aval/saida_todos
+P28c	2026-10-17T18:43:41.959Z	2026-10-17T18:43:42.028Z	0.067	0	/home/revisor/aval	foremost-ng -t evtx\,elf\,exe -i teste.dd -o /home/revisor/aval/saida_tipos
+P28d	2026-10-17T18:43:42.098Z	2026-10-17T18:43:42.159Z	0.060	0	/home/revisor/aval	bash /execucao/evidencias/scripts/entradas/P28d-A-conferencias.sh
+P19a	2026-10-17T18:43:42.221Z	2026-10-17T18:43:50.309Z	8.087	0	/home/revisor/aval	bash /execucao/evidencias/scripts/entradas/P19a-A-evtx-dump.sh
+P29b	2026-10-17T18:43:50.672Z	2026-10-17T18:43:50.691Z	0.018	0	/home/revisor/trabalho/foremost-ng-bb812a22/src	sh -c rm\ -rf\ ./carved-files_nokey\;\ env\ -u\ VT_API_KEY\ ./foremost-ng\ -x\ -t\ elf\ -i\ memory.dump\ -o\ ./carved-files_nokey\;\ echo\ \"exit\ foremost-ng=\$\?\"\;\ cat\ ./carved-files_nokey/audit.txt\;\ ls\ -la\ ./carved-files_nokey/elf/
+P29a	2026-10-17T18:43:50.794Z	2026-10-17T18:43:50.818Z	0.023	0	/home/revisor/aval	bash -c unset\ VT_API_KEY\;\ foremost-ng\ -x\ -t\ elf\ -i\ teste.dd\ -o\ ~/aval/saida_vt_semchave\ 2\>\&1\ \|\ tee\ evidencias/P25_semchave.txt\;\ echo\ \"exit\ foremost-ng=\$\{PIPESTATUS\[0\]\}\"\;\ cat\ saida_vt_semchave/audit.txt
+P34	2026-10-17T18:43:50.979Z	2026-10-17T18:43:51.223Z	0.242	0	/home/revisor/trabalho/foremost-ng-bb812a22/src	sh -c find\ ..\ -name\ \"evidence2.dd\"\;\ echo\ \"find\ exit=\$\?\ \(sem\ linhas\ =\ nenhum\ arquivo\)\"\;\ find\ /\ -xdev\ -name\ \"evidence2.dd\"\ 2\>/dev/null\;\ echo\ \"busca\ em\ /\ concluida\"
+P38a	2026-10-17T18:43:51.289Z	2026-10-17T18:43:51.320Z	0.030	0	/home/revisor/trabalho/foremost-ng-bb812a22/src	bash /execucao/evidencias/scripts/entradas/P38a-A-grep.sh
+P38b	2026-10-17T18:43:51.384Z	2026-10-17T18:43:51.393Z	0.008	0	/home/revisor/trabalho/foremost-ng-bb812a22/src	sh -c grep\ -n\ \"typedef\ struct\ s_spec\"\ -A\ 19\ main.h\;\ grep\ -n\ \"void\ init_all\"\ -A\ 82\ state.c\;\ grep\ -n\ \"unsigned\ char\ \\\*extract_file\"\ -A\ 69\ extract.c
+P11-2	2026-10-17T18:46:45.373Z	2026-10-17T18:46:45.481Z	0.107	0	/home/revisor/trabalho	bash /execucao/evidencias/scripts/entradas/P11-2-sem-cr.sh
+P16-G-cmp	2026-10-17T18:46:45.571Z	2026-10-17T18:46:46.138Z	0.565	0	/home/revisor/trabalho	bash /execucao/evidencias/scripts/entradas/P-G-cmp.sh
+P39-prep	2026-10-17T18:46:46.230Z	2026-10-17T18:46:50.964Z	4.732	0	/home/revisor/dftt	sh -c cp\ /execucao/insumos/dftt-11/11-carve-fat/11-carve-fat.dd\ /execucao/insumos/dftt-12/12-carve-ext2/12-carve-ext2.dd\ .\ \&\&\ md5sum\ 11-carve-fat.dd\ 12-carve-ext2.dd\ \&\&\ sha256sum\ 11-carve-fat.dd\ 12-carve-ext2.dd\ \&\&\ ls\ -l
+P39	2026-10-17T18:46:51.154Z	2026-10-17T18:46:52.327Z	1.171	0	/home/revisor/dftt	foremost-ng -v -i 11-carve-fat.dd -o /home/revisor/dftt/saida11
+P39-conf	2026-10-17T18:46:52.450Z	2026-10-17T18:46:52.480Z	0.029	0	/home/revisor/dftt	sh -c find\ saida11\ -type\ f\ \|\ sort\;\ ls\ -l\ saida11/recovery.log\ 2\>\&1\;\ find\ saida11\ -type\ f\ \!\ -name\ audit.txt\ -exec\ file\ \{\}\ +
+P39-gabarito	2026-10-17T18:46:52.529Z	2026-10-17T18:46:52.663Z	0.132	0	/home/revisor/dftt	python3 /execucao/evidencias/scripts/entradas/compara-gabarito.py /execucao/evidencias/dftt/gabarito-11.tsv /home/revisor/dftt/saida11
+P39-t	2026-10-17T18:46:52.724Z	2026-10-17T18:46:52.973Z	0.248	0	/home/revisor/dftt	foremost-ng -t evtx\,elf\,exe -i 11-carve-fat.dd -o /home/revisor/dftt/saida11-t
+P39-t-conf	2026-10-17T18:46:53.047Z	2026-10-17T18:46:53.070Z	0.021	0	/home/revisor/dftt	sh -c find\ saida11-t\ -mindepth\ 1\ -type\ d\ \|\ sort\;\ find\ saida11-t\ -type\ f\ \|\ sort\;\ cat\ saida11-t/audit.txt
+P41	2026-10-17T18:46:53.259Z	2026-10-17T18:46:55.552Z	2.292	0	/home/revisor/dftt	foremost-ng -v -i 12-carve-ext2.dd -o /home/revisor/dftt/saida12
+P41-conf	2026-10-17T18:46:55.638Z	2026-10-17T18:46:55.662Z	0.022	0	/home/revisor/dftt	sh -c find\ saida12\ -type\ f\ \|\ sort\;\ ls\ -l\ saida12/recovery.log\ 2\>\&1\;\ find\ saida12\ -type\ f\ \!\ -name\ audit.txt\ -exec\ file\ \{\}\ +
+P41-gabarito	2026-10-17T18:46:55.718Z	2026-10-17T18:46:55.803Z	0.084	0	/home/revisor/dftt	python3 /execucao/evidencias/scripts/entradas/compara-gabarito.py /execucao/evidencias/dftt/gabarito-12.tsv /home/revisor/dftt/saida12
+P41-t	2026-10-17T18:46:55.858Z	2026-10-17T18:46:56.368Z	0.509	0	/home/revisor/dftt	foremost-ng -t evtx\,elf\,exe -i 12-carve-ext2.dd -o /home/revisor/dftt/saida12-t
+P41-t-conf	2026-10-17T18:46:56.448Z	2026-10-17T18:46:56.458Z	0.009	0	/home/revisor/dftt	sh -c find\ saida12-t\ -mindepth\ 1\ -type\ d\ \|\ sort\;\ find\ saida12-t\ -type\ f\ \|\ sort\;\ cat\ saida12-t/audit.txt
+P28d-readelf	2026-10-17T18:49:30.376Z	2026-10-17T18:49:30.396Z	0.019	0	/home/revisor/aval	sh -c for\ f\ in\ saida_todos/elf/\*.elf\;\ do\ echo\ \"===\ \$f\"\;\ readelf\ -h\ -l\ \"\$f\"\;\ echo\ \"exit\ readelf=\$\?\"\;\ done

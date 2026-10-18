@@ -1,0 +1,1 @@
+/execucao/ambiente/gravar-sessao.sh: line 90: ./foremost-ng: No such file or directory

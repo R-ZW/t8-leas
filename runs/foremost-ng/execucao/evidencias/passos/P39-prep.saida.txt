@@ -1,0 +1,7 @@
+0069813c892a462f88dc6d376624f7d9  11-carve-fat.dd
+6cbd2c5248fa7030d699eb6cde051623  12-carve-ext2.dd
+83585232e908529286f1ff04c43b4d858604875c733183a9e3b44a07ff818d26  11-carve-fat.dd
+ffeb78b6cf8eed64c241212fb5cd1f3d226dcd58e16b67192f465e4a3ec46342  12-carve-ext2.dd
+total 189788
+-rwxr-xr-x 1 revisor revisor  64979456 Oct 17 18:46 11-carve-fat.dd
+-rwxr-xr-x 1 revisor revisor 129356800 Oct 17 18:46 12-carve-ext2.dd

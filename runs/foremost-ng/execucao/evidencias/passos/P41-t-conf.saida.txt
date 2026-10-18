@@ -1,0 +1,21 @@
+saida12-t/audit.txt
+foremost-ng version 1.5.7 by Cristian Souza
+Audit File
+
+foremost-ng started at Sat Oct 17 18:46:55 2026
+Invocation: foremost-ng -t evtx,elf,exe -i 12-carve-ext2.dd -o /home/revisor/dftt/saida12-t 
+Output directory: /home/revisor/dftt/saida12-t
+Configuration file: /usr/local/etc/foremost.conf
+------------------------------------------------------------------
+File: 12-carve-ext2.dd
+Start: Sat Oct 17 18:46:55 2026
+Length: 123 MB (129356800 bytes)
+ 
+  ID  Name (bs=512)              Size       Offset  Comment                   VT             
+Finish: Sat Oct 17 18:46:56 2026
+
+0 FILES EXTRACTED
+	
+------------------------------------------------------------------
+
+foremost-ng finished at Sat Oct 17 18:46:56 2026

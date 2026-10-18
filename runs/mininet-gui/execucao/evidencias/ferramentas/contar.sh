@@ -1,0 +1,1 @@
+contar() { for r in controllers switches hosts links; do printf "%s=" $r; curl -s localhost:8000/api/mininet/$r | python3 -c 'import json,sys; d=json.load(sys.stdin); print(len(d), sorted(d) if isinstance(d,dict) else d)'; done; printf "start="; curl -s localhost:8000/api/mininet/start; echo; }

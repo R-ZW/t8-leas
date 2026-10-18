@@ -1,0 +1,20 @@
+P15b ELF 4096: original=87200 B recuperado=73752 B -> PREFIXO_IDENTICO (recuperado menor)
+P15b script 524288: original=65 B recuperado=65 B -> IDENTICO
+P18b EVTX sintetico 8192 (cabecalho+chunk): original=69632 B recuperado=65536 B -> PREFIXO_IDENTICO (recuperado menor)
+P21b s1 bash 4096: original=76 B recuperado=76 B -> IDENTICO
+P21b s2 python 16384: original=75 B recuperado=75 B -> IDENTICO
+P21b s3 <32 B 32768: recuperado ausente (/execucao/evidencias/saidas/P21b/out_c2/script/00000064.script)
+P21b s4 so comentarios 49152: original=62 B recuperado=62 B -> IDENTICO
+P24b Mach-O thin 8192: recuperado ausente (/execucao/evidencias/saidas/P24b/out_c3/macho/00000016.macho)
+P24b Mach-O fat 32768: original=8192 B recuperado=8192 B -> IDENTICO
+P27b ELF32 4096: original=4096 B recuperado=4096 B -> IDENTICO
+P27b ELF64 65536: original=87200 B recuperado=73752 B -> PREFIXO_IDENTICO (recuperado menor)
+P29b ELF32 (sem chave): original=4096 B recuperado=4096 B -> IDENTICO
+P29b ELF64 (sem chave): original=87200 B recuperado=73752 B -> PREFIXO_IDENTICO (recuperado menor)
+  Start of section headers:          85152 (bytes into file)
+  Size of section headers:           64 (bytes)
+  Number of section headers:         32
+  LOAD           0x000000 0x0000000000000000 0x0000000000000000 0x001c70 0x001c70 R   0x1000
+  LOAD           0x002000 0x0000000000002000 0x0000000000002000 0x00af11 0x00af11 R E 0x1000
+  LOAD           0x00d000 0x000000000000d000 0x000000000000d000 0x003d50 0x003d50 R   0x1000
+  LOAD           0x011ad0 0x0000000000011ad0 0x0000000000011ad0 0x000548 0x0be7c0 RW  0x1000

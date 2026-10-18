@@ -1,0 +1,8 @@
+== amostras/macho_fat -> saida_todos/macho/00010684.macho
+saida_todos/macho/00010684.macho: Mach-O universal binary with 1 architecture: [x86_64:\012- Mach-O 64-bit x86_64 executable, flags:<NOUNDEFS>]
+8192
+8192
+IDENTICO
+== amostras/macho_thin -> saida_todos/macho/00012748.macho
+saida_todos/macho/00012748.macho: cannot open `saida_todos/macho/00012748.macho' (No such file or directory)
+4096

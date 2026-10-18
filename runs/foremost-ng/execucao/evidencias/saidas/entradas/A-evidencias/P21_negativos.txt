@@ -1,0 +1,2 @@
+amostras/neg_comentario.sh RECUPERADO
+amostras/neg_curto.sh descartado

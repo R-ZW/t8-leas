@@ -1,0 +1,9 @@
+
+> mininet-gui@0.0.1 dev
+> vite
+
+
+  VITE v4.5.9  ready in 4713 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: http://192.168.56.101:5173/

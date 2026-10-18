@@ -1,0 +1,31 @@
+1:00:00:00.385565 VirtualBox VM 7.1.6 r167084 win.amd64 (Jan 21 2025 14:13:52) release log
+11:00:00:00.473282 Host RAM: 16068MB (15.6GB) total, 725MB available
+33:00:00:00.642499 Guest OS type: 'Ubuntu_64'
+52:00:00:01.108163   NumCPUs           <integer> = 0x0000000000000002 (2)
+55:00:00:01.108164   RamSize           <integer> = 0x0000000200000000 (8 589 934 592, 8.0 GiB)
+130:00:00:01.108188   NumCPUs             <integer> = 0x0000000000000002 (2)
+144:00:00:01.108192   Driver <string>  = "ACPIHost" (cb=9)
+149:00:00:01.108194   Driver <string>  = "ACPICpu" (cb=8)
+161:00:00:01.108197   NumCPUs <integer> = 0x0000000000000002 (2)
+252:00:00:01.108221   NumCPUs <integer> = 0x0000000000000002 (2)
+342:00:00:01.108246   NumCPUs            <integer> = 0x0000000000000002 (2)
+438:00:00:01.108270   VRamSize         <integer> = 0x0000000001000000 (16 777 216, 16.0 MiB)
+480:00:00:01.108281   UseNEMInstead       <integer> = 0x0000000000000000 (0)
+485:00:00:01.108282 [/NEM/] (level 1)
+526:00:00:01.108419 HM: HMR3Init: Attempting fall back to NEM: VT-x is not available
+527:00:00:01.185259 NEM:  info: Found optional import WinHvPlatform.dll!WHvQueryGpaRangeDirtyBitmap.
+528:00:00:01.185270 NEM:  info: Found optional import vid.dll!VidGetHvPartitionId.
+529:00:00:01.185272 NEM:  info: Found optional import vid.dll!VidGetPartitionProperty.
+530:00:00:01.185402 NEM: WHvCapabilityCodeHypervisorPresent is TRUE, so this might work...
+531:00:00:01.185405 NEM: WHvCapabilityCodeExtendedVmExits      = 0x0000000000007fff
+532:00:00:01.185408 NEM:                       fExtendedMsrExit: 1
+533:00:00:01.185413 NEM:                     fExtendedCpuIdExit: 1
+534:00:00:01.185415 NEM:                      fExtendedXcptExit: 1
+535:00:00:01.185417 NEM: Warning! Unknown VM exit definitions: 0x7fff
+536:00:00:01.185419 NEM: WHvCapabilityCodeFeatures             = 0x00000000000002ff
+537:00:00:01.185421 NEM: Supported exception exit bitmap: 0xf7dfb
+538:00:00:01.185428 NEM: WHvCapabilityCodeProcessorVendor      = 1 - Intel
+539:00:00:01.185435 NEM: WHvCapabilityCodeProcessorFeatures    = 0x3e1bfbcfe7f7859f
+540:00:00:01.185437 NEM:                            Sse3Support: 1
+541:00:00:01.185438 NEM:                        LahfSahfSupport: 1
+615:00:00:01.186438 NEM: NEMR3Init: Snail execution mode is active!

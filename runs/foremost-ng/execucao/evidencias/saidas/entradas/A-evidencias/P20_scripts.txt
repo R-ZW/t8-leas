@@ -1,0 +1,9 @@
+== amostras/s_bash.sh -> saida_todos/script/00018902.script
+#!/bin/bash
+IDENTICO
+== amostras/s_ps.ps1 -> saida_todos/script/00020951.script
+#!/usr/bin/env pwsh
+IDENTICO
+== amostras/s_py.py -> saida_todos/script/00023000.script
+#!/usr/bin/env python3
+IDENTICO

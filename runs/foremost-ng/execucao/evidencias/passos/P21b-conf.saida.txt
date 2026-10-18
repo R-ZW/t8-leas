@@ -1,0 +1,44 @@
+foremost-ng version 1.5.7 by Cristian Souza
+Audit File
+
+foremost-ng started at Sat Oct 17 18:43:39 2026
+Invocation: ./foremost-ng -v -t script -i c2_script.img -o /tmp/out_c2 
+Output directory: /tmp/out_c2
+Configuration file: /home/revisor/trabalho/foremost-ng-bb812a22/src/foremost.conf
+------------------------------------------------------------------
+File: c2_script.img
+Start: Sat Oct 17 18:43:39 2026
+Length: 128 KB (131072 bytes)
+ 
+  ID  Name (bs=512)              Size       Offset  Comment                   VT             
+   0: 00000008.script            76 B         4096                            N/A            
+   1: 00000032.script            75 B        16384                            N/A            
+   2: 00000096.script            62 B        49152                            N/A            
+Finish: Sat Oct 17 18:43:39 2026
+
+3 FILES EXTRACTED
+	
+script=3
+------------------------------------------------------------------
+
+foremost-ng finished at Sat Oct 17 18:43:39 2026
+total 12
+-rw-r--r-- 1 revisor revisor 76 Oct 17 18:43 00000008.script
+-rw-r--r-- 1 revisor revisor 75 Oct 17 18:43 00000032.script
+-rw-r--r-- 1 revisor revisor 62 Oct 17 18:43 00000096.script
+==> /tmp/out_c2/script/00000008.script <==
+#!/bin/bash
+# Valid bash script
+echo "Hello from carved bash script"
+exit 0
+
+==> /tmp/out_c2/script/00000032.script <==
+#!/usr/bin/env python3
+# Valid python script
+import sys
+print(sys.version)
+
+==> /tmp/out_c2/script/00000096.script <==
+#!/bin/bash
+# apenas comentario 1
+# apenas comentario 2 longo

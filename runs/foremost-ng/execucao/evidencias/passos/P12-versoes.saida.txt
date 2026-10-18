@@ -1,0 +1,17 @@
+file-5.45
+GNU readelf (GNU Binutils for Ubuntu) 2.42
+Python 3.12.3
+ii  curl           8.5.0-2ubuntu10.6      amd64        command line tool for transferring data with URL syntax
+ii  file           1:5.45-3build1         amd64        Recognize the type of data in a file using "magic" numbers
+ii  gcc-multilib   4:13.2.0-7ubuntu1      amd64        GNU C compiler (multilib files)
+ii  jq             1.7.1-3build1          amd64        lightweight and flexible command-line JSON processor
+ii  python3-evtx   0.7.4-1ubuntu0.24.04.1 all          parser for recent Windows Event Log files -- Python 3 version
+evtx_dump.py
+evtx_dump_chunk_slack.py
+evtx_eid_record_numbers.py
+evtx_extract_record.py
+evtx_filter_records.py
+evtx_info.py
+evtx_record_structure.py
+evtx_structure.py
+evtx_templates.py

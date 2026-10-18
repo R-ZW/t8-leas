@@ -1,0 +1,2873 @@
+INFO:     Started server process [1647]
+INFO:     Waiting for application startup.
+*** errRun: ['grep', '-c', 'processor', '/proc/cpuinfo'] 
+2
+  0*** Setting resource limits
+*** Creating network
+*** Adding controller
+*** errRun: ['which', 'controller'] 
+/usr/local/bin/controller
+  0*** errRun: ['which', 'mnexec'] 
+/usr/bin/mnexec
+  0*** errRun: ['which', 'ifconfig'] 
+/usr/sbin/ifconfig
+  0_popen ['mnexec', '-cd', 'env', 'PS1=\x7f', 'bash', '--norc', '--noediting', '-is', 'mininet:c0'] 1718*** c0 : ('unset HISTFILE; stty -echo; set +m',)
+unset HISTFILE; stty -echo; set +m
+*** errRun: ['which', 'telnet'] 
+/usr/bin/telnet
+  0*** c0 : ('echo A | telnet -e A 127.0.0.1 6653',)
+Telnet escape character is 'A'.
+Trying 127.0.0.1...
+telnet: Unable to connect to remote host: Connection refused
+*** Adding hosts:
+
+*** Adding switches:
+
+*** Adding links:
+
+*** Configuring hosts
+
+*** Creating network
+*** Adding hosts:
+
+*** Adding switches:
+
+*** Adding links:
+
+*** Configuring hosts
+
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     192.168.56.1:62888 - "OPTIONS /api/mininet/start HTTP/1.1" 200 OK
+INFO:     192.168.56.1:62888 - "GET /api/mininet/start HTTP/1.1" 200 OK
+INFO:     192.168.56.1:62888 - "OPTIONS /api/mininet/hosts HTTP/1.1" 200 OK
+INFO:     192.168.56.1:62888 - "GET /api/mininet/hosts HTTP/1.1" 200 OK
+INFO:     192.168.56.1:62888 - "OPTIONS /api/mininet/switches HTTP/1.1" 200 OK
+INFO:     192.168.56.1:63779 - "GET /api/mininet/switches HTTP/1.1" 200 OK
+INFO:     192.168.56.1:63779 - "OPTIONS /api/mininet/controllers HTTP/1.1" 200 OK
+INFO:     192.168.56.1:63779 - "GET /api/mininet/controllers HTTP/1.1" 200 OK
+INFO:     192.168.56.1:63779 - "OPTIONS /api/mininet/links HTTP/1.1" 200 OK
+INFO:     192.168.56.1:63779 - "GET /api/mininet/links HTTP/1.1" 200 OK
+INFO:     192.168.56.1:59521 - "GET /api/mininet/start HTTP/1.1" 200 OK
+INFO:     192.168.56.1:59521 - "GET /api/mininet/hosts HTTP/1.1" 200 OK
+INFO:     192.168.56.1:59521 - "GET /api/mininet/switches HTTP/1.1" 200 OK
+INFO:     192.168.56.1:59521 - "GET /api/mininet/controllers HTTP/1.1" 200 OK
+INFO:     192.168.56.1:59521 - "GET /api/mininet/links HTTP/1.1" 200 OK
+INFO:     192.168.56.1:63761 - "OPTIONS /api/mininet/controllers HTTP/1.1" 200 OK
+id='c1' type='controller' name='c1' label='c1' x=219.23833494441112 y=-0.8833627505716147 remote=False ip=None port=None 
+_popen ['mnexec', '-cd', 'env', 'PS1=\x7f', 'bash', '--norc', '--noediting', '-is', 'mininet:c1'] 2180*** c1 : ('unset HISTFILE; stty -echo; set +m',)
+unset HISTFILE; stty -echo; set +m
+*** errRun: ['which', 'telnet'] 
+/usr/bin/telnet
+  0*** c1 : ('echo A | telnet -e A 127.0.0.1 6653',)
+Telnet escape character is 'A'.
+Trying 127.0.0.1...
+telnet: Unable to connect to remote host: Connection refused
+*** errRun: ['which', 'controller'] 
+/usr/local/bin/controller
+  0*** c1 : ('controller ptcp:6653 1>/tmp/c1.log 2>/tmp/c1.log &',)
+c1 
+INFO:     192.168.56.1:53627 - "POST /api/mininet/controllers HTTP/1.1" 200 OK
+INFO:     192.168.56.1:53646 - "OPTIONS /api/mininet/switches HTTP/1.1" 200 OK
+CREATING SWITCH id='s1' type='sw' name='s1' label='s1 <00:00:00:00:00:00:00:01>' x=250.0 y=150.0 ports=4 controller=None
+*** errRun: ['which', 'ovs-vsctl'] 
+/usr/bin/ovs-vsctl
+  0*** errRun: ['ovs-vsctl', '-t', '1', 'show'] 
+e7a21c84-4464-4b53-9d84-7ac031b48c46
+    ovs_version: "2.13.1"
+  0*** errRun: ['ovs-vsctl', '--version'] 
+ovs-vsctl (Open vSwitch) 2.13.1
+DB Schema 8.2.0
+  0_popen ['mnexec', '-cd', 'env', 'PS1=\x7f', 'bash', '--norc', '--noediting', '-is', 'mininet:s1'] 2190*** s1 : ('unset HISTFILE; stty -echo; set +m',)
+unset HISTFILE; stty -echo; set +m
+
+added intf lo (0) to node s1
+*** s1 : ('ifconfig', 'lo', 'up')
+*** s1 : ('ovs-vsctl', ' -- --if-exists del-br s1 -- add-br s1 -- set bridge s1 controller=[] other_config:datapath-id=0000000000000001 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s1')
+INFO:     192.168.56.1:53646 - "POST /api/mininet/switches HTTP/1.1" 200 OK
+INFO:     192.168.56.1:53646 - "OPTIONS /api/mininet/associate_switch HTTP/1.1" 200 OK
+*** s1 : ('ovs-vsctl', '-- --id=@s1c1 create Controller target=\\"tcp:127.0.0.1:6653\\" max_backoff=1000 -- --if-exists del-br s1 -- add-br s1 -- set bridge s1 controller=[@s1c1] other_config:datapath-id=0000000000000001 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s1')
+bad5a517-a87e-484c-834c-d285a8132f05
+INFO:     192.168.56.1:53831 - "POST /api/mininet/associate_switch HTTP/1.1" 200 OK
+INFO:     192.168.56.1:53831 - "OPTIONS /api/mininet/hosts HTTP/1.1" 200 OK
+id='h1' type='host' name='h1' label='h1' x=200.0 y=300.0 ip='10.0.0.1/8' mac='000000000001' 
+*** errRun: ['which', 'mnexec'] 
+/usr/bin/mnexec
+  0*** errRun: ['which', 'ifconfig'] 
+/usr/sbin/ifconfig
+  0_popen ['mnexec', '-cdn', 'env', 'PS1=\x7f', 'bash', '--norc', '--noediting', '-is', 'mininet:h1'] 2217*** h1 : ('unset HISTFILE; stty -echo; set +m',)
+unset HISTFILE; stty -echo; set +m
+h1 
+INFO:     192.168.56.1:53646 - "POST /api/mininet/hosts HTTP/1.1" 200 OK
+INFO:     192.168.56.1:53646 - "OPTIONS /api/mininet/links HTTP/1.1" 200 OK
+*** s1 : ('ip link add name s1-eth1 address 12:01:ad:14:c9:af type veth peer name h1-eth0 address 56:98:2e:2f:13:f0 netns 2217',)
+
+added intf s1-eth1 (1) to node s1
+*** s1 : ('ifconfig', 's1-eth1', 'up')
+
+added intf h1-eth0 (0) to node h1
+moving h1-eth0 into namespace for h1 
+*** h1 : ('ifconfig', 'h1-eth0', 'up')
+*** s1 : ('ovs-vsctl', '-- --id=@s1c1 create Controller target=\\"tcp:127.0.0.1:6653\\" max_backoff=1000 -- --if-exists del-br s1 -- add-br s1 -- set bridge s1 controller=[@s1c1] other_config:datapath-id=0000000000000001 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s1 -- add-port s1 s1-eth1 -- set Interface s1-eth1 ofport_request=1')
+899ce156-44f5-4a1f-b391-4e49a47bc127
+*** h1 : ('ifconfig', 'h1-eth0', 'down')
+*** h1 : ('ifconfig', 'h1-eth0', 'hw', 'ether', '00:00:00:00:00:01')
+*** h1 : ('ifconfig', 'h1-eth0', 'up')
+*** h1 : ('ifconfig', 'h1-eth0', '10.0.0.1/8', 'up')
+*** h1 : ('ifconfig lo up',)
+INFO:     192.168.56.1:53831 - "POST /api/mininet/links HTTP/1.1" 200 OK
+id='h2' type='host' name='h2' label='h2' x=290.0 y=300.0 ip='10.0.0.2/8' mac='000000000002' 
+_popen ['mnexec', '-cdn', 'env', 'PS1=\x7f', 'bash', '--norc', '--noediting', '-is', 'mininet:h2'] 2235*** h2 : ('unset HISTFILE; stty -echo; set +m',)
+unset HISTFILE; stty -echo; set +m
+h2 
+INFO:     192.168.56.1:53831 - "POST /api/mininet/hosts HTTP/1.1" 200 OK
+*** s1 : ('ip link add name s1-eth2 address 62:aa:0d:a2:3e:52 type veth peer name h2-eth0 address a2:ba:ba:4c:6e:aa netns 2235',)
+
+added intf s1-eth2 (2) to node s1
+*** s1 : ('ifconfig', 's1-eth2', 'up')
+
+added intf h2-eth0 (0) to node h2
+moving h2-eth0 into namespace for h2 
+*** h2 : ('ifconfig', 'h2-eth0', 'up')
+*** s1 : ('ovs-vsctl', '-- --id=@s1c1 create Controller target=\\"tcp:127.0.0.1:6653\\" max_backoff=1000 -- --if-exists del-br s1 -- add-br s1 -- set bridge s1 controller=[@s1c1] other_config:datapath-id=0000000000000001 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s1 -- add-port s1 s1-eth1 -- set Interface s1-eth1 ofport_request=1 -- add-port s1 s1-eth2 -- set Interface s1-eth2 ofport_request=2')
+418ea543-91af-453f-8110-1b2157ee4de6
+*** h2 : ('ifconfig', 'h2-eth0', 'down')
+*** h2 : ('ifconfig', 'h2-eth0', 'hw', 'ether', '00:00:00:00:00:02')
+*** h2 : ('ifconfig', 'h2-eth0', 'up')
+*** h2 : ('ifconfig', 'h2-eth0', '10.0.0.2/8', 'up')
+*** h2 : ('ifconfig lo up',)
+INFO:     192.168.56.1:53831 - "POST /api/mininet/links HTTP/1.1" 200 OK
+INFO:     192.168.56.1:64671 - "OPTIONS /api/mininet/pingall HTTP/1.1" 200 OK
+*** Ping: testing ping reachability
+h1 -> *** h1 : ('ping -c1  10.0.0.2',)
+PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
+64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=24.3 ms
+
+--- 10.0.0.2 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 24.340/24.340/24.340/0.000 ms
+h2 
+h2 -> *** h2 : ('ping -c1  10.0.0.1',)
+PING 10.0.0.1 (10.0.0.1) 56(84) bytes of data.
+64 bytes from 10.0.0.1: icmp_seq=1 ttl=64 time=4.67 ms
+
+--- 10.0.0.1 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 4.674/4.674/4.674/0.000 ms
+h1 
+*** Results: 
+ h1->h2: 1/1, rtt min/avg/max/mdev 24.340/24.340/24.340/0.000 ms
+ h2->h1: 1/1, rtt min/avg/max/mdev 4.674/4.674/4.674/0.000 ms
+[(<Host h1: h1-eth0:10.0.0.1 pid=2217> , <Host h2: h2-eth0:10.0.0.2 pid=2235> , (1, 1, 24.34, 24.34, 24.34, 0.0)), (<Host h2: h2-eth0:10.0.0.2 pid=2235> , <Host h1: h1-eth0:10.0.0.1 pid=2217> , (1, 1, 4.674, 4.674, 4.674, 0.0))] 
+INFO:     192.168.56.1:59906 - "POST /api/mininet/pingall HTTP/1.1" 200 OK
+DEBUG:    = connection is CONNECTING
+DEBUG:    < GET /api/mininet/terminal/h1 HTTP/1.1
+DEBUG:    < host: 192.168.56.101:8000
+DEBUG:    < connection: Upgrade
+DEBUG:    < pragma: no-cache
+DEBUG:    < cache-control: no-cache
+DEBUG:    < user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0
+DEBUG:    < upgrade: websocket
+DEBUG:    < origin: http://192.168.56.101:5173
+DEBUG:    < sec-websocket-version: 13
+DEBUG:    < accept-encoding: gzip, deflate
+DEBUG:    < accept-language: pt-BR,pt;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+DEBUG:    < sec-websocket-key: 3O/AxVQYZjnilbYulY/N9Q==
+DEBUG:    < sec-websocket-extensions: permessage-deflate; client_max_window_bits
+INFO:     ('192.168.56.1', 53094) - "WebSocket /api/mininet/terminal/h1" [accepted]
+_popen ['mnexec', '-da', '2217', '/bin/bash', '-i'] 2258DEBUG:    > HTTP/1.1 101 Switching Protocols
+DEBUG:    > Upgrade: websocket
+DEBUG:    > Connection: Upgrade
+DEBUG:    > Sec-WebSocket-Accept: 7yGaCr4Y0QEQBRnIymiWJfC/q4k=
+DEBUG:    > Sec-WebSocket-Extensions: permessage-deflate
+DEBUG:    > date: Sat, 17 Oct 2026 18:44:35 GMT
+DEBUG:    > server: uvicorn
+INFO:     connection open
+DEBUG:    = connection is OPEN
+DEBUG:    > TEXT 'root@mininet-vm:/home/mininet/mininet-gui/mininet-gui-backend# ' [63 bytes]
+DEBUG:    % sending keepalive ping
+DEBUG:    > PING bb 23 45 4d [binary, 4 bytes]
+DEBUG:    < PONG bb 23 45 4d [binary, 4 bytes]
+DEBUG:    % received keepalive pong
+DEBUG:    % sending keepalive ping
+DEBUG:    > PING cb 19 bc 2f [binary, 4 bytes]
+DEBUG:    < PONG cb 19 bc 2f [binary, 4 bytes]
+DEBUG:    % received keepalive pong
+DEBUG:    % sending keepalive ping
+DEBUG:    > PING cc ec f6 c6 [binary, 4 bytes]
+DEBUG:    < PONG cc ec f6 c6 [binary, 4 bytes]
+DEBUG:    % received keepalive pong
+DEBUG:    % sending keepalive ping
+DEBUG:    > PING fe 14 20 4a [binary, 4 bytes]
+DEBUG:    < PONG fe 14 20 4a [binary, 4 bytes]
+DEBUG:    % received keepalive pong
+DEBUG:    % sending keepalive ping
+DEBUG:    > PING 73 af 48 63 [binary, 4 bytes]
+DEBUG:    < PONG 73 af 48 63 [binary, 4 bytes]
+DEBUG:    % received keepalive pong
+DEBUG:    < TEXT 'i' [1 byte]
+RECEIVED b'i'
+DEBUG:    > TEXT 'i' [1 byte]
+DEBUG:    < TEXT 'p' [1 byte]
+RECEIVED b'p'
+DEBUG:    > TEXT 'p' [1 byte]
+DEBUG:    < TEXT 'e' [1 byte]
+RECEIVED b'e'
+DEBUG:    > TEXT 'e' [1 byte]
+DEBUG:    < TEXT 'r' [1 byte]
+RECEIVED b'r'
+DEBUG:    > TEXT 'r' [1 byte]
+DEBUG:    < TEXT 'f' [1 byte]
+RECEIVED b'f'
+DEBUG:    > TEXT 'f' [1 byte]
+DEBUG:    < TEXT ' ' [1 byte]
+RECEIVED b' '
+DEBUG:    > TEXT ' ' [1 byte]
+DEBUG:    < TEXT '-' [1 byte]
+RECEIVED b'-'
+DEBUG:    > TEXT '-' [1 byte]
+DEBUG:    < TEXT 's' [1 byte]
+RECEIVED b's'
+DEBUG:    > TEXT 's' [1 byte]
+DEBUG:    < TEXT '\n' [1 byte]
+RECEIVED b'\n'
+DEBUG:    > TEXT '\r\n' [2 bytes]
+DEBUG:    > TEXT '-----------------------------------------------...-------------------\r\n' [198 bytes]
+DEBUG:    = connection is CONNECTING
+DEBUG:    < GET /api/mininet/terminal/h2 HTTP/1.1
+DEBUG:    < host: 192.168.56.101:8000
+DEBUG:    < connection: Upgrade
+DEBUG:    < pragma: no-cache
+DEBUG:    < cache-control: no-cache
+DEBUG:    < user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0
+DEBUG:    < upgrade: websocket
+DEBUG:    < origin: http://192.168.56.101:5173
+DEBUG:    < sec-websocket-version: 13
+DEBUG:    < accept-encoding: gzip, deflate
+DEBUG:    < accept-language: pt-BR,pt;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+DEBUG:    < sec-websocket-key: zP4UBVjvA5zkojubRMyt/g==
+DEBUG:    < sec-websocket-extensions: permessage-deflate; client_max_window_bits
+INFO:     ('192.168.56.1', 61819) - "WebSocket /api/mininet/terminal/h2" [accepted]
+_popen ['mnexec', '-da', '2235', '/bin/bash', '-i'] 2272DEBUG:    > HTTP/1.1 101 Switching Protocols
+DEBUG:    > Upgrade: websocket
+DEBUG:    > Connection: Upgrade
+DEBUG:    > Sec-WebSocket-Accept: FZEVV4PDwtDJmOhKB+RTqmdYyhQ=
+DEBUG:    > Sec-WebSocket-Extensions: permessage-deflate
+DEBUG:    > date: Sat, 17 Oct 2026 18:46:31 GMT
+DEBUG:    > server: uvicorn
+INFO:     connection open
+DEBUG:    = connection is OPEN
+DEBUG:    > TEXT 'root@mininet-vm:/home/mininet/mininet-gui/mininet-gui-backend# ' [63 bytes]
+DEBUG:    < TEXT 'i' [1 byte]
+RECEIVED b'i'
+DEBUG:    > TEXT 'i' [1 byte]
+DEBUG:    < TEXT 'p' [1 byte]
+RECEIVED b'p'
+DEBUG:    > TEXT 'p' [1 byte]
+DEBUG:    < TEXT 'e' [1 byte]
+RECEIVED b'e'
+DEBUG:    > TEXT 'e' [1 byte]
+DEBUG:    < TEXT 'r' [1 byte]
+RECEIVED b'r'
+DEBUG:    < TEXT 'f' [1 byte]
+DEBUG:    > TEXT 'r' [1 byte]
+RECEIVED b'f'
+DEBUG:    > TEXT 'f' [1 byte]
+DEBUG:    < TEXT ' ' [1 byte]
+RECEIVED b' '
+DEBUG:    > TEXT ' ' [1 byte]
+DEBUG:    < TEXT '-' [1 byte]
+RECEIVED b'-'
+DEBUG:    > TEXT '-' [1 byte]
+DEBUG:    < TEXT 'c' [1 byte]
+RECEIVED b'c'
+DEBUG:    > TEXT 'c' [1 byte]
+DEBUG:    < TEXT ' ' [1 byte]
+RECEIVED b' '
+DEBUG:    > TEXT ' ' [1 byte]
+DEBUG:    < TEXT '1' [1 byte]
+RECEIVED b'1'
+DEBUG:    > TEXT '1' [1 byte]
+DEBUG:    < TEXT '0' [1 byte]
+RECEIVED b'0'
+DEBUG:    > TEXT '0' [1 byte]
+DEBUG:    < TEXT '.' [1 byte]
+RECEIVED b'.'
+DEBUG:    > TEXT '.' [1 byte]
+DEBUG:    < TEXT '0' [1 byte]
+RECEIVED b'0'
+DEBUG:    > TEXT '0' [1 byte]
+DEBUG:    < TEXT '.' [1 byte]
+RECEIVED b'.'
+DEBUG:    > TEXT '.' [1 byte]
+DEBUG:    < TEXT '0' [1 byte]
+RECEIVED b'0'
+DEBUG:    > TEXT '<et/mininet-gui/mininet-gui-backend# iperf -c 1...                       ' [77 bytes]
+DEBUG:    < TEXT '.' [1 byte]
+RECEIVED b'.'
+DEBUG:    > TEXT '.' [1 byte]
+DEBUG:    < TEXT '1' [1 byte]
+RECEIVED b'1'
+DEBUG:    > TEXT '1' [1 byte]
+DEBUG:    < TEXT '\n' [1 byte]
+RECEIVED b'\n'
+DEBUG:    > TEXT '\r\n' [2 bytes]
+DEBUG:    > TEXT '-----------------------------------------------... 10.0.0.1 port 5001\r\n' [276 bytes]
+DEBUG:    > TEXT '[  6] local 10.0.0.1 port 5001 connected with 10.0.0.2 port 47106' [65 bytes]
+DEBUG:    > TEXT '\r\n' [2 bytes]
+DEBUG:    % sending keepalive ping
+DEBUG:    > PING 1a a3 91 f7 [binary, 4 bytes]
+DEBUG:    < PONG 1a a3 91 f7 [binary, 4 bytes]
+DEBUG:    % received keepalive pong
+DEBUG:    > TEXT '[ ID] Interval       Transfer     Bandwidth\r\n...tes  6.62 Gbits/sec\r\n' [95 bytes]
+DEBUG:    % sending keepalive ping
+DEBUG:    > PING d3 3e 91 4b [binary, 4 bytes]
+DEBUG:    % sending keepalive ping
+DEBUG:    > PING 9e e5 9e 8e [binary, 4 bytes]
+DEBUG:    < PONG d3 3e 91 4b [binary, 4 bytes]
+DEBUG:    < PONG 9e e5 9e 8e [binary, 4 bytes]
+DEBUG:    % received keepalive pong
+DEBUG:    % received keepalive pong
+DEBUG:    > TEXT '[ ID] Interval       Transfer     Bandwidth\r\n...tes  6.62 Gbits/sec\r\n' [95 bytes]
+DEBUG:    > TEXT 'root@mininet-vm:/home/mininet/mininet-gui/mininet-gui-backend# ' [63 bytes]
+DEBUG:    % sending keepalive ping
+DEBUG:    > PING 9d 73 3a fb [binary, 4 bytes]
+DEBUG:    % sending keepalive ping
+DEBUG:    > PING 32 95 72 04 [binary, 4 bytes]
+DEBUG:    < PONG 9d 73 3a fb [binary, 4 bytes]
+DEBUG:    < PONG 32 95 72 04 [binary, 4 bytes]
+DEBUG:    % received keepalive pong
+DEBUG:    % received keepalive pong
+DEBUG:    < TEXT '\x03' [1 byte]
+RECEIVED b'\x03'
+DEBUG:    > TEXT '^Croot@mininet-vm:/home/mininet/mininet-gui/mininet-gui-backend# ' [65 bytes]
+DEBUG:    % sending keepalive ping
+DEBUG:    > PING a1 a0 f9 00 [binary, 4 bytes]
+DEBUG:    % sending keepalive ping
+DEBUG:    > PING 'Gl\x04\x1b' [text, 4 bytes]
+DEBUG:    < PONG a1 a0 f9 00 [binary, 4 bytes]
+DEBUG:    % received keepalive pong
+DEBUG:    < PONG 'Gl\x04\x1b' [text, 4 bytes]
+DEBUG:    % received keepalive pong
+id='c2' type='controller' name='c2' label='c2 <127.0.0.1:6633>' x=19.730534891200953 y=-105.91122905779801 remote=True ip='127.0.0.1' port=6633 
+_popen ['mnexec', '-cd', 'env', 'PS1=\x7f', 'bash', '--norc', '--noediting', '-is', 'mininet:c2'] 2288*** c2 : ('unset HISTFILE; stty -echo; set +m',)
+unset HISTFILE; stty -echo; set +m
+*** c2 : ('echo A | telnet -e A 127.0.0.1 6633',)
+Telnet escape character is 'A'.
+Trying 127.0.0.1...
+telnet: Unable to connect to remote host: Connection refused
+Unable to contact the remote controller at 127.0.0.1:6633
+c2 
+INFO:     192.168.56.1:58702 - "POST /api/mininet/controllers HTTP/1.1" 200 OK
+DEBUG:    % sending keepalive ping
+DEBUG:    > PING 4a f4 15 26 [binary, 4 bytes]
+DEBUG:    < PONG 4a f4 15 26 [binary, 4 bytes]
+DEBUG:    % sending keepalive ping
+DEBUG:    > PING 4e d1 38 b1 [binary, 4 bytes]
+DEBUG:    % received keepalive pong
+DEBUG:    < PONG 4e d1 38 b1 [binary, 4 bytes]
+DEBUG:    % received keepalive pong
+CREATING SWITCH id='s2' type='sw' name='s2' label='s2 <00:00:00:00:00:00:00:02>' x=250.0 y=150.0 ports=4 controller=None
+_popen ['mnexec', '-cd', 'env', 'PS1=\x7f', 'bash', '--norc', '--noediting', '-is', 'mininet:s2'] 2292*** s2 : ('unset HISTFILE; stty -echo; set +m',)
+unset HISTFILE; stty -echo; set +m
+
+added intf lo (0) to node s2
+*** s2 : ('ifconfig', 'lo', 'up')
+*** s2 : ('ovs-vsctl', ' -- --if-exists del-br s2 -- add-br s2 -- set bridge s2 controller=[] other_config:datapath-id=0000000000000002 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s2')
+INFO:     192.168.56.1:53747 - "POST /api/mininet/switches HTTP/1.1" 200 OK
+*** s2 : ('ovs-vsctl', '-- --id=@s2c2 create Controller target=\\"tcp:127.0.0.1:6633\\" max_backoff=1000 -- --if-exists del-br s2 -- add-br s2 -- set bridge s2 controller=[@s2c2] other_config:datapath-id=0000000000000002 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s2')
+fcb8ef38-76d9-4266-863b-8cea3c61d2c1
+INFO:     192.168.56.1:53747 - "POST /api/mininet/associate_switch HTTP/1.1" 200 OK
+id='h3' type='host' name='h3' label='h3' x=200.0 y=300.0 ip='10.0.0.3/8' mac='000000000003' 
+_popen ['mnexec', '-cdn', 'env', 'PS1=\x7f', 'bash', '--norc', '--noediting', '-is', 'mininet:h3'] 2308*** h3 : ('unset HISTFILE; stty -echo; set +m',)
+unset HISTFILE; stty -echo; set +m
+h3 
+INFO:     192.168.56.1:53747 - "POST /api/mininet/hosts HTTP/1.1" 200 OK
+*** s2 : ('ip link add name s2-eth1 address 9e:90:6e:8b:a3:ee type veth peer name h3-eth0 address 46:1a:d0:59:f0:51 netns 2308',)
+
+added intf s2-eth1 (1) to node s2
+*** s2 : ('ifconfig', 's2-eth1', 'up')
+
+added intf h3-eth0 (0) to node h3
+moving h3-eth0 into namespace for h3 
+*** h3 : ('ifconfig', 'h3-eth0', 'up')
+*** s2 : ('ovs-vsctl', '-- --id=@s2c2 create Controller target=\\"tcp:127.0.0.1:6633\\" max_backoff=1000 -- --if-exists del-br s2 -- add-br s2 -- set bridge s2 controller=[@s2c2] other_config:datapath-id=0000000000000002 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s2 -- add-port s2 s2-eth1 -- set Interface s2-eth1 ofport_request=1')
+1276cd4e-e841-4fd6-94b7-f190e7064538
+*** h3 : ('ifconfig', 'h3-eth0', 'down')
+*** h3 : ('ifconfig', 'h3-eth0', 'hw', 'ether', '00:00:00:00:00:03')
+*** h3 : ('ifconfig', 'h3-eth0', 'up')
+*** h3 : ('ifconfig', 'h3-eth0', '10.0.0.3/8', 'up')
+*** h3 : ('ifconfig lo up',)
+INFO:     192.168.56.1:53747 - "POST /api/mininet/links HTTP/1.1" 200 OK
+id='h4' type='host' name='h4' label='h4' x=290.0 y=300.0 ip='10.0.0.4/8' mac='000000000004' 
+_popen ['mnexec', '-cdn', 'env', 'PS1=\x7f', 'bash', '--norc', '--noediting', '-is', 'mininet:h4'] 2324*** h4 : ('unset HISTFILE; stty -echo; set +m',)
+unset HISTFILE; stty -echo; set +m
+h4 
+INFO:     192.168.56.1:53747 - "POST /api/mininet/hosts HTTP/1.1" 200 OK
+*** s2 : ('ip link add name s2-eth2 address 2a:4d:c8:90:0d:26 type veth peer name h4-eth0 address 2e:77:45:6c:ef:60 netns 2324',)
+
+added intf s2-eth2 (2) to node s2
+*** s2 : ('ifconfig', 's2-eth2', 'up')
+
+added intf h4-eth0 (0) to node h4
+moving h4-eth0 into namespace for h4 
+*** h4 : ('ifconfig', 'h4-eth0', 'up')
+*** s2 : ('ovs-vsctl', '-- --id=@s2c2 create Controller target=\\"tcp:127.0.0.1:6633\\" max_backoff=1000 -- --if-exists del-br s2 -- add-br s2 -- set bridge s2 controller=[@s2c2] other_config:datapath-id=0000000000000002 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s2 -- add-port s2 s2-eth1 -- set Interface s2-eth1 ofport_request=1 -- add-port s2 s2-eth2 -- set Interface s2-eth2 ofport_request=2')
+3fd6a5b3-1caa-4e56-a1a4-3ce394788d4e
+*** h4 : ('ifconfig', 'h4-eth0', 'down')
+*** h4 : ('ifconfig', 'h4-eth0', 'hw', 'ether', '00:00:00:00:00:04')
+*** h4 : ('ifconfig', 'h4-eth0', 'up')
+*** h4 : ('ifconfig', 'h4-eth0', '10.0.0.4/8', 'up')
+*** h4 : ('ifconfig lo up',)
+INFO:     192.168.56.1:53747 - "POST /api/mininet/links HTTP/1.1" 200 OK
+DEBUG:    % sending keepalive ping
+DEBUG:    > PING 3a 4d 98 c4 [binary, 4 bytes]
+DEBUG:    % sending keepalive ping
+DEBUG:    > PING c0 69 ea 91 [binary, 4 bytes]
+DEBUG:    < PONG 3a 4d 98 c4 [binary, 4 bytes]
+DEBUG:    < PONG c0 69 ea 91 [binary, 4 bytes]
+DEBUG:    % received keepalive pong
+DEBUG:    % received keepalive pong
+INFO:     192.168.56.1:51929 - "OPTIONS /api/mininet/node_position HTTP/1.1" 200 OK
+data: {'node_id': 's2', 'position': [-192.66775049690258, 90.97763326707968]}
+before update xy (250.0, 150.0)
+updated xy (-192.66775049690258, 90.97763326707968)
+INFO:     192.168.56.1:51929 - "POST /api/mininet/node_position HTTP/1.1" 200 OK
+data: {'node_id': 'h3', 'position': [-242.53435288657911, 221.32722615349715]}
+before update xy (200.0, 300.0)
+updated xy (-242.53435288657911, 221.32722615349715)
+INFO:     192.168.56.1:51929 - "POST /api/mininet/node_position HTTP/1.1" 200 OK
+data: {'node_id': 'h4', 'position': [-152.40099547553007, 221.35093413768348]}
+before update xy (290.0, 300.0)
+updated xy (-152.40099547553007, 221.35093413768348)
+INFO:     192.168.56.1:51929 - "POST /api/mininet/node_position HTTP/1.1" 200 OK
+DEBUG:    % sending keepalive ping
+DEBUG:    > PING 'J3\u07b3' [text, 4 bytes]
+DEBUG:    % sending keepalive ping
+DEBUG:    > PING fb b5 f9 94 [binary, 4 bytes]
+DEBUG:    < PONG 'J3\u07b3' [text, 4 bytes]
+DEBUG:    < PONG fb b5 f9 94 [binary, 4 bytes]
+DEBUG:    % received keepalive pong
+DEBUG:    % received keepalive pong
+DEBUG:    % sending keepalive ping
+DEBUG:    > PING 2a 02 9c 76 [binary, 4 bytes]
+DEBUG:    % sending keepalive ping
+DEBUG:    > PING ba a2 ce f5 [binary, 4 bytes]
+DEBUG:    < PONG 2a 02 9c 76 [binary, 4 bytes]
+DEBUG:    < PONG ba a2 ce f5 [binary, 4 bytes]
+DEBUG:    % received keepalive pong
+DEBUG:    % received keepalive pong
+*** s1 : ('ip link add name s1-eth3 address 9e:ed:88:28:84:38 type veth peer name s2-eth3 address b6:46:38:fb:93:81 netns 2292',)
+
+added intf s1-eth3 (3) to node s1
+*** s1 : ('ifconfig', 's1-eth3', 'up')
+
+added intf s2-eth3 (3) to node s2
+*** s2 : ('ifconfig', 's2-eth3', 'up')
+*** s1 : ('ovs-vsctl', '-- --id=@s1c1 create Controller target=\\"tcp:127.0.0.1:6653\\" max_backoff=1000 -- --if-exists del-br s1 -- add-br s1 -- set bridge s1 controller=[@s1c1] other_config:datapath-id=0000000000000001 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s1 -- add-port s1 s1-eth1 -- set Interface s1-eth1 ofport_request=1 -- add-port s1 s1-eth2 -- set Interface s1-eth2 ofport_request=2 -- add-port s1 s1-eth3 -- set Interface s1-eth3 ofport_request=3')
+9ba8f451-ac3a-417d-b3c2-da4bbd8bb95a
+*** s2 : ('ovs-vsctl', '-- --id=@s2c2 create Controller target=\\"tcp:127.0.0.1:6633\\" max_backoff=1000 -- --if-exists del-br s2 -- add-br s2 -- set bridge s2 controller=[@s2c2] other_config:datapath-id=0000000000000002 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s2 -- add-port s2 s2-eth1 -- set Interface s2-eth1 ofport_request=1 -- add-port s2 s2-eth2 -- set Interface s2-eth2 ofport_request=2 -- add-port s2 s2-eth3 -- set Interface s2-eth3 ofport_request=3')
+83e590a8-d578-4a9d-8d4a-06fbafb1fcd8
+INFO:     192.168.56.1:52587 - "POST /api/mininet/links HTTP/1.1" 200 OK
+DEBUG:    % sending keepalive ping
+DEBUG:    > PING 2f 50 88 83 [binary, 4 bytes]
+DEBUG:    % sending keepalive ping
+DEBUG:    > PING e9 6e 07 c1 [binary, 4 bytes]
+DEBUG:    < PONG 2f 50 88 83 [binary, 4 bytes]
+DEBUG:    < PONG e9 6e 07 c1 [binary, 4 bytes]
+DEBUG:    % received keepalive pong
+DEBUG:    % received keepalive pong
+DEBUG:    = connection is CONNECTING
+DEBUG:    < GET /api/mininet/terminal/c2 HTTP/1.1
+DEBUG:    < host: 192.168.56.101:8000
+DEBUG:    < connection: Upgrade
+DEBUG:    < pragma: no-cache
+DEBUG:    < cache-control: no-cache
+DEBUG:    < user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0
+DEBUG:    < upgrade: websocket
+DEBUG:    < origin: http://192.168.56.101:5173
+DEBUG:    < sec-websocket-version: 13
+DEBUG:    < accept-encoding: gzip, deflate
+DEBUG:    < accept-language: pt-BR,pt;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+DEBUG:    < sec-websocket-key: xiVN9S/1gg6+NVohneIzQQ==
+DEBUG:    < sec-websocket-extensions: permessage-deflate; client_max_window_bits
+INFO:     ('192.168.56.1', 51219) - "WebSocket /api/mininet/terminal/c2" [accepted]
+_popen ['mnexec', '-da', '2288', '/bin/bash', '-i'] 2433DEBUG:    > HTTP/1.1 101 Switching Protocols
+DEBUG:    > Upgrade: websocket
+DEBUG:    > Connection: Upgrade
+DEBUG:    > Sec-WebSocket-Accept: eYKN0UdTgRdBcfy8a1tuJApOHeg=
+DEBUG:    > Sec-WebSocket-Extensions: permessage-deflate
+DEBUG:    > date: Sat, 17 Oct 2026 18:49:34 GMT
+DEBUG:    > server: uvicorn
+INFO:     connection open
+DEBUG:    = connection is OPEN
+DEBUG:    > TEXT 'root@mininet-vm:/home/mininet/mininet-gui/mininet-gui-backend# ' [63 bytes]
+DEBUG:    < TEXT 'r' [1 byte]
+RECEIVED b'r'
+DEBUG:    > TEXT 'r' [1 byte]
+DEBUG:    < TEXT 'y' [1 byte]
+RECEIVED b'y'
+DEBUG:    > TEXT 'y' [1 byte]
+DEBUG:    < TEXT 'u' [1 byte]
+RECEIVED b'u'
+DEBUG:    > TEXT 'u' [1 byte]
+DEBUG:    < TEXT '-' [1 byte]
+RECEIVED b'-'
+DEBUG:    > TEXT '-' [1 byte]
+DEBUG:    < TEXT 'm' [1 byte]
+RECEIVED b'm'
+DEBUG:    > TEXT 'm' [1 byte]
+DEBUG:    < TEXT 'a' [1 byte]
+RECEIVED b'a'
+DEBUG:    > TEXT 'a' [1 byte]
+DEBUG:    < TEXT 'n' [1 byte]
+RECEIVED b'n'
+DEBUG:    > TEXT 'n' [1 byte]
+DEBUG:    < TEXT 'a' [1 byte]
+RECEIVED b'a'
+DEBUG:    > TEXT 'a' [1 byte]
+DEBUG:    < TEXT 'g' [1 byte]
+RECEIVED b'g'
+DEBUG:    > TEXT 'g' [1 byte]
+DEBUG:    < TEXT 'e' [1 byte]
+RECEIVED b'e'
+DEBUG:    > TEXT 'e' [1 byte]
+DEBUG:    < TEXT 'r' [1 byte]
+RECEIVED b'r'
+DEBUG:    > TEXT 'r' [1 byte]
+DEBUG:    < TEXT ' ' [1 byte]
+RECEIVED b' '
+DEBUG:    > TEXT ' ' [1 byte]
+DEBUG:    < TEXT '-' [1 byte]
+RECEIVED b'-'
+DEBUG:    > TEXT '-' [1 byte]
+DEBUG:    < TEXT '-' [1 byte]
+RECEIVED b'-'
+DEBUG:    > TEXT '-' [1 byte]
+DEBUG:    < TEXT 'o' [1 byte]
+RECEIVED b'o'
+DEBUG:    > TEXT '<et/mininet-gui/mininet-gui-backend# ryu-manage...                       ' [77 bytes]
+DEBUG:    < TEXT 'f' [1 byte]
+RECEIVED b'f'
+DEBUG:    > TEXT 'f' [1 byte]
+DEBUG:    < TEXT 'p' [1 byte]
+RECEIVED b'p'
+DEBUG:    > TEXT 'p' [1 byte]
+DEBUG:    < TEXT '-' [1 byte]
+RECEIVED b'-'
+DEBUG:    < TEXT 't' [1 byte]
+DEBUG:    > TEXT '-' [1 byte]
+RECEIVED b't'
+DEBUG:    > TEXT 't' [1 byte]
+DEBUG:    < TEXT 'c' [1 byte]
+RECEIVED b'c'
+DEBUG:    > TEXT 'c' [1 byte]
+DEBUG:    < TEXT 'p' [1 byte]
+RECEIVED b'p'
+DEBUG:    > TEXT 'p' [1 byte]
+DEBUG:    < TEXT '-' [1 byte]
+RECEIVED b'-'
+DEBUG:    > TEXT '-' [1 byte]
+DEBUG:    < TEXT 'l' [1 byte]
+RECEIVED b'l'
+DEBUG:    > TEXT 'l' [1 byte]
+DEBUG:    < TEXT 'i' [1 byte]
+RECEIVED b'i'
+DEBUG:    > TEXT 'i' [1 byte]
+DEBUG:    < TEXT 's' [1 byte]
+RECEIVED b's'
+DEBUG:    > TEXT 's' [1 byte]
+DEBUG:    < TEXT 't' [1 byte]
+RECEIVED b't'
+DEBUG:    > TEXT 't' [1 byte]
+DEBUG:    < TEXT 'e' [1 byte]
+RECEIVED b'e'
+DEBUG:    > TEXT 'e' [1 byte]
+DEBUG:    < TEXT 'n' [1 byte]
+RECEIVED b'n'
+DEBUG:    > TEXT 'n' [1 byte]
+DEBUG:    < TEXT '-' [1 byte]
+RECEIVED b'-'
+DEBUG:    > TEXT '-' [1 byte]
+DEBUG:    < TEXT 'p' [1 byte]
+RECEIVED b'p'
+DEBUG:    < TEXT 'o' [1 byte]
+DEBUG:    > TEXT 'p' [1 byte]
+RECEIVED b'o'
+DEBUG:    < TEXT 'r' [1 byte]
+DEBUG:    < TEXT 't' [1 byte]
+RECEIVED b'r'
+RECEIVED b't'
+DEBUG:    > TEXT 'ort' [3 bytes]
+DEBUG:    < TEXT ' ' [1 byte]
+RECEIVED b' '
+DEBUG:    > TEXT ' ' [1 byte]
+DEBUG:    < TEXT '6' [1 byte]
+RECEIVED b'6'
+DEBUG:    > TEXT '6' [1 byte]
+DEBUG:    < TEXT '6' [1 byte]
+RECEIVED b'6'
+DEBUG:    > TEXT '6' [1 byte]
+DEBUG:    < TEXT '3' [1 byte]
+RECEIVED b'3'
+DEBUG:    > TEXT '3' [1 byte]
+DEBUG:    < TEXT '3' [1 byte]
+RECEIVED b'3'
+DEBUG:    > TEXT '3' [1 byte]
+DEBUG:    < TEXT ' ' [1 byte]
+RECEIVED b' '
+DEBUG:    > TEXT ' ' [1 byte]
+DEBUG:    < TEXT 'r' [1 byte]
+RECEIVED b'r'
+DEBUG:    > TEXT 'r' [1 byte]
+DEBUG:    < TEXT 'y' [1 byte]
+RECEIVED b'y'
+DEBUG:    > TEXT '<-backend# ryu-manager --ofp-tcp-listen-port 66...                       ' [77 bytes]
+DEBUG:    < TEXT 'u' [1 byte]
+RECEIVED b'u'
+DEBUG:    > TEXT 'u' [1 byte]
+DEBUG:    < TEXT '.' [1 byte]
+RECEIVED b'.'
+DEBUG:    > TEXT '.' [1 byte]
+DEBUG:    < TEXT 'a' [1 byte]
+RECEIVED b'a'
+DEBUG:    > TEXT 'a' [1 byte]
+DEBUG:    < TEXT 'p' [1 byte]
+RECEIVED b'p'
+DEBUG:    > TEXT 'p' [1 byte]
+DEBUG:    < TEXT 'p' [1 byte]
+RECEIVED b'p'
+DEBUG:    > TEXT 'p' [1 byte]
+DEBUG:    < TEXT '.' [1 byte]
+RECEIVED b'.'
+DEBUG:    > TEXT '.' [1 byte]
+DEBUG:    < TEXT 's' [1 byte]
+RECEIVED b's'
+DEBUG:    > TEXT 's' [1 byte]
+DEBUG:    < TEXT 'i' [1 byte]
+RECEIVED b'i'
+DEBUG:    > TEXT 'i' [1 byte]
+DEBUG:    < TEXT 'm' [1 byte]
+RECEIVED b'm'
+DEBUG:    > TEXT 'm' [1 byte]
+DEBUG:    < TEXT 'p' [1 byte]
+RECEIVED b'p'
+DEBUG:    > TEXT 'p' [1 byte]
+DEBUG:    < TEXT 'l' [1 byte]
+RECEIVED b'l'
+DEBUG:    > TEXT 'l' [1 byte]
+DEBUG:    < TEXT 'e' [1 byte]
+RECEIVED b'e'
+DEBUG:    > TEXT 'e' [1 byte]
+DEBUG:    < TEXT '_' [1 byte]
+RECEIVED b'_'
+DEBUG:    > TEXT '_' [1 byte]
+DEBUG:    < TEXT 's' [1 byte]
+RECEIVED b's'
+DEBUG:    > TEXT 's' [1 byte]
+DEBUG:    < TEXT 'w' [1 byte]
+RECEIVED b'w'
+DEBUG:    > TEXT 'w' [1 byte]
+DEBUG:    < TEXT 'i' [1 byte]
+RECEIVED b'i'
+DEBUG:    > TEXT 'i' [1 byte]
+DEBUG:    < TEXT 't' [1 byte]
+RECEIVED b't'
+DEBUG:    > TEXT 't' [1 byte]
+DEBUG:    < TEXT 'c' [1 byte]
+RECEIVED b'c'
+DEBUG:    > TEXT 'c' [1 byte]
+DEBUG:    < TEXT 'h' [1 byte]
+RECEIVED b'h'
+DEBUG:    > TEXT 'h' [1 byte]
+DEBUG:    < TEXT '_' [1 byte]
+RECEIVED b'_'
+DEBUG:    > TEXT '_' [1 byte]
+DEBUG:    < TEXT '1' [1 byte]
+RECEIVED b'1'
+DEBUG:    > TEXT '1' [1 byte]
+DEBUG:    < TEXT '3' [1 byte]
+RECEIVED b'3'
+DEBUG:    > TEXT '3' [1 byte]
+DEBUG:    < TEXT '\n' [1 byte]
+RECEIVED b'\n'
+DEBUG:    > TEXT '\r\n' [2 bytes]
+DEBUG:    > TEXT "\r\nCommand 'ryu-manager' not found, but can be...all python3-ryu\r\n\r\n" [92 bytes]
+DEBUG:    > TEXT 'root@mininet-vm:/home/mininet/mininet-gui/mininet-gui-backend# ' [63 bytes]
+DEBUG:    % sending keepalive ping
+DEBUG:    > PING 9c ed b7 b5 [binary, 4 bytes]
+DEBUG:    % sending keepalive ping
+DEBUG:    > PING a9 31 09 57 [binary, 4 bytes]
+DEBUG:    < PONG 9c ed b7 b5 [binary, 4 bytes]
+DEBUG:    < PONG a9 31 09 57 [binary, 4 bytes]
+DEBUG:    % received keepalive pong
+DEBUG:    % received keepalive pong
+*** Ping: testing ping reachability
+h1 -> *** h1 : ('ping -c1  10.0.0.2',)
+PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
+64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=3.80 ms
+
+--- 10.0.0.2 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 3.804/3.804/3.804/0.000 ms
+h2 *** h1 : ('ping -c1  10.0.0.3',)
+PING 10.0.0.3 (10.0.0.3) 56(84) bytes of data.
+From 10.0.0.1 icmp_seq=1 Destination Host Unreachable
+
+--- 10.0.0.3 ping statistics ---
+1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+
+X *** h1 : ('ping -c1  10.0.0.4',)
+PING 10.0.0.4 (10.0.0.4) 56(84) bytes of data.
+DEBUG:    % sending keepalive ping
+DEBUG:    > PING da 6e 38 d6 [binary, 4 bytes]
+DEBUG:    < PONG da 6e 38 d6 [binary, 4 bytes]
+DEBUG:    % received keepalive pong
+From 10.0.0.1 icmp_seq=1 Destination Host Unreachable
+
+--- 10.0.0.4 ping statistics ---
+1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+
+X 
+h2 -> *** h2 : ('ping -c1  10.0.0.1',)
+PING 10.0.0.1 (10.0.0.1) 56(84) bytes of data.
+64 bytes from 10.0.0.1: icmp_seq=1 ttl=64 time=9.24 ms
+
+--- 10.0.0.1 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 9.242/9.242/9.242/0.000 ms
+h1 *** h2 : ('ping -c1  10.0.0.3',)
+PING 10.0.0.3 (10.0.0.3) 56(84) bytes of data.
+From 10.0.0.2 icmp_seq=1 Destination Host Unreachable
+
+--- 10.0.0.3 ping statistics ---
+1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+
+X *** h2 : ('ping -c1  10.0.0.4',)
+PING 10.0.0.4 (10.0.0.4) 56(84) bytes of data.
+From 10.0.0.2 icmp_seq=1 Destination Host Unreachable
+
+--- 10.0.0.4 ping statistics ---
+1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+
+X 
+h3 -> *** h3 : ('ping -c1  10.0.0.1',)
+PING 10.0.0.1 (10.0.0.1) 56(84) bytes of data.
+From 10.0.0.3 icmp_seq=1 Destination Host Unreachable
+
+--- 10.0.0.1 ping statistics ---
+1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+
+X *** h3 : ('ping -c1  10.0.0.2',)
+PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
+From 10.0.0.3 icmp_seq=1 Destination Host Unreachable
+
+--- 10.0.0.2 ping statistics ---
+1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+
+X *** h3 : ('ping -c1  10.0.0.4',)
+PING 10.0.0.4 (10.0.0.4) 56(84) bytes of data.
+DEBUG:    % sending keepalive ping
+DEBUG:    > PING 'deY5' [text, 4 bytes]
+DEBUG:    % sending keepalive ping
+DEBUG:    > PING '}\ufd26' [text, 4 bytes]
+DEBUG:    < PONG 'deY5' [text, 4 bytes]
+DEBUG:    % received keepalive pong
+DEBUG:    < PONG '}\ufd26' [text, 4 bytes]
+DEBUG:    % received keepalive pong
+From 10.0.0.3 icmp_seq=1 Destination Host Unreachable
+
+--- 10.0.0.4 ping statistics ---
+1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+
+X 
+h4 -> *** h4 : ('ping -c1  10.0.0.1',)
+PING 10.0.0.1 (10.0.0.1) 56(84) bytes of data.
+DEBUG:    % sending keepalive ping
+DEBUG:    > PING 9d fb 3e 1b [binary, 4 bytes]
+DEBUG:    < PONG 9d fb 3e 1b [binary, 4 bytes]
+DEBUG:    % received keepalive pong
+From 10.0.0.4 icmp_seq=1 Destination Host Unreachable
+
+--- 10.0.0.1 ping statistics ---
+1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+
+X *** h4 : ('ping -c1  10.0.0.2',)
+PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
+From 10.0.0.4 icmp_seq=1 Destination Host Unreachable
+
+--- 10.0.0.2 ping statistics ---
+1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+
+X *** h4 : ('ping -c1  10.0.0.3',)
+PING 10.0.0.3 (10.0.0.3) 56(84) bytes of data.
+From 10.0.0.4 icmp_seq=1 Destination Host Unreachable
+
+--- 10.0.0.3 ping statistics ---
+1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+
+X 
+*** Results: 
+ h1->h2: 1/1, rtt min/avg/max/mdev 3.804/3.804/3.804/0.000 ms
+ h1->h3: 1/0, rtt min/avg/max/mdev 0.000/0.000/0.000/0.000 ms
+ h1->h4: 1/0, rtt min/avg/max/mdev 0.000/0.000/0.000/0.000 ms
+ h2->h1: 1/1, rtt min/avg/max/mdev 9.242/9.242/9.242/0.000 ms
+ h2->h3: 1/0, rtt min/avg/max/mdev 0.000/0.000/0.000/0.000 ms
+ h2->h4: 1/0, rtt min/avg/max/mdev 0.000/0.000/0.000/0.000 ms
+ h3->h1: 1/0, rtt min/avg/max/mdev 0.000/0.000/0.000/0.000 ms
+ h3->h2: 1/0, rtt min/avg/max/mdev 0.000/0.000/0.000/0.000 ms
+ h3->h4: 1/0, rtt min/avg/max/mdev 0.000/0.000/0.000/0.000 ms
+ h4->h1: 1/0, rtt min/avg/max/mdev 0.000/0.000/0.000/0.000 ms
+ h4->h2: 1/0, rtt min/avg/max/mdev 0.000/0.000/0.000/0.000 ms
+ h4->h3: 1/0, rtt min/avg/max/mdev 0.000/0.000/0.000/0.000 ms
+[(<Host h1: h1-eth0:10.0.0.1 pid=2217> , <Host h2: h2-eth0:10.0.0.2 pid=2235> , (1, 1, 3.804, 3.804, 3.804, 0.0)), (<Host h1: h1-eth0:10.0.0.1 pid=2217> , <Host h3: h3-eth0:10.0.0.3 pid=2308> , (1, 0, 0, 0, 0, 0)), (<Host h1: h1-eth0:10.0.0.1 pid=2217> , <Host h4: h4-eth0:10.0.0.4 pid=2324> , (1, 0, 0, 0, 0, 0)), (<Host h2: h2-eth0:10.0.0.2 pid=2235> , <Host h1: h1-eth0:10.0.0.1 pid=2217> , (1, 1, 9.242, 9.242, 9.242, 0.0)), (<Host h2: h2-eth0:10.0.0.2 pid=2235> , <Host h3: h3-eth0:10.0.0.3 pid=2308> , (1, 0, 0, 0, 0, 0)), (<Host h2: h2-eth0:10.0.0.2 pid=2235> , <Host h4: h4-eth0:10.0.0.4 pid=2324> , (1, 0, 0, 0, 0, 0)), (<Host h3: h3-eth0:10.0.0.3 pid=2308> , <Host h1: h1-eth0:10.0.0.1 pid=2217> , (1, 0, 0, 0, 0, 0)), (<Host h3: h3-eth0:10.0.0.3 pid=2308> , <Host h2: h2-eth0:10.0.0.2 pid=2235> , (1, 0, 0, 0, 0, 0)), (<Host h3: h3-eth0:10.0.0.3 pid=2308> , <Host h4: h4-eth0:10.0.0.4 pid=2324> , (1, 0, 0, 0, 0, 0)), (<Host h4: h4-eth0:10.0.0.4 pid=2324> , <Host h1: h1-eth0:10.0.0.1 pid=2217> , (1, 0, 0, 0, 0, 0)), (<Host h4: h4-eth0:10.0.0.4 pid=2324> , <Host h2: h2-eth0:10.0.0.2 pid=2235> , (1, 0, 0, 0, 0, 0)), (<Host h4: h4-eth0:10.0.0.4 pid=2324> , <Host h3: h3-eth0:10.0.0.3 pid=2308> , (1, 0, 0, 0, 0, 0))] 
+INFO:     192.168.56.1:65137 - "POST /api/mininet/pingall HTTP/1.1" 200 OK
+DEBUG:    % sending keepalive ping
+DEBUG:    > PING f7 c6 9f bb [binary, 4 bytes]
+DEBUG:    % sending keepalive ping
+DEBUG:    > PING e5 b2 12 c9 [binary, 4 bytes]
+DEBUG:    < PONG f7 c6 9f bb [binary, 4 bytes]
+DEBUG:    % received keepalive pong
+DEBUG:    < PONG e5 b2 12 c9 [binary, 4 bytes]
+DEBUG:    % received keepalive pong
+DEBUG:    % sending keepalive ping
+DEBUG:    > PING '\x06AOw' [text, 4 bytes]
+DEBUG:    < PONG '\x06AOw' [text, 4 bytes]
+DEBUG:    % received keepalive pong
+DEBUG:    % sending keepalive ping
+DEBUG:    > PING 17 ff a0 ce [binary, 4 bytes]
+DEBUG:    % sending keepalive ping
+DEBUG:    > PING 7a ba af 8d [binary, 4 bytes]
+DEBUG:    < PONG 17 ff a0 ce [binary, 4 bytes]
+DEBUG:    < PONG 7a ba af 8d [binary, 4 bytes]
+DEBUG:    % received keepalive pong
+DEBUG:    % received keepalive pong
+<mininet.net.Mininet object at 0x7f5f40f423a0> 
+INFO:     192.168.56.1:65012 - "GET /api/mininet/export_json HTTP/1.1" 200 OK
+DEBUG:    % sending keepalive ping
+DEBUG:    > PING f4 be b6 fc [binary, 4 bytes]
+DEBUG:    < PONG f4 be b6 fc [binary, 4 bytes]
+DEBUG:    % received keepalive pong
+<mininet.net.Mininet object at 0x7f5f40f423a0> 
+INFO:     192.168.56.1:60525 - "GET /api/mininet/export_script HTTP/1.1" 200 OK
+DEBUG:    % sending keepalive ping
+DEBUG:    > PING fc 2b a9 0f [binary, 4 bytes]
+DEBUG:    % sending keepalive ping
+DEBUG:    > PING f8 6e 50 c7 [binary, 4 bytes]
+DEBUG:    < PONG fc 2b a9 0f [binary, 4 bytes]
+DEBUG:    % received keepalive pong
+DEBUG:    < PONG f8 6e 50 c7 [binary, 4 bytes]
+DEBUG:    % received keepalive pong
+DEBUG:    % sending keepalive ping
+DEBUG:    > PING 18 fe df c8 [binary, 4 bytes]
+DEBUG:    < PONG 18 fe df c8 [binary, 4 bytes]
+DEBUG:    % received keepalive pong
+INFO:     127.0.0.1:49522 - "GET /api/mininet/controllers HTTP/1.1" 200 OK
+DEBUG:    % sending keepalive ping
+DEBUG:    > PING 63 84 da f4 [binary, 4 bytes]
+DEBUG:    % sending keepalive ping
+DEBUG:    > PING fa 9f 42 68 [binary, 4 bytes]
+DEBUG:    < PONG 63 84 da f4 [binary, 4 bytes]
+DEBUG:    % received keepalive pong
+DEBUG:    < PONG fa 9f 42 68 [binary, 4 bytes]
+INFO:     127.0.0.1:49524 - "GET /api/mininet/switches HTTP/1.1" 200 OK
+DEBUG:    % received keepalive pong
+INFO:     127.0.0.1:49526 - "GET /api/mininet/hosts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49528 - "GET /api/mininet/links HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49530 - "GET /api/mininet/start HTTP/1.1" 200 OK
+DEBUG:    % sending keepalive ping
+DEBUG:    > PING 4b a7 54 08 [binary, 4 bytes]
+DEBUG:    < PONG 4b a7 54 08 [binary, 4 bytes]
+DEBUG:    % received keepalive pong
+INFO:     192.168.56.1:61218 - "OPTIONS /api/mininet/reset HTTP/1.1" 200 OK
+*** Removing excess controllers/ofprotocols/ofdatapaths/pings/noxes
+killall controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+killall -9 controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+pkill -9 -f "sudo mnexec"
+*** Removing junk from /tmp
+rm -f /tmp/vconn* /tmp/vlogs* /tmp/*.out /tmp/*.log
+*** Removing old X11 tunnels
+*** errRun: ['pkill', '-9', '-f', 'mnexec.*socat'] 
+  1*** Removing excess kernel datapaths
+ps ax | egrep -o 'dp[0-9]+' | sed 's/dp/nl:/'
+***  Removing OVS datapaths
+ovs-vsctl --timeout=1 list-br
+ovs-vsctl --if-exists del-br s1 -- --if-exists del-br s2
+ovs-vsctl --timeout=1 list-br
+*** Removing all links of the pattern foo-ethX
+ip link show | egrep -o '([-_.[:alnum:]]+-eth[[:digit:]]+)'
+( ip link del s1-eth1;ip link del s1-eth2;ip link del s2-eth1;ip link del s2-eth2;ip link del s2-eth3;ip link del s1-eth3;ip link del s1-eth3;ip link del s2-eth3 ) 2> /dev/null
+ip link show
+*** Killing stale mininet node processes
+pkill -9 -f mininet:
+*** Shutting down stale tunnels
+pkill -9 -f Tunnel=Ethernet
+pkill -9 -f .ssh/mn
+rm -f ~/.ssh/mn/*
+*** Cleanup complete.
+*** Creating network
+*** Adding controller
+*** errRun: ['which', 'controller'] 
+/usr/local/bin/controller
+  0_popen ['mnexec', '-cd', 'env', 'PS1=\x7f', 'bash', '--norc', '--noediting', '-is', 'mininet:c0'] 2740*** c0 : ('unset HISTFILE; stty -echo; set +m',)
+unset HISTFILE; stty -echo; set +m
+*** errRun: ['which', 'telnet'] 
+/usr/bin/telnet
+  0*** c0 : ('echo A | telnet -e A 127.0.0.1 6653',)
+Telnet escape character is 'A'.
+Trying 127.0.0.1...
+telnet: Unable to connect to remote host: Connection refused
+*** Adding hosts:
+
+*** Adding switches:
+
+*** Adding links:
+
+*** Configuring hosts
+
+*** Creating network
+*** Adding hosts:
+
+*** Adding switches:
+
+*** Adding links:
+
+*** Configuring hosts
+
+INFO:     192.168.56.1:61218 - "POST /api/mininet/reset HTTP/1.1" 200 OK
+DEBUG:    < CLOSE 1005 (no status received [internal]) [0 bytes]
+DEBUG:    = connection is CLOSING
+DEBUG:    > CLOSE 1005 (no status received [internal]) [0 bytes]
+DEBUG:    < CLOSE 1005 (no status received [internal]) [0 bytes]
+DEBUG:    = connection is CLOSING
+DEBUG:    > CLOSE 1005 (no status received [internal]) [0 bytes]
+DEBUG:    x half-closing TCP connection
+DEBUG:    x half-closing TCP connection
+DEBUG:    < CLOSE 1005 (no status received [internal]) [0 bytes]
+DEBUG:    = connection is CLOSING
+DEBUG:    > CLOSE 1005 (no status received [internal]) [0 bytes]
+DEBUG:    x half-closing TCP connection
+DEBUG:    = connection is CLOSED
+DEBUG:    = connection is CLOSED
+DEBUG:    = connection is CLOSED
+INFO:     connection closed
+INFO:     connection closed
+INFO:     connection closed
+PTY Read Error: [Errno 9] Bad file descriptor 
+PTY Read Error: [Errno 9] Bad file descriptor 
+PTY Read Error: [Errno 9] Bad file descriptor 
+Closed terminal session for h1
+Closed terminal session for h2
+Closed terminal session for c2
+INFO:     127.0.0.1:49540 - "GET /api/mininet/controllers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49542 - "GET /api/mininet/switches HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49544 - "GET /api/mininet/hosts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49546 - "GET /api/mininet/links HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49548 - "GET /api/mininet/start HTTP/1.1" 200 OK
+id='c1' type='controller' name='c1' label='c1' x=19.987947844807724 y=-149.79335529084045 remote=False ip=None port=None 
+_popen ['mnexec', '-cd', 'env', 'PS1=\x7f', 'bash', '--norc', '--noediting', '-is', 'mininet:c1'] 2812*** c1 : ('unset HISTFILE; stty -echo; set +m',)
+unset HISTFILE; stty -echo; set +m
+*** errRun: ['which', 'telnet'] 
+/usr/bin/telnet
+  0*** c1 : ('echo A | telnet -e A 127.0.0.1 6653',)
+Telnet escape character is 'A'.
+Trying 127.0.0.1...
+telnet: Unable to connect to remote host: Connection refused
+*** errRun: ['which', 'controller'] 
+/usr/local/bin/controller
+  0*** c1 : ('controller ptcp:6653 1>/tmp/c1.log 2>/tmp/c1.log &',)
+c1 
+INFO:     192.168.56.1:49742 - "POST /api/mininet/controllers HTTP/1.1" 200 OK
+CREATING SWITCH id='s1' type='sw' name='s1' label='s1 <00:00:00:00:00:00:00:01>' x=250.0 y=150.0 ports=4 controller=None
+_popen ['mnexec', '-cd', 'env', 'PS1=\x7f', 'bash', '--norc', '--noediting', '-is', 'mininet:s1'] 2819*** s1 : ('unset HISTFILE; stty -echo; set +m',)
+unset HISTFILE; stty -echo; set +m
+
+added intf lo (0) to node s1
+*** s1 : ('ifconfig', 'lo', 'up')
+*** s1 : ('ovs-vsctl', ' -- --if-exists del-br s1 -- add-br s1 -- set bridge s1 controller=[] other_config:datapath-id=0000000000000001 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s1')
+INFO:     192.168.56.1:52564 - "POST /api/mininet/switches HTTP/1.1" 200 OK
+*** s1 : ('ovs-vsctl', '-- --id=@s1c1 create Controller target=\\"tcp:127.0.0.1:6653\\" max_backoff=1000 -- --if-exists del-br s1 -- add-br s1 -- set bridge s1 controller=[@s1c1] other_config:datapath-id=0000000000000001 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s1')
+76d39a77-f958-4af8-a456-50c9fb42cef9
+INFO:     192.168.56.1:52564 - "POST /api/mininet/associate_switch HTTP/1.1" 200 OK
+id='h1' type='host' name='h1' label='h1' x=200.0 y=300.0 ip='10.0.0.1/8' mac='000000000001' 
+_popen ['mnexec', '-cdn', 'env', 'PS1=\x7f', 'bash', '--norc', '--noediting', '-is', 'mininet:h1'] 2843*** h1 : ('unset HISTFILE; stty -echo; set +m',)
+unset HISTFILE; stty -echo; set +m
+h1 
+INFO:     192.168.56.1:52564 - "POST /api/mininet/hosts HTTP/1.1" 200 OK
+*** s1 : ('ip link add name s1-eth1 address 6e:a7:05:b4:d7:4c type veth peer name h1-eth0 address ee:fc:51:3d:e2:03 netns 2843',)
+
+added intf s1-eth1 (1) to node s1
+*** s1 : ('ifconfig', 's1-eth1', 'up')
+
+added intf h1-eth0 (0) to node h1
+moving h1-eth0 into namespace for h1 
+*** h1 : ('ifconfig', 'h1-eth0', 'up')
+*** s1 : ('ovs-vsctl', '-- --id=@s1c1 create Controller target=\\"tcp:127.0.0.1:6653\\" max_backoff=1000 -- --if-exists del-br s1 -- add-br s1 -- set bridge s1 controller=[@s1c1] other_config:datapath-id=0000000000000001 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s1 -- add-port s1 s1-eth1 -- set Interface s1-eth1 ofport_request=1')
+9614960f-9977-416e-97b6-6bfdb906a73f
+*** h1 : ('ifconfig', 'h1-eth0', 'down')
+*** h1 : ('ifconfig', 'h1-eth0', 'hw', 'ether', '00:00:00:00:00:01')
+*** h1 : ('ifconfig', 'h1-eth0', 'up')
+*** h1 : ('ifconfig', 'h1-eth0', '10.0.0.1/8', 'up')
+*** h1 : ('ifconfig lo up',)
+INFO:     192.168.56.1:52564 - "POST /api/mininet/links HTTP/1.1" 200 OK
+id='h2' type='host' name='h2' label='h2' x=290.0 y=300.0 ip='10.0.0.2/8' mac='000000000002' 
+_popen ['mnexec', '-cdn', 'env', 'PS1=\x7f', 'bash', '--norc', '--noediting', '-is', 'mininet:h2'] 2860*** h2 : ('unset HISTFILE; stty -echo; set +m',)
+unset HISTFILE; stty -echo; set +m
+h2 
+INFO:     192.168.56.1:52564 - "POST /api/mininet/hosts HTTP/1.1" 200 OK
+*** s1 : ('ip link add name s1-eth2 address 7a:77:8a:b2:e0:35 type veth peer name h2-eth0 address ca:14:2d:b7:cd:68 netns 2860',)
+
+added intf s1-eth2 (2) to node s1
+*** s1 : ('ifconfig', 's1-eth2', 'up')
+
+added intf h2-eth0 (0) to node h2
+moving h2-eth0 into namespace for h2 
+*** h2 : ('ifconfig', 'h2-eth0', 'up')
+*** s1 : ('ovs-vsctl', '-- --id=@s1c1 create Controller target=\\"tcp:127.0.0.1:6653\\" max_backoff=1000 -- --if-exists del-br s1 -- add-br s1 -- set bridge s1 controller=[@s1c1] other_config:datapath-id=0000000000000001 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s1 -- add-port s1 s1-eth1 -- set Interface s1-eth1 ofport_request=1 -- add-port s1 s1-eth2 -- set Interface s1-eth2 ofport_request=2')
+7714fbe5-cfaa-43d7-af5d-b4a2b9fd4ba5
+*** h2 : ('ifconfig', 'h2-eth0', 'down')
+*** h2 : ('ifconfig', 'h2-eth0', 'hw', 'ether', '00:00:00:00:00:02')
+*** h2 : ('ifconfig', 'h2-eth0', 'up')
+*** h2 : ('ifconfig', 'h2-eth0', '10.0.0.2/8', 'up')
+*** h2 : ('ifconfig lo up',)
+INFO:     192.168.56.1:52564 - "POST /api/mininet/links HTTP/1.1" 200 OK
+id='h3' type='host' name='h3' label='h3' x=380.0 y=300.0 ip='10.0.0.3/8' mac='000000000003' 
+_popen ['mnexec', '-cdn', 'env', 'PS1=\x7f', 'bash', '--norc', '--noediting', '-is', 'mininet:h3'] 2875*** h3 : ('unset HISTFILE; stty -echo; set +m',)
+unset HISTFILE; stty -echo; set +m
+h3 
+INFO:     192.168.56.1:52564 - "POST /api/mininet/hosts HTTP/1.1" 200 OK
+*** s1 : ('ip link add name s1-eth3 address c2:41:f3:df:09:3c type veth peer name h3-eth0 address c6:1c:e6:54:99:33 netns 2875',)
+
+added intf s1-eth3 (3) to node s1
+*** s1 : ('ifconfig', 's1-eth3', 'up')
+
+added intf h3-eth0 (0) to node h3
+moving h3-eth0 into namespace for h3 
+*** h3 : ('ifconfig', 'h3-eth0', 'up')
+*** s1 : ('ovs-vsctl', '-- --id=@s1c1 create Controller target=\\"tcp:127.0.0.1:6653\\" max_backoff=1000 -- --if-exists del-br s1 -- add-br s1 -- set bridge s1 controller=[@s1c1] other_config:datapath-id=0000000000000001 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s1 -- add-port s1 s1-eth1 -- set Interface s1-eth1 ofport_request=1 -- add-port s1 s1-eth2 -- set Interface s1-eth2 ofport_request=2 -- add-port s1 s1-eth3 -- set Interface s1-eth3 ofport_request=3')
+eb607b6f-3734-4318-a569-4631ecf07b79
+*** h3 : ('ifconfig', 'h3-eth0', 'down')
+*** h3 : ('ifconfig', 'h3-eth0', 'hw', 'ether', '00:00:00:00:00:03')
+*** h3 : ('ifconfig', 'h3-eth0', 'up')
+*** h3 : ('ifconfig', 'h3-eth0', '10.0.0.3/8', 'up')
+*** h3 : ('ifconfig lo up',)
+INFO:     192.168.56.1:52564 - "POST /api/mininet/links HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49554 - "GET /api/mininet/controllers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49556 - "GET /api/mininet/switches HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49558 - "GET /api/mininet/hosts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49560 - "GET /api/mininet/links HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49562 - "GET /api/mininet/start HTTP/1.1" 200 OK
+*** Removing excess controllers/ofprotocols/ofdatapaths/pings/noxes
+killall controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+killall -9 controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+pkill -9 -f "sudo mnexec"
+*** Removing junk from /tmp
+rm -f /tmp/vconn* /tmp/vlogs* /tmp/*.out /tmp/*.log
+*** Removing old X11 tunnels
+*** errRun: ['pkill', '-9', '-f', 'mnexec.*socat'] 
+  1*** Removing excess kernel datapaths
+ps ax | egrep -o 'dp[0-9]+' | sed 's/dp/nl:/'
+***  Removing OVS datapaths
+ovs-vsctl --timeout=1 list-br
+ovs-vsctl --if-exists del-br s1
+ovs-vsctl --timeout=1 list-br
+*** Removing all links of the pattern foo-ethX
+ip link show | egrep -o '([-_.[:alnum:]]+-eth[[:digit:]]+)'
+( ip link del s1-eth1;ip link del s1-eth2;ip link del s1-eth3 ) 2> /dev/null
+ip link show
+*** Killing stale mininet node processes
+pkill -9 -f mininet:
+*** Shutting down stale tunnels
+pkill -9 -f Tunnel=Ethernet
+pkill -9 -f .ssh/mn
+rm -f ~/.ssh/mn/*
+*** Cleanup complete.
+*** Creating network
+*** Adding controller
+*** errRun: ['which', 'controller'] 
+/usr/local/bin/controller
+  0_popen ['mnexec', '-cd', 'env', 'PS1=\x7f', 'bash', '--norc', '--noediting', '-is', 'mininet:c0'] 3011*** c0 : ('unset HISTFILE; stty -echo; set +m',)
+unset HISTFILE; stty -echo; set +m
+*** errRun: ['which', 'telnet'] 
+/usr/bin/telnet
+  0*** c0 : ('echo A | telnet -e A 127.0.0.1 6653',)
+Telnet escape character is 'A'.
+Trying 127.0.0.1...
+telnet: Unable to connect to remote host: Connection refused
+*** Adding hosts:
+
+*** Adding switches:
+
+*** Adding links:
+
+*** Configuring hosts
+
+*** Creating network
+*** Adding hosts:
+
+*** Adding switches:
+
+*** Adding links:
+
+*** Configuring hosts
+
+INFO:     192.168.56.1:64887 - "POST /api/mininet/reset HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49568 - "GET /api/mininet/controllers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49570 - "GET /api/mininet/switches HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49572 - "GET /api/mininet/hosts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49574 - "GET /api/mininet/links HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49576 - "GET /api/mininet/start HTTP/1.1" 200 OK
+id='c1' type='controller' name='c1' label='c1' x=19.993973014289775 y=-149.64669974935256 remote=False ip=None port=None 
+_popen ['mnexec', '-cd', 'env', 'PS1=\x7f', 'bash', '--norc', '--noediting', '-is', 'mininet:c1'] 3085*** c1 : ('unset HISTFILE; stty -echo; set +m',)
+unset HISTFILE; stty -echo; set +m
+*** errRun: ['which', 'telnet'] 
+/usr/bin/telnet
+  0*** c1 : ('echo A | telnet -e A 127.0.0.1 6653',)
+Telnet escape character is 'A'.
+Trying 127.0.0.1...
+telnet: Unable to connect to remote host: Connection refused
+*** errRun: ['which', 'controller'] 
+/usr/local/bin/controller
+  0*** c1 : ('controller ptcp:6653 1>/tmp/c1.log 2>/tmp/c1.log &',)
+c1 
+INFO:     192.168.56.1:59193 - "POST /api/mininet/controllers HTTP/1.1" 200 OK
+CREATING SWITCH id='s1' type='sw' name='s1' label='s1 <00:00:00:00:00:00:00:01>' x=250.0 y=150.0 ports=4 controller=None
+_popen ['mnexec', '-cd', 'env', 'PS1=\x7f', 'bash', '--norc', '--noediting', '-is', 'mininet:s1'] 3092*** s1 : ('unset HISTFILE; stty -echo; set +m',)
+unset HISTFILE; stty -echo; set +m
+
+added intf lo (0) to node s1
+*** s1 : ('ifconfig', 'lo', 'up')
+*** s1 : ('ovs-vsctl', ' -- --if-exists del-br s1 -- add-br s1 -- set bridge s1 controller=[] other_config:datapath-id=0000000000000001 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s1')
+INFO:     192.168.56.1:64065 - "POST /api/mininet/switches HTTP/1.1" 200 OK
+*** s1 : ('ovs-vsctl', '-- --id=@s1c1 create Controller target=\\"tcp:127.0.0.1:6653\\" max_backoff=1000 -- --if-exists del-br s1 -- add-br s1 -- set bridge s1 controller=[@s1c1] other_config:datapath-id=0000000000000001 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s1')
+75d84d67-01c2-4465-b0d7-dba136696713
+INFO:     192.168.56.1:64065 - "POST /api/mininet/associate_switch HTTP/1.1" 200 OK
+id='h1' type='host' name='h1' label='h1' x=200.0 y=300.0 ip='10.0.0.1/8' mac='000000000001' 
+_popen ['mnexec', '-cdn', 'env', 'PS1=\x7f', 'bash', '--norc', '--noediting', '-is', 'mininet:h1'] 3115*** h1 : ('unset HISTFILE; stty -echo; set +m',)
+unset HISTFILE; stty -echo; set +m
+h1 
+INFO:     192.168.56.1:64065 - "POST /api/mininet/hosts HTTP/1.1" 200 OK
+*** s1 : ('ip link add name s1-eth1 address a2:f5:25:c7:bc:ba type veth peer name h1-eth0 address aa:b5:52:d0:a0:b9 netns 3115',)
+
+added intf s1-eth1 (1) to node s1
+*** s1 : ('ifconfig', 's1-eth1', 'up')
+
+added intf h1-eth0 (0) to node h1
+moving h1-eth0 into namespace for h1 
+*** h1 : ('ifconfig', 'h1-eth0', 'up')
+*** s1 : ('ovs-vsctl', '-- --id=@s1c1 create Controller target=\\"tcp:127.0.0.1:6653\\" max_backoff=1000 -- --if-exists del-br s1 -- add-br s1 -- set bridge s1 controller=[@s1c1] other_config:datapath-id=0000000000000001 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s1 -- add-port s1 s1-eth1 -- set Interface s1-eth1 ofport_request=1')
+9ded9447-3dd7-4c17-af79-0f2f53bfc92f
+*** h1 : ('ifconfig', 'h1-eth0', 'down')
+*** h1 : ('ifconfig', 'h1-eth0', 'hw', 'ether', '00:00:00:00:00:01')
+*** h1 : ('ifconfig', 'h1-eth0', 'up')
+*** h1 : ('ifconfig', 'h1-eth0', '10.0.0.1/8', 'up')
+*** h1 : ('ifconfig lo up',)
+INFO:     192.168.56.1:64065 - "POST /api/mininet/links HTTP/1.1" 200 OK
+id='h2' type='host' name='h2' label='h2' x=200.0 y=350.0 ip='10.0.0.2/8' mac='000000000002' 
+_popen ['mnexec', '-cdn', 'env', 'PS1=\x7f', 'bash', '--norc', '--noediting', '-is', 'mininet:h2'] 3132*** h2 : ('unset HISTFILE; stty -echo; set +m',)
+unset HISTFILE; stty -echo; set +m
+h2 
+INFO:     192.168.56.1:64065 - "POST /api/mininet/hosts HTTP/1.1" 200 OK
+*** s1 : ('ip link add name s1-eth2 address fe:f8:29:b5:a7:44 type veth peer name h2-eth0 address 4a:c3:00:ce:e8:fd netns 3132',)
+
+added intf s1-eth2 (2) to node s1
+*** s1 : ('ifconfig', 's1-eth2', 'up')
+
+added intf h2-eth0 (0) to node h2
+moving h2-eth0 into namespace for h2 
+*** h2 : ('ifconfig', 'h2-eth0', 'up')
+*** s1 : ('ovs-vsctl', '-- --id=@s1c1 create Controller target=\\"tcp:127.0.0.1:6653\\" max_backoff=1000 -- --if-exists del-br s1 -- add-br s1 -- set bridge s1 controller=[@s1c1] other_config:datapath-id=0000000000000001 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s1 -- add-port s1 s1-eth1 -- set Interface s1-eth1 ofport_request=1 -- add-port s1 s1-eth2 -- set Interface s1-eth2 ofport_request=2')
+b691b9ae-6c82-46fd-98af-45e8161b7951
+*** h2 : ('ifconfig', 'h2-eth0', 'down')
+*** h2 : ('ifconfig', 'h2-eth0', 'hw', 'ether', '00:00:00:00:00:02')
+*** h2 : ('ifconfig', 'h2-eth0', 'up')
+*** h2 : ('ifconfig', 'h2-eth0', '10.0.0.2/8', 'up')
+*** h2 : ('ifconfig lo up',)
+INFO:     192.168.56.1:64065 - "POST /api/mininet/links HTTP/1.1" 200 OK
+CREATING SWITCH id='s2' type='sw' name='s2' label='s2 <00:00:00:00:00:00:00:02>' x=340.0 y=150.0 ports=4 controller=None
+_popen ['mnexec', '-cd', 'env', 'PS1=\x7f', 'bash', '--norc', '--noediting', '-is', 'mininet:s2'] 3147*** s2 : ('unset HISTFILE; stty -echo; set +m',)
+unset HISTFILE; stty -echo; set +m
+
+added intf lo (0) to node s2
+*** s2 : ('ifconfig', 'lo', 'up')
+*** s2 : ('ovs-vsctl', ' -- --if-exists del-br s2 -- add-br s2 -- set bridge s2 controller=[] other_config:datapath-id=0000000000000002 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s2')
+INFO:     192.168.56.1:64065 - "POST /api/mininet/switches HTTP/1.1" 200 OK
+*** s2 : ('ovs-vsctl', '-- --id=@s2c1 create Controller target=\\"tcp:127.0.0.1:6653\\" max_backoff=1000 -- --if-exists del-br s2 -- add-br s2 -- set bridge s2 controller=[@s2c1] other_config:datapath-id=0000000000000002 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s2')
+7bc3a208-137b-44ef-aca8-d40554ac4429
+INFO:     192.168.56.1:64065 - "POST /api/mininet/associate_switch HTTP/1.1" 200 OK
+id='h3' type='host' name='h3' label='h3' x=290.0 y=300.0 ip='10.0.0.3/8' mac='000000000003' 
+_popen ['mnexec', '-cdn', 'env', 'PS1=\x7f', 'bash', '--norc', '--noediting', '-is', 'mininet:h3'] 3160*** h3 : ('unset HISTFILE; stty -echo; set +m',)
+unset HISTFILE; stty -echo; set +m
+h3 
+INFO:     192.168.56.1:64065 - "POST /api/mininet/hosts HTTP/1.1" 200 OK
+*** s2 : ('ip link add name s2-eth1 address 3e:c7:42:4d:a6:ea type veth peer name h3-eth0 address 9e:93:80:71:b1:31 netns 3160',)
+
+added intf s2-eth1 (1) to node s2
+*** s2 : ('ifconfig', 's2-eth1', 'up')
+
+added intf h3-eth0 (0) to node h3
+moving h3-eth0 into namespace for h3 
+*** h3 : ('ifconfig', 'h3-eth0', 'up')
+*** s2 : ('ovs-vsctl', '-- --id=@s2c1 create Controller target=\\"tcp:127.0.0.1:6653\\" max_backoff=1000 -- --if-exists del-br s2 -- add-br s2 -- set bridge s2 controller=[@s2c1] other_config:datapath-id=0000000000000002 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s2 -- add-port s2 s2-eth1 -- set Interface s2-eth1 ofport_request=1')
+86d772d5-b4bb-49a6-9233-003dcbf25b38
+*** h3 : ('ifconfig', 'h3-eth0', 'down')
+*** h3 : ('ifconfig', 'h3-eth0', 'hw', 'ether', '00:00:00:00:00:03')
+*** h3 : ('ifconfig', 'h3-eth0', 'up')
+*** h3 : ('ifconfig', 'h3-eth0', '10.0.0.3/8', 'up')
+*** h3 : ('ifconfig lo up',)
+INFO:     192.168.56.1:64065 - "POST /api/mininet/links HTTP/1.1" 200 OK
+id='h4' type='host' name='h4' label='h4' x=290.0 y=350.0 ip='10.0.0.4/8' mac='000000000004' 
+_popen ['mnexec', '-cdn', 'env', 'PS1=\x7f', 'bash', '--norc', '--noediting', '-is', 'mininet:h4'] 3177*** h4 : ('unset HISTFILE; stty -echo; set +m',)
+unset HISTFILE; stty -echo; set +m
+h4 
+INFO:     192.168.56.1:64065 - "POST /api/mininet/hosts HTTP/1.1" 200 OK
+*** s2 : ('ip link add name s2-eth2 address 6a:81:60:ba:27:9a type veth peer name h4-eth0 address 6e:71:da:29:a9:74 netns 3177',)
+
+added intf s2-eth2 (2) to node s2
+*** s2 : ('ifconfig', 's2-eth2', 'up')
+
+added intf h4-eth0 (0) to node h4
+moving h4-eth0 into namespace for h4 
+*** h4 : ('ifconfig', 'h4-eth0', 'up')
+*** s2 : ('ovs-vsctl', '-- --id=@s2c1 create Controller target=\\"tcp:127.0.0.1:6653\\" max_backoff=1000 -- --if-exists del-br s2 -- add-br s2 -- set bridge s2 controller=[@s2c1] other_config:datapath-id=0000000000000002 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s2 -- add-port s2 s2-eth1 -- set Interface s2-eth1 ofport_request=1 -- add-port s2 s2-eth2 -- set Interface s2-eth2 ofport_request=2')
+245a76f8-2968-4581-98a3-c916eef94529
+*** h4 : ('ifconfig', 'h4-eth0', 'down')
+*** h4 : ('ifconfig', 'h4-eth0', 'hw', 'ether', '00:00:00:00:00:04')
+*** h4 : ('ifconfig', 'h4-eth0', 'up')
+*** h4 : ('ifconfig', 'h4-eth0', '10.0.0.4/8', 'up')
+*** h4 : ('ifconfig lo up',)
+INFO:     192.168.56.1:64065 - "POST /api/mininet/links HTTP/1.1" 200 OK
+*** s2 : ('ip link add name s2-eth3 address da:76:05:bb:00:af type veth peer name s1-eth3 address ce:6d:5d:b7:ec:5a netns 3092',)
+
+added intf s2-eth3 (3) to node s2
+*** s2 : ('ifconfig', 's2-eth3', 'up')
+
+added intf s1-eth3 (3) to node s1
+*** s1 : ('ifconfig', 's1-eth3', 'up')
+*** s2 : ('ovs-vsctl', '-- --id=@s2c1 create Controller target=\\"tcp:127.0.0.1:6653\\" max_backoff=1000 -- --if-exists del-br s2 -- add-br s2 -- set bridge s2 controller=[@s2c1] other_config:datapath-id=0000000000000002 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s2 -- add-port s2 s2-eth1 -- set Interface s2-eth1 ofport_request=1 -- add-port s2 s2-eth2 -- set Interface s2-eth2 ofport_request=2 -- add-port s2 s2-eth3 -- set Interface s2-eth3 ofport_request=3')
+820781bc-54c3-4bf0-afca-b7017803a96b
+*** s1 : ('ovs-vsctl', '-- --id=@s1c1 create Controller target=\\"tcp:127.0.0.1:6653\\" max_backoff=1000 -- --if-exists del-br s1 -- add-br s1 -- set bridge s1 controller=[@s1c1] other_config:datapath-id=0000000000000001 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s1 -- add-port s1 s1-eth1 -- set Interface s1-eth1 ofport_request=1 -- add-port s1 s1-eth2 -- set Interface s1-eth2 ofport_request=2 -- add-port s1 s1-eth3 -- set Interface s1-eth3 ofport_request=3')
+9e67e4e9-aed8-4afb-95e2-fe1f0f569fcf
+INFO:     192.168.56.1:64065 - "POST /api/mininet/links HTTP/1.1" 200 OK
+CREATING SWITCH id='s3' type='sw' name='s3' label='s3 <00:00:00:00:00:00:00:03>' x=430.0 y=150.0 ports=4 controller=None
+_popen ['mnexec', '-cd', 'env', 'PS1=\x7f', 'bash', '--norc', '--noediting', '-is', 'mininet:s3'] 3206*** s3 : ('unset HISTFILE; stty -echo; set +m',)
+unset HISTFILE; stty -echo; set +m
+
+added intf lo (0) to node s3
+*** s3 : ('ifconfig', 'lo', 'up')
+*** s3 : ('ovs-vsctl', ' -- --if-exists del-br s3 -- add-br s3 -- set bridge s3 controller=[] other_config:datapath-id=0000000000000003 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s3')
+INFO:     192.168.56.1:64065 - "POST /api/mininet/switches HTTP/1.1" 200 OK
+*** s3 : ('ovs-vsctl', '-- --id=@s3c1 create Controller target=\\"tcp:127.0.0.1:6653\\" max_backoff=1000 -- --if-exists del-br s3 -- add-br s3 -- set bridge s3 controller=[@s3c1] other_config:datapath-id=0000000000000003 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s3')
+3a664301-f584-4981-a3cd-44926337d8f7
+INFO:     192.168.56.1:64065 - "POST /api/mininet/associate_switch HTTP/1.1" 200 OK
+id='h5' type='host' name='h5' label='h5' x=380.0 y=300.0 ip='10.0.0.5/8' mac='000000000005' 
+_popen ['mnexec', '-cdn', 'env', 'PS1=\x7f', 'bash', '--norc', '--noediting', '-is', 'mininet:h5'] 3219*** h5 : ('unset HISTFILE; stty -echo; set +m',)
+unset HISTFILE; stty -echo; set +m
+h5 
+INFO:     192.168.56.1:64065 - "POST /api/mininet/hosts HTTP/1.1" 200 OK
+*** s3 : ('ip link add name s3-eth1 address ba:8e:c8:65:28:a0 type veth peer name h5-eth0 address ca:35:ba:a4:81:38 netns 3219',)
+
+added intf s3-eth1 (1) to node s3
+*** s3 : ('ifconfig', 's3-eth1', 'up')
+
+added intf h5-eth0 (0) to node h5
+moving h5-eth0 into namespace for h5 
+*** h5 : ('ifconfig', 'h5-eth0', 'up')
+*** s3 : ('ovs-vsctl', '-- --id=@s3c1 create Controller target=\\"tcp:127.0.0.1:6653\\" max_backoff=1000 -- --if-exists del-br s3 -- add-br s3 -- set bridge s3 controller=[@s3c1] other_config:datapath-id=0000000000000003 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s3 -- add-port s3 s3-eth1 -- set Interface s3-eth1 ofport_request=1')
+0127e0f7-b110-4154-9dea-2327b78a86de
+*** h5 : ('ifconfig', 'h5-eth0', 'down')
+*** h5 : ('ifconfig', 'h5-eth0', 'hw', 'ether', '00:00:00:00:00:05')
+*** h5 : ('ifconfig', 'h5-eth0', 'up')
+*** h5 : ('ifconfig', 'h5-eth0', '10.0.0.5/8', 'up')
+*** h5 : ('ifconfig lo up',)
+INFO:     192.168.56.1:64065 - "POST /api/mininet/links HTTP/1.1" 200 OK
+id='h6' type='host' name='h6' label='h6' x=380.0 y=350.0 ip='10.0.0.6/8' mac='000000000006' 
+_popen ['mnexec', '-cdn', 'env', 'PS1=\x7f', 'bash', '--norc', '--noediting', '-is', 'mininet:h6'] 3234*** h6 : ('unset HISTFILE; stty -echo; set +m',)
+unset HISTFILE; stty -echo; set +m
+h6 
+INFO:     192.168.56.1:64065 - "POST /api/mininet/hosts HTTP/1.1" 200 OK
+*** s3 : ('ip link add name s3-eth2 address c6:65:e5:2c:89:26 type veth peer name h6-eth0 address be:c8:98:93:46:71 netns 3234',)
+
+added intf s3-eth2 (2) to node s3
+*** s3 : ('ifconfig', 's3-eth2', 'up')
+
+added intf h6-eth0 (0) to node h6
+moving h6-eth0 into namespace for h6 
+*** h6 : ('ifconfig', 'h6-eth0', 'up')
+*** s3 : ('ovs-vsctl', '-- --id=@s3c1 create Controller target=\\"tcp:127.0.0.1:6653\\" max_backoff=1000 -- --if-exists del-br s3 -- add-br s3 -- set bridge s3 controller=[@s3c1] other_config:datapath-id=0000000000000003 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s3 -- add-port s3 s3-eth1 -- set Interface s3-eth1 ofport_request=1 -- add-port s3 s3-eth2 -- set Interface s3-eth2 ofport_request=2')
+c31b7273-6a54-4882-8232-6cb5b000d805
+*** h6 : ('ifconfig', 'h6-eth0', 'down')
+*** h6 : ('ifconfig', 'h6-eth0', 'hw', 'ether', '00:00:00:00:00:06')
+*** h6 : ('ifconfig', 'h6-eth0', 'up')
+*** h6 : ('ifconfig', 'h6-eth0', '10.0.0.6/8', 'up')
+*** h6 : ('ifconfig lo up',)
+INFO:     192.168.56.1:64065 - "POST /api/mininet/links HTTP/1.1" 200 OK
+*** s3 : ('ip link add name s3-eth3 address 72:bc:3b:e0:e1:d8 type veth peer name s2-eth4 address 22:f1:53:49:27:73 netns 3147',)
+
+added intf s3-eth3 (3) to node s3
+*** s3 : ('ifconfig', 's3-eth3', 'up')
+
+added intf s2-eth4 (4) to node s2
+*** s2 : ('ifconfig', 's2-eth4', 'up')
+*** s3 : ('ovs-vsctl', '-- --id=@s3c1 create Controller target=\\"tcp:127.0.0.1:6653\\" max_backoff=1000 -- --if-exists del-br s3 -- add-br s3 -- set bridge s3 controller=[@s3c1] other_config:datapath-id=0000000000000003 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s3 -- add-port s3 s3-eth1 -- set Interface s3-eth1 ofport_request=1 -- add-port s3 s3-eth2 -- set Interface s3-eth2 ofport_request=2 -- add-port s3 s3-eth3 -- set Interface s3-eth3 ofport_request=3')
+3e655e0f-1dad-4f5c-bfb3-06437e7b907c
+*** s2 : ('ovs-vsctl', '-- --id=@s2c1 create Controller target=\\"tcp:127.0.0.1:6653\\" max_backoff=1000 -- --if-exists del-br s2 -- add-br s2 -- set bridge s2 controller=[@s2c1] other_config:datapath-id=0000000000000002 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s2 -- add-port s2 s2-eth1 -- set Interface s2-eth1 ofport_request=1 -- add-port s2 s2-eth2 -- set Interface s2-eth2 ofport_request=2 -- add-port s2 s2-eth3 -- set Interface s2-eth3 ofport_request=3 -- add-port s2 s2-eth4 -- set Interface s2-eth4 ofport_request=4')
+79fad6ce-fe65-4c0b-9bd7-fa752d902c66
+INFO:     192.168.56.1:64065 - "POST /api/mininet/links HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49586 - "GET /api/mininet/controllers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49588 - "GET /api/mininet/switches HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49590 - "GET /api/mininet/hosts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49592 - "GET /api/mininet/links HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49594 - "GET /api/mininet/start HTTP/1.1" 200 OK
+*** Removing excess controllers/ofprotocols/ofdatapaths/pings/noxes
+killall controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+killall -9 controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+pkill -9 -f "sudo mnexec"
+*** Removing junk from /tmp
+rm -f /tmp/vconn* /tmp/vlogs* /tmp/*.out /tmp/*.log
+*** Removing old X11 tunnels
+*** errRun: ['pkill', '-9', '-f', 'mnexec.*socat'] 
+  1*** Removing excess kernel datapaths
+ps ax | egrep -o 'dp[0-9]+' | sed 's/dp/nl:/'
+***  Removing OVS datapaths
+ovs-vsctl --timeout=1 list-br
+ovs-vsctl --if-exists del-br s1 -- --if-exists del-br s2 -- --if-exists del-br s3
+ovs-vsctl --timeout=1 list-br
+*** Removing all links of the pattern foo-ethX
+ip link show | egrep -o '([-_.[:alnum:]]+-eth[[:digit:]]+)'
+( ip link del s1-eth1;ip link del s1-eth2;ip link del s2-eth1;ip link del s2-eth2;ip link del s1-eth3;ip link del s2-eth3;ip link del s2-eth3;ip link del s1-eth3;ip link del s3-eth1;ip link del s3-eth2;ip link del s2-eth4;ip link del s3-eth3;ip link del s3-eth3;ip link del s2-eth4 ) 2> /dev/null
+ip link show
+*** Killing stale mininet node processes
+pkill -9 -f mininet:
+*** Shutting down stale tunnels
+pkill -9 -f Tunnel=Ethernet
+pkill -9 -f .ssh/mn
+rm -f ~/.ssh/mn/*
+*** Cleanup complete.
+*** Creating network
+*** Adding controller
+*** errRun: ['which', 'controller'] 
+/usr/local/bin/controller
+  0_popen ['mnexec', '-cd', 'env', 'PS1=\x7f', 'bash', '--norc', '--noediting', '-is', 'mininet:c0'] 3426*** c0 : ('unset HISTFILE; stty -echo; set +m',)
+unset HISTFILE; stty -echo; set +m
+*** errRun: ['which', 'telnet'] 
+/usr/bin/telnet
+  0*** c0 : ('echo A | telnet -e A 127.0.0.1 6653',)
+Telnet escape character is 'A'.
+Trying 127.0.0.1...
+telnet: Unable to connect to remote host: Connection refused
+*** Adding hosts:
+
+*** Adding switches:
+
+*** Adding links:
+
+*** Configuring hosts
+
+*** Creating network
+*** Adding hosts:
+
+*** Adding switches:
+
+*** Adding links:
+
+*** Configuring hosts
+
+INFO:     192.168.56.1:55138 - "POST /api/mininet/reset HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49604 - "GET /api/mininet/controllers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49606 - "GET /api/mininet/switches HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49608 - "GET /api/mininet/hosts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49610 - "GET /api/mininet/links HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49612 - "GET /api/mininet/start HTTP/1.1" 200 OK
+id='c1' type='controller' name='c1' label='c1' x=19.996986280082137 y=-149.57335540149214 remote=False ip=None port=None 
+_popen ['mnexec', '-cd', 'env', 'PS1=\x7f', 'bash', '--norc', '--noediting', '-is', 'mininet:c1'] 3503*** c1 : ('unset HISTFILE; stty -echo; set +m',)
+unset HISTFILE; stty -echo; set +m
+*** errRun: ['which', 'telnet'] 
+/usr/bin/telnet
+  0*** c1 : ('echo A | telnet -e A 127.0.0.1 6653',)
+Telnet escape character is 'A'.
+Trying 127.0.0.1...
+telnet: Unable to connect to remote host: Connection refused
+*** errRun: ['which', 'controller'] 
+/usr/local/bin/controller
+  0*** c1 : ('controller ptcp:6653 1>/tmp/c1.log 2>/tmp/c1.log &',)
+c1 
+INFO:     192.168.56.1:50671 - "POST /api/mininet/controllers HTTP/1.1" 200 OK
+CREATING SWITCH id='s1' type='sw' name='s1' label='s1 <00:00:00:00:00:00:00:01>' x=250.0 y=150.0 ports=4 controller=None
+_popen ['mnexec', '-cd', 'env', 'PS1=\x7f', 'bash', '--norc', '--noediting', '-is', 'mininet:s1'] 3510*** s1 : ('unset HISTFILE; stty -echo; set +m',)
+unset HISTFILE; stty -echo; set +m
+
+added intf lo (0) to node s1
+*** s1 : ('ifconfig', 'lo', 'up')
+*** s1 : ('ovs-vsctl', ' -- --if-exists del-br s1 -- add-br s1 -- set bridge s1 controller=[] other_config:datapath-id=0000000000000001 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s1')
+INFO:     192.168.56.1:63985 - "POST /api/mininet/switches HTTP/1.1" 200 OK
+*** s1 : ('ovs-vsctl', '-- --id=@s1c1 create Controller target=\\"tcp:127.0.0.1:6653\\" max_backoff=1000 -- --if-exists del-br s1 -- add-br s1 -- set bridge s1 controller=[@s1c1] other_config:datapath-id=0000000000000001 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s1')
+f6cfcdc9-5971-4d0f-bb66-9a537f5cfe40
+INFO:     192.168.56.1:63985 - "POST /api/mininet/associate_switch HTTP/1.1" 200 OK
+id='h1' type='host' name='h1' label='h1' x=200.0 y=300.0 ip='10.0.0.1/8' mac='000000000001' 
+_popen ['mnexec', '-cdn', 'env', 'PS1=\x7f', 'bash', '--norc', '--noediting', '-is', 'mininet:h1'] 3533*** h1 : ('unset HISTFILE; stty -echo; set +m',)
+unset HISTFILE; stty -echo; set +m
+h1 
+INFO:     192.168.56.1:63985 - "POST /api/mininet/hosts HTTP/1.1" 200 OK
+*** s1 : ('ip link add name s1-eth1 address 32:79:3f:bd:86:32 type veth peer name h1-eth0 address 02:e7:f4:3a:c0:82 netns 3533',)
+
+added intf s1-eth1 (1) to node s1
+*** s1 : ('ifconfig', 's1-eth1', 'up')
+
+added intf h1-eth0 (0) to node h1
+moving h1-eth0 into namespace for h1 
+*** h1 : ('ifconfig', 'h1-eth0', 'up')
+*** s1 : ('ovs-vsctl', '-- --id=@s1c1 create Controller target=\\"tcp:127.0.0.1:6653\\" max_backoff=1000 -- --if-exists del-br s1 -- add-br s1 -- set bridge s1 controller=[@s1c1] other_config:datapath-id=0000000000000001 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s1 -- add-port s1 s1-eth1 -- set Interface s1-eth1 ofport_request=1')
+ab0f3a1b-bde1-45b4-88e1-9091e49ce46e
+*** h1 : ('ifconfig', 'h1-eth0', 'down')
+*** h1 : ('ifconfig', 'h1-eth0', 'hw', 'ether', '00:00:00:00:00:01')
+*** h1 : ('ifconfig', 'h1-eth0', 'up')
+*** h1 : ('ifconfig', 'h1-eth0', '10.0.0.1/8', 'up')
+*** h1 : ('ifconfig lo up',)
+INFO:     192.168.56.1:63985 - "POST /api/mininet/links HTTP/1.1" 200 OK
+CREATING SWITCH id='s2' type='sw' name='s2' label='s2 <00:00:00:00:00:00:00:02>' x=340.0 y=150.0 ports=4 controller=None
+_popen ['mnexec', '-cd', 'env', 'PS1=\x7f', 'bash', '--norc', '--noediting', '-is', 'mininet:s2'] 3550*** s2 : ('unset HISTFILE; stty -echo; set +m',)
+unset HISTFILE; stty -echo; set +m
+
+added intf lo (0) to node s2
+*** s2 : ('ifconfig', 'lo', 'up')
+*** s2 : ('ovs-vsctl', ' -- --if-exists del-br s2 -- add-br s2 -- set bridge s2 controller=[] other_config:datapath-id=0000000000000002 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s2')
+INFO:     192.168.56.1:63985 - "POST /api/mininet/switches HTTP/1.1" 200 OK
+*** s2 : ('ovs-vsctl', '-- --id=@s2c1 create Controller target=\\"tcp:127.0.0.1:6653\\" max_backoff=1000 -- --if-exists del-br s2 -- add-br s2 -- set bridge s2 controller=[@s2c1] other_config:datapath-id=0000000000000002 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s2')
+003e45fd-7e22-4c1c-a7ad-4c8d0a7dd037
+INFO:     192.168.56.1:63985 - "POST /api/mininet/associate_switch HTTP/1.1" 200 OK
+id='h2' type='host' name='h2' label='h2' x=290.0 y=300.0 ip='10.0.0.2/8' mac='000000000002' 
+_popen ['mnexec', '-cdn', 'env', 'PS1=\x7f', 'bash', '--norc', '--noediting', '-is', 'mininet:h2'] 3563*** h2 : ('unset HISTFILE; stty -echo; set +m',)
+unset HISTFILE; stty -echo; set +m
+h2 
+INFO:     192.168.56.1:63985 - "POST /api/mininet/hosts HTTP/1.1" 200 OK
+*** s2 : ('ip link add name s2-eth1 address 72:73:9f:aa:34:87 type veth peer name h2-eth0 address 6a:1f:6d:5a:62:22 netns 3563',)
+
+added intf s2-eth1 (1) to node s2
+*** s2 : ('ifconfig', 's2-eth1', 'up')
+
+added intf h2-eth0 (0) to node h2
+moving h2-eth0 into namespace for h2 
+*** h2 : ('ifconfig', 'h2-eth0', 'up')
+*** s2 : ('ovs-vsctl', '-- --id=@s2c1 create Controller target=\\"tcp:127.0.0.1:6653\\" max_backoff=1000 -- --if-exists del-br s2 -- add-br s2 -- set bridge s2 controller=[@s2c1] other_config:datapath-id=0000000000000002 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s2 -- add-port s2 s2-eth1 -- set Interface s2-eth1 ofport_request=1')
+ebd6a4dd-a1f9-4024-b4d5-61148c03cd7e
+*** h2 : ('ifconfig', 'h2-eth0', 'down')
+*** h2 : ('ifconfig', 'h2-eth0', 'hw', 'ether', '00:00:00:00:00:02')
+*** h2 : ('ifconfig', 'h2-eth0', 'up')
+*** h2 : ('ifconfig', 'h2-eth0', '10.0.0.2/8', 'up')
+*** h2 : ('ifconfig lo up',)
+INFO:     192.168.56.1:63985 - "POST /api/mininet/links HTTP/1.1" 200 OK
+*** s2 : ('ip link add name s2-eth2 address 8e:88:82:83:4f:21 type veth peer name s1-eth2 address 1e:4a:e3:f4:0c:39 netns 3510',)
+
+added intf s2-eth2 (2) to node s2
+*** s2 : ('ifconfig', 's2-eth2', 'up')
+
+added intf s1-eth2 (2) to node s1
+*** s1 : ('ifconfig', 's1-eth2', 'up')
+*** s2 : ('ovs-vsctl', '-- --id=@s2c1 create Controller target=\\"tcp:127.0.0.1:6653\\" max_backoff=1000 -- --if-exists del-br s2 -- add-br s2 -- set bridge s2 controller=[@s2c1] other_config:datapath-id=0000000000000002 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s2 -- add-port s2 s2-eth1 -- set Interface s2-eth1 ofport_request=1 -- add-port s2 s2-eth2 -- set Interface s2-eth2 ofport_request=2')
+47d058b1-8403-4519-aa44-e08046f39200
+*** s1 : ('ovs-vsctl', '-- --id=@s1c1 create Controller target=\\"tcp:127.0.0.1:6653\\" max_backoff=1000 -- --if-exists del-br s1 -- add-br s1 -- set bridge s1 controller=[@s1c1] other_config:datapath-id=0000000000000001 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s1 -- add-port s1 s1-eth1 -- set Interface s1-eth1 ofport_request=1 -- add-port s1 s1-eth2 -- set Interface s1-eth2 ofport_request=2')
+92325c94-ae5d-429a-b4ff-3d3f4227509c
+INFO:     192.168.56.1:63985 - "POST /api/mininet/links HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49620 - "GET /api/mininet/controllers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49622 - "GET /api/mininet/switches HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49624 - "GET /api/mininet/hosts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49626 - "GET /api/mininet/links HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49628 - "GET /api/mininet/start HTTP/1.1" 200 OK
+*** Removing excess controllers/ofprotocols/ofdatapaths/pings/noxes
+killall controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+killall -9 controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+pkill -9 -f "sudo mnexec"
+*** Removing junk from /tmp
+rm -f /tmp/vconn* /tmp/vlogs* /tmp/*.out /tmp/*.log
+*** Removing old X11 tunnels
+*** errRun: ['pkill', '-9', '-f', 'mnexec.*socat'] 
+  1*** Removing excess kernel datapaths
+ps ax | egrep -o 'dp[0-9]+' | sed 's/dp/nl:/'
+***  Removing OVS datapaths
+ovs-vsctl --timeout=1 list-br
+ovs-vsctl --if-exists del-br s1 -- --if-exists del-br s2
+ovs-vsctl --timeout=1 list-br
+*** Removing all links of the pattern foo-ethX
+ip link show | egrep -o '([-_.[:alnum:]]+-eth[[:digit:]]+)'
+( ip link del s1-eth1;ip link del s2-eth1;ip link del s1-eth2;ip link del s2-eth2;ip link del s2-eth2;ip link del s1-eth2 ) 2> /dev/null
+ip link show
+*** Killing stale mininet node processes
+pkill -9 -f mininet:
+*** Shutting down stale tunnels
+pkill -9 -f Tunnel=Ethernet
+pkill -9 -f .ssh/mn
+rm -f ~/.ssh/mn/*
+*** Cleanup complete.
+*** Creating network
+*** Adding controller
+*** errRun: ['which', 'controller'] 
+/usr/local/bin/controller
+  0_popen ['mnexec', '-cd', 'env', 'PS1=\x7f', 'bash', '--norc', '--noediting', '-is', 'mininet:c0'] 3723*** c0 : ('unset HISTFILE; stty -echo; set +m',)
+unset HISTFILE; stty -echo; set +m
+*** errRun: ['which', 'telnet'] 
+/usr/bin/telnet
+  0*** c0 : ('echo A | telnet -e A 127.0.0.1 6653',)
+Telnet escape character is 'A'.
+Trying 127.0.0.1...
+telnet: Unable to connect to remote host: Connection refused
+*** Adding hosts:
+
+*** Adding switches:
+
+*** Adding links:
+
+*** Configuring hosts
+
+*** Creating network
+*** Adding hosts:
+
+*** Adding switches:
+
+*** Adding links:
+
+*** Configuring hosts
+
+INFO:     192.168.56.1:55577 - "POST /api/mininet/reset HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49636 - "GET /api/mininet/controllers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49638 - "GET /api/mininet/switches HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49640 - "GET /api/mininet/hosts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49642 - "GET /api/mininet/links HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49644 - "GET /api/mininet/start HTTP/1.1" 200 OK
+INFO:     192.168.56.1:57789 - "OPTIONS /api/mininet/controllers HTTP/1.1" 200 OK
+id='c1' type='controller' name='c1' label='c1' x=19.996986280082137 y=-149.57335540149214 remote=False ip=None port=None 
+_popen ['mnexec', '-cd', 'env', 'PS1=\x7f', 'bash', '--norc', '--noediting', '-is', 'mininet:c1'] 3794*** c1 : ('unset HISTFILE; stty -echo; set +m',)
+unset HISTFILE; stty -echo; set +m
+*** errRun: ['which', 'telnet'] 
+/usr/bin/telnet
+  0*** c1 : ('echo A | telnet -e A 127.0.0.1 6653',)
+Telnet escape character is 'A'.
+Trying 127.0.0.1...
+telnet: Unable to connect to remote host: Connection refused
+*** errRun: ['which', 'controller'] 
+/usr/local/bin/controller
+  0*** c1 : ('controller ptcp:6653 1>/tmp/c1.log 2>/tmp/c1.log &',)
+c1 
+INFO:     192.168.56.1:55134 - "POST /api/mininet/controllers HTTP/1.1" 200 OK
+INFO:     192.168.56.1:62308 - "OPTIONS /api/mininet/hosts HTTP/1.1" 200 OK
+id='h1' type='host' name='h1' label='h1' x=50.0 y=450.0 ip='10.0.0.1/8' mac='000000000001' 
+_popen ['mnexec', '-cdn', 'env', 'PS1=\x7f', 'bash', '--norc', '--noediting', '-is', 'mininet:h1'] 3801*** h1 : ('unset HISTFILE; stty -echo; set +m',)
+unset HISTFILE; stty -echo; set +m
+h1 
+INFO:     192.168.56.1:61084 - "POST /api/mininet/hosts HTTP/1.1" 200 OK
+id='h2' type='host' name='h2' label='h2' x=150.0 y=450.0 ip='10.0.0.2/8' mac='000000000002' 
+_popen ['mnexec', '-cdn', 'env', 'PS1=\x7f', 'bash', '--norc', '--noediting', '-is', 'mininet:h2'] 3803*** h2 : ('unset HISTFILE; stty -echo; set +m',)
+unset HISTFILE; stty -echo; set +m
+h2 
+INFO:     192.168.56.1:61084 - "POST /api/mininet/hosts HTTP/1.1" 200 OK
+id='h3' type='host' name='h3' label='h3' x=250.0 y=450.0 ip='10.0.0.3/8' mac='000000000003' 
+_popen ['mnexec', '-cdn', 'env', 'PS1=\x7f', 'bash', '--norc', '--noediting', '-is', 'mininet:h3'] 3805*** h3 : ('unset HISTFILE; stty -echo; set +m',)
+unset HISTFILE; stty -echo; set +m
+h3 
+INFO:     192.168.56.1:61084 - "POST /api/mininet/hosts HTTP/1.1" 200 OK
+id='h4' type='host' name='h4' label='h4' x=350.0 y=450.0 ip='10.0.0.4/8' mac='000000000004' 
+_popen ['mnexec', '-cdn', 'env', 'PS1=\x7f', 'bash', '--norc', '--noediting', '-is', 'mininet:h4'] 3807*** h4 : ('unset HISTFILE; stty -echo; set +m',)
+unset HISTFILE; stty -echo; set +m
+h4 
+INFO:     192.168.56.1:61084 - "POST /api/mininet/hosts HTTP/1.1" 200 OK
+INFO:     192.168.56.1:61084 - "OPTIONS /api/mininet/switches HTTP/1.1" 200 OK
+CREATING SWITCH id='s1' type='sw' name='s1' label='s1 <00:00:00:00:00:00:00:01>' x=100.0 y=300.0 ports=4 controller=None
+_popen ['mnexec', '-cd', 'env', 'PS1=\x7f', 'bash', '--norc', '--noediting', '-is', 'mininet:s1'] 3809*** s1 : ('unset HISTFILE; stty -echo; set +m',)
+unset HISTFILE; stty -echo; set +m
+
+added intf lo (0) to node s1
+*** s1 : ('ifconfig', 'lo', 'up')
+*** s1 : ('ovs-vsctl', ' -- --if-exists del-br s1 -- add-br s1 -- set bridge s1 controller=[] other_config:datapath-id=0000000000000001 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s1')
+INFO:     192.168.56.1:62308 - "POST /api/mininet/switches HTTP/1.1" 200 OK
+INFO:     192.168.56.1:62308 - "OPTIONS /api/mininet/associate_switch HTTP/1.1" 200 OK
+*** s1 : ('ovs-vsctl', '-- --id=@s1c1 create Controller target=\\"tcp:127.0.0.1:6653\\" max_backoff=1000 -- --if-exists del-br s1 -- add-br s1 -- set bridge s1 controller=[@s1c1] other_config:datapath-id=0000000000000001 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s1')
+95601998-42f9-4ac7-a121-119da7b77a51
+INFO:     192.168.56.1:61084 - "POST /api/mininet/associate_switch HTTP/1.1" 200 OK
+INFO:     192.168.56.1:61084 - "OPTIONS /api/mininet/links HTTP/1.1" 200 OK
+*** s1 : ('ip link add name s1-eth1 address e6:2c:97:22:9e:51 type veth peer name h1-eth0 address c2:49:ee:ea:3f:75 netns 3801',)
+
+added intf s1-eth1 (1) to node s1
+*** s1 : ('ifconfig', 's1-eth1', 'up')
+
+added intf h1-eth0 (0) to node h1
+moving h1-eth0 into namespace for h1 
+*** h1 : ('ifconfig', 'h1-eth0', 'up')
+*** s1 : ('ovs-vsctl', '-- --id=@s1c1 create Controller target=\\"tcp:127.0.0.1:6653\\" max_backoff=1000 -- --if-exists del-br s1 -- add-br s1 -- set bridge s1 controller=[@s1c1] other_config:datapath-id=0000000000000001 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s1 -- add-port s1 s1-eth1 -- set Interface s1-eth1 ofport_request=1')
+ddee2a0e-6654-436c-855c-e4a7b710d62d
+*** h1 : ('ifconfig', 'h1-eth0', 'down')
+*** h1 : ('ifconfig', 'h1-eth0', 'hw', 'ether', '00:00:00:00:00:01')
+*** h1 : ('ifconfig', 'h1-eth0', 'up')
+*** h1 : ('ifconfig', 'h1-eth0', '10.0.0.1/8', 'up')
+*** h1 : ('ifconfig lo up',)
+INFO:     192.168.56.1:62308 - "POST /api/mininet/links HTTP/1.1" 200 OK
+*** s1 : ('ip link add name s1-eth2 address b2:61:60:a3:5b:78 type veth peer name h2-eth0 address d6:80:35:8c:9a:ba netns 3803',)
+
+added intf s1-eth2 (2) to node s1
+*** s1 : ('ifconfig', 's1-eth2', 'up')
+
+added intf h2-eth0 (0) to node h2
+moving h2-eth0 into namespace for h2 
+*** h2 : ('ifconfig', 'h2-eth0', 'up')
+*** s1 : ('ovs-vsctl', '-- --id=@s1c1 create Controller target=\\"tcp:127.0.0.1:6653\\" max_backoff=1000 -- --if-exists del-br s1 -- add-br s1 -- set bridge s1 controller=[@s1c1] other_config:datapath-id=0000000000000001 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s1 -- add-port s1 s1-eth1 -- set Interface s1-eth1 ofport_request=1 -- add-port s1 s1-eth2 -- set Interface s1-eth2 ofport_request=2')
+28527a86-8641-40cd-8781-cbd0d07db493
+*** h2 : ('ifconfig', 'h2-eth0', 'down')
+*** h2 : ('ifconfig', 'h2-eth0', 'hw', 'ether', '00:00:00:00:00:02')
+*** h2 : ('ifconfig', 'h2-eth0', 'up')
+*** h2 : ('ifconfig', 'h2-eth0', '10.0.0.2/8', 'up')
+*** h2 : ('ifconfig lo up',)
+INFO:     192.168.56.1:62308 - "POST /api/mininet/links HTTP/1.1" 200 OK
+CREATING SWITCH id='s2' type='sw' name='s2' label='s2 <00:00:00:00:00:00:00:02>' x=300.0 y=300.0 ports=4 controller=None
+_popen ['mnexec', '-cd', 'env', 'PS1=\x7f', 'bash', '--norc', '--noediting', '-is', 'mininet:s2'] 3858*** s2 : ('unset HISTFILE; stty -echo; set +m',)
+unset HISTFILE; stty -echo; set +m
+
+added intf lo (0) to node s2
+*** s2 : ('ifconfig', 'lo', 'up')
+*** s2 : ('ovs-vsctl', ' -- --if-exists del-br s2 -- add-br s2 -- set bridge s2 controller=[] other_config:datapath-id=0000000000000002 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s2')
+INFO:     192.168.56.1:62308 - "POST /api/mininet/switches HTTP/1.1" 200 OK
+*** s2 : ('ovs-vsctl', '-- --id=@s2c1 create Controller target=\\"tcp:127.0.0.1:6653\\" max_backoff=1000 -- --if-exists del-br s2 -- add-br s2 -- set bridge s2 controller=[@s2c1] other_config:datapath-id=0000000000000002 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s2')
+96afe1ea-5aaf-4737-80f1-7d6aff589ace
+INFO:     192.168.56.1:62308 - "POST /api/mininet/associate_switch HTTP/1.1" 200 OK
+*** s2 : ('ip link add name s2-eth1 address 5e:c5:ba:12:12:ea type veth peer name h3-eth0 address 42:ca:21:ef:d7:da netns 3805',)
+
+added intf s2-eth1 (1) to node s2
+*** s2 : ('ifconfig', 's2-eth1', 'up')
+
+added intf h3-eth0 (0) to node h3
+moving h3-eth0 into namespace for h3 
+*** h3 : ('ifconfig', 'h3-eth0', 'up')
+*** s2 : ('ovs-vsctl', '-- --id=@s2c1 create Controller target=\\"tcp:127.0.0.1:6653\\" max_backoff=1000 -- --if-exists del-br s2 -- add-br s2 -- set bridge s2 controller=[@s2c1] other_config:datapath-id=0000000000000002 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s2 -- add-port s2 s2-eth1 -- set Interface s2-eth1 ofport_request=1')
+703dcd1c-e6b4-4e32-b948-dafc532ee21e
+*** h3 : ('ifconfig', 'h3-eth0', 'down')
+*** h3 : ('ifconfig', 'h3-eth0', 'hw', 'ether', '00:00:00:00:00:03')
+*** h3 : ('ifconfig', 'h3-eth0', 'up')
+*** h3 : ('ifconfig', 'h3-eth0', '10.0.0.3/8', 'up')
+*** h3 : ('ifconfig lo up',)
+INFO:     192.168.56.1:62308 - "POST /api/mininet/links HTTP/1.1" 200 OK
+*** s2 : ('ip link add name s2-eth2 address c6:ad:f9:8d:ab:08 type veth peer name h4-eth0 address 86:b7:f0:9c:6e:93 netns 3807',)
+
+added intf s2-eth2 (2) to node s2
+*** s2 : ('ifconfig', 's2-eth2', 'up')
+
+added intf h4-eth0 (0) to node h4
+moving h4-eth0 into namespace for h4 
+*** h4 : ('ifconfig', 'h4-eth0', 'up')
+*** s2 : ('ovs-vsctl', '-- --id=@s2c1 create Controller target=\\"tcp:127.0.0.1:6653\\" max_backoff=1000 -- --if-exists del-br s2 -- add-br s2 -- set bridge s2 controller=[@s2c1] other_config:datapath-id=0000000000000002 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s2 -- add-port s2 s2-eth1 -- set Interface s2-eth1 ofport_request=1 -- add-port s2 s2-eth2 -- set Interface s2-eth2 ofport_request=2')
+eaf4ff57-4ae7-413d-af28-6fe410632358
+*** h4 : ('ifconfig', 'h4-eth0', 'down')
+*** h4 : ('ifconfig', 'h4-eth0', 'hw', 'ether', '00:00:00:00:00:04')
+*** h4 : ('ifconfig', 'h4-eth0', 'up')
+*** h4 : ('ifconfig', 'h4-eth0', '10.0.0.4/8', 'up')
+*** h4 : ('ifconfig lo up',)
+INFO:     192.168.56.1:62308 - "POST /api/mininet/links HTTP/1.1" 200 OK
+CREATING SWITCH id='s3' type='sw' name='s3' label='s3 <00:00:00:00:00:00:00:03>' x=200.0 y=150.0 ports=4 controller=None
+_popen ['mnexec', '-cd', 'env', 'PS1=\x7f', 'bash', '--norc', '--noediting', '-is', 'mininet:s3'] 3897*** s3 : ('unset HISTFILE; stty -echo; set +m',)
+unset HISTFILE; stty -echo; set +m
+
+added intf lo (0) to node s3
+*** s3 : ('ifconfig', 'lo', 'up')
+*** s3 : ('ovs-vsctl', ' -- --if-exists del-br s3 -- add-br s3 -- set bridge s3 controller=[] other_config:datapath-id=0000000000000003 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s3')
+INFO:     192.168.56.1:62308 - "POST /api/mininet/switches HTTP/1.1" 200 OK
+*** s3 : ('ovs-vsctl', '-- --id=@s3c1 create Controller target=\\"tcp:127.0.0.1:6653\\" max_backoff=1000 -- --if-exists del-br s3 -- add-br s3 -- set bridge s3 controller=[@s3c1] other_config:datapath-id=0000000000000003 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s3')
+aee95860-301a-4b2a-b5f8-29e4fd1a916b
+INFO:     192.168.56.1:62308 - "POST /api/mininet/associate_switch HTTP/1.1" 200 OK
+*** s3 : ('ip link add name s3-eth1 address 86:52:6e:7f:7b:38 type veth peer name s1-eth3 address aa:73:95:62:43:16 netns 3809',)
+
+added intf s3-eth1 (1) to node s3
+*** s3 : ('ifconfig', 's3-eth1', 'up')
+
+added intf s1-eth3 (3) to node s1
+*** s1 : ('ifconfig', 's1-eth3', 'up')
+*** s3 : ('ovs-vsctl', '-- --id=@s3c1 create Controller target=\\"tcp:127.0.0.1:6653\\" max_backoff=1000 -- --if-exists del-br s3 -- add-br s3 -- set bridge s3 controller=[@s3c1] other_config:datapath-id=0000000000000003 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s3 -- add-port s3 s3-eth1 -- set Interface s3-eth1 ofport_request=1')
+b85ead4b-dad9-479f-b566-d7bc35a3d16a
+*** s1 : ('ovs-vsctl', '-- --id=@s1c1 create Controller target=\\"tcp:127.0.0.1:6653\\" max_backoff=1000 -- --if-exists del-br s1 -- add-br s1 -- set bridge s1 controller=[@s1c1] other_config:datapath-id=0000000000000001 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s1 -- add-port s1 s1-eth1 -- set Interface s1-eth1 ofport_request=1 -- add-port s1 s1-eth2 -- set Interface s1-eth2 ofport_request=2 -- add-port s1 s1-eth3 -- set Interface s1-eth3 ofport_request=3')
+1fda866d-2efe-463e-8a58-eb0f11355c86
+INFO:     192.168.56.1:62308 - "POST /api/mininet/links HTTP/1.1" 200 OK
+*** s3 : ('ip link add name s3-eth2 address 1e:b9:97:5e:96:dd type veth peer name s2-eth3 address 8e:d4:c8:5a:bf:30 netns 3858',)
+
+added intf s3-eth2 (2) to node s3
+*** s3 : ('ifconfig', 's3-eth2', 'up')
+
+added intf s2-eth3 (3) to node s2
+*** s2 : ('ifconfig', 's2-eth3', 'up')
+*** s3 : ('ovs-vsctl', '-- --id=@s3c1 create Controller target=\\"tcp:127.0.0.1:6653\\" max_backoff=1000 -- --if-exists del-br s3 -- add-br s3 -- set bridge s3 controller=[@s3c1] other_config:datapath-id=0000000000000003 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s3 -- add-port s3 s3-eth1 -- set Interface s3-eth1 ofport_request=1 -- add-port s3 s3-eth2 -- set Interface s3-eth2 ofport_request=2')
+48dd6b0a-6ee2-480c-b9aa-b07ea9b0e8f9
+*** s2 : ('ovs-vsctl', '-- --id=@s2c1 create Controller target=\\"tcp:127.0.0.1:6653\\" max_backoff=1000 -- --if-exists del-br s2 -- add-br s2 -- set bridge s2 controller=[@s2c1] other_config:datapath-id=0000000000000002 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s2 -- add-port s2 s2-eth1 -- set Interface s2-eth1 ofport_request=1 -- add-port s2 s2-eth2 -- set Interface s2-eth2 ofport_request=2 -- add-port s2 s2-eth3 -- set Interface s2-eth3 ofport_request=3')
+2739a341-9e0c-4d07-bfef-5e29e5741fb6
+INFO:     192.168.56.1:62308 - "POST /api/mininet/links HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49654 - "GET /api/mininet/controllers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49656 - "GET /api/mininet/switches HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49658 - "GET /api/mininet/hosts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49660 - "GET /api/mininet/links HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49662 - "GET /api/mininet/start HTTP/1.1" 200 OK
+DEBUG:    = connection is CONNECTING
+DEBUG:    < GET /api/mininet/terminal/h1 HTTP/1.1
+DEBUG:    < host: 192.168.56.101:8000
+DEBUG:    < connection: Upgrade
+DEBUG:    < pragma: no-cache
+DEBUG:    < cache-control: no-cache
+DEBUG:    < user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0
+DEBUG:    < upgrade: websocket
+DEBUG:    < origin: http://192.168.56.101:5173
+DEBUG:    < sec-websocket-version: 13
+DEBUG:    < accept-encoding: gzip, deflate
+DEBUG:    < accept-language: pt-BR,pt;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+DEBUG:    < sec-websocket-key: 3QDe3mFEoivwktCo0PMO9g==
+DEBUG:    < sec-websocket-extensions: permessage-deflate; client_max_window_bits
+INFO:     ('192.168.56.1', 63542) - "WebSocket /api/mininet/terminal/h1" [accepted]
+_popen ['mnexec', '-da', '3801', '/bin/bash', '-i'] 4003DEBUG:    > HTTP/1.1 101 Switching Protocols
+DEBUG:    > Upgrade: websocket
+DEBUG:    > Connection: Upgrade
+DEBUG:    > Sec-WebSocket-Accept: Fss9g20nLyIY2assLcLbDlAkt3Y=
+DEBUG:    > Sec-WebSocket-Extensions: permessage-deflate
+DEBUG:    > date: Sat, 17 Oct 2026 18:54:40 GMT
+DEBUG:    > server: uvicorn
+INFO:     connection open
+DEBUG:    = connection is OPEN
+DEBUG:    > TEXT 'root@mininet-vm:/home/mininet/mininet-gui/mininet-gui-backend# ' [63 bytes]
+DEBUG:    < TEXT 'i' [1 byte]
+RECEIVED b'i'
+DEBUG:    > TEXT 'i' [1 byte]
+DEBUG:    < TEXT 'p' [1 byte]
+RECEIVED b'p'
+DEBUG:    > TEXT 'p' [1 byte]
+DEBUG:    < TEXT ' ' [1 byte]
+RECEIVED b' '
+DEBUG:    > TEXT ' ' [1 byte]
+DEBUG:    < TEXT 'a' [1 byte]
+RECEIVED b'a'
+DEBUG:    > TEXT 'a' [1 byte]
+DEBUG:    < TEXT 'd' [1 byte]
+RECEIVED b'd'
+DEBUG:    > TEXT 'd' [1 byte]
+DEBUG:    < TEXT 'd' [1 byte]
+RECEIVED b'd'
+DEBUG:    > TEXT 'd' [1 byte]
+DEBUG:    < TEXT 'r' [1 byte]
+RECEIVED b'r'
+DEBUG:    > TEXT 'r' [1 byte]
+DEBUG:    < TEXT ' ' [1 byte]
+RECEIVED b' '
+DEBUG:    > TEXT ' ' [1 byte]
+DEBUG:    < TEXT 's' [1 byte]
+RECEIVED b's'
+DEBUG:    > TEXT 's' [1 byte]
+DEBUG:    < TEXT 'h' [1 byte]
+RECEIVED b'h'
+DEBUG:    > TEXT 'h' [1 byte]
+DEBUG:    < TEXT 'o' [1 byte]
+RECEIVED b'o'
+DEBUG:    > TEXT 'o' [1 byte]
+DEBUG:    < TEXT 'w' [1 byte]
+RECEIVED b'w'
+DEBUG:    > TEXT 'w' [1 byte]
+DEBUG:    < TEXT '\n' [1 byte]
+RECEIVED b'\n'
+DEBUG:    > TEXT '\r\n' [2 bytes]
+DEBUG:    > TEXT '1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc n...i/mininet-gui-backend# ' [587 bytes]
+DEBUG:    = connection is CONNECTING
+DEBUG:    < GET /api/mininet/terminal/h2 HTTP/1.1
+DEBUG:    < host: 192.168.56.101:8000
+DEBUG:    < connection: Upgrade
+DEBUG:    < pragma: no-cache
+DEBUG:    < cache-control: no-cache
+DEBUG:    < user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0
+DEBUG:    < upgrade: websocket
+DEBUG:    < origin: http://192.168.56.101:5173
+DEBUG:    < sec-websocket-version: 13
+DEBUG:    < accept-encoding: gzip, deflate
+DEBUG:    < accept-language: pt-BR,pt;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+DEBUG:    < sec-websocket-key: 3FEADfSJN5D2JCsU7J+mhA==
+DEBUG:    < sec-websocket-extensions: permessage-deflate; client_max_window_bits
+INFO:     ('192.168.56.1', 65258) - "WebSocket /api/mininet/terminal/h2" [accepted]
+_popen ['mnexec', '-da', '3803', '/bin/bash', '-i'] 4011DEBUG:    > HTTP/1.1 101 Switching Protocols
+DEBUG:    > Upgrade: websocket
+DEBUG:    > Connection: Upgrade
+DEBUG:    > Sec-WebSocket-Accept: jX9qpSl6pkVOwLQFO7iB8cLwU/I=
+DEBUG:    > Sec-WebSocket-Extensions: permessage-deflate
+DEBUG:    > date: Sat, 17 Oct 2026 18:54:46 GMT
+DEBUG:    > server: uvicorn
+INFO:     connection open
+DEBUG:    = connection is OPEN
+DEBUG:    > TEXT 'root@mininet-vm:/home/mininet/mininet-gui/mininet-gui-backend# ' [63 bytes]
+DEBUG:    < TEXT 'i' [1 byte]
+RECEIVED b'i'
+DEBUG:    > TEXT 'i' [1 byte]
+DEBUG:    < TEXT 'p' [1 byte]
+RECEIVED b'p'
+DEBUG:    > TEXT 'p' [1 byte]
+DEBUG:    < TEXT ' ' [1 byte]
+RECEIVED b' '
+DEBUG:    > TEXT ' ' [1 byte]
+DEBUG:    < TEXT 'a' [1 byte]
+RECEIVED b'a'
+DEBUG:    > TEXT 'a' [1 byte]
+DEBUG:    < TEXT 'd' [1 byte]
+RECEIVED b'd'
+DEBUG:    > TEXT 'd' [1 byte]
+DEBUG:    < TEXT 'd' [1 byte]
+RECEIVED b'd'
+DEBUG:    > TEXT 'd' [1 byte]
+DEBUG:    < TEXT 'r' [1 byte]
+RECEIVED b'r'
+DEBUG:    > TEXT 'r' [1 byte]
+DEBUG:    < TEXT ' ' [1 byte]
+RECEIVED b' '
+DEBUG:    > TEXT ' ' [1 byte]
+DEBUG:    < TEXT 's' [1 byte]
+RECEIVED b's'
+DEBUG:    > TEXT 's' [1 byte]
+DEBUG:    < TEXT 'h' [1 byte]
+RECEIVED b'h'
+DEBUG:    > TEXT 'h' [1 byte]
+DEBUG:    < TEXT 'o' [1 byte]
+RECEIVED b'o'
+DEBUG:    > TEXT 'o' [1 byte]
+DEBUG:    < TEXT 'w' [1 byte]
+RECEIVED b'w'
+DEBUG:    > TEXT 'w' [1 byte]
+DEBUG:    < TEXT '\n' [1 byte]
+RECEIVED b'\n'
+DEBUG:    > TEXT '\r\n1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdi...i/mininet-gui-backend# ' [589 bytes]
+DEBUG:    % sending keepalive ping
+DEBUG:    > PING fc 2e 57 11 [binary, 4 bytes]
+DEBUG:    < PONG fc 2e 57 11 [binary, 4 bytes]
+DEBUG:    % received keepalive pong
+DEBUG:    < TEXT 'p' [1 byte]
+RECEIVED b'p'
+DEBUG:    > TEXT 'p' [1 byte]
+DEBUG:    < TEXT 'i' [1 byte]
+RECEIVED b'i'
+DEBUG:    > TEXT 'i' [1 byte]
+DEBUG:    < TEXT 'n' [1 byte]
+RECEIVED b'n'
+DEBUG:    > TEXT 'n' [1 byte]
+DEBUG:    < TEXT 'g' [1 byte]
+RECEIVED b'g'
+DEBUG:    > TEXT 'g' [1 byte]
+DEBUG:    < TEXT ' ' [1 byte]
+RECEIVED b' '
+DEBUG:    > TEXT ' ' [1 byte]
+DEBUG:    < TEXT '-' [1 byte]
+RECEIVED b'-'
+DEBUG:    > TEXT '-' [1 byte]
+DEBUG:    < TEXT 'c' [1 byte]
+RECEIVED b'c'
+DEBUG:    > TEXT 'c' [1 byte]
+DEBUG:    < TEXT ' ' [1 byte]
+RECEIVED b' '
+DEBUG:    > TEXT ' ' [1 byte]
+DEBUG:    < TEXT '2' [1 byte]
+RECEIVED b'2'
+DEBUG:    > TEXT '2' [1 byte]
+DEBUG:    < TEXT ' ' [1 byte]
+RECEIVED b' '
+DEBUG:    > TEXT ' ' [1 byte]
+DEBUG:    < TEXT '1' [1 byte]
+RECEIVED b'1'
+DEBUG:    > TEXT '1' [1 byte]
+DEBUG:    < TEXT '0' [1 byte]
+RECEIVED b'0'
+DEBUG:    > TEXT '0' [1 byte]
+DEBUG:    < TEXT '.' [1 byte]
+RECEIVED b'.'
+DEBUG:    > TEXT '.' [1 byte]
+DEBUG:    < TEXT '0' [1 byte]
+RECEIVED b'0'
+DEBUG:    > TEXT '0' [1 byte]
+DEBUG:    < TEXT '.' [1 byte]
+RECEIVED b'.'
+DEBUG:    > TEXT '<et/mininet-gui/mininet-gui-backend# ping -c 2 ...                       ' [77 bytes]
+DEBUG:    < TEXT '0' [1 byte]
+RECEIVED b'0'
+DEBUG:    > TEXT '0' [1 byte]
+DEBUG:    < TEXT '.' [1 byte]
+RECEIVED b'.'
+DEBUG:    > TEXT '.' [1 byte]
+DEBUG:    < TEXT '2' [1 byte]
+RECEIVED b'2'
+DEBUG:    > TEXT '2' [1 byte]
+DEBUG:    < TEXT '\n' [1 byte]
+RECEIVED b'\n'
+DEBUG:    > TEXT '\r\n' [2 bytes]
+DEBUG:    > TEXT 'PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.\r\n' [48 bytes]
+DEBUG:    > TEXT '64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=20.6 ms\r\n' [56 bytes]
+DEBUG:    > TEXT '64 bytes from 10.0.0.2: icmp_seq=2 ttl=64 time=...i/mininet-gui-backend# ' [274 bytes]
+DEBUG:    % sending keepalive ping
+DEBUG:    > PING 11 de 32 8c [binary, 4 bytes]
+DEBUG:    < PONG 11 de 32 8c [binary, 4 bytes]
+DEBUG:    % received keepalive pong
+DEBUG:    % sending keepalive ping
+DEBUG:    > PING 10 31 ec 86 [binary, 4 bytes]
+DEBUG:    < PONG 10 31 ec 86 [binary, 4 bytes]
+DEBUG:    % received keepalive pong
+DEBUG:    < TEXT 'e' [1 byte]
+RECEIVED b'e'
+DEBUG:    > TEXT 'e' [1 byte]
+DEBUG:    < TEXT 'c' [1 byte]
+RECEIVED b'c'
+DEBUG:    > TEXT 'c' [1 byte]
+DEBUG:    < TEXT 'h' [1 byte]
+RECEIVED b'h'
+DEBUG:    > TEXT 'h' [1 byte]
+DEBUG:    < TEXT 'o' [1 byte]
+RECEIVED b'o'
+DEBUG:    > TEXT 'o' [1 byte]
+DEBUG:    < TEXT ' ' [1 byte]
+RECEIVED b' '
+DEBUG:    > TEXT ' ' [1 byte]
+DEBUG:    < TEXT 'w' [1 byte]
+RECEIVED b'w'
+DEBUG:    > TEXT 'w' [1 byte]
+DEBUG:    < TEXT 'e' [1 byte]
+RECEIVED b'e'
+DEBUG:    > TEXT 'e' [1 byte]
+DEBUG:    < TEXT 'b' [1 byte]
+RECEIVED b'b'
+DEBUG:    > TEXT 'b' [1 byte]
+DEBUG:    < TEXT 's' [1 byte]
+RECEIVED b's'
+DEBUG:    > TEXT 's' [1 byte]
+DEBUG:    < TEXT 'h' [1 byte]
+RECEIVED b'h'
+DEBUG:    > TEXT 'h' [1 byte]
+DEBUG:    < TEXT 'e' [1 byte]
+RECEIVED b'e'
+DEBUG:    > TEXT 'e' [1 byte]
+DEBUG:    < TEXT 'l' [1 byte]
+RECEIVED b'l'
+DEBUG:    > TEXT 'l' [1 byte]
+DEBUG:    < TEXT 'l' [1 byte]
+RECEIVED b'l'
+DEBUG:    > TEXT 'l' [1 byte]
+DEBUG:    < TEXT '-' [1 byte]
+RECEIVED b'-'
+DEBUG:    > TEXT '-' [1 byte]
+DEBUG:    < TEXT 'p' [1 byte]
+RECEIVED b'p'
+DEBUG:    > TEXT '<et/mininet-gui/mininet-gui-backend# echo websh...                       ' [77 bytes]
+DEBUG:    < TEXT 'i' [1 byte]
+RECEIVED b'i'
+DEBUG:    > TEXT 'i' [1 byte]
+DEBUG:    < TEXT 'd' [1 byte]
+RECEIVED b'd'
+DEBUG:    > TEXT 'd' [1 byte]
+DEBUG:    < TEXT '=' [1 byte]
+RECEIVED b'='
+DEBUG:    > TEXT '=' [1 byte]
+DEBUG:    < TEXT '$' [1 byte]
+RECEIVED b'$'
+DEBUG:    > TEXT '$' [1 byte]
+DEBUG:    < TEXT '$' [1 byte]
+RECEIVED b'$'
+DEBUG:    > TEXT '$' [1 byte]
+DEBUG:    < TEXT ' ' [1 byte]
+RECEIVED b' '
+DEBUG:    > TEXT ' ' [1 byte]
+DEBUG:    < TEXT 'n' [1 byte]
+RECEIVED b'n'
+DEBUG:    > TEXT 'n' [1 byte]
+DEBUG:    < TEXT 'e' [1 byte]
+RECEIVED b'e'
+DEBUG:    > TEXT 'e' [1 byte]
+DEBUG:    < TEXT 't' [1 byte]
+RECEIVED b't'
+DEBUG:    > TEXT 't' [1 byte]
+DEBUG:    < TEXT 'n' [1 byte]
+RECEIVED b'n'
+DEBUG:    > TEXT 'n' [1 byte]
+DEBUG:    < TEXT 's' [1 byte]
+RECEIVED b's'
+DEBUG:    > TEXT 's' [1 byte]
+DEBUG:    < TEXT '=' [1 byte]
+RECEIVED b'='
+DEBUG:    > TEXT '=' [1 byte]
+DEBUG:    < TEXT '$' [1 byte]
+RECEIVED b'$'
+DEBUG:    > TEXT '$' [1 byte]
+DEBUG:    < TEXT '(' [1 byte]
+RECEIVED b'('
+DEBUG:    > TEXT '(' [1 byte]
+DEBUG:    < TEXT 'r' [1 byte]
+RECEIVED b'r'
+DEBUG:    > TEXT 'r' [1 byte]
+DEBUG:    < TEXT 'e' [1 byte]
+RECEIVED b'e'
+DEBUG:    > TEXT 'e' [1 byte]
+DEBUG:    < TEXT 'a' [1 byte]
+RECEIVED b'a'
+DEBUG:    > TEXT 'a' [1 byte]
+DEBUG:    < TEXT 'd' [1 byte]
+RECEIVED b'd'
+DEBUG:    > TEXT 'd' [1 byte]
+DEBUG:    < TEXT 'l' [1 byte]
+RECEIVED b'l'
+DEBUG:    > TEXT 'l' [1 byte]
+DEBUG:    < TEXT 'i' [1 byte]
+RECEIVED b'i'
+DEBUG:    > TEXT 'i' [1 byte]
+DEBUG:    < TEXT 'n' [1 byte]
+RECEIVED b'n'
+DEBUG:    > TEXT 'n' [1 byte]
+DEBUG:    < TEXT 'k' [1 byte]
+RECEIVED b'k'
+DEBUG:    > TEXT 'k' [1 byte]
+DEBUG:    < TEXT ' ' [1 byte]
+RECEIVED b' '
+DEBUG:    > TEXT ' ' [1 byte]
+DEBUG:    < TEXT '/' [1 byte]
+RECEIVED b'/'
+DEBUG:    > TEXT '/' [1 byte]
+DEBUG:    < TEXT 'p' [1 byte]
+RECEIVED b'p'
+DEBUG:    > TEXT 'p' [1 byte]
+DEBUG:    < TEXT 'r' [1 byte]
+RECEIVED b'r'
+DEBUG:    > TEXT '<-backend# echo webshell-pid=$$ netns=$(readlin...                       ' [77 bytes]
+DEBUG:    < TEXT 'o' [1 byte]
+RECEIVED b'o'
+DEBUG:    > TEXT 'o' [1 byte]
+DEBUG:    < TEXT 'c' [1 byte]
+RECEIVED b'c'
+DEBUG:    > TEXT 'c' [1 byte]
+DEBUG:    < TEXT '/' [1 byte]
+RECEIVED b'/'
+DEBUG:    > TEXT '/' [1 byte]
+DEBUG:    < TEXT '$' [1 byte]
+RECEIVED b'$'
+DEBUG:    > TEXT '$' [1 byte]
+DEBUG:    < TEXT '$' [1 byte]
+RECEIVED b'$'
+DEBUG:    > TEXT '$' [1 byte]
+DEBUG:    < TEXT '/' [1 byte]
+RECEIVED b'/'
+DEBUG:    > TEXT '/' [1 byte]
+DEBUG:    < TEXT 'n' [1 byte]
+RECEIVED b'n'
+DEBUG:    > TEXT 'n' [1 byte]
+DEBUG:    < TEXT 's' [1 byte]
+RECEIVED b's'
+DEBUG:    > TEXT 's' [1 byte]
+DEBUG:    < TEXT '/' [1 byte]
+RECEIVED b'/'
+DEBUG:    > TEXT '/' [1 byte]
+DEBUG:    < TEXT 'n' [1 byte]
+RECEIVED b'n'
+DEBUG:    > TEXT 'n' [1 byte]
+DEBUG:    < TEXT 'e' [1 byte]
+RECEIVED b'e'
+DEBUG:    > TEXT 'e' [1 byte]
+DEBUG:    < TEXT 't' [1 byte]
+RECEIVED b't'
+DEBUG:    > TEXT 't' [1 byte]
+DEBUG:    < TEXT ')' [1 byte]
+RECEIVED b')'
+DEBUG:    > TEXT ')' [1 byte]
+DEBUG:    < TEXT '\n' [1 byte]
+RECEIVED b'\n'
+DEBUG:    > TEXT '\r\nwebshell-pid=4003 netns=net:[4026532228]\r\...i/mininet-gui-backend# ' [107 bytes]
+DEBUG:    % sending keepalive ping
+DEBUG:    > PING 1c dc 43 80 [binary, 4 bytes]
+DEBUG:    < PONG 1c dc 43 80 [binary, 4 bytes]
+DEBUG:    % received keepalive pong
+DEBUG:    < TEXT 'e' [1 byte]
+RECEIVED b'e'
+DEBUG:    > TEXT 'e' [1 byte]
+DEBUG:    < TEXT 'c' [1 byte]
+RECEIVED b'c'
+DEBUG:    > TEXT 'c' [1 byte]
+DEBUG:    < TEXT 'h' [1 byte]
+RECEIVED b'h'
+DEBUG:    > TEXT 'h' [1 byte]
+DEBUG:    < TEXT 'o' [1 byte]
+RECEIVED b'o'
+DEBUG:    > TEXT 'o' [1 byte]
+DEBUG:    < TEXT ' ' [1 byte]
+RECEIVED b' '
+DEBUG:    > TEXT ' ' [1 byte]
+DEBUG:    < TEXT 'w' [1 byte]
+RECEIVED b'w'
+DEBUG:    > TEXT 'w' [1 byte]
+DEBUG:    < TEXT 'e' [1 byte]
+RECEIVED b'e'
+DEBUG:    > TEXT 'e' [1 byte]
+DEBUG:    < TEXT 'b' [1 byte]
+RECEIVED b'b'
+DEBUG:    > TEXT 'b' [1 byte]
+DEBUG:    < TEXT 's' [1 byte]
+RECEIVED b's'
+DEBUG:    > TEXT 's' [1 byte]
+DEBUG:    < TEXT 'h' [1 byte]
+RECEIVED b'h'
+DEBUG:    > TEXT 'h' [1 byte]
+DEBUG:    < TEXT 'e' [1 byte]
+RECEIVED b'e'
+DEBUG:    > TEXT 'e' [1 byte]
+DEBUG:    < TEXT 'l' [1 byte]
+RECEIVED b'l'
+DEBUG:    > TEXT 'l' [1 byte]
+DEBUG:    < TEXT 'l' [1 byte]
+RECEIVED b'l'
+DEBUG:    > TEXT 'l' [1 byte]
+DEBUG:    < TEXT '-' [1 byte]
+RECEIVED b'-'
+DEBUG:    > TEXT '-' [1 byte]
+DEBUG:    < TEXT 'p' [1 byte]
+RECEIVED b'p'
+DEBUG:    > TEXT '<et/mininet-gui/mininet-gui-backend# echo websh...                       ' [77 bytes]
+DEBUG:    < TEXT 'i' [1 byte]
+RECEIVED b'i'
+DEBUG:    > TEXT 'i' [1 byte]
+DEBUG:    < TEXT 'd' [1 byte]
+RECEIVED b'd'
+DEBUG:    > TEXT 'd' [1 byte]
+DEBUG:    < TEXT '=' [1 byte]
+RECEIVED b'='
+DEBUG:    > TEXT '=' [1 byte]
+DEBUG:    < TEXT '$' [1 byte]
+RECEIVED b'$'
+DEBUG:    > TEXT '$' [1 byte]
+DEBUG:    < TEXT '$' [1 byte]
+RECEIVED b'$'
+DEBUG:    > TEXT '$' [1 byte]
+DEBUG:    < TEXT ' ' [1 byte]
+RECEIVED b' '
+DEBUG:    > TEXT ' ' [1 byte]
+DEBUG:    < TEXT 'n' [1 byte]
+RECEIVED b'n'
+DEBUG:    > TEXT 'n' [1 byte]
+DEBUG:    < TEXT 'e' [1 byte]
+RECEIVED b'e'
+DEBUG:    > TEXT 'e' [1 byte]
+DEBUG:    < TEXT 't' [1 byte]
+RECEIVED b't'
+DEBUG:    > TEXT 't' [1 byte]
+DEBUG:    < TEXT 'n' [1 byte]
+RECEIVED b'n'
+DEBUG:    > TEXT 'n' [1 byte]
+DEBUG:    < TEXT 's' [1 byte]
+RECEIVED b's'
+DEBUG:    > TEXT 's' [1 byte]
+DEBUG:    < TEXT '=' [1 byte]
+RECEIVED b'='
+DEBUG:    > TEXT '=' [1 byte]
+DEBUG:    < TEXT '$' [1 byte]
+RECEIVED b'$'
+DEBUG:    > TEXT '$' [1 byte]
+DEBUG:    < TEXT '(' [1 byte]
+RECEIVED b'('
+DEBUG:    > TEXT '(' [1 byte]
+DEBUG:    < TEXT 'r' [1 byte]
+RECEIVED b'r'
+DEBUG:    > TEXT 'r' [1 byte]
+DEBUG:    < TEXT 'e' [1 byte]
+RECEIVED b'e'
+DEBUG:    > TEXT 'e' [1 byte]
+DEBUG:    < TEXT 'a' [1 byte]
+RECEIVED b'a'
+DEBUG:    > TEXT 'a' [1 byte]
+DEBUG:    < TEXT 'd' [1 byte]
+RECEIVED b'd'
+DEBUG:    > TEXT 'd' [1 byte]
+DEBUG:    < TEXT 'l' [1 byte]
+RECEIVED b'l'
+DEBUG:    > TEXT 'l' [1 byte]
+DEBUG:    < TEXT 'i' [1 byte]
+RECEIVED b'i'
+DEBUG:    > TEXT 'i' [1 byte]
+DEBUG:    < TEXT 'n' [1 byte]
+RECEIVED b'n'
+DEBUG:    > TEXT 'n' [1 byte]
+DEBUG:    < TEXT 'k' [1 byte]
+RECEIVED b'k'
+DEBUG:    > TEXT 'k' [1 byte]
+DEBUG:    < TEXT ' ' [1 byte]
+RECEIVED b' '
+DEBUG:    > TEXT ' ' [1 byte]
+DEBUG:    < TEXT '/' [1 byte]
+RECEIVED b'/'
+DEBUG:    > TEXT '/' [1 byte]
+DEBUG:    < TEXT 'p' [1 byte]
+RECEIVED b'p'
+DEBUG:    > TEXT 'p' [1 byte]
+DEBUG:    < TEXT 'r' [1 byte]
+RECEIVED b'r'
+DEBUG:    > TEXT '<-backend# echo webshell-pid=$$ netns=$(readlin...                       ' [77 bytes]
+DEBUG:    < TEXT 'o' [1 byte]
+RECEIVED b'o'
+DEBUG:    > TEXT 'o' [1 byte]
+DEBUG:    < TEXT 'c' [1 byte]
+RECEIVED b'c'
+DEBUG:    > TEXT 'c' [1 byte]
+DEBUG:    < TEXT '/' [1 byte]
+RECEIVED b'/'
+DEBUG:    > TEXT '/' [1 byte]
+DEBUG:    < TEXT '$' [1 byte]
+RECEIVED b'$'
+DEBUG:    > TEXT '$' [1 byte]
+DEBUG:    < TEXT '$' [1 byte]
+RECEIVED b'$'
+DEBUG:    > TEXT '$' [1 byte]
+DEBUG:    < TEXT '/' [1 byte]
+RECEIVED b'/'
+DEBUG:    > TEXT '/' [1 byte]
+DEBUG:    < TEXT 'n' [1 byte]
+RECEIVED b'n'
+DEBUG:    > TEXT 'n' [1 byte]
+DEBUG:    < TEXT 's' [1 byte]
+RECEIVED b's'
+DEBUG:    > TEXT 's' [1 byte]
+DEBUG:    < TEXT '/' [1 byte]
+RECEIVED b'/'
+DEBUG:    > TEXT '/' [1 byte]
+DEBUG:    < TEXT 'n' [1 byte]
+RECEIVED b'n'
+DEBUG:    > TEXT 'n' [1 byte]
+DEBUG:    < TEXT 'e' [1 byte]
+RECEIVED b'e'
+DEBUG:    > TEXT 'e' [1 byte]
+DEBUG:    < TEXT 't' [1 byte]
+RECEIVED b't'
+DEBUG:    > TEXT 't' [1 byte]
+DEBUG:    < TEXT ')' [1 byte]
+RECEIVED b')'
+DEBUG:    > TEXT ')' [1 byte]
+DEBUG:    < TEXT '\n' [1 byte]
+RECEIVED b'\n'
+DEBUG:    > TEXT '\r\n' [2 bytes]
+DEBUG:    > TEXT 'webshell-pid=4011 netns=net:[4026532269]\r\nroo...i/mininet-gui-backend# ' [105 bytes]
+DEBUG:    % sending keepalive ping
+DEBUG:    > PING fa 2a 9f da [binary, 4 bytes]
+DEBUG:    < PONG fa 2a 9f da [binary, 4 bytes]
+DEBUG:    % received keepalive pong
+DEBUG:    % sending keepalive ping
+DEBUG:    > PING a6 57 51 79 [binary, 4 bytes]
+DEBUG:    < PONG a6 57 51 79 [binary, 4 bytes]
+DEBUG:    % received keepalive pong
+INFO:     127.0.0.1:49664 - "GET /api/mininet/hosts HTTP/1.1" 200 OK
+DEBUG:    < CLOSE 1001 (going away) [2 bytes]
+DEBUG:    = connection is CLOSING
+DEBUG:    > CLOSE 1001 (going away) [2 bytes]
+DEBUG:    < CLOSE 1001 (going away) [2 bytes]
+DEBUG:    = connection is CLOSING
+DEBUG:    > CLOSE 1001 (going away) [2 bytes]
+DEBUG:    x half-closing TCP connection
+DEBUG:    x half-closing TCP connection
+DEBUG:    = connection is CLOSED
+DEBUG:    = connection is CLOSED
+PTY Read Error: [Errno 9] Bad file descriptor 
+PTY Read Error: [Errno 9] Bad file descriptor 
+INFO:     connection closed
+INFO:     connection closed
+Closed terminal session for h1
+Closed terminal session for h2
+INFO:     192.168.56.1:54179 - "OPTIONS /api/mininet/start HTTP/1.1" 200 OK
+INFO:     192.168.56.1:54179 - "GET /api/mininet/start HTTP/1.1" 200 OK
+INFO:     192.168.56.1:54179 - "GET /api/mininet/hosts HTTP/1.1" 200 OK
+INFO:     192.168.56.1:54179 - "GET /api/mininet/switches HTTP/1.1" 200 OK
+INFO:     192.168.56.1:54179 - "GET /api/mininet/controllers HTTP/1.1" 200 OK
+INFO:     192.168.56.1:54179 - "GET /api/mininet/links HTTP/1.1" 200 OK
+data: {'node_id': 'h1', 'position': [-204.7328110514078, 388.864125347662]}
+before update xy (50.0, 450.0)
+updated xy (-204.7328110514078, 388.864125347662)
+INFO:     192.168.56.1:55133 - "POST /api/mininet/node_position HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49666 - "GET /api/mininet/hosts HTTP/1.1" 200 OK
+INFO:     192.168.56.1:55133 - "GET /api/mininet/start HTTP/1.1" 200 OK
+INFO:     192.168.56.1:55133 - "GET /api/mininet/hosts HTTP/1.1" 200 OK
+INFO:     192.168.56.1:55133 - "GET /api/mininet/switches HTTP/1.1" 200 OK
+INFO:     192.168.56.1:55133 - "GET /api/mininet/controllers HTTP/1.1" 200 OK
+INFO:     192.168.56.1:55133 - "GET /api/mininet/links HTTP/1.1" 200 OK
+CREATING SWITCH id='s4' type='sw' name='s4' label='s4 <00:00:00:00:00:00:00:04>' x=-161.46015978496595 y=47.75513402046653 ports=4 controller=None
+_popen ['mnexec', '-cd', 'env', 'PS1=\x7f', 'bash', '--norc', '--noediting', '-is', 'mininet:s4'] 4271*** s4 : ('unset HISTFILE; stty -echo; set +m',)
+unset HISTFILE; stty -echo; set +m
+
+added intf lo (0) to node s4
+*** s4 : ('ifconfig', 'lo', 'up')
+*** s4 : ('ovs-vsctl', ' -- --if-exists del-br s4 -- add-br s4 -- set bridge s4 controller=[] other_config:datapath-id=0000000000000004 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s4')
+INFO:     192.168.56.1:56825 - "POST /api/mininet/switches HTTP/1.1" 200 OK
+id='h5' type='host' name='h5' label='h5' x=-165.54348939071332 y=266.676475907597 ip='10.0.0.5/8' mac='000000000005' 
+_popen ['mnexec', '-cdn', 'env', 'PS1=\x7f', 'bash', '--norc', '--noediting', '-is', 'mininet:h5'] 4284*** h5 : ('unset HISTFILE; stty -echo; set +m',)
+unset HISTFILE; stty -echo; set +m
+h5 
+INFO:     192.168.56.1:50294 - "POST /api/mininet/hosts HTTP/1.1" 200 OK
+*** h5 : ('ip link add name h5-eth0 address ce:00:64:5b:d9:68 type veth peer name s4-eth1 address fa:26:49:69:1b:b7 netns 4271',)
+
+added intf h5-eth0 (0) to node h5
+moving h5-eth0 into namespace for h5 
+*** h5 : ('ifconfig', 'h5-eth0', 'up')
+
+added intf s4-eth1 (1) to node s4
+*** s4 : ('ifconfig', 's4-eth1', 'up')
+*** h5 : ('ifconfig', 'h5-eth0', 'down')
+*** h5 : ('ifconfig', 'h5-eth0', 'hw', 'ether', '00:00:00:00:00:05')
+*** h5 : ('ifconfig', 'h5-eth0', 'up')
+*** h5 : ('ifconfig', 'h5-eth0', '10.0.0.5/8', 'up')
+*** h5 : ('ifconfig lo up',)
+INFO:     192.168.56.1:60578 - "POST /api/mininet/links HTTP/1.1" 200 OK
+*** s4 : ('ip link add name s4-eth2 address ba:e4:77:27:1d:63 type veth peer name s1-eth4 address 62:4a:3b:8a:79:fe netns 3809',)
+
+added intf s4-eth2 (2) to node s4
+*** s4 : ('ifconfig', 's4-eth2', 'up')
+
+added intf s1-eth4 (4) to node s1
+*** s1 : ('ifconfig', 's1-eth4', 'up')
+*** s1 : ('ovs-vsctl', '-- --id=@s1c1 create Controller target=\\"tcp:127.0.0.1:6653\\" max_backoff=1000 -- --if-exists del-br s1 -- add-br s1 -- set bridge s1 controller=[@s1c1] other_config:datapath-id=0000000000000001 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s1 -- add-port s1 s1-eth1 -- set Interface s1-eth1 ofport_request=1 -- add-port s1 s1-eth2 -- set Interface s1-eth2 ofport_request=2 -- add-port s1 s1-eth3 -- set Interface s1-eth3 ofport_request=3 -- add-port s1 s1-eth4 -- set Interface s1-eth4 ofport_request=4')
+6278cc99-dd3f-4743-842f-0e816e3d326f
+INFO:     192.168.56.1:60578 - "POST /api/mininet/links HTTP/1.1" 200 OK
+*** s4 : ('ovs-vsctl', '-- --id=@s4c1 create Controller target=\\"tcp:127.0.0.1:6653\\" max_backoff=1000 -- --if-exists del-br s4 -- add-br s4 -- set bridge s4 controller=[@s4c1] other_config:datapath-id=0000000000000004 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s4 -- add-port s4 s4-eth1 -- set Interface s4-eth1 ofport_request=1 -- add-port s4 s4-eth2 -- set Interface s4-eth2 ofport_request=2')
+3c469fc8-a8e9-4144-9991-4614abb095d4
+INFO:     192.168.56.1:60578 - "POST /api/mininet/associate_switch HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49670 - "GET /api/mininet/controllers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49672 - "GET /api/mininet/switches HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49674 - "GET /api/mininet/hosts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49676 - "GET /api/mininet/links HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49678 - "GET /api/mininet/start HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49680 - "GET /api/mininet/start HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49682 - "GET /api/mininet/hosts HTTP/1.1" 200 OK
+INFO:     192.168.56.1:57930 - "OPTIONS /api/mininet/pingall HTTP/1.1" 200 OK
+*** Ping: testing ping reachability
+h1 -> *** h1 : ('ping -c1  10.0.0.2',)
+PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
+64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=4.34 ms
+
+--- 10.0.0.2 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 4.342/4.342/4.342/0.000 ms
+h2 *** h1 : ('ping -c1  10.0.0.3',)
+PING 10.0.0.3 (10.0.0.3) 56(84) bytes of data.
+64 bytes from 10.0.0.3: icmp_seq=1 ttl=64 time=41.9 ms
+
+--- 10.0.0.3 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 41.868/41.868/41.868/0.000 ms
+h3 *** h1 : ('ping -c1  10.0.0.4',)
+PING 10.0.0.4 (10.0.0.4) 56(84) bytes of data.
+64 bytes from 10.0.0.4: icmp_seq=1 ttl=64 time=20.2 ms
+
+--- 10.0.0.4 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 20.246/20.246/20.246/0.000 ms
+h4 *** h1 : ('ping -c1  10.0.0.5',)
+PING 10.0.0.5 (10.0.0.5) 56(84) bytes of data.
+64 bytes from 10.0.0.5: icmp_seq=1 ttl=64 time=16.4 ms
+
+--- 10.0.0.5 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 16.408/16.408/16.408/0.000 ms
+h5 
+h2 -> *** h2 : ('ping -c1  10.0.0.1',)
+PING 10.0.0.1 (10.0.0.1) 56(84) bytes of data.
+64 bytes from 10.0.0.1: icmp_seq=1 ttl=64 time=4.41 ms
+
+--- 10.0.0.1 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 4.410/4.410/4.410/0.000 ms
+h1 *** h2 : ('ping -c1  10.0.0.3',)
+PING 10.0.0.3 (10.0.0.3) 56(84) bytes of data.
+64 bytes from 10.0.0.3: icmp_seq=1 ttl=64 time=37.8 ms
+
+--- 10.0.0.3 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 37.796/37.796/37.796/0.000 ms
+h3 *** h2 : ('ping -c1  10.0.0.4',)
+PING 10.0.0.4 (10.0.0.4) 56(84) bytes of data.
+64 bytes from 10.0.0.4: icmp_seq=1 ttl=64 time=24.5 ms
+
+--- 10.0.0.4 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 24.481/24.481/24.481/0.000 ms
+h4 *** h2 : ('ping -c1  10.0.0.5',)
+PING 10.0.0.5 (10.0.0.5) 56(84) bytes of data.
+64 bytes from 10.0.0.5: icmp_seq=1 ttl=64 time=7.29 ms
+
+--- 10.0.0.5 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 7.294/7.294/7.294/0.000 ms
+h5 
+h3 -> *** h3 : ('ping -c1  10.0.0.1',)
+PING 10.0.0.1 (10.0.0.1) 56(84) bytes of data.
+64 bytes from 10.0.0.1: icmp_seq=1 ttl=64 time=13.8 ms
+
+--- 10.0.0.1 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 13.832/13.832/13.832/0.000 ms
+h1 *** h3 : ('ping -c1  10.0.0.2',)
+PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
+64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=9.34 ms
+
+--- 10.0.0.2 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 9.344/9.344/9.344/0.000 ms
+h2 *** h3 : ('ping -c1  10.0.0.4',)
+PING 10.0.0.4 (10.0.0.4) 56(84) bytes of data.
+64 bytes from 10.0.0.4: icmp_seq=1 ttl=64 time=27.7 ms
+
+--- 10.0.0.4 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 27.676/27.676/27.676/0.000 ms
+h4 *** h3 : ('ping -c1  10.0.0.5',)
+PING 10.0.0.5 (10.0.0.5) 56(84) bytes of data.
+64 bytes from 10.0.0.5: icmp_seq=1 ttl=64 time=42.6 ms
+
+--- 10.0.0.5 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 42.551/42.551/42.551/0.000 ms
+h5 
+h4 -> *** h4 : ('ping -c1  10.0.0.1',)
+PING 10.0.0.1 (10.0.0.1) 56(84) bytes of data.
+64 bytes from 10.0.0.1: icmp_seq=1 ttl=64 time=12.1 ms
+
+--- 10.0.0.1 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 12.104/12.104/12.104/0.000 ms
+h1 *** h4 : ('ping -c1  10.0.0.2',)
+PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
+64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=10.9 ms
+
+--- 10.0.0.2 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 10.856/10.856/10.856/0.000 ms
+h2 *** h4 : ('ping -c1  10.0.0.3',)
+PING 10.0.0.3 (10.0.0.3) 56(84) bytes of data.
+64 bytes from 10.0.0.3: icmp_seq=1 ttl=64 time=23.1 ms
+
+--- 10.0.0.3 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 23.142/23.142/23.142/0.000 ms
+h3 *** h4 : ('ping -c1  10.0.0.5',)
+PING 10.0.0.5 (10.0.0.5) 56(84) bytes of data.
+64 bytes from 10.0.0.5: icmp_seq=1 ttl=64 time=55.5 ms
+
+--- 10.0.0.5 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 55.502/55.502/55.502/0.000 ms
+h5 
+h5 -> *** h5 : ('ping -c1  10.0.0.1',)
+PING 10.0.0.1 (10.0.0.1) 56(84) bytes of data.
+64 bytes from 10.0.0.1: icmp_seq=1 ttl=64 time=12.7 ms
+
+--- 10.0.0.1 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 12.661/12.661/12.661/0.000 ms
+h1 *** h5 : ('ping -c1  10.0.0.2',)
+PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
+64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=21.4 ms
+
+--- 10.0.0.2 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 21.441/21.441/21.441/0.000 ms
+h2 *** h5 : ('ping -c1  10.0.0.3',)
+PING 10.0.0.3 (10.0.0.3) 56(84) bytes of data.
+64 bytes from 10.0.0.3: icmp_seq=1 ttl=64 time=34.5 ms
+
+--- 10.0.0.3 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 34.522/34.522/34.522/0.000 ms
+h3 *** h5 : ('ping -c1  10.0.0.4',)
+PING 10.0.0.4 (10.0.0.4) 56(84) bytes of data.
+64 bytes from 10.0.0.4: icmp_seq=1 ttl=64 time=25.8 ms
+
+--- 10.0.0.4 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 25.847/25.847/25.847/0.000 ms
+h4 
+*** Results: 
+ h1->h2: 1/1, rtt min/avg/max/mdev 4.342/4.342/4.342/0.000 ms
+ h1->h3: 1/1, rtt min/avg/max/mdev 41.868/41.868/41.868/0.000 ms
+ h1->h4: 1/1, rtt min/avg/max/mdev 20.246/20.246/20.246/0.000 ms
+ h1->h5: 1/1, rtt min/avg/max/mdev 16.408/16.408/16.408/0.000 ms
+ h2->h1: 1/1, rtt min/avg/max/mdev 4.410/4.410/4.410/0.000 ms
+ h2->h3: 1/1, rtt min/avg/max/mdev 37.796/37.796/37.796/0.000 ms
+ h2->h4: 1/1, rtt min/avg/max/mdev 24.481/24.481/24.481/0.000 ms
+ h2->h5: 1/1, rtt min/avg/max/mdev 7.294/7.294/7.294/0.000 ms
+ h3->h1: 1/1, rtt min/avg/max/mdev 13.832/13.832/13.832/0.000 ms
+ h3->h2: 1/1, rtt min/avg/max/mdev 9.344/9.344/9.344/0.000 ms
+ h3->h4: 1/1, rtt min/avg/max/mdev 27.676/27.676/27.676/0.000 ms
+ h3->h5: 1/1, rtt min/avg/max/mdev 42.551/42.551/42.551/0.000 ms
+ h4->h1: 1/1, rtt min/avg/max/mdev 12.104/12.104/12.104/0.000 ms
+ h4->h2: 1/1, rtt min/avg/max/mdev 10.856/10.856/10.856/0.000 ms
+ h4->h3: 1/1, rtt min/avg/max/mdev 23.142/23.142/23.142/0.000 ms
+ h4->h5: 1/1, rtt min/avg/max/mdev 55.502/55.502/55.502/0.000 ms
+ h5->h1: 1/1, rtt min/avg/max/mdev 12.661/12.661/12.661/0.000 ms
+ h5->h2: 1/1, rtt min/avg/max/mdev 21.441/21.441/21.441/0.000 ms
+ h5->h3: 1/1, rtt min/avg/max/mdev 34.522/34.522/34.522/0.000 ms
+ h5->h4: 1/1, rtt min/avg/max/mdev 25.847/25.847/25.847/0.000 ms
+[(<Host h1: h1-eth0:10.0.0.1 pid=3801> , <Host h2: h2-eth0:10.0.0.2 pid=3803> , (1, 1, 4.342, 4.342, 4.342, 0.0)), (<Host h1: h1-eth0:10.0.0.1 pid=3801> , <Host h3: h3-eth0:10.0.0.3 pid=3805> , (1, 1, 41.868, 41.868, 41.868, 0.0)), (<Host h1: h1-eth0:10.0.0.1 pid=3801> , <Host h4: h4-eth0:10.0.0.4 pid=3807> , (1, 1, 20.246, 20.246, 20.246, 0.0)), (<Host h1: h1-eth0:10.0.0.1 pid=3801> , <Host h5: h5-eth0:10.0.0.5 pid=4284> , (1, 1, 16.408, 16.408, 16.408, 0.0)), (<Host h2: h2-eth0:10.0.0.2 pid=3803> , <Host h1: h1-eth0:10.0.0.1 pid=3801> , (1, 1, 4.41, 4.41, 4.41, 0.0)), (<Host h2: h2-eth0:10.0.0.2 pid=3803> , <Host h3: h3-eth0:10.0.0.3 pid=3805> , (1, 1, 37.796, 37.796, 37.796, 0.0)), (<Host h2: h2-eth0:10.0.0.2 pid=3803> , <Host h4: h4-eth0:10.0.0.4 pid=3807> , (1, 1, 24.481, 24.481, 24.481, 0.0)), (<Host h2: h2-eth0:10.0.0.2 pid=3803> , <Host h5: h5-eth0:10.0.0.5 pid=4284> , (1, 1, 7.294, 7.294, 7.294, 0.0)), (<Host h3: h3-eth0:10.0.0.3 pid=3805> , <Host h1: h1-eth0:10.0.0.1 pid=3801> , (1, 1, 13.832, 13.832, 13.832, 0.0)), (<Host h3: h3-eth0:10.0.0.3 pid=3805> , <Host h2: h2-eth0:10.0.0.2 pid=3803> , (1, 1, 9.344, 9.344, 9.344, 0.0)), (<Host h3: h3-eth0:10.0.0.3 pid=3805> , <Host h4: h4-eth0:10.0.0.4 pid=3807> , (1, 1, 27.676, 27.676, 27.676, 0.0)), (<Host h3: h3-eth0:10.0.0.3 pid=3805> , <Host h5: h5-eth0:10.0.0.5 pid=4284> , (1, 1, 42.551, 42.551, 42.551, 0.0)), (<Host h4: h4-eth0:10.0.0.4 pid=3807> , <Host h1: h1-eth0:10.0.0.1 pid=3801> , (1, 1, 12.104, 12.104, 12.104, 0.0)), (<Host h4: h4-eth0:10.0.0.4 pid=3807> , <Host h2: h2-eth0:10.0.0.2 pid=3803> , (1, 1, 10.856, 10.856, 10.856, 0.0)), (<Host h4: h4-eth0:10.0.0.4 pid=3807> , <Host h3: h3-eth0:10.0.0.3 pid=3805> , (1, 1, 23.142, 23.142, 23.142, 0.0)), (<Host h4: h4-eth0:10.0.0.4 pid=3807> , <Host h5: h5-eth0:10.0.0.5 pid=4284> , (1, 1, 55.502, 55.502, 55.502, 0.0)), (<Host h5: h5-eth0:10.0.0.5 pid=4284> , <Host h1: h1-eth0:10.0.0.1 pid=3801> , (1, 1, 12.661, 12.661, 12.661, 0.0)), (<Host h5: h5-eth0:10.0.0.5 pid=4284> , <Host h2: h2-eth0:10.0.0.2 pid=3803> , (1, 1, 21.441, 21.441, 21.441, 0.0)), (<Host h5: h5-eth0:10.0.0.5 pid=4284> , <Host h3: h3-eth0:10.0.0.3 pid=3805> , (1, 1, 34.522, 34.522, 34.522, 0.0)), (<Host h5: h5-eth0:10.0.0.5 pid=4284> , <Host h4: h4-eth0:10.0.0.4 pid=3807> , (1, 1, 25.847, 25.847, 25.847, 0.0))] 
+INFO:     192.168.56.1:57930 - "POST /api/mininet/pingall HTTP/1.1" 200 OK
+INFO:     192.168.56.1:50967 - "OPTIONS /api/mininet/delete_link/h2/s1 HTTP/1.1" 200 OK
+*** s1 : ('ip link del s1-eth2',)
+*** h2 : ('ip link del h2-eth0',)
+Cannot find device "h2-eth0"
+INFO:     192.168.56.1:50967 - "DELETE /api/mininet/delete_link/h2/s1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49684 - "GET /api/mininet/controllers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49686 - "GET /api/mininet/switches HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49688 - "GET /api/mininet/hosts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49690 - "GET /api/mininet/links HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49692 - "GET /api/mininet/start HTTP/1.1" 200 OK
+INFO:     192.168.56.1:58866 - "OPTIONS /api/mininet/delete_node/h4 HTTP/1.1" 200 OK
+*** h4 : ('ip link del h4-eth0',)
+.waiting for 3807 to terminate
+INFO:     192.168.56.1:58866 - "DELETE /api/mininet/delete_node/h4 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49694 - "GET /api/mininet/controllers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49696 - "GET /api/mininet/switches HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49698 - "GET /api/mininet/hosts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49700 - "GET /api/mininet/links HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49702 - "GET /api/mininet/start HTTP/1.1" 200 OK
+*** Ping: testing ping reachability
+h1 -> *** defaultIntf: warning: h2 has no interfaces
+INFO:     192.168.56.1:59057 - "POST /api/mininet/pingall HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/usr/local/lib/python3.8/dist-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.8/dist-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.8/dist-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.8/dist-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/usr/local/lib/python3.8/dist-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.8/dist-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/usr/local/lib/python3.8/dist-packages/starlette/middleware/cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.8/dist-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/usr/local/lib/python3.8/dist-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/usr/local/lib/python3.8/dist-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/usr/local/lib/python3.8/dist-packages/starlette/routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.8/dist-packages/starlette/routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.8/dist-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.8/dist-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/usr/local/lib/python3.8/dist-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/usr/local/lib/python3.8/dist-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/usr/local/lib/python3.8/dist-packages/starlette/routing.py", line 73, in app
+    response = await f(request)
+  File "/usr/local/lib/python3.8/dist-packages/fastapi/routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+  File "/usr/local/lib/python3.8/dist-packages/fastapi/routing.py", line 214, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/usr/local/lib/python3.8/dist-packages/starlette/concurrency.py", line 37, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+  File "/usr/local/lib/python3.8/dist-packages/anyio/to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+  File "/usr/local/lib/python3.8/dist-packages/anyio/_backends/_asyncio.py", line 2364, in run_sync_in_worker_thread
+    return await future
+  File "/usr/local/lib/python3.8/dist-packages/anyio/_backends/_asyncio.py", line 864, in run
+    result = context.run(func, *args)
+  File "/home/mininet/mininet-gui/mininet-gui-backend/mininet_gui_backend/api.py", line 157, in run_pingall
+    pingall_results = app.net.pingFull()
+  File "/usr/local/lib/python3.8/dist-packages/mininet/net.py", line 747, in pingFull
+    result = node.cmd( 'ping -c1 %s %s' % (opts, dest.IP()) )
+  File "/usr/local/lib/python3.8/dist-packages/mininet/node.py", line 573, in IP
+    return self.intf( intf ).IP()
+AttributeError: 'NoneType' object has no attribute 'IP'
+INFO:     127.0.0.1:49704 - "GET /api/mininet/start HTTP/1.1" 200 OK
+DEBUG:    = connection is CONNECTING
+DEBUG:    < GET /api/mininet/terminal/h1 HTTP/1.1
+DEBUG:    < host: 192.168.56.101:8000
+DEBUG:    < connection: Upgrade
+DEBUG:    < pragma: no-cache
+DEBUG:    < cache-control: no-cache
+DEBUG:    < user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0
+DEBUG:    < upgrade: websocket
+DEBUG:    < origin: http://192.168.56.101:5173
+DEBUG:    < sec-websocket-version: 13
+DEBUG:    < accept-encoding: gzip, deflate
+DEBUG:    < accept-language: pt-BR,pt;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+DEBUG:    < sec-websocket-key: F3jfIdM0b1OCq+/osgzLZA==
+DEBUG:    < sec-websocket-extensions: permessage-deflate; client_max_window_bits
+INFO:     ('192.168.56.1', 51577) - "WebSocket /api/mininet/terminal/h1" [accepted]
+_popen ['mnexec', '-da', '3801', '/bin/bash', '-i'] 4836DEBUG:    > HTTP/1.1 101 Switching Protocols
+DEBUG:    > Upgrade: websocket
+DEBUG:    > Connection: Upgrade
+DEBUG:    > Sec-WebSocket-Accept: J2u4uA/vMdqxPaTcH4AKlcHOTB0=
+DEBUG:    > Sec-WebSocket-Extensions: permessage-deflate
+DEBUG:    > date: Sat, 17 Oct 2026 19:01:20 GMT
+DEBUG:    > server: uvicorn
+INFO:     connection open
+DEBUG:    = connection is OPEN
+DEBUG:    > TEXT 'root@mininet-vm:/home/mininet/mininet-gui/mininet-gui-backend# ' [63 bytes]
+DEBUG:    < TEXT 'p' [1 byte]
+RECEIVED b'p'
+DEBUG:    > TEXT 'p' [1 byte]
+DEBUG:    < TEXT 'i' [1 byte]
+RECEIVED b'i'
+DEBUG:    > TEXT 'i' [1 byte]
+DEBUG:    < TEXT 'n' [1 byte]
+RECEIVED b'n'
+DEBUG:    > TEXT 'n' [1 byte]
+DEBUG:    < TEXT 'g' [1 byte]
+RECEIVED b'g'
+DEBUG:    > TEXT 'g' [1 byte]
+DEBUG:    < TEXT ' ' [1 byte]
+RECEIVED b' '
+DEBUG:    > TEXT ' ' [1 byte]
+DEBUG:    < TEXT '-' [1 byte]
+RECEIVED b'-'
+DEBUG:    > TEXT '-' [1 byte]
+DEBUG:    < TEXT 'c' [1 byte]
+RECEIVED b'c'
+DEBUG:    > TEXT 'c' [1 byte]
+DEBUG:    < TEXT ' ' [1 byte]
+RECEIVED b' '
+DEBUG:    > TEXT ' ' [1 byte]
+DEBUG:    < TEXT '2' [1 byte]
+RECEIVED b'2'
+DEBUG:    > TEXT '2' [1 byte]
+DEBUG:    < TEXT ' ' [1 byte]
+RECEIVED b' '
+DEBUG:    > TEXT ' ' [1 byte]
+DEBUG:    < TEXT '1' [1 byte]
+RECEIVED b'1'
+DEBUG:    > TEXT '1' [1 byte]
+DEBUG:    < TEXT '0' [1 byte]
+RECEIVED b'0'
+DEBUG:    > TEXT '0' [1 byte]
+DEBUG:    < TEXT '.' [1 byte]
+RECEIVED b'.'
+DEBUG:    > TEXT '.' [1 byte]
+DEBUG:    < TEXT '0' [1 byte]
+RECEIVED b'0'
+DEBUG:    > TEXT '0' [1 byte]
+DEBUG:    < TEXT '.' [1 byte]
+RECEIVED b'.'
+DEBUG:    > TEXT '<et/mininet-gui/mininet-gui-backend# ping -c 2 ...                       ' [77 bytes]
+DEBUG:    < TEXT '0' [1 byte]
+RECEIVED b'0'
+DEBUG:    > TEXT '0' [1 byte]
+DEBUG:    < TEXT '.' [1 byte]
+RECEIVED b'.'
+DEBUG:    > TEXT '.' [1 byte]
+DEBUG:    < TEXT '3' [1 byte]
+RECEIVED b'3'
+DEBUG:    > TEXT '3' [1 byte]
+DEBUG:    < TEXT ';' [1 byte]
+RECEIVED b';'
+DEBUG:    > TEXT ';' [1 byte]
+DEBUG:    < TEXT ' ' [1 byte]
+RECEIVED b' '
+DEBUG:    > TEXT ' ' [1 byte]
+DEBUG:    < TEXT 'i' [1 byte]
+RECEIVED b'i'
+DEBUG:    > TEXT 'i' [1 byte]
+DEBUG:    < TEXT 'p' [1 byte]
+RECEIVED b'p'
+DEBUG:    > TEXT 'p' [1 byte]
+DEBUG:    < TEXT ' ' [1 byte]
+RECEIVED b' '
+DEBUG:    > TEXT ' ' [1 byte]
+DEBUG:    < TEXT '-' [1 byte]
+RECEIVED b'-'
+DEBUG:    > TEXT '-' [1 byte]
+DEBUG:    < TEXT 'b' [1 byte]
+RECEIVED b'b'
+DEBUG:    > TEXT 'b' [1 byte]
+DEBUG:    < TEXT 'r' [1 byte]
+RECEIVED b'r'
+DEBUG:    > TEXT 'r' [1 byte]
+DEBUG:    < TEXT ' ' [1 byte]
+RECEIVED b' '
+DEBUG:    > TEXT ' ' [1 byte]
+DEBUG:    < TEXT 'a' [1 byte]
+RECEIVED b'a'
+DEBUG:    > TEXT 'a' [1 byte]
+DEBUG:    < TEXT 'd' [1 byte]
+RECEIVED b'd'
+DEBUG:    > TEXT 'd' [1 byte]
+DEBUG:    < TEXT 'd' [1 byte]
+RECEIVED b'd'
+DEBUG:    > TEXT 'd' [1 byte]
+DEBUG:    < TEXT 'r' [1 byte]
+RECEIVED b'r'
+DEBUG:    > TEXT 'r' [1 byte]
+DEBUG:    < TEXT '\n' [1 byte]
+RECEIVED b'\n'
+DEBUG:    > TEXT '\r\n' [2 bytes]
+DEBUG:    > TEXT 'PING 10.0.0.3 (10.0.0.3) 56(84) bytes of data.\r\n' [48 bytes]
+DEBUG:    > TEXT '64 bytes from 10.0.0.3: icmp_seq=1 ttl=64 time=33.7 ms\r\n' [56 bytes]
+DEBUG:    > TEXT '64 bytes from 10.0.0.3: icmp_seq=2 ttl=64 time=...t loss, time 1005ms\r\n' [156 bytes]
+DEBUG:    > TEXT 'rtt min/avg/max/mdev = 8.737/21.237/33.737/12.5...i/mininet-gui-backend# ' [208 bytes]
+INFO:     192.168.56.1:53217 - "OPTIONS /api/mininet/reset HTTP/1.1" 200 OK
+*** Removing excess controllers/ofprotocols/ofdatapaths/pings/noxes
+killall controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+killall -9 controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+pkill -9 -f "sudo mnexec"
+*** Removing junk from /tmp
+rm -f /tmp/vconn* /tmp/vlogs* /tmp/*.out /tmp/*.log
+*** Removing old X11 tunnels
+*** errRun: ['pkill', '-9', '-f', 'mnexec.*socat'] 
+  1*** Removing excess kernel datapaths
+ps ax | egrep -o 'dp[0-9]+' | sed 's/dp/nl:/'
+***  Removing OVS datapaths
+ovs-vsctl --timeout=1 list-br
+ovs-vsctl --if-exists del-br s1 -- --if-exists del-br s2 -- --if-exists del-br s3 -- --if-exists del-br s4
+ovs-vsctl --timeout=1 list-br
+*** Removing all links of the pattern foo-ethX
+ip link show | egrep -o '([-_.[:alnum:]]+-eth[[:digit:]]+)'
+( ip link del s1-eth1;ip link del s2-eth1;ip link del s1-eth3;ip link del s3-eth1;ip link del s3-eth1;ip link del s1-eth3;ip link del s2-eth3;ip link del s3-eth2;ip link del s3-eth2;ip link del s2-eth3;ip link del s4-eth1;ip link del s1-eth4;ip link del s4-eth2;ip link del s4-eth2;ip link del s1-eth4 ) 2> /dev/null
+DEBUG:    % sending keepalive ping
+DEBUG:    > PING 0b 3a 33 bc [binary, 4 bytes]
+DEBUG:    < PONG 0b 3a 33 bc [binary, 4 bytes]
+DEBUG:    % received keepalive pong
+ip link show
+*** Killing stale mininet node processes
+pkill -9 -f mininet:
+*** Shutting down stale tunnels
+pkill -9 -f Tunnel=Ethernet
+pkill -9 -f .ssh/mn
+rm -f ~/.ssh/mn/*
+*** Cleanup complete.
+*** Creating network
+*** Adding controller
+*** errRun: ['which', 'controller'] 
+/usr/local/bin/controller
+  0_popen ['mnexec', '-cd', 'env', 'PS1=\x7f', 'bash', '--norc', '--noediting', '-is', 'mininet:c0'] 4941*** c0 : ('unset HISTFILE; stty -echo; set +m',)
+unset HISTFILE; stty -echo; set +m
+*** errRun: ['which', 'telnet'] 
+/usr/bin/telnet
+  0*** c0 : ('echo A | telnet -e A 127.0.0.1 6653',)
+Telnet escape character is 'A'.
+Trying 127.0.0.1...
+telnet: Unable to connect to remote host: Connection refused
+*** Adding hosts:
+
+*** Adding switches:
+
+*** Adding links:
+
+*** Configuring hosts
+
+*** Creating network
+*** Adding hosts:
+
+*** Adding switches:
+
+*** Adding links:
+
+*** Configuring hosts
+
+INFO:     192.168.56.1:55132 - "POST /api/mininet/reset HTTP/1.1" 200 OK
+DEBUG:    < CLOSE 1005 (no status received [internal]) [0 bytes]
+DEBUG:    = connection is CLOSING
+DEBUG:    > CLOSE 1005 (no status received [internal]) [0 bytes]
+DEBUG:    x half-closing TCP connection
+DEBUG:    = connection is CLOSED
+INFO:     connection closed
+PTY Read Error: [Errno 9] Bad file descriptor 
+id='c1' type='controller' name='c1' label='c1' x=19.996986280082137 y=-149.57335540149214 remote=False ip=None port=None 
+_popen ['mnexec', '-cd', 'env', 'PS1=\x7f', 'bash', '--norc', '--noediting', '-is', 'mininet:c1'] 4946*** c1 : ('unset HISTFILE; stty -echo; set +m',)
+unset HISTFILE; stty -echo; set +m
+*** errRun: ['which', 'telnet'] 
+/usr/bin/telnet
+  0*** c1 : ('echo A | telnet -e A 127.0.0.1 6653',)
+Telnet escape character is 'A'.
+Trying 127.0.0.1...
+telnet: Unable to connect to remote host: Connection refused
+*** errRun: ['which', 'controller'] 
+/usr/local/bin/controller
+  0*** c1 : ('controller ptcp:6653 1>/tmp/c1.log 2>/tmp/c1.log &',)
+c1 
+Closed terminal session for h1
+INFO:     192.168.56.1:56887 - "POST /api/mininet/controllers HTTP/1.1" 200 OK
+CREATING SWITCH id='s1' type='sw' name='s1' label='s1 <00:00:00:00:00:00:00:01>' x=250.0 y=150.0 ports=4 controller=None
+_popen ['mnexec', '-cd', 'env', 'PS1=\x7f', 'bash', '--norc', '--noediting', '-is', 'mininet:s1'] 4953*** s1 : ('unset HISTFILE; stty -echo; set +m',)
+unset HISTFILE; stty -echo; set +m
+
+added intf lo (0) to node s1
+*** s1 : ('ifconfig', 'lo', 'up')
+*** s1 : ('ovs-vsctl', ' -- --if-exists del-br s1 -- add-br s1 -- set bridge s1 controller=[] other_config:datapath-id=0000000000000001 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s1')
+INFO:     192.168.56.1:64677 - "POST /api/mininet/switches HTTP/1.1" 200 OK
+*** s1 : ('ovs-vsctl', '-- --id=@s1c1 create Controller target=\\"tcp:127.0.0.1:6653\\" max_backoff=1000 -- --if-exists del-br s1 -- add-br s1 -- set bridge s1 controller=[@s1c1] other_config:datapath-id=0000000000000001 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s1')
+c0d758b1-610b-4643-9337-e26a981e6260
+INFO:     192.168.56.1:64677 - "POST /api/mininet/associate_switch HTTP/1.1" 200 OK
+id='h1' type='host' name='h1' label='h1' x=200.0 y=300.0 ip='10.0.0.1/8' mac='000000000001' 
+_popen ['mnexec', '-cdn', 'env', 'PS1=\x7f', 'bash', '--norc', '--noediting', '-is', 'mininet:h1'] 4975*** h1 : ('unset HISTFILE; stty -echo; set +m',)
+unset HISTFILE; stty -echo; set +m
+h1 
+INFO:     192.168.56.1:64677 - "POST /api/mininet/hosts HTTP/1.1" 200 OK
+*** s1 : ('ip link add name s1-eth1 address fa:e2:ec:b4:3e:df type veth peer name h1-eth0 address 82:b0:3b:e6:f0:5e netns 4975',)
+
+added intf s1-eth1 (1) to node s1
+*** s1 : ('ifconfig', 's1-eth1', 'up')
+
+added intf h1-eth0 (0) to node h1
+moving h1-eth0 into namespace for h1 
+*** h1 : ('ifconfig', 'h1-eth0', 'up')
+*** s1 : ('ovs-vsctl', '-- --id=@s1c1 create Controller target=\\"tcp:127.0.0.1:6653\\" max_backoff=1000 -- --if-exists del-br s1 -- add-br s1 -- set bridge s1 controller=[@s1c1] other_config:datapath-id=0000000000000001 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s1 -- add-port s1 s1-eth1 -- set Interface s1-eth1 ofport_request=1')
+4134dc7b-6abd-4c59-b7df-ffba8c40aa6b
+*** h1 : ('ifconfig', 'h1-eth0', 'down')
+*** h1 : ('ifconfig', 'h1-eth0', 'hw', 'ether', '00:00:00:00:00:01')
+*** h1 : ('ifconfig', 'h1-eth0', 'up')
+*** h1 : ('ifconfig', 'h1-eth0', '10.0.0.1/8', 'up')
+*** h1 : ('ifconfig lo up',)
+INFO:     192.168.56.1:64677 - "POST /api/mininet/links HTTP/1.1" 200 OK
+id='h2' type='host' name='h2' label='h2' x=290.0 y=300.0 ip='10.0.0.2/8' mac='000000000002' 
+_popen ['mnexec', '-cdn', 'env', 'PS1=\x7f', 'bash', '--norc', '--noediting', '-is', 'mininet:h2'] 4990*** h2 : ('unset HISTFILE; stty -echo; set +m',)
+unset HISTFILE; stty -echo; set +m
+h2 
+INFO:     192.168.56.1:64677 - "POST /api/mininet/hosts HTTP/1.1" 200 OK
+*** s1 : ('ip link add name s1-eth2 address c6:f7:f8:ec:31:81 type veth peer name h2-eth0 address 12:c6:f7:18:bd:19 netns 4990',)
+
+added intf s1-eth2 (2) to node s1
+*** s1 : ('ifconfig', 's1-eth2', 'up')
+
+added intf h2-eth0 (0) to node h2
+moving h2-eth0 into namespace for h2 
+*** h2 : ('ifconfig', 'h2-eth0', 'up')
+*** s1 : ('ovs-vsctl', '-- --id=@s1c1 create Controller target=\\"tcp:127.0.0.1:6653\\" max_backoff=1000 -- --if-exists del-br s1 -- add-br s1 -- set bridge s1 controller=[@s1c1] other_config:datapath-id=0000000000000001 fail_mode=secure other-config:disable-in-band=true other-config:dp-desc=s1 -- add-port s1 s1-eth1 -- set Interface s1-eth1 ofport_request=1 -- add-port s1 s1-eth2 -- set Interface s1-eth2 ofport_request=2')
+8d37ba0d-986e-4158-9eb0-d0d1b0291fda
+*** h2 : ('ifconfig', 'h2-eth0', 'down')
+*** h2 : ('ifconfig', 'h2-eth0', 'hw', 'ether', '00:00:00:00:00:02')
+*** h2 : ('ifconfig', 'h2-eth0', 'up')
+*** h2 : ('ifconfig', 'h2-eth0', '10.0.0.2/8', 'up')
+*** h2 : ('ifconfig lo up',)
+INFO:     192.168.56.1:64677 - "POST /api/mininet/links HTTP/1.1" 200 OK
+*** Ping: testing ping reachability
+h1 -> *** h1 : ('ping -c1  10.0.0.2',)
+PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
+64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=22.4 ms
+
+--- 10.0.0.2 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 22.388/22.388/22.388/0.000 ms
+h2 
+h2 -> *** h2 : ('ping -c1  10.0.0.1',)
+PING 10.0.0.1 (10.0.0.1) 56(84) bytes of data.
+64 bytes from 10.0.0.1: icmp_seq=1 ttl=64 time=13.7 ms
+
+--- 10.0.0.1 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 13.712/13.712/13.712/0.000 ms
+h1 
+*** Results: 
+ h1->h2: 1/1, rtt min/avg/max/mdev 22.388/22.388/22.388/0.000 ms
+ h2->h1: 1/1, rtt min/avg/max/mdev 13.712/13.712/13.712/0.000 ms
+[(<Host h1: h1-eth0:10.0.0.1 pid=4975> , <Host h2: h2-eth0:10.0.0.2 pid=4990> , (1, 1, 22.388, 22.388, 22.388, 0.0)), (<Host h2: h2-eth0:10.0.0.2 pid=4990> , <Host h1: h1-eth0:10.0.0.1 pid=4975> , (1, 1, 13.712, 13.712, 13.712, 0.0))] 
+INFO:     192.168.56.1:60926 - "POST /api/mininet/pingall HTTP/1.1" 200 OK
+INFO:     192.168.56.1:60926 - "OPTIONS /api/mininet/stats/s1 HTTP/1.1" 200 OK
+*** s1 : ('ovs-ofctl', 'dump-ports', <OVSSwitch s1: lo:127.0.0.1,s1-eth1:None,s1-eth2:None pid=4953> )
+OFPST_PORT reply (xid=0x2): 3 ports
+  port LOCAL: rx pkts=0, bytes=0, drop=1, errs=0, frame=0, over=0, crc=0
+           tx pkts=0, bytes=0, drop=0, errs=0, coll=0
+  port  "s1-eth1": rx pkts=3, bytes=238, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=3, bytes=238, drop=0, errs=0, coll=0
+  port  "s1-eth2": rx pkts=3, bytes=238, drop=0, errs=0, frame=0, over=0, crc=0
+           tx pkts=3, bytes=238, drop=0, errs=0, coll=0
+*** s1 : ('ovs-ofctl', 'dump-flows', <OVSSwitch s1: lo:127.0.0.1,s1-eth1:None,s1-eth2:None pid=4953> )
+ cookie=0x0, duration=4.903s, table=0, n_packets=0, n_bytes=0, idle_timeout=60, priority=65535,arp,in_port="s1-eth2",vlan_tci=0x0000,dl_src=00:00:00:00:00:02,dl_dst=00:00:00:00:00:01,arp_spa=10.0.0.2,arp_tpa=10.0.0.1,arp_op=2 actions=output:"s1-eth1"
+ cookie=0x0, duration=4.891s, table=0, n_packets=0, n_bytes=0, idle_timeout=60, priority=65535,icmp,in_port="s1-eth1",vlan_tci=0x0000,dl_src=00:00:00:00:00:01,dl_dst=00:00:00:00:00:02,nw_src=10.0.0.1,nw_dst=10.0.0.2,nw_tos=0,icmp_type=8,icmp_code=0 actions=output:"s1-eth2"
+ cookie=0x0, duration=4.886s, table=0, n_packets=0, n_bytes=0, idle_timeout=60, priority=65535,icmp,in_port="s1-eth2",vlan_tci=0x0000,dl_src=00:00:00:00:00:02,dl_dst=00:00:00:00:00:01,nw_src=10.0.0.2,nw_dst=10.0.0.1,nw_tos=0,icmp_type=0,icmp_code=0 actions=output:"s1-eth1"
+ cookie=0x0, duration=4.856s, table=0, n_packets=0, n_bytes=0, idle_timeout=60, priority=65535,icmp,in_port="s1-eth2",vlan_tci=0x0000,dl_src=00:00:00:00:00:02,dl_dst=00:00:00:00:00:01,nw_src=10.0.0.2,nw_dst=10.0.0.1,nw_tos=0,icmp_type=8,icmp_code=0 actions=output:"s1-eth1"
+ cookie=0x0, duration=4.845s, table=0, n_packets=0, n_bytes=0, idle_timeout=60, priority=65535,icmp,in_port="s1-eth1",vlan_tci=0x0000,dl_src=00:00:00:00:00:01,dl_dst=00:00:00:00:00:02,nw_src=10.0.0.1,nw_dst=10.0.0.2,nw_tos=0,icmp_type=0,icmp_code=0 actions=output:"s1-eth2"
+INFO:     192.168.56.1:50371 - "GET /api/mininet/stats/s1 HTTP/1.1" 200 OK

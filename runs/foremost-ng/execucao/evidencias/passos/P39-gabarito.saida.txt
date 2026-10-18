@@ -1,0 +1,23 @@
+gabarito: /execucao/evidencias/dftt/gabarito-11.tsv (15 arquivos)
+saida: /home/revisor/dftt/saida11 (14 arquivos recuperados, sem audit.txt)
+
+n	nome	setor	tam_esperado	recuperado_no_setor	tam_recuperado	md5_igual	md5_em_outro_arquivo
+1	2003_document.doc	281	19968	ole/00000281.ole	20992	nao	-
+2	enterprise.wav	16021	318895	wav/00016021.wav	318886	nao	-
+3	haxor2.jpg	16645	24367	-	-	nao	-
+4	holly.xls	16693	23040	ole/00016693.ole	25088	nao	-
+5	lin_1.2.pdf	16741	1399508	pdf/00016741.pdf	1399508	sim	-
+6	nlin_14.pdf	19477	122434	pdf/00019477.pdf	122434	sim	-
+7	paul.jpg	19717	29885	jpg/00019717.jpg	29885	sim	-
+8	pumpkin.jpg	19777	444314	jpg/00019777.jpg	444314	sim	-
+9	shark.jpg	20645	99298	jpg/00020645.jpg	99298	sim	-
+10	sm1.gif	20841	5498	gif/00020841.gif	5498	sim	-
+11	surf.mov	20853	550653	mov/00020853.mov	550653	sim	-
+12	surf.wmv	21929	1036994	wmv/00021929.wmv	1036994	sim	-
+13	test.ppt	23957	11264	ole/00023957.ole	7212032	nao	-
+14	wword60t.zip	23981	78899	zip/00023981.zip	78899	sim	-
+15	domopers.wmv	321	8037267	wmv/00000321.wmv	8037267	sim	-
+
+RESUMO esperados=15 recuperados_no_setor=14 corretos_md5_no_setor=10 md5_do_gabarito_em_qualquer_recuperado=10 total_recuperados=14 recuperados_sem_correspondencia=0
+
+recuperados sem correspondencia no gabarito (setor, arquivo, tamanho, md5):

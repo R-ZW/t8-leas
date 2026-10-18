@@ -1,0 +1,216 @@
+Saídas textuais lidas da interface web (innerText do DOM via CDP) durante a execução de referência
+de 2026-10-17. Cada bloco traz o passo, a hora UTC da leitura e o texto tal como lido. As capturas
+correspondentes estão em telas/ (hora UTC no nome do arquivo e carimbada na imagem).
+Contagens de "grafo" vêm dos conjuntos de nós/arestas do componente Vue da página (somente leitura);
+contagens de "API" vêm de curl em localhost:8000 dentro da VM (terminal.txt).
+
+=== E10 2026-10-17T18:43:03Z — barra lateral (#side)
+Topology Controls / Generate Topology / Reset Topology / Actions / Create Link / Delete Selected /
+Run Pingall Test / Export/Import / Export Topology (JSON) / Import Topology (JSON) /
+Export Mininet Script / Nodes Palette / Host / Switch / Controller
+título da página: "Mininet-GUI | http://192.168.56.101:5173/"
+
+=== E11 2026-10-17T18:43:32Z — formulário aberto após soltar "Controller"
+<form><label for="type">Controller Type:</label><select id="type"><option value="default">Default</option>
+<option value="remote">Remote</option></select><br><button class="submit-button" type="submit">Submit</button></form>
+(valor selecionado: "default")
+=== E11 2026-10-17T18:43:41Z — após Submit: nós do grafo {c1}; abas do WebShell: C1
+
+=== E12 2026-10-17T18:43:55Z — formulário "Generate Topology": type=Single, controller=c1, nDevices=2
+=== E12 2026-10-17T18:44:11Z — grafo
+nós: c1, s1, h1, h2 ; abas: C1 S1 H1 H2 ; networkStarted=true
+arestas: s1-c1 (cor #777788af, tracejada), s1-h1, s1-h2
+
+=== E13 2026-10-17T18:44:21Z — "Pingall Results"
+src	dst	packets_sent	packets_recv	min	avg	max	mdev
+h1	h2	1	1	24.340	24.340	24.340	0.000
+h2	h1	1	1	4.674	4.674	4.674	0.000
+
+=== E14 2026-10-17T18:46:29Z — aba h1, "iperf -s"
+root@mininet-vm:/home/mininet/mininet-gui/mininet-gui-backend# iperf -s
+------------------------------------------------------------
+Server listening on TCP port 5001
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+=== E14 2026-10-17T18:47:38Z — aba h2, "iperf -c 10.0.0.1" (digitado às 18:46:36Z)
+------------------------------------------------------------
+Client connecting to 10.0.0.1, TCP port 5001
+TCP window size:  306 KByte (default)
+------------------------------------------------------------
+[  5] local 10.0.0.2 port 47106 connected with 10.0.0.1 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  5]  0.0-10.0 sec  7.71 GBytes  6.62 Gbits/sec
+=== E14 2026-10-17T18:47:42Z — aba h1 após o cliente
+[  6] local 10.0.0.1 port 5001 connected with 10.0.0.2 port 47106
+[ ID] Interval       Transfer     Bandwidth
+[  6]  0.0-10.0 sec  7.71 GBytes  6.62 Gbits/sec
+=== E14 2026-10-17T18:47:49Z — Ctrl+C na aba h1
+^Croot@mininet-vm:/home/mininet/mininet-gui/mininet-gui-backend#
+
+=== E16 2026-10-17T18:47:49Z–18:48:05Z — controlador Remote: type=remote, ip=127.0.0.1, port=6633; nó c2 criado
+=== E16 2026-10-17T18:48:24Z — Single, controller=c2, Hosts=2: nós s2, h3, h4 criados nas mesmas
+coordenadas de tela de s1, h1, h2 (s2 e s1 em 1174,511; h3 e h1 em 1123,664; h4 e h2 em 1215,664)
+=== E16 2026-10-17T18:49:28Z — após "Create Link" e arraste s1 -> s2, arestas do grafo:
+s1-c1 #777788af | s1-h1 | s1-h2 | s2-c2 #777788af | s2-h3 | s2-h4 | s1-s2 #00aa00ff
+=== E16 2026-10-17T18:49:45Z — aba c2, "ryu-manager --ofp-tcp-listen-port 6633 ryu.app.simple_switch_13"
+Command 'ryu-manager' not found, but can be installed with:
+
+apt install python3-ryu
+=== E16 2026-10-17T18:49:53Z — "Pingall Results" logo após o clique: "No ping results available."
+=== E16 2026-10-17T18:50:24Z — "Pingall Results" final
+src	dst	packets_sent	packets_recv	min	avg	max	mdev
+h1	h2	1	1	3.804	3.804	3.804	0.000
+h1	h3	1	0	0.000	0.000	0.000	0.000
+h1	h4	1	0	0.000	0.000	0.000	0.000
+h2	h1	1	1	9.242	9.242	9.242	0.000
+h2	h3	1	0	0.000	0.000	0.000	0.000
+h2	h4	1	0	0.000	0.000	0.000	0.000
+h3	h1	1	0	0.000	0.000	0.000	0.000
+h3	h2	1	0	0.000	0.000	0.000	0.000
+h3	h4	1	0	0.000	0.000	0.000	0.000
+h4	h1	1	0	0.000	0.000	0.000	0.000
+h4	h2	1	0	0.000	0.000	0.000	0.000
+h4	h3	1	0	0.000	0.000	0.000	0.000
+
+=== E17 2026-10-17T18:50:52Z / 18:51:08Z — downloads: network_export.json (2514 bytes), network_export.py (1105 bytes)
+(arquivos em exportados/, SHA-256 em exportados/exportados.sha256)
+
+=== E18 — "Reset Topology": diálogo confirm "Are you sure you want to reset the topology? This action
+cannot be undone." aceito; após cada reset, grafo sem nós e API com 0 controllers/switches/hosts/links
+
+=== E19 2026-10-17T18:52:10Z — formulário: "Topology Type: Single | Controller: c1 | Hosts: 3"
+grafo 18:52:17Z: nós 5 (c1,s1,h1,h2,h3); arestas 4: s1-c1(assoc) s1-h1 s1-h2 s1-h3
+API: controllers=1 switches=1 ['s1'] hosts=3 ['h1','h2','h3'] links=3 [['s1','h1'],['h2','s1'],['s1','h3']]
+
+=== E20 2026-10-17T18:52:48Z — formulário: "Topology Type: Linear | Controller: c1 | Switches: 3 | Hosts per switch: 2"
+grafo 18:52:54Z: nós 10 (c1,s1,h1,h2,s2,h3,h4,s3,h5,h6); arestas 11:
+s1-c1(assoc) s1-h1 s1-h2 s2-c1(assoc) s2-h3 s2-h4 s2-s1 s3-c1(assoc) s3-h5 s3-h6 s3-s2
+API: controllers=1 switches=3 hosts=6 links=8 [['s1','h1'],['h2','s1'],['h3','s2'],['h4','s2'],['s1','s2'],['h5','s3'],['h6','s3'],['s2','s3']]
+
+=== E21 2026-10-17T18:53:27Z — formulário: "Topology Type: Linear | Controller: c1 | Switches: 2 | Hosts per switch: 1"
+grafo 18:53:33Z: nós 5 (c1,s1,h1,s2,h2); arestas 5: s1-c1(assoc) s1-h1 s2-c1(assoc) s2-h2 s2-s1
+API: controllers=1 switches=2 hosts=2 links=3 [['s1','h1'],['h2','s2'],['s1','s2']]
+
+=== E22 2026-10-17T18:53:57Z — formulário: "Topology Type: Tree | Controller: c1 | Layers: 2 | Fanout: 2"
+grafo 18:54:03Z: nós 8 (c1,h1,h2,h3,h4,s1,s2,s3); arestas 9:
+s1-c1(assoc) s1-h1 s1-h2 s2-c1(assoc) s2-h3 s2-h4 s3-c1(assoc) s3-s1 s3-s2
+API: controllers=1 switches=3 hosts=4 links=6 [['s1','h1'],['h2','s1'],['h3','s2'],['h4','s2'],['s1','s3'],['s2','s3']]
+
+=== E24 2026-10-17T18:54:48Z — aba h1, "ip addr show"
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+2: h1-eth0@if40: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether 00:00:00:00:00:01 brd ff:ff:ff:ff:ff:ff link-netnsid 0
+    inet 10.0.0.1/8 brd 10.255.255.255 scope global h1-eth0
+       valid_lft forever preferred_lft forever
+
+=== E25 2026-10-17T18:54:55Z — aba h2, "ip addr show"
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+2: h2-eth0@if41: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether 00:00:00:00:00:02 brd ff:ff:ff:ff:ff:ff link-netnsid 0
+    inet 10.0.0.2/8 brd 10.255.255.255 scope global h2-eth0
+       valid_lft forever preferred_lft forever
+
+=== E26 2026-10-17T18:55:11Z — aba h1, "ping -c 2 10.0.0.2"
+PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
+64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=20.6 ms
+64 bytes from 10.0.0.2: icmp_seq=2 ttl=64 time=0.140 ms
+
+--- 10.0.0.2 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1002ms
+rtt min/avg/max/mdev = 0.140/10.374/20.609/10.234 ms
+
+=== E27 2026-10-17T18:55:22Z–18:55:35Z — abas h1 e h2, "echo webshell-pid=$$ netns=$(readlink /proc/$$/ns/net)"
+h1: webshell-pid=4003 netns=net:[4026532228]
+h2: webshell-pid=4011 netns=net:[4026532269]
+(terminal da VM, 18:55:11Z: h1 pid=3801 netns=net:[4026532228]; h2 pid=3803 netns=net:[4026532269];
+ shell da VM netns=net:[4026531992]; "ip -br addr" da VM: lo 127.0.0.1/8, eth0 192.168.56.101/24, s1..s3 e
+ portas sN-ethM, sem h1-eth0/h2-eth0)
+
+=== E28 2026-10-17T18:56:26Z–18:56:40Z — arraste de h1 e recarga da página
+posição de h1 no canvas antes: (50, 450); depois do arraste: (-205, 389)
+API /hosts após o arraste: h1 (-204.7328110514078, 388.864125347662)
+posição de h1 após recarregar a página (F5 equivalente, Page.reload): (-204, 388)
+(tentativa anterior, 18:55:49Z–18:56:04Z: o arraste partiu de coordenada que não era a de h1 — 469,159 —
+ e não moveu o nó; posição antes e depois (50, 450))
+=== E28 2026-10-17T18:56:47Z–18:57:25Z — paleta: Switch e Host soltos no grafo -> nós s4 e h5, sem formulário
+"Create Link": h5->s4, s4->s1, s4->c1; arestas do grafo:
+s1-h1 h2-s1 h3-s2 h4-s2 s1-s3 s2-s3 s1-c1(assoc) s2-c1(assoc) s3-c1(assoc) h5-s4[#00aa00ff] s4-s1[#00aa00ff] s4-c1(assoc)[#777788af]
+API: controllers=1 switches=4 hosts=5 links=8 [... ['s4','h5'],['s1','s4']] start=true
+
+=== E29 2026-10-17T18:57:34Z — API: /start = true; /hosts = h1..h5 (10.0.0.1/8 .. 10.0.0.5/8)
+=== E29 2026-10-17T18:57:39Z — "Pingall Results" (20 linhas, todas packets_sent=1, packets_recv=1)
+h1	h2	1	1	4.342	4.342	4.342	0.000
+h1	h3	1	1	41.868	41.868	41.868	0.000
+h1	h4	1	1	20.246	20.246	20.246	0.000
+h1	h5	1	1	16.408	16.408	16.408	0.000
+h2	h1	1	1	4.410	4.410	4.410	0.000
+h2	h3	1	1	37.796	37.796	37.796	0.000
+h2	h4	1	1	24.481	24.481	24.481	0.000
+h2	h5	1	1	7.294	7.294	7.294	0.000
+h3	h1	1	1	13.832	13.832	13.832	0.000
+h3	h2	1	1	9.344	9.344	9.344	0.000
+h3	h4	1	1	27.676	27.676	27.676	0.000
+h3	h5	1	1	42.551	42.551	42.551	0.000
+h4	h1	1	1	12.104	12.104	12.104	0.000
+h4	h2	1	1	10.856	10.856	10.856	0.000
+h4	h3	1	1	23.142	23.142	23.142	0.000
+h4	h5	1	1	55.502	55.502	55.502	0.000
+h5	h1	1	1	12.661	12.661	12.661	0.000
+h5	h2	1	1	21.441	21.441	21.441	0.000
+h5	h3	1	1	34.522	34.522	34.522	0.000
+h5	h4	1	1	25.847	25.847	25.847	0.000
+
+=== E30 2026-10-17T18:58:05Z — aresta h2-s1 selecionada; "Delete Selected"
+grafo: nós h1,h2,h3,h4,s1,s2,s3,c1,s4,h5; arestas s1-h1 h3-s2 h4-s2 s1-s3 s2-s3 s1-c1 s2-c1 s3-c1 h5-s4 s4-s1 s4-c1
+API 18:58:08Z: switches=4 hosts=5 links=7 (sem ['h2','s1']) start=true
+=== E30 2026-10-17T18:58:26Z — nó h4 selecionado; "Delete Selected"
+grafo: nós h1,h2,h3,s1,s2,s3,c1,s4,h5; arestas s1-h1 h3-s2 s1-s3 s2-s3 s1-c1 s2-c1 s3-c1 h5-s4 s4-s1 s4-c1
+abas: H1 H2 H3 S1 S2 S3 C1 S4 H5
+API 18:58:30Z: hosts=4 ['h1','h2','h3','h5']; links=7 [['s1','h1'],['h3','s2'],['h4','s2'],['s1','s3'],['s2','s3'],['s4','h5'],['s1','s4']]; start=true
+log do backend: "DELETE /api/mininet/delete_link/h2/s1 HTTP/1.1" 200 OK; "DELETE /api/mininet/delete_node/h4 HTTP/1.1" 200 OK;
+ocorrências de "Creating network" no log: 10 antes e 10 depois das remoções
+=== E30 2026-10-17T18:58:40Z — "Run Pingall Test": diálogo alert "Network Error"; modal "No ping results available."
+log do backend: "POST /api/mininet/pingall HTTP/1.1" 500 Internal Server Error
+  File ".../mininet_gui_backend/api.py", line 157, in run_pingall
+    pingall_results = app.net.pingFull()
+  File "/usr/local/lib/python3.8/dist-packages/mininet/net.py", line 747, in pingFull
+    result = node.cmd( 'ping -c1 %s %s' % (opts, dest.IP()) )
+  File "/usr/local/lib/python3.8/dist-packages/mininet/node.py", line 573, in IP
+    return self.intf( intf ).IP()
+AttributeError: 'NoneType' object has no attribute 'IP'
+=== E30 2026-10-17T19:01:07Z — API /start = true; "Creating network" = 10
+=== E30 2026-10-17T19:01:31Z — aba h1, "ping -c 2 10.0.0.3; ip -br addr"
+2 packets transmitted, 2 received, 0% packet loss, time 1005ms
+rtt min/avg/max/mdev = 8.737/21.237/33.737/12.500 ms
+lo               UNKNOWN        127.0.0.1/8
+h1-eth0@if40     UP             10.0.0.1/8
+
+=== E31 2026-10-17T19:02:05Z — reset; c1; Single, c1, Hosts=2: arestas s1-c1(assoc) s1-h1 s1-h2
+=== E31 2026-10-17T19:02:08Z — "Pingall Results"
+h1	h2	1	1	22.388	22.388	22.388	0.000
+h2	h1	1	1	13.712	13.712	13.712	0.000
+=== E31 2026-10-17T19:02:14Z — duplo clique em s1: modal "Node Info: s1", botões Details / Flow Table
+id: s1 / type: sw / name: s1 / label: s1 <00:00:00:00:00:00:00:01> / controller: c1
+ports: "s1-eth1": rx pkts=3, bytes=238 ... tx pkts=3, bytes=238 ... ; "s1-eth2": rx pkts=3, bytes=238 ... tx pkts=3, bytes=238 ...
+=== E31 2026-10-17T19:02:25Z — aba "Flow Table"
+Flow ID	Cookie	Duration	Table	Packets	Bytes	Idle Timeout	Priority	Match Fields
+1	0x0	4.903s	0	0	0	60	65535	in_port: "s1-eth2", vlan_tci: 0x0000, dl_src: 00:00:00:00:00:02, dl_dst: 00:00:00:00:00:01, arp_spa: 10.0.0.2, arp_tpa: 10.0.0.1
+2	0x0	4.891s	0	0	0	60	65535	in_port: "s1-eth1", vlan_tci: 0x0000, dl_src: 00:00:00:00:00:01, dl_dst: 00:00:00:00:00:02, nw_src: 10.0.0.1, nw_dst: 10.0.0.2, nw_tos: 0, icmp_type: 8
+3	0x0	4.886s	0	0	0	60	65535	in_port: "s1-eth2", vlan_tci: 0x0000, dl_src: 00:00:00:00:00:02, dl_dst: 00:00:00:00:00:01, nw_src: 10.0.0.2, nw_dst: 10.0.0.1, nw_tos: 0, icmp_type: 0
+4	0x0	4.856s	0	0	0	60	65535	in_port: "s1-eth2", vlan_tci: 0x0000, dl_src: 00:00:00:00:00:02, dl_dst: 00:00:00:00:00:01, nw_src: 10.0.0.2, nw_dst: 10.0.0.1, nw_tos: 0, icmp_type: 8
+5	0x0	4.845s	0	0	0	60	65535	in_port: "s1-eth1", vlan_tci: 0x0000, dl_src: 00:00:00:00:00:01, dl_dst: 00:00:00:00:00:02, nw_src: 10.0.0.1, nw_dst: 10.0.0.2, nw_tos: 0, icmp_type: 0
+botões no modal: X | Details | Flow Table
+
+=== E32 2026-10-17T19:02:34Z — todos os controles da página (button/input/select/textarea/a)
+BUTTON#button-create-topology "Generate Topology" | BUTTON#button-reset-topology "Reset Topology" |
+BUTTON#button-create-link "Create Link" | BUTTON#button-delete-selected "Delete Selected" |
+BUTTON#button-pingall "Run Pingall Test" | BUTTON#button-export-topology "Export Topology (JSON)" |
+BUTTON#button-import-topology "Import Topology (JSON)" | BUTTON#button-export-script "Export Mininet Script" |
+INPUT#fileInput (file) | BUTTON#button-hide-side | BUTTON C1 | BUTTON S1 | BUTTON H1 | BUTTON H2 |
+INPUT (text, entrada oculta do WebShell) | BUTTON X | BUTTON Details | BUTTON Flow Table
