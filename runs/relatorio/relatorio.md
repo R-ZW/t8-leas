@@ -1,6 +1,6 @@
 # Relatório final da T8 — LLMs reproduzem os selos F e R de artefatos do SBSeg e do SBRC?
 
-**Estado:** versão de 18/10/2026. As 18 cadeias têm A, B1 e B2. O B2 do GPT foi aceito como **não comparável** (5.10). A verificação cega das evidências e as métricas estão prontas. A linha de base humana não foi preenchida e está declarada **ausente**. Nada foi commitado.
+**Estado:** versão de 18/10/2026. As 18 cadeias têm A, B1 e B2. O B2 do GPT foi aceito como **não comparável** (5.10). A verificação cega das evidências e as métricas estão prontas. A linha de base humana não foi preenchida e está declarada **ausente**.
 
 **Fontes dos números:**
 - `runs/<artefato>/analise/metricas.md`, `decisoes.csv`, `por-reivindicacao.csv`, `evidencias.csv` e `notas-verificacao.md`;
@@ -258,7 +258,7 @@ Cada item diz o que aconteceu, o efeito possível e a fonte.
 
 ### 5.2 Esforço Médio × High
 
-- **O que aconteceu:** o Claude rodou com esforço `Médio`; o GPT e o Gemini, com `High`. Modelo e esforço do GPT foram informados de memória e não foram confirmados até 18/10/2026.
+- **O que aconteceu:** o Claude rodou com esforço `Médio`; o GPT e o Gemini, com `High`. Modelo e esforço do GPT (GPT 6.1 Sol, High) foram confirmados por Reinaldo em 18/10/2026.
 - **Efeito possível:** diferenças entre o Claude e os outros podem vir do nível de raciocínio. Os níveis nominais não são equivalentes entre provedores.
 - **Fonte:** [llms.md](../foremost-ng/llms.md); [decisoes-operacionais.md](../decisoes-operacionais.md); cabeçalhos das cadeias.
 
