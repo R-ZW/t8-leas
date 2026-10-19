@@ -228,7 +228,7 @@ O §3.1 manda copiar esta tabela para `preregistro.md` e preencher "Valor adotad
 | Execução | Critério de desistência | erro D2 em passo essencial ou tempo | definido em cada roteiro; não acionado | idem |
 | Execução | Classes de desvio | D0–D3 | D0–D3 | `registro-factual.md` |
 | Execução | Tolerância numérica | ex.: 5% ou a dos autores | nenhuma (os autores não publicam valores); critério = comportamento observado | `reivindicacoes.md` |
-| Execução | Contato com autores | no máximo 1 mensagem | FN: pedido de `evidence2.dd` redigido e **não enviado**; MG: nenhum | `registro-factual.md` |
+| Execução | Contato com autores | no máximo 1 mensagem | FN: pedido de `evidence2.dd` **não enviado durante a execução**; enviado em 19/10/2026, depois das etapas B2, sem efeito nos dados; MG: nenhum | `registro-factual.md` |
 | Medida | Decisão | Atribuir / Não atribuir / Indeterminado | idem, no JSON de A e B2 | `analise/decisoes.csv` |
 | Medida | Confiança | 0–100 | idem; o Prompt A a define como "confiança de que o comitê atribuiu o selo" | idem |
 | Medida | Evidências citadas | correta / mal interpretada / inexistente / não verificável | idem, por verificação cega feita por agentes | `analise/evidencias.csv` |
@@ -334,7 +334,7 @@ Os pré-registros não contêm a tabela de parâmetros. A seção 4 a reconstró
 | Desvio | Efeito possível | Fonte |
 |---|---|---|
 | Os dois commits são proxies; o SHA do comitê não é público | divergência com o oficial pode ter causa "diferença de versão" | `versao.md` |
-| FN: `evidence2.dd` e chave VirusTotal não obtidos; a mensagem aos autores foi redigida e não enviada | C5 com chave e C6 bloqueados; o canal de "rebuttal" não foi usado | registro FN §4; `mensagem-autores.md` |
+| FN: `evidence2.dd` e chave VirusTotal não obtidos; a mensagem aos autores não foi enviada durante a execução (só em 19/10/2026, depois das etapas B2) | C5 com chave e C6 bloqueados; o canal de "rebuttal" não foi usado a tempo; uma eventual resposta não altera os dados | registro FN §4; `mensagem-autores.md` |
 | FN: entradas de C1–C4 montadas pelos revisores (D2) ou públicas (D3) | evidência complementar, não autoral | registro FN §2.2–2.3 |
 | MG: Ryu ausente na VM, sem Internet | passo 8 do teste mínimo incompleto | registro MG §5 |
 | MG: quantidades de C4 e comandos de C5 escolhidos pelos revisores | valores rotulados como D2 | registro MG §2 e §5 |

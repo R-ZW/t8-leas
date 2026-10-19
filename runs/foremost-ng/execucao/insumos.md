@@ -31,7 +31,7 @@
 | 01:45:58 | Página do artigo na SBC (SOL) | [sol.sbc.org.br/…/article/view/36737](https://sol.sbc.org.br/index.php/sbseg_estendido/article/view/36737) | DOI `10.5753/sbseg_estendido.2025.12307`; único arquivo é o PDF do artigo (`36737/36523`); sem material suplementar |
 | ~01:46 | Buscador web | `"evidence2.dd" foremost-ng`; `Foremost-NG SBSeg 2025 artefato evidence2.dd imagem disco` | nenhum resultado com a imagem; só a página da SBC e tutoriais genéricos do Foremost original com `evidence.dd` |
 
-**Resultado:** `evidence2.dd` **não foi localizado** em nenhuma fonte pública consultada. Lacuna desta busca: a busca de código do GitHub não foi feita (exige autenticação), e a descrição do vídeo não foi relida hoje. O rascunho de pedido aos autores está em [`mensagem-autores.md`](mensagem-autores.md) (não enviado).
+**Resultado:** `evidence2.dd` **não foi localizado** em nenhuma fonte pública consultada. Lacuna desta busca: a busca de código do GitHub não foi feita (exige autenticação), e a descrição do vídeo não foi relida hoje. O pedido aos autores está em [`mensagem-autores.md`](mensagem-autores.md) (enviado em 19/10/2026, depois da execução e das etapas B2).
 
 ## 2. Imagens DFTT para o teste externo D3
 
